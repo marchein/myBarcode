@@ -10,10 +10,14 @@ import Foundation
 import UIKit
 
 struct localStoreKeys {
+    // is app setup?
+    static let appSetup = "appSetup"
     // is beta tester?
     static let isTester = "isTester"
     // has tipped?
     static let hasTipped = "hasTipped"
+    // which is the current App icon?
+    static let currentAppIcon = "currentIcon"
 }
 
 struct myQRcodeIAP {
@@ -32,10 +36,13 @@ struct myQRcode {
     static let supportPage = "https://marc-hein-webdesign.de/#kontakt"
     static let versionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     static let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
-
+    static let defaultAppIcon = "default"
+    static var appIcons = AppIcons(icons: [
+        AppIcon(iconName: nil, iconTitle: "myQRcode (2018)"),
+        AppIcon(iconName: "myQRcode-dark", iconTitle: "myQRcode - Dark (2019)")
+    ])
     static let thanksItems = [
         ["header": "Frameworks",
          "items": [Thank(name: "IQKeyboardManager", url: "https://github.com/hackiftekhar/IQKeyboardManager"),
-                   Thank(name: "JGProgressHUD", url: "https://github.com/JonasGessner/JGProgressHUD")]]
-    ]
+                   Thank(name: "JGProgressHUD", url: "https://github.com/JonasGessner/JGProgressHUD")]]]
 }

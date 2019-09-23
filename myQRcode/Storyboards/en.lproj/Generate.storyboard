@@ -94,7 +94,7 @@
                                                         <constraint firstAttribute="width" constant="200" id="oRP-16-Jtl"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -175,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="rsq-R3-6nG" kind="relationship" relationship="rootViewController" id="2e9-UC-oSN"/>
+                        <segue destination="DuO-Ma-m4p" kind="relationship" relationship="rootViewController" id="aTR-MU-ls9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EnQ-PY-6wr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -183,14 +183,14 @@
             <point key="canvasLocation" x="1170" y="-298"/>
         </scene>
         <!--Scan-->
-        <scene sceneID="kqV-hH-UQY">
+        <scene sceneID="WXC-fI-GyG">
             <objects>
-                <viewControllerPlaceholder storyboardName="Scan" id="rsq-R3-6nG" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="3fv-6b-CVV"/>
+                <viewControllerPlaceholder storyboardName="Scan" id="DuO-Ma-m4p" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="avW-38-2Md"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4OW-eq-kvc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2rs-Ba-aCV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1818" y="-299"/>
+            <point key="canvasLocation" x="1714" y="-298"/>
         </scene>
         <!--Navigation-->
         <scene sceneID="hwl-Wn-yNz">

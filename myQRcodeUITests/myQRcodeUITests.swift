@@ -138,6 +138,7 @@ class myQRcodeUITests: XCTestCase {
         
         
         let app = XCUIApplication()
+        app.launch()
         let tablesQuery = app.tables
         saveScreenshot(name: "01_start.jpeg")
         tablesQuery/*@START_MENU_TOKEN@*/.textFields["Content of the QR code"]/*[[".cells.textFields[\"Content of the QR code\"]",".textFields[\"Content of the QR code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
@@ -154,8 +155,9 @@ class myQRcodeUITests: XCTestCase {
     }
 
     func testScreenshotsDE() {
-        
+
         let app = XCUIApplication()
+        app.launch()
         saveScreenshot(name: "01_start.jpeg")
         let tablesQuery = app.tables
         tablesQuery/*@START_MENU_TOKEN@*/.textFields["Inhalt des QR Codes"]/*[[".cells.textFields[\"Inhalt des QR Codes\"]",".textFields[\"Inhalt des QR Codes\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()

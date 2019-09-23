@@ -6,3 +6,5 @@
   Copyright © 2019 Marc Hein Webdesign. All rights reserved.
 */
 
+"NSCameraUsageDescription" = "This app needs access to your back camera to scan QR codes";
+"NSPhotoLibraryAddUsageDescription" = "This app needs access to your photo library so it can save generated codes to your library";

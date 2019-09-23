@@ -1,6 +1,6 @@
 //
 //  AppIcon+TableView.swift
-//  myTodo
+//  myQRcode
 //
 //  Created by Marc Hein on 20.11.18.
 //  Copyright © 2018 Marc Hein Webdesign. All rights reserved.
@@ -14,9 +14,12 @@ extension AppIconTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 96.0
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(myQRcode.appIcons.count())
         return myQRcode.appIcons.count()
     }
 

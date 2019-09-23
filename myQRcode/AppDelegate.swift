@@ -18,7 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-            
+        
+        if #available(iOS 13.0,*)  {
+            // nothing to do
+        } else {
+            if let tabBarController = window?.rootViewController as? UITabBarController, let items = tabBarController.tabBar.items {
+                var index = 0;
+                for item in items {
+                    if index == 0 {
+                        item.image = #imageLiteral(resourceName: "Generate-Icon")
+                    } else if index == 1 {
+                        item.image = #imageLiteral(resourceName: "Scan-Icon")
+                    }
+                    index += 1
+                    print(item)
+                }
+            }
+        }
         return true
     }
 

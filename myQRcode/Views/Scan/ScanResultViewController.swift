@@ -15,12 +15,23 @@ class ScanResultViewController: UIViewController {
     @IBOutlet weak var resultTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(codeResult!)
         resultTextView.text = codeResult
-        // Do any additional setup after loading the view.
     }
     
-
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "resetView"), object: nil)
+    }
+    
+    @IBAction func dismiss(_ sender: Any) {
+        self.dismiss(animated: true) {
+            if let scanVC = self.presentingViewController as? ScanViewController {
+                scanVC.resetScanner()
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

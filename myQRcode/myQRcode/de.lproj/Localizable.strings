@@ -15,7 +15,7 @@
 "transaction_error" = "Es ist ein Fehler beim Abschließen der Transaktion aufgetreten.";
 "no_tips" = "Keine Unterstützungsbeiträge vorhanden";
 "no_tips_desc" = "Entweder hat Dein Gerät Probleme Daten von Apple zu empfangen oder Apple hat Probleme. Bitte versuche es erneut.";
-"tip_success" = "Erfolgreich myTodo unterstützt!";
+"tip_success" = "Erfolgreich myApp unterstützt!";
 "tip_success_message" = "Vielen Dank für Deine Unterstützung!";
 "loading" = "Laden...";
 

@@ -6,3 +6,6 @@
   Copyright © 2019 Marc Hein Webdesign. All rights reserved.
 */
 
+"NSCameraUsageDescription" = "Diese Anwendungs benötigt Zugriff auf die Rückkamera um QR Codes zu scannen";
+"NSPhotoLibraryAddUsageDescription" = "Diese Anwendungs benötigt Zugriff auf deine Fotos, um generierte QR Codes zu speichern";
+

@@ -24,18 +24,30 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupApp()
 
         imageView.addInteraction(UIDragInteraction(delegate: self))
-        
         textField.delegate = self
-                
         imageView.image = #imageLiteral(resourceName: "Blank QR")
         exportButton.isEnabled = false
 
         
         textField.addTarget(self, action: #selector(checkIfGenerationIsPossible), for: UIControl.Event.editingChanged)
                 
-        checkIfGenerationIsPossible()    }
+        checkIfGenerationIsPossible()
+        
+    }
+    
+    fileprivate func setupApp() {
+        let appSetup = UserDefaults.standard.bool(forKey: localStoreKeys.appSetup)
+        
+        if !appSetup {
+            UserDefaults.standard.set(isSimulatorOrTestFlight(), forKey: localStoreKeys.isTester)
+            UserDefaults.standard.set(myQRcode.defaultAppIcon, forKey: localStoreKeys.currentAppIcon)
+            UserDefaults.standard.set(true, forKey: localStoreKeys.appSetup)
+        }
+    }
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -95,11 +107,6 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         filter.setValue("Q", forKey: "inputCorrectionLevel")
         
         let scale: CGFloat = 44
-        
-        print(filter.outputImage)
-        print("content: \(content)")
-        print("content length: \(content.count)")
-        
         
         if let qrCode = filter.outputImage {
             return qrCode.transformed(by: CGAffineTransform(scaleX: scale, y: scale))

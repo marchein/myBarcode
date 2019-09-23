@@ -15,21 +15,40 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     var qrCodeFrameView: UIView?
     var isReadyToScan = false
     var codeResult: String?
-    
-    @IBOutlet weak var notificationView: UIView!
-    @IBOutlet weak var resultLabel: UILabel!
+    var isSetup = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestAccess()
         
-        setupScanner()
+        NotificationCenter.default.addObserver(self, selector: #selector(resetScanner), name:NSNotification.Name(rawValue: "resetView"), object: nil)
+    }
+    
+    func requestAccess() {
+        if AVCaptureDevice.authorizationStatus(for: .video) ==  .authorized {
+                   setupScanner()
+                   resetScanner()
+       } else {
+           AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
+               if granted {
+                   self.setupScanner()
+                   self.resetScanner()
+               } else {
+                   print("restricted usage")
+                DispatchQueue.main.async {
+                    self.setRequestView()
+                }
+               }
+           })
+       }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        resetQrCodeFrame()
-        isReadyToScan = true
-        captureSession.startRunning()
+        if !isSetup {
+            requestAccess()
+        }
+        resetScanner()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -37,8 +56,14 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         captureSession.stopRunning()
     }
     
+    @objc func resetScanner() {
+        resetQrCodeFrame()
+        isReadyToScan = true
+        captureSession.startRunning()
+    }
+    
     func setupScanner() {
-        let deviceDiscoverySession = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back)
+        let deviceDiscoverySession = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
 
         guard let captureDevice = deviceDiscoverySession else {
             print("Failed to get the camera device")
@@ -60,9 +85,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
             videoPreviewLayer?.frame = view.layer.bounds
             view.layer.addSublayer(videoPreviewLayer!)
-            
-            view.bringSubviewToFront(notificationView)
-            
+                        
             qrCodeFrameView = UIView()
             
             if let qrCodeFrameView = qrCodeFrameView {
@@ -71,12 +94,15 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                 view.addSubview(qrCodeFrameView)
                 view.bringSubviewToFront(qrCodeFrameView)
             }
-            
-            captureSession.startRunning()
+            isSetup = true
         } catch {
             print(error)
             return
         }
+    }
+    
+    func setRequestView() {
+        performSegue(withIdentifier: "errorSegue", sender: self)
     }
     
     fileprivate func resetQrCodeFrame() {
@@ -100,8 +126,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         
                 if let contentOfCode = metadataObj.stringValue {
                     codeResult = contentOfCode
-                    resultLabel.text = contentOfCode
-                    //performSegue(withIdentifier: "resultSegue", sender: self)
+                    performSegue(withIdentifier: "resultSegue", sender: self)
                     return
                 }
             }
@@ -112,6 +137,8 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         if segue.identifier == "resultSegue" {
             guard let resultVC = segue.destination as? ScanResultViewController else { return }
             resultVC.codeResult = codeResult
+            captureSession.stopRunning()
+            isReadyToScan = false;
         }
     }
 }

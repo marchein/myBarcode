@@ -1,6 +1,6 @@
 //
 //  AppIconTableViewController.swift
-//  myTodo
+//  myQRcode
 //
 //  Created by Marc Hein on 15.11.18.
 //  Copyright © 2018 Marc Hein Webdesign. All rights reserved.

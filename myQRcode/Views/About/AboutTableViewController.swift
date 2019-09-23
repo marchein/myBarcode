@@ -18,10 +18,13 @@ class AboutTableViewController: UITableViewController {
     @IBOutlet weak var developerTwitterCell: UITableViewCell!
     @IBOutlet weak var appStoreCell: UITableViewCell!
     @IBOutlet weak var developerCell: UITableViewCell!
+    @IBOutlet weak var appIconIV: UIImageView!
     
     
     // MARK:- Class Attributes
     private var hasTipped = false
+    private var currentAppIcon: String?
+
     
     // MARK: System Functions
     override func viewDidLoad() {
@@ -33,6 +36,21 @@ class AboutTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         navigationController?.toolbar.isHidden = true
         navigationController?.navigationBar.prefersLargeTitles = true
+        reconfigureView()
+    }
+    
+    fileprivate func reconfigureView() {
+        currentAppIcon = UserDefaults.standard.string(forKey: localStoreKeys.currentAppIcon)
+        if !myQRcode.appIcons.contains(iconName: currentAppIcon) {
+            currentAppIcon = myQRcode.defaultAppIcon
+            UserDefaults.standard.set(currentAppIcon, forKey: localStoreKeys.currentAppIcon)
+        }
+        
+        if let appIcon = currentAppIcon {
+            appIconIV.image = appIcon == myQRcode.defaultAppIcon ? Bundle.main.icon : UIImage(named: appIcon)
+            appIconIV.roundCorners(radius: 6)
+        }
+        tableView.reloadData()
     }
     
     func appStoreAction() {

@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - Table View Extension
 extension AboutTableViewController {
+    
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 0 {
             return "\(NSLocalizedString("Build number", comment: "")): \(myQRcode.buildNumber) (\(getReleaseTitle()))"
@@ -21,6 +22,8 @@ extension AboutTableViewController {
         }
         return nil
     }
+    
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let selectedCell = tableView.cellForRow(at: indexPath) else { return }

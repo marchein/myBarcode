@@ -32,7 +32,9 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
             print("There are no products.")
         }
         hasData = true
-        tableView.reloadData()
+        DispatchQueue.main.async { 
+            self.tableView.reloadData()
+        }
         if response.invalidProductIdentifiers.count != 0 {
             print(response.invalidProductIdentifiers.description)
         }

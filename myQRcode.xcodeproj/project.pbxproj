@@ -3,20 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		24010AFE689F92AE97967F72 /* Pods_myQRcode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867E2466553EFD4B9F95D1F1 /* Pods_myQRcode.framework */; };
-		5B19FB2B21AAF5D100BA102F /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B19FB2921AAF5D100BA102F /* About.storyboard */; };
 		5B2AE31021AA017E00976FE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AE30F21AA017E00976FE2 /* AppDelegate.swift */; };
 		5B2AE31221AA017E00976FE2 /* GenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AE31121AA017E00976FE2 /* GenerateViewController.swift */; };
-		5B2AE31521AA017E00976FE2 /* Generate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AE31321AA017E00976FE2 /* Generate.storyboard */; };
 		5B2AE31721AA017F00976FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AE31621AA017F00976FE2 /* Assets.xcassets */; };
-		5B2AE31A21AA017F00976FE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AE31821AA017F00976FE2 /* LaunchScreen.storyboard */; };
 		5B39B2E721AECC8700E24C60 /* ScanResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39B2E621AECC8700E24C60 /* ScanResultViewController.swift */; };
-		5BD63BC521AEBC0D00885382 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD63BC421AEBC0D00885382 /* Main.storyboard */; };
-		5BD63BC721AEBC5E00885382 /* Scan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD63BC621AEBC5E00885382 /* Scan.storyboard */; };
+		5B5C98A82339299E00030C75 /* myQRcode-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B5C98A72339299E00030C75 /* myQRcode-dark.png */; };
+		5B5C98AA233929E200030C75 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C98A9233929E200030C75 /* AppIcon.swift */; };
+		5B642F0323392EC4005804AA /* AppIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B642F0223392EC4005804AA /* AppIconTableViewCell.swift */; };
+		5B642F0823393159005804AA /* AppIcon+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B642F0623393159005804AA /* AppIcon+TableView.swift */; };
+		5B642F0923393159005804AA /* AppIconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B642F0723393159005804AA /* AppIconTableViewController.swift */; };
+		5B642F1B2339596B005804AA /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F1D2339596B005804AA /* About.storyboard */; };
+		5B642F2123395979005804AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F2323395979005804AA /* LaunchScreen.storyboard */; };
+		5B67630823395B6000C563FD /* Scan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F262339597E005804AA /* Scan.storyboard */; };
+		5B67630923395B6500C563FD /* Generate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F2023395975005804AA /* Generate.storyboard */; };
+		5B915E9123390703008B8B59 /* fa-regular-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B915E90233906EE008B8B59 /* fa-regular-400.ttf */; };
+		5BB9DE0623396BF200854E41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BB9DE0823396BF200854E41 /* InfoPlist.strings */; };
+		5BCCE6AA23397445007A78D0 /* ScanRequestAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCCE6A923397445007A78D0 /* ScanRequestAccessViewController.swift */; };
 		5BD63BCA21AEBE4200885382 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD63BC921AEBE4200885382 /* ScanViewController.swift */; };
 		5BE4AA9121AAF62E00D69E18 /* TipJarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AA8521AAF62E00D69E18 /* TipJarTableViewController.swift */; };
 		5BE4AA9221AAF62E00D69E18 /* TipJar+Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AA8621AAF62E00D69E18 /* TipJar+Transaction.swift */; };
@@ -37,7 +44,6 @@
 		5BE4AAB321AAF91B00D69E18 /* Thank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AAB221AAF91B00D69E18 /* Thank.swift */; };
 		5BEC8A25223FDF1B00BDF642 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BEC8A23223FDF1B00BDF642 /* Localizable.strings */; };
 		5BF98BC121AB371D00AA5BBC /* myQRcodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF98BC021AB371D00AA5BBC /* myQRcodeUITests.swift */; };
-		5BF98BD521AB474200AA5BBC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BF98BD721AB474200AA5BBC /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,15 +62,25 @@
 		5B2AE30C21AA017E00976FE2 /* myQRcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myQRcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2AE30F21AA017E00976FE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B2AE31121AA017E00976FE2 /* GenerateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateViewController.swift; sourceTree = "<group>"; };
-		5B2AE31421AA017E00976FE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Generate.storyboard; sourceTree = "<group>"; };
 		5B2AE31621AA017F00976FE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5B2AE31921AA017F00976FE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B39B2E621AECC8700E24C60 /* ScanResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultViewController.swift; sourceTree = "<group>"; };
-		5B5FB1AF21AB232900788E68 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Generate.strings; sourceTree = "<group>"; };
-		5B5FB1B121AB232900788E68 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		5B5FB1B321AB241C00788E68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Generate.strings; sourceTree = "<group>"; };
-		5BD63BC421AEBC0D00885382 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		5BD63BC621AEBC5E00885382 /* Scan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Scan.storyboard; sourceTree = "<group>"; };
+		5B5C98A72339299E00030C75 /* myQRcode-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myQRcode-dark.png"; sourceTree = "<group>"; };
+		5B5C98A9233929E200030C75 /* AppIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
+		5B642F0223392EC4005804AA /* AppIconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconTableViewCell.swift; sourceTree = "<group>"; };
+		5B642F0623393159005804AA /* AppIcon+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppIcon+TableView.swift"; sourceTree = "<group>"; };
+		5B642F0723393159005804AA /* AppIconTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconTableViewController.swift; sourceTree = "<group>"; };
+		5B642F1C2339596B005804AA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/About.storyboard; sourceTree = "<group>"; };
+		5B642F1F23395975005804AA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Generate.storyboard; sourceTree = "<group>"; };
+		5B642F2223395979005804AA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5B642F252339597E005804AA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Scan.storyboard; sourceTree = "<group>"; };
+		5B642F2723395997005804AA /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/About.storyboard; sourceTree = "<group>"; };
+		5B642F2823395A77005804AA /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/Generate.storyboard; sourceTree = "<group>"; };
+		5B67630A23395B7300C563FD /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/Scan.storyboard; sourceTree = "<group>"; };
+		5B915E90233906EE008B8B59 /* fa-regular-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-regular-400.ttf"; sourceTree = "<group>"; };
+		5BB9DE0423396BCF00854E41 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BB9DE0723396BF200854E41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5BB9DE0923396BF400854E41 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5BCCE6A923397445007A78D0 /* ScanRequestAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRequestAccessViewController.swift; sourceTree = "<group>"; };
 		5BD63BC921AEBE4200885382 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		5BE4AA8521AAF62E00D69E18 /* TipJarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipJarTableViewController.swift; sourceTree = "<group>"; };
 		5BE4AA8621AAF62E00D69E18 /* TipJar+Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TipJar+Transaction.swift"; sourceTree = "<group>"; };
@@ -85,15 +101,8 @@
 		5BE4AAB221AAF91B00D69E18 /* Thank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thank.swift; sourceTree = "<group>"; };
 		5BEC8A24223FDF1B00BDF642 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = myQRcode/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5BEC8A26223FDF2200BDF642 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = myQRcode/de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5BF98BB721AB332400AA5BBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/About.storyboard; sourceTree = "<group>"; };
-		5BF98BB821AB332A00AA5BBC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/About.strings; sourceTree = "<group>"; };
-		5BF98BB921AB332F00AA5BBC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/About.strings; sourceTree = "<group>"; };
 		5BF98BBE21AB371D00AA5BBC /* myQRcodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myQRcodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF98BC021AB371D00AA5BBC /* myQRcodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myQRcodeUITests.swift; sourceTree = "<group>"; };
-		5BF98BC221AB371D00AA5BBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5BF98BD621AB474200AA5BBC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5BF98BD921AB477400AA5BBC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5BF98BDB21AB47A700AA5BBC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		867E2466553EFD4B9F95D1F1 /* Pods_myQRcode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myQRcode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -138,6 +147,7 @@
 		5B19FB2D21AAF60500BA102F /* About */ = {
 			isa = PBXGroup;
 			children = (
+				5B642F052339313D005804AA /* AppIconList */,
 				5BE4AA8D21AAF62E00D69E18 /* About+SendSupportMail.swift */,
 				5BE4AA8821AAF62E00D69E18 /* About+TableView.swift */,
 				5BE4AA8C21AAF62E00D69E18 /* AboutTableViewController.swift */,
@@ -179,11 +189,29 @@
 				5BE4AAAA21AAF70900D69E18 /* Utilities */,
 				5BE4AAA321AAF6E000D69E18 /* Extensions */,
 				5B2AE31621AA017F00976FE2 /* Assets.xcassets */,
-				5BF98BD921AB477400AA5BBC /* Info.plist */,
-				5BF98BD721AB474200AA5BBC /* InfoPlist.strings */,
+				5B5C98A62339299000030C75 /* Alternative App Icons */,
+				5BB9DE0423396BCF00854E41 /* Info.plist */,
+				5BB9DE0823396BF200854E41 /* InfoPlist.strings */,
 				5BEC8A23223FDF1B00BDF642 /* Localizable.strings */,
 			);
 			path = myQRcode;
+			sourceTree = "<group>";
+		};
+		5B5C98A62339299000030C75 /* Alternative App Icons */ = {
+			isa = PBXGroup;
+			children = (
+				5B5C98A72339299E00030C75 /* myQRcode-dark.png */,
+			);
+			path = "Alternative App Icons";
+			sourceTree = "<group>";
+		};
+		5B642F052339313D005804AA /* AppIconList */ = {
+			isa = PBXGroup;
+			children = (
+				5B642F0623393159005804AA /* AppIcon+TableView.swift */,
+				5B642F0723393159005804AA /* AppIconTableViewController.swift */,
+			);
+			path = AppIconList;
 			sourceTree = "<group>";
 		};
 		5BD63BC821AEBE2F00885382 /* Scan */ = {
@@ -191,6 +219,7 @@
 			children = (
 				5BD63BC921AEBE4200885382 /* ScanViewController.swift */,
 				5B39B2E621AECC8700E24C60 /* ScanResultViewController.swift */,
+				5BCCE6A923397445007A78D0 /* ScanRequestAccessViewController.swift */,
 			);
 			path = Scan;
 			sourceTree = "<group>";
@@ -218,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				5BE4AA9D21AAF6B000D69E18 /* TipTableViewCell.swift */,
+				5B642F0223392EC4005804AA /* AppIconTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -246,6 +276,7 @@
 			children = (
 				5BE4AAAB21AAF71200D69E18 /* Constants.swift */,
 				5BE4AAAC21AAF71200D69E18 /* Utilities.swift */,
+				5B915E90233906EE008B8B59 /* fa-regular-400.ttf */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -253,6 +284,7 @@
 		5BE4AAB121AAF91200D69E18 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5B5C98A9233929E200030C75 /* AppIcon.swift */,
 				5BE4AAB221AAF91B00D69E18 /* Thank.swift */,
 			);
 			path = Model;
@@ -269,11 +301,10 @@
 		5BE4AAB521AAFBD900D69E18 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				5BD63BC421AEBC0D00885382 /* Main.storyboard */,
-				5B2AE31321AA017E00976FE2 /* Generate.storyboard */,
-				5B19FB2921AAF5D100BA102F /* About.storyboard */,
-				5BD63BC621AEBC5E00885382 /* Scan.storyboard */,
-				5B2AE31821AA017F00976FE2 /* LaunchScreen.storyboard */,
+				5B642F1D2339596B005804AA /* About.storyboard */,
+				5B642F2023395975005804AA /* Generate.storyboard */,
+				5B642F2323395979005804AA /* LaunchScreen.storyboard */,
+				5B642F262339597E005804AA /* Scan.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -282,7 +313,6 @@
 			isa = PBXGroup;
 			children = (
 				5BF98BC021AB371D00AA5BBC /* myQRcodeUITests.swift */,
-				5BF98BC221AB371D00AA5BBC /* Info.plist */,
 			);
 			path = myQRcodeUITests;
 			sourceTree = "<group>";
@@ -347,9 +377,11 @@
 				TargetAttributes = {
 					5B2AE30B21AA017E00976FE2 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1100;
 					};
 					5BF98BBD21AB371D00AA5BBC = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1100;
 						TestTargetID = 5B2AE30B21AA017E00976FE2;
 					};
 				};
@@ -360,7 +392,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				de,
 			);
 			mainGroup = 5B2AE30321AA017E00976FE2;
@@ -379,14 +410,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BD63BC521AEBC0D00885382 /* Main.storyboard in Resources */,
-				5B2AE31A21AA017F00976FE2 /* LaunchScreen.storyboard in Resources */,
-				5BF98BD521AB474200AA5BBC /* InfoPlist.strings in Resources */,
-				5BD63BC721AEBC5E00885382 /* Scan.storyboard in Resources */,
+				5B915E9123390703008B8B59 /* fa-regular-400.ttf in Resources */,
+				5B642F1B2339596B005804AA /* About.storyboard in Resources */,
+				5B5C98A82339299E00030C75 /* myQRcode-dark.png in Resources */,
+				5B67630923395B6500C563FD /* Generate.storyboard in Resources */,
+				5B642F2123395979005804AA /* LaunchScreen.storyboard in Resources */,
 				5B2AE31721AA017F00976FE2 /* Assets.xcassets in Resources */,
 				5BEC8A25223FDF1B00BDF642 /* Localizable.strings in Resources */,
-				5B19FB2B21AAF5D100BA102F /* About.storyboard in Resources */,
-				5B2AE31521AA017E00976FE2 /* Generate.storyboard in Resources */,
+				5BB9DE0623396BF200854E41 /* InfoPlist.strings in Resources */,
+				5B67630823395B6000C563FD /* Scan.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,22 +460,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-myQRcode/Pods-myQRcode-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-myQRcode/Pods-myQRcode-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-myQRcode/Pods-myQRcode-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myQRcode/Pods-myQRcode-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-myQRcode/Pods-myQRcode-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -463,13 +488,18 @@
 				5BD63BCA21AEBE4200885382 /* ScanViewController.swift in Sources */,
 				5B2AE31221AA017E00976FE2 /* GenerateViewController.swift in Sources */,
 				5BE4AAB021AAF7CC00D69E18 /* UIView+Effects.swift in Sources */,
+				5B642F0823393159005804AA /* AppIcon+TableView.swift in Sources */,
+				5B642F0323392EC4005804AA /* AppIconTableViewCell.swift in Sources */,
+				5B5C98AA233929E200030C75 /* AppIcon.swift in Sources */,
 				5BE4AA9321AAF62E00D69E18 /* TipJar+TableView.swift in Sources */,
 				5BE4AA9221AAF62E00D69E18 /* TipJar+Transaction.swift in Sources */,
 				5BE4AA9A21AAF62E00D69E18 /* ThanksTableViewController.swift in Sources */,
 				5BE4AA9821AAF62E00D69E18 /* About+SendSupportMail.swift in Sources */,
 				5BE4AAA821AAF6F300D69E18 /* Bundle+Icon.swift in Sources */,
 				5BE4AA9921AAF62E00D69E18 /* Thanks+TableView.swift in Sources */,
+				5BCCE6AA23397445007A78D0 /* ScanRequestAccessViewController.swift in Sources */,
 				5BE4AAA721AAF6F300D69E18 /* SKProduct+LocalizedPrice.swift in Sources */,
+				5B642F0923393159005804AA /* AppIconTableViewController.swift in Sources */,
 				5B2AE31021AA017E00976FE2 /* AppDelegate.swift in Sources */,
 				5B39B2E721AECC8700E24C60 /* ScanResultViewController.swift in Sources */,
 				5BE4AAAE21AAF71200D69E18 /* Utilities.swift in Sources */,
@@ -496,33 +526,48 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5B19FB2921AAF5D100BA102F /* About.storyboard */ = {
+		5B642F1D2339596B005804AA /* About.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5BF98BB721AB332400AA5BBC /* Base */,
-				5BF98BB821AB332A00AA5BBC /* de */,
-				5BF98BB921AB332F00AA5BBC /* en */,
+				5B642F1C2339596B005804AA /* en */,
+				5B642F2723395997005804AA /* de */,
 			);
 			name = About.storyboard;
 			sourceTree = "<group>";
 		};
-		5B2AE31321AA017E00976FE2 /* Generate.storyboard */ = {
+		5B642F2023395975005804AA /* Generate.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5B2AE31421AA017E00976FE2 /* Base */,
-				5B5FB1AF21AB232900788E68 /* de */,
-				5B5FB1B321AB241C00788E68 /* en */,
+				5B642F1F23395975005804AA /* en */,
+				5B642F2823395A77005804AA /* de */,
 			);
 			name = Generate.storyboard;
 			sourceTree = "<group>";
 		};
-		5B2AE31821AA017F00976FE2 /* LaunchScreen.storyboard */ = {
+		5B642F2323395979005804AA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5B2AE31921AA017F00976FE2 /* Base */,
-				5B5FB1B121AB232900788E68 /* de */,
+				5B642F2223395979005804AA /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5B642F262339597E005804AA /* Scan.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B642F252339597E005804AA /* en */,
+				5B67630A23395B7300C563FD /* de */,
+			);
+			name = Scan.storyboard;
+			sourceTree = "<group>";
+		};
+		5BB9DE0823396BF200854E41 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BB9DE0723396BF200854E41 /* en */,
+				5BB9DE0923396BF400854E41 /* de */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		5BEC8A23223FDF1B00BDF642 /* Localizable.strings */ = {
@@ -532,15 +577,6 @@
 				5BEC8A26223FDF2200BDF642 /* de */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		5BF98BD721AB474200AA5BBC /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5BF98BD621AB474200AA5BBC /* en */,
-				5BF98BDB21AB47A700AA5BBC /* de */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -669,17 +705,20 @@
 			baseConfigurationReference = 2F5913ADEF6D0D7FC5AAA5C9 /* Pods-myQRcode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/myQRcode/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "myQRcode Development";
-				SWIFT_VERSION = 4.2;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -689,18 +728,20 @@
 			baseConfigurationReference = 12ECDFD3667BBB5277463700 /* Pods-myQRcode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/myQRcode/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "myQRcode Distribution";
-				SWIFT_VERSION = 4.2;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -718,7 +759,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcodeUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = myQRcode;
 			};
@@ -737,7 +778,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcodeUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = myQRcode;
 			};
