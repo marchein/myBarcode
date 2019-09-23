@@ -1,0 +1,23 @@
+/*
+ Localizable.strings
+ myQRcode
+ 
+ Created by Marc Hein on 11.11.18.
+ Copyright © 2018 Marc Hein Webdesign. All rights reserved.
+ */
+
+"Build number" = "Build Nummer";
+"support_mail_body" = "Warum kontaktierst Du den Support von myQRcode?";
+"Beta testers" = "Beta Tester";
+"Developers" = "Entwickler";
+"tip_greeting" = "Heyho";
+"tip_desc" = "Falls Dir myQRcode sehr gefällt, kannst Du hier mit einer Spende an den Entwickler die Entwicklung unterstützen.\nSelbst wenn Du das nicht möchtest, dennoch danke. Der Gedanke zählt!";
+"transaction_error" = "Es ist ein Fehler beim Abschließen der Transaktion aufgetreten.";
+"no_tips" = "Keine Unterstützungsbeiträge vorhanden";
+"no_tips_desc" = "Entweder hat Dein Gerät Probleme Daten von Apple zu empfangen oder Apple hat Probleme. Bitte versuche es erneut.";
+"tip_success" = "Erfolgreich myTodo unterstützt!";
+"tip_success_message" = "Vielen Dank für Deine Unterstützung!";
+"loading" = "Laden...";
+
+/* No comment provided by engineer. */
+"" = "";

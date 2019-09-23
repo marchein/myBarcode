@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  myQRcode
+
+  Created by Marc Hein on 11.11.18.
+  Copyright © 2018 Marc Hein Webdesign. All rights reserved.
+*/
+
+"Build number" = "Build number";
+"support_mail_body" = "Why are you contacting the support of myQRcode?";
+"Beta testers" = "Beta testers";
+"Developers" = "Developers";
+"tip_greeting" = "Hey there";
+"tip_desc" = "If you are really enjoying myQRcode, you can leave a tip here. Tips keep up the development, as I really enjoy what I'm doing here.\nEven if you don't, thank you for considering!";
+"transaction_error" = "There was an error while finishing the transaction.";
+"no_tips" = "No tips found";
+"no_tips_desc" = "Either your device has problems fetching data from Apple or Apple has issues. Please try again!";
+"tip_success" = "Tip successful!";
+"tip_success_message" = "Thank you so much for your tip!";
+"loading" = "Loading...";
+
+/* No comment provided by engineer. */
+"" = "";
