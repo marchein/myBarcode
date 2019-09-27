@@ -18,6 +18,9 @@ struct localStoreKeys {
     static let hasTipped = "hasTipped"
     // which is the current App icon?
     static let currentAppIcon = "currentIcon"
+    // how many actions are taken
+    static let codeGenerated = "codeGenerated"
+    static let codeScanned = "codeScanned"
 }
 
 struct myQRcodeIAP {
@@ -30,19 +33,21 @@ struct myQRcodeIAP {
 
 struct myQRcode {
     static let appStoreId = "1444531883"
-    static let twitterName = "HeinWebdesign"
-    static let mailAdress = "info@marc-hein-webdesign.de"
-    static let website = "https://marc-hein-webdesign.de/"
-    static let supportPage = "https://marc-hein-webdesign.de/#kontakt"
+    static let mailAdress = "dev@marc-hein.de"
+    static let website = "https://marc-hein.de/"
     static let versionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     static let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
     static let defaultAppIcon = "default"
     static var appIcons = AppIcons(icons: [
-        AppIcon(iconName: nil, iconTitle: "myQRcode (2018)"),
-        AppIcon(iconName: "myQRcode-dark", iconTitle: "myQRcode - Dark (2019)")
+        AppIcon(iconName: nil, iconTitle: "myQRcode - \(NSLocalizedString("light_icon", comment: ""))"),
+        AppIcon(iconName: "myQRcode-dark", iconTitle: "myQRcode - \(NSLocalizedString("dark_icon", comment: ""))")
     ])
     static let thanksItems = [
         ["header": "Frameworks",
          "items": [Thank(name: "IQKeyboardManager", url: "https://github.com/hackiftekhar/IQKeyboardManager"),
                    Thank(name: "JGProgressHUD", url: "https://github.com/JonasGessner/JGProgressHUD")]]]
+    
+    static let askForReviewAtSingleAction = 5
+    static let askForReviewAtCombinedAction = 20
 }
+

@@ -45,6 +45,8 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
             UserDefaults.standard.set(isSimulatorOrTestFlight(), forKey: localStoreKeys.isTester)
             UserDefaults.standard.set(myQRcode.defaultAppIcon, forKey: localStoreKeys.currentAppIcon)
             UserDefaults.standard.set(true, forKey: localStoreKeys.appSetup)
+            UserDefaults.standard.set(0, forKey: localStoreKeys.codeGenerated)
+            UserDefaults.standard.set(0, forKey: localStoreKeys.codeScanned)
         }
     }
     
@@ -90,6 +92,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
                     if let resultImage = result {
                         let newImage = self.convertCIImageToCGImage(inputImage: resultImage)
                         self.displayQRCodeImage(image: newImage!)
+                        incrementCodeValue(of: localStoreKeys.codeGenerated)
                     } else {
                         self.hud.dismiss()
                         return

@@ -17,6 +17,7 @@ class AboutTableViewController: UITableViewController {
     @IBOutlet weak var contactMailCell: UITableViewCell!
     @IBOutlet weak var developerTwitterCell: UITableViewCell!
     @IBOutlet weak var appStoreCell: UITableViewCell!
+    @IBOutlet weak var rateCell: UITableViewCell!
     @IBOutlet weak var developerCell: UITableViewCell!
     @IBOutlet weak var appIconIV: UIImageView!
     

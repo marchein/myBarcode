@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import StoreKit
 
 // MARK: - Table View Extension
 extension AboutTableViewController {
@@ -27,12 +28,21 @@ extension AboutTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let selectedCell = tableView.cellForRow(at: indexPath) else { return }
-        if selectedCell == contactMailCell {
+        switch (selectedCell) {
+        case contactMailCell:
             sendSupportMail()
-        } else if selectedCell == developerTwitterCell {
-            openTwitter(username: myQRcode.twitterName)
-        } else if selectedCell == appStoreCell {
+            break
+        case developerCell:
+            openSafariViewControllerWith(url: myQRcode.website)
+            break
+        case rateCell:
+            SKStoreReviewController.requestReview()
+            break
+        case appStoreCell:
             appStoreAction()
+            break
+        default:
+            break
         }
         selectedCell.setSelected(false, animated: false)
     }

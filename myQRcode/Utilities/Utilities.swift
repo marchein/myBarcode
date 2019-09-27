@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import StoreKit
 
 //MARK:- Check for Beta Testers
 func isSimulatorOrTestFlight() -> Bool {
@@ -45,4 +46,22 @@ func showMessage(title: String, message: String, on view: UIViewController) {
     DispatchQueue.main.async {
         view.present(alert, animated: true)
     }
+}
+
+func getCodeValue(from: String) -> Int {
+    return UserDefaults.standard.integer(forKey: from)
+}
+
+func incrementCodeValue(of: String) {
+    let result = getCodeValue(from: of) + 1
+    UserDefaults.standard.set(result, forKey: of)
+    if result == myQRcode.askForReviewAtSingleAction {
+        showRateWindow()
+    } else if (getCodeValue(from: localStoreKeys.codeGenerated) + getCodeValue(from: localStoreKeys.codeScanned) == myQRcode.askForReviewAtCombinedAction) {
+        showRateWindow()
+    }
+}
+
+func showRateWindow() {
+    SKStoreReviewController.requestReview()
 }
