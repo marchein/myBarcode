@@ -10,9 +10,9 @@ import XCTest
 
 func getPlatformNSString() -> String {
     #if targetEnvironment(simulator)
-        let DEVICE_IS_SIMULATOR = true
+    let DEVICE_IS_SIMULATOR = true
     #else
-        let DEVICE_IS_SIMULATOR = false
+    let DEVICE_IS_SIMULATOR = false
     #endif
     
     var machineSwiftString : String = ""
@@ -85,7 +85,7 @@ public extension UIDevice {
 
 
 class myQRcodeUITests: XCTestCase {
-
+    
     var deviceScreenshotPath = ""
     
     override func setUp() {
@@ -131,7 +131,7 @@ class myQRcodeUITests: XCTestCase {
         
         return path
     }
-
+    
     func testScreenshotsEN() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -146,16 +146,28 @@ class myQRcodeUITests: XCTestCase {
         saveScreenshot(name: "02_entered.jpeg")
         app/*@START_MENU_TOKEN@*/.buttons["Done"]/*[[".keyboards",".buttons[\"Fertig\"]",".buttons[\"Done\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
         tablesQuery/*@START_MENU_TOKEN@*/.buttons["Generate QR code"]/*[[".cells.buttons[\"Generate QR code\"]",".buttons[\"Generate QR code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        sleep(5)
+        sleep(3)
         saveScreenshot(name: "03_generated.jpeg")
         tablesQuery/*@START_MENU_TOKEN@*/.buttons["Export generated QR code"]/*[[".cells.buttons[\"Export generated QR code\"]",".buttons[\"Export generated QR code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        sleep(10)
+        sleep(2)
         saveScreenshot(name: "04_shared.jpeg")
-
+        app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Close"].tap()
+        app.tabBars.buttons["Scan"].tap()
+        sleep(2)
+        saveScreenshot(name: "05_scanner.jpeg")
+        let image = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .image).element(boundBy: 1)
+        image.tap()
+        sleep(10)
+        saveScreenshot(name: "06_scanner_result.jpeg")
+        app.navigationBars["Result"].buttons["Close"].tap()
+        app.navigationBars["Scan"].buttons["About"].tap()
+        sleep(2)
+        saveScreenshot(name: "07_scanner_history.jpeg")
+        
+        
     }
-
+    
     func testScreenshotsDE() {
-
         let app = XCUIApplication()
         app.launch()
         saveScreenshot(name: "01_start.jpeg")
@@ -164,10 +176,32 @@ class myQRcodeUITests: XCTestCase {
         tablesQuery.textFields["Inhalt des QR Codes"].typeText("Inhalt Deines QR Codes")
         saveScreenshot(name: "02_entered.jpeg")
         tablesQuery/*@START_MENU_TOKEN@*/.buttons["QR Code generieren"]/*[[".cells.buttons[\"QR Code generieren\"]",".buttons[\"QR Code generieren\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        sleep(5)
+        sleep(3)
         saveScreenshot(name: "03_generated.jpeg")
         tablesQuery/*@START_MENU_TOKEN@*/.buttons["Generierten QR Code exportieren"]/*[[".cells.buttons[\"Generierten QR Code exportieren\"]",".buttons[\"Generierten QR Code exportieren\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        sleep(10)
+        sleep(1)
         saveScreenshot(name: "04_shared.jpeg")
+        if app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Schließen"].exists {
+            app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Schließen"].tap()
+        } else {
+            app.otherElements["PopoverDismissRegion"].tap()
+        }
+        app.tabBars.buttons["Scannen"].tap()
+        sleep(2)
+        saveScreenshot(name: "05_scanner.jpeg")
+        
+        let app = XCUIApplication()
+        app.tabBars.buttons["Scannen"].tap()
+        app.windows.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .other).element(boundBy: 1).children(matching: .scrollView).element(boundBy: 1).children(matching: .other).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.tap()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .image).element(boundBy: 1).tap()
+        
+        let image = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .image).element(boundBy: 1)
+        image.tap()
+        sleep(10)
+        saveScreenshot(name: "06_scanner_result.jpeg")
+        app.navigationBars["Ergebnis"].buttons["Schließen"].tap()
+        app.navigationBars["Scannen"].buttons["History"].tap()
+        sleep(2)
+        saveScreenshot(name: "07_scanner_history.jpeg")
     }
 }
