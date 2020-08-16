@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A1w-WY-ICU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A1w-WY-ICU">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--About-->
+        <!--Settings-->
         <scene sceneID="uwe-0w-29s">
             <objects>
-                <viewControllerPlaceholder storyboardName="About" id="deY-rb-GIn" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Settings" id="deY-rb-GIn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2KV-i4-920" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2562" y="-1005"/>
+            <point key="canvasLocation" x="2566" y="-1024"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="EcE-Px-LGa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="History" id="idU-Dk-P3W" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ydb-Xf-8hz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2566" y="-897"/>
         </scene>
         <!--myQRcode-->
         <scene sceneID="IB0-wK-xzm">
@@ -59,7 +67,7 @@
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="Generate QR code"/>
                                                     <connections>
-                                                        <action selector="sendButtonAction:" destination="0zn-sQ-Gnv" eventType="touchUpInside" id="KEP-5k-cNQ"/>
+                                                        <action selector="generateButtonAction:" destination="0zn-sQ-Gnv" eventType="touchUpInside" id="KEP-5k-cNQ"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -152,13 +160,22 @@
                                 <segue destination="deY-rb-GIn" kind="presentation" id="viF-h2-jNg"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="About" image="History-Icon" id="jbV-8l-EOS">
+                            <connections>
+                                <segue destination="idU-Dk-P3W" kind="popoverPresentation" identifier="showHistory" popoverAnchorBarButtonItem="jbV-8l-EOS" id="05r-p4-BP0">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="emptyLabel" destination="njC-gD-BiU" id="K6s-pN-gqB"/>
                         <outlet property="exportButton" destination="X4f-wI-1Pm" id="UUb-sM-Suy"/>
                         <outlet property="generateButton" destination="aBE-FK-kol" id="MoG-rv-JuH"/>
-                        <outlet property="imageView" destination="cpL-AM-lsy" id="gy3-03-kdt"/>
-                        <outlet property="textField" destination="DwH-hJ-Ipd" id="02t-qr-V3n"/>
+                        <outlet property="historyButton" destination="jbV-8l-EOS" id="Aoz-om-nns"/>
+                        <outlet property="qrCodeImageView" destination="cpL-AM-lsy" id="gy3-03-kdt"/>
+                        <outlet property="qrContentTextField" destination="DwH-hJ-Ipd" id="02t-qr-V3n"/>
+                        <outlet property="settingsButton" destination="mbM-68-iH4" id="nhH-TW-Pzn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYp-g2-JIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -166,31 +183,15 @@
             <point key="canvasLocation" x="2039" y="-1003"/>
         </scene>
         <!--Scan-->
-        <scene sceneID="Art-rM-GSU">
-            <objects>
-                <navigationController id="AU4-jO-K6m" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Scan" image="qrcode.viewfinder" catalog="system" id="ncB-JF-mBv"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bMh-gR-ACU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="DuO-Ma-m4p" kind="relationship" relationship="rootViewController" id="aTR-MU-ls9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EnQ-PY-6wr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1170" y="-298"/>
-        </scene>
-        <!--Scan-->
         <scene sceneID="WXC-fI-GyG">
             <objects>
                 <viewControllerPlaceholder storyboardName="Scan" id="DuO-Ma-m4p" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Un4-9b-sBJ"/>
                     <navigationItem key="navigationItem" id="avW-38-2Md"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rs-Ba-aCV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="-298"/>
+            <point key="canvasLocation" x="1211" y="-435"/>
         </scene>
         <!--Navigation-->
         <scene sceneID="hwl-Wn-yNz">
@@ -227,7 +228,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="GAg-Vh-DJw" kind="relationship" relationship="viewControllers" id="JO3-Tj-8Lc"/>
-                        <segue destination="AU4-jO-K6m" kind="relationship" relationship="viewControllers" id="rcO-Qc-Nw8"/>
+                        <segue destination="DuO-Ma-m4p" kind="relationship" relationship="viewControllers" id="adx-CT-MGs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Yn-aC-NsF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -237,8 +238,8 @@
     </scenes>
     <resources>
         <image name="Blank QR" width="258" height="258"/>
+        <image name="History-Icon" width="25" height="25"/>
         <image name="Settings" width="25" height="25"/>
-        <image name="qrcode" catalog="system" width="64" height="56"/>
-        <image name="qrcode.viewfinder" catalog="system" width="64" height="58"/>
+        <image name="qrcode" catalog="system" width="128" height="114"/>
     </resources>
 </document>

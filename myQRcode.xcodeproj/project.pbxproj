@@ -3,21 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24010AFE689F92AE97967F72 /* Pods_myQRcode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867E2466553EFD4B9F95D1F1 /* Pods_myQRcode.framework */; };
 		5B2AE31021AA017E00976FE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AE30F21AA017E00976FE2 /* AppDelegate.swift */; };
 		5B2AE31221AA017E00976FE2 /* GenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AE31121AA017E00976FE2 /* GenerateViewController.swift */; };
 		5B2AE31721AA017F00976FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AE31621AA017F00976FE2 /* Assets.xcassets */; };
 		5B39B2E721AECC8700E24C60 /* ScanResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39B2E621AECC8700E24C60 /* ScanResultViewController.swift */; };
+		5B3D61CB24E9294E00C01F34 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3D61CA24E9294E00C01F34 /* History.storyboard */; };
+		5B3D61CD24E92C5300C01F34 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D61CC24E92C5300C01F34 /* QRCode.swift */; };
+		5B3D61CF24E92FA000C01F34 /* UIImage+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D61CE24E92FA000C01F34 /* UIImage+Base64.swift */; };
+		5B3D621824E9355B00C01F34 /* History.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D621624E9355B00C01F34 /* History.xcdatamodeld */; };
+		5B4B4AA224E93D0300E44302 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4B4AA124E93D0300E44302 /* HistoryTableViewController.swift */; };
+		5B4B4AA424E93F2700E44302 /* HistoryItem+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4B4AA324E93F2700E44302 /* HistoryItem+Date.swift */; };
+		5B4B4AA624E93FEC00E44302 /* HistoryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4B4AA524E93FEC00E44302 /* HistoryItemTableViewCell.swift */; };
+		5B4B4AA824E9596200E44302 /* ActivityIndicatorOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4B4AA724E9596200E44302 /* ActivityIndicatorOverlay.swift */; };
 		5B5C98A82339299E00030C75 /* myQRcode-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B5C98A72339299E00030C75 /* myQRcode-dark.png */; };
 		5B5C98AA233929E200030C75 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C98A9233929E200030C75 /* AppIcon.swift */; };
 		5B642F0323392EC4005804AA /* AppIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B642F0223392EC4005804AA /* AppIconTableViewCell.swift */; };
 		5B642F0823393159005804AA /* AppIcon+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B642F0623393159005804AA /* AppIcon+TableView.swift */; };
 		5B642F0923393159005804AA /* AppIconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B642F0723393159005804AA /* AppIconTableViewController.swift */; };
-		5B642F1B2339596B005804AA /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F1D2339596B005804AA /* About.storyboard */; };
+		5B642F1B2339596B005804AA /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F1D2339596B005804AA /* Settings.storyboard */; };
 		5B642F2123395979005804AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F2323395979005804AA /* LaunchScreen.storyboard */; };
 		5B67630823395B6000C563FD /* Scan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F262339597E005804AA /* Scan.storyboard */; };
 		5B67630923395B6500C563FD /* Generate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F2023395975005804AA /* Generate.storyboard */; };
@@ -28,11 +35,9 @@
 		5BE4AA9121AAF62E00D69E18 /* TipJarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AA8521AAF62E00D69E18 /* TipJarTableViewController.swift */; };
 		5BE4AA9221AAF62E00D69E18 /* TipJar+Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AA8621AAF62E00D69E18 /* TipJar+Transaction.swift */; };
 		5BE4AA9321AAF62E00D69E18 /* TipJar+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AA8721AAF62E00D69E18 /* TipJar+TableView.swift */; };
-		5BE4AA9421AAF62E00D69E18 /* About+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AA8821AAF62E00D69E18 /* About+TableView.swift */; };
-		5BE4AA9721AAF62E00D69E18 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AA8C21AAF62E00D69E18 /* AboutTableViewController.swift */; };
-		5BE4AA9821AAF62E00D69E18 /* About+SendSupportMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AA8D21AAF62E00D69E18 /* About+SendSupportMail.swift */; };
-		5BE4AA9921AAF62E00D69E18 /* Thanks+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AA8F21AAF62E00D69E18 /* Thanks+TableView.swift */; };
-		5BE4AA9A21AAF62E00D69E18 /* ThanksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AA9021AAF62E00D69E18 /* ThanksTableViewController.swift */; };
+		5BE4AA9421AAF62E00D69E18 /* Settings+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AA8821AAF62E00D69E18 /* Settings+TableView.swift */; };
+		5BE4AA9721AAF62E00D69E18 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AA8C21AAF62E00D69E18 /* SettingsTableViewController.swift */; };
+		5BE4AA9821AAF62E00D69E18 /* Settings+SendSupportMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AA8D21AAF62E00D69E18 /* Settings+SendSupportMail.swift */; };
 		5BE4AA9F21AAF6B000D69E18 /* TipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AA9D21AAF6B000D69E18 /* TipTableViewCell.swift */; };
 		5BE4AAA221AAF6C900D69E18 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AAA121AAF6C900D69E18 /* BorderedButton.swift */; };
 		5BE4AAA721AAF6F300D69E18 /* SKProduct+LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4AAA421AAF6F300D69E18 /* SKProduct+LocalizedPrice.swift */; };
@@ -57,23 +62,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		12ECDFD3667BBB5277463700 /* Pods-myQRcode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myQRcode.release.xcconfig"; path = "Pods/Target Support Files/Pods-myQRcode/Pods-myQRcode.release.xcconfig"; sourceTree = "<group>"; };
-		2F5913ADEF6D0D7FC5AAA5C9 /* Pods-myQRcode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myQRcode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myQRcode/Pods-myQRcode.debug.xcconfig"; sourceTree = "<group>"; };
 		5B2AE30C21AA017E00976FE2 /* myQRcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myQRcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2AE30F21AA017E00976FE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B2AE31121AA017E00976FE2 /* GenerateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateViewController.swift; sourceTree = "<group>"; };
 		5B2AE31621AA017F00976FE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B39B2E621AECC8700E24C60 /* ScanResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultViewController.swift; sourceTree = "<group>"; };
+		5B3D61CA24E9294E00C01F34 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		5B3D61CC24E92C5300C01F34 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
+		5B3D61CE24E92FA000C01F34 /* UIImage+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Base64.swift"; sourceTree = "<group>"; };
+		5B3D621724E9355B00C01F34 /* History.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = History.xcdatamodel; sourceTree = "<group>"; };
+		5B4B4AA124E93D0300E44302 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		5B4B4AA324E93F2700E44302 /* HistoryItem+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryItem+Date.swift"; sourceTree = "<group>"; };
+		5B4B4AA524E93FEC00E44302 /* HistoryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemTableViewCell.swift; sourceTree = "<group>"; };
+		5B4B4AA724E9596200E44302 /* ActivityIndicatorOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorOverlay.swift; sourceTree = "<group>"; };
 		5B5C98A72339299E00030C75 /* myQRcode-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myQRcode-dark.png"; sourceTree = "<group>"; };
 		5B5C98A9233929E200030C75 /* AppIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		5B642F0223392EC4005804AA /* AppIconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconTableViewCell.swift; sourceTree = "<group>"; };
 		5B642F0623393159005804AA /* AppIcon+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppIcon+TableView.swift"; sourceTree = "<group>"; };
 		5B642F0723393159005804AA /* AppIconTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconTableViewController.swift; sourceTree = "<group>"; };
-		5B642F1C2339596B005804AA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/About.storyboard; sourceTree = "<group>"; };
+		5B642F1C2339596B005804AA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		5B642F1F23395975005804AA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Generate.storyboard; sourceTree = "<group>"; };
 		5B642F2223395979005804AA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B642F252339597E005804AA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Scan.storyboard; sourceTree = "<group>"; };
-		5B642F2723395997005804AA /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/About.storyboard; sourceTree = "<group>"; };
+		5B642F2723395997005804AA /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		5B642F2823395A77005804AA /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/Generate.storyboard; sourceTree = "<group>"; };
 		5B67630A23395B7300C563FD /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/Scan.storyboard; sourceTree = "<group>"; };
 		5B915E90233906EE008B8B59 /* fa-regular-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-regular-400.ttf"; sourceTree = "<group>"; };
@@ -85,11 +96,9 @@
 		5BE4AA8521AAF62E00D69E18 /* TipJarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipJarTableViewController.swift; sourceTree = "<group>"; };
 		5BE4AA8621AAF62E00D69E18 /* TipJar+Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TipJar+Transaction.swift"; sourceTree = "<group>"; };
 		5BE4AA8721AAF62E00D69E18 /* TipJar+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TipJar+TableView.swift"; sourceTree = "<group>"; };
-		5BE4AA8821AAF62E00D69E18 /* About+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "About+TableView.swift"; sourceTree = "<group>"; };
-		5BE4AA8C21AAF62E00D69E18 /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
-		5BE4AA8D21AAF62E00D69E18 /* About+SendSupportMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "About+SendSupportMail.swift"; sourceTree = "<group>"; };
-		5BE4AA8F21AAF62E00D69E18 /* Thanks+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Thanks+TableView.swift"; sourceTree = "<group>"; };
-		5BE4AA9021AAF62E00D69E18 /* ThanksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThanksTableViewController.swift; sourceTree = "<group>"; };
+		5BE4AA8821AAF62E00D69E18 /* Settings+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Settings+TableView.swift"; sourceTree = "<group>"; };
+		5BE4AA8C21AAF62E00D69E18 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		5BE4AA8D21AAF62E00D69E18 /* Settings+SendSupportMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Settings+SendSupportMail.swift"; sourceTree = "<group>"; };
 		5BE4AA9D21AAF6B000D69E18 /* TipTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipTableViewCell.swift; sourceTree = "<group>"; };
 		5BE4AAA121AAF6C900D69E18 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		5BE4AAA421AAF6F300D69E18 /* SKProduct+LocalizedPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKProduct+LocalizedPrice.swift"; sourceTree = "<group>"; };
@@ -103,7 +112,6 @@
 		5BEC8A26223FDF2200BDF642 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = myQRcode/de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5BF98BBE21AB371D00AA5BBC /* myQRcodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myQRcodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF98BC021AB371D00AA5BBC /* myQRcodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myQRcodeUITests.swift; sourceTree = "<group>"; };
-		867E2466553EFD4B9F95D1F1 /* Pods_myQRcode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myQRcode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +119,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24010AFE689F92AE97967F72 /* Pods_myQRcode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,36 +132,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		17652D27BFE615379D3D3399 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2F5913ADEF6D0D7FC5AAA5C9 /* Pods-myQRcode.debug.xcconfig */,
-				12ECDFD3667BBB5277463700 /* Pods-myQRcode.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		5B19FB2C21AAF5FD00BA102F /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				5BE4AAB421AAFBCD00D69E18 /* Generate */,
 				5BD63BC821AEBE2F00885382 /* Scan */,
-				5B19FB2D21AAF60500BA102F /* About */,
+				5B4B4AA024E93CF500E44302 /* History */,
+				5B19FB2D21AAF60500BA102F /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		5B19FB2D21AAF60500BA102F /* About */ = {
+		5B19FB2D21AAF60500BA102F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				5B642F052339313D005804AA /* AppIconList */,
-				5BE4AA8D21AAF62E00D69E18 /* About+SendSupportMail.swift */,
-				5BE4AA8821AAF62E00D69E18 /* About+TableView.swift */,
-				5BE4AA8C21AAF62E00D69E18 /* AboutTableViewController.swift */,
-				5BE4AA8E21AAF62E00D69E18 /* Thanks */,
+				5BE4AA8C21AAF62E00D69E18 /* SettingsTableViewController.swift */,
+				5BE4AA8D21AAF62E00D69E18 /* Settings+SendSupportMail.swift */,
+				5BE4AA8821AAF62E00D69E18 /* Settings+TableView.swift */,
 				5BE4AA8421AAF62E00D69E18 /* TipJar */,
 			);
-			path = About;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		5B2AE30321AA017E00976FE2 = {
@@ -163,8 +161,6 @@
 				5B2AE30E21AA017E00976FE2 /* myQRcode */,
 				5BF98BBF21AB371D00AA5BBC /* myQRcodeUITests */,
 				5B2AE30D21AA017E00976FE2 /* Products */,
-				17652D27BFE615379D3D3399 /* Pods */,
-				9111C6CC4F5E5C50CF3F0FD3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,6 +191,14 @@
 				5BEC8A23223FDF1B00BDF642 /* Localizable.strings */,
 			);
 			path = myQRcode;
+			sourceTree = "<group>";
+		};
+		5B4B4AA024E93CF500E44302 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				5B4B4AA124E93D0300E44302 /* HistoryTableViewController.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 		5B5C98A62339299000030C75 /* Alternative App Icons */ = {
@@ -234,20 +238,12 @@
 			path = TipJar;
 			sourceTree = "<group>";
 		};
-		5BE4AA8E21AAF62E00D69E18 /* Thanks */ = {
-			isa = PBXGroup;
-			children = (
-				5BE4AA8F21AAF62E00D69E18 /* Thanks+TableView.swift */,
-				5BE4AA9021AAF62E00D69E18 /* ThanksTableViewController.swift */,
-			);
-			path = Thanks;
-			sourceTree = "<group>";
-		};
 		5BE4AA9B21AAF6A300D69E18 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				5BE4AA9D21AAF6B000D69E18 /* TipTableViewCell.swift */,
 				5B642F0223392EC4005804AA /* AppIconTableViewCell.swift */,
+				5B4B4AA524E93FEC00E44302 /* HistoryItemTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -267,6 +263,9 @@
 				5BE4AAA421AAF6F300D69E18 /* SKProduct+LocalizedPrice.swift */,
 				5BE4AAAF21AAF7CC00D69E18 /* UIView+Effects.swift */,
 				5BE4AAA621AAF6F300D69E18 /* UIViewController+SafariActions.swift */,
+				5B3D61CE24E92FA000C01F34 /* UIImage+Base64.swift */,
+				5B4B4AA324E93F2700E44302 /* HistoryItem+Date.swift */,
+				5B4B4AA724E9596200E44302 /* ActivityIndicatorOverlay.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -286,6 +285,8 @@
 			children = (
 				5B5C98A9233929E200030C75 /* AppIcon.swift */,
 				5BE4AAB221AAF91B00D69E18 /* Thank.swift */,
+				5B3D61CC24E92C5300C01F34 /* QRCode.swift */,
+				5B3D621624E9355B00C01F34 /* History.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,10 +302,11 @@
 		5BE4AAB521AAFBD900D69E18 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				5B642F1D2339596B005804AA /* About.storyboard */,
+				5B642F1D2339596B005804AA /* Settings.storyboard */,
 				5B642F2023395975005804AA /* Generate.storyboard */,
 				5B642F2323395979005804AA /* LaunchScreen.storyboard */,
 				5B642F262339597E005804AA /* Scan.storyboard */,
+				5B3D61CA24E9294E00C01F34 /* History.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -317,14 +319,6 @@
 			path = myQRcodeUITests;
 			sourceTree = "<group>";
 		};
-		9111C6CC4F5E5C50CF3F0FD3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				867E2466553EFD4B9F95D1F1 /* Pods_myQRcode.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -332,11 +326,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B2AE31E21AA017F00976FE2 /* Build configuration list for PBXNativeTarget "myQRcode" */;
 			buildPhases = (
-				4F623CE9763FA530790AB8E9 /* [CP] Check Pods Manifest.lock */,
 				5B2AE30821AA017E00976FE2 /* Sources */,
 				5B2AE30921AA017E00976FE2 /* Frameworks */,
 				5B2AE30A21AA017E00976FE2 /* Resources */,
-				A717077C6E35A90795ED06E4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -411,8 +403,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B915E9123390703008B8B59 /* fa-regular-400.ttf in Resources */,
-				5B642F1B2339596B005804AA /* About.storyboard in Resources */,
+				5B642F1B2339596B005804AA /* Settings.storyboard in Resources */,
 				5B5C98A82339299E00030C75 /* myQRcode-dark.png in Resources */,
+				5B3D61CB24E9294E00C01F34 /* History.storyboard in Resources */,
 				5B67630923395B6500C563FD /* Generate.storyboard in Resources */,
 				5B642F2123395979005804AA /* LaunchScreen.storyboard in Resources */,
 				5B2AE31721AA017F00976FE2 /* Assets.xcassets in Resources */,
@@ -431,48 +424,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		4F623CE9763FA530790AB8E9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-myQRcode-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A717077C6E35A90795ED06E4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-myQRcode/Pods-myQRcode-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-myQRcode/Pods-myQRcode-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-myQRcode/Pods-myQRcode-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		5B2AE30821AA017E00976FE2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -483,7 +434,8 @@
 				5BE4AA9121AAF62E00D69E18 /* TipJarTableViewController.swift in Sources */,
 				5BE4AA9F21AAF6B000D69E18 /* TipTableViewCell.swift in Sources */,
 				5BE4AAB321AAF91B00D69E18 /* Thank.swift in Sources */,
-				5BE4AA9421AAF62E00D69E18 /* About+TableView.swift in Sources */,
+				5BE4AA9421AAF62E00D69E18 /* Settings+TableView.swift in Sources */,
+				5B4B4AA424E93F2700E44302 /* HistoryItem+Date.swift in Sources */,
 				5BE4AAA221AAF6C900D69E18 /* BorderedButton.swift in Sources */,
 				5BD63BCA21AEBE4200885382 /* ScanViewController.swift in Sources */,
 				5B2AE31221AA017E00976FE2 /* GenerateViewController.swift in Sources */,
@@ -491,19 +443,23 @@
 				5B642F0823393159005804AA /* AppIcon+TableView.swift in Sources */,
 				5B642F0323392EC4005804AA /* AppIconTableViewCell.swift in Sources */,
 				5B5C98AA233929E200030C75 /* AppIcon.swift in Sources */,
+				5B4B4AA824E9596200E44302 /* ActivityIndicatorOverlay.swift in Sources */,
 				5BE4AA9321AAF62E00D69E18 /* TipJar+TableView.swift in Sources */,
+				5B4B4AA224E93D0300E44302 /* HistoryTableViewController.swift in Sources */,
 				5BE4AA9221AAF62E00D69E18 /* TipJar+Transaction.swift in Sources */,
-				5BE4AA9A21AAF62E00D69E18 /* ThanksTableViewController.swift in Sources */,
-				5BE4AA9821AAF62E00D69E18 /* About+SendSupportMail.swift in Sources */,
+				5BE4AA9821AAF62E00D69E18 /* Settings+SendSupportMail.swift in Sources */,
 				5BE4AAA821AAF6F300D69E18 /* Bundle+Icon.swift in Sources */,
-				5BE4AA9921AAF62E00D69E18 /* Thanks+TableView.swift in Sources */,
 				5BCCE6AA23397445007A78D0 /* ScanRequestAccessViewController.swift in Sources */,
+				5B3D61CF24E92FA000C01F34 /* UIImage+Base64.swift in Sources */,
 				5BE4AAA721AAF6F300D69E18 /* SKProduct+LocalizedPrice.swift in Sources */,
 				5B642F0923393159005804AA /* AppIconTableViewController.swift in Sources */,
 				5B2AE31021AA017E00976FE2 /* AppDelegate.swift in Sources */,
+				5B3D61CD24E92C5300C01F34 /* QRCode.swift in Sources */,
 				5B39B2E721AECC8700E24C60 /* ScanResultViewController.swift in Sources */,
+				5B3D621824E9355B00C01F34 /* History.xcdatamodeld in Sources */,
+				5B4B4AA624E93FEC00E44302 /* HistoryItemTableViewCell.swift in Sources */,
 				5BE4AAAE21AAF71200D69E18 /* Utilities.swift in Sources */,
-				5BE4AA9721AAF62E00D69E18 /* AboutTableViewController.swift in Sources */,
+				5BE4AA9721AAF62E00D69E18 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,13 +482,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5B642F1D2339596B005804AA /* About.storyboard */ = {
+		5B642F1D2339596B005804AA /* Settings.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5B642F1C2339596B005804AA /* en */,
 				5B642F2723395997005804AA /* de */,
 			);
-			name = About.storyboard;
+			name = Settings.storyboard;
 			sourceTree = "<group>";
 		};
 		5B642F2023395975005804AA /* Generate.storyboard */ = {
@@ -702,19 +658,19 @@
 		};
 		5B2AE31F21AA017F00976FE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F5913ADEF6D0D7FC5AAA5C9 /* Pods-myQRcode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/myQRcode/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -725,19 +681,19 @@
 		};
 		5B2AE32021AA017F00976FE2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12ECDFD3667BBB5277463700 /* Pods-myQRcode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/myQRcode/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -815,6 +771,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5B3D621624E9355B00C01F34 /* History.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5B3D621724E9355B00C01F34 /* History.xcdatamodel */,
+			);
+			currentVersion = 5B3D621724E9355B00C01F34 /* History.xcdatamodel */;
+			path = History.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5B2AE30421AA017E00976FE2 /* Project object */;
 }

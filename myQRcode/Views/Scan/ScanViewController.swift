@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, HistoryItemDelegate {
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
@@ -26,21 +26,21 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     func requestAccess() {
         if AVCaptureDevice.authorizationStatus(for: .video) ==  .authorized {
-                   setupScanner()
-                   resetScanner()
-       } else {
-           AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
-               if granted {
-                   self.setupScanner()
-                   self.resetScanner()
-               } else {
-                   print("restricted usage")
-                DispatchQueue.main.async {
-                    self.setRequestView()
+            setupScanner()
+            resetScanner()
+        } else {
+            AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
+                if granted {
+                    self.setupScanner()
+                    self.resetScanner()
+                } else {
+                    print("restricted usage")
+                    DispatchQueue.main.async {
+                        self.setRequestView()
+                    }
                 }
-               }
-           })
-       }
+            })
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,10 +62,10 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             videoPreviewLayer.frame = self.view.bounds
         }
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
+        
         if let connection =  self.videoPreviewLayer?.connection  {
             let currentDevice: UIDevice = UIDevice.current
             let orientation: UIDeviceOrientation = currentDevice.orientation
@@ -86,7 +86,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             }
         }
     }
-
+    
     
     @objc func resetScanner() {
         resetQrCodeFrame()
@@ -96,7 +96,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     func setupScanner() {
         let deviceDiscoverySession = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
-
+        
         guard let captureDevice = deviceDiscoverySession else {
             print("Failed to get the camera device")
             return
@@ -117,7 +117,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
             videoPreviewLayer?.frame = view.bounds
             view.layer.addSublayer(videoPreviewLayer!)
-                        
+            
             qrCodeFrameView = UIView()
             
             if let qrCodeFrameView = qrCodeFrameView {
@@ -155,9 +155,10 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             if metadataObj.type == AVMetadataObject.ObjectType.qr {
                 let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
                 qrCodeFrameView?.frame = barCodeObject!.bounds
-        
+                
                 if let contentOfCode = metadataObj.stringValue {
                     codeResult = contentOfCode
+                    self.saveScannedCode(content: contentOfCode)
                     incrementCodeValue(of: localStoreKeys.codeScanned)
                     performSegue(withIdentifier: "resultSegue", sender: self)
                     return
@@ -166,12 +167,34 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         }
     }
     
+    func saveScannedCode(content: String) {
+        // _ = ... to supress unused warning
+        _ = QRCode(content: content, category: .scan)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resultSegue" {
             guard let resultVC = segue.destination as? ScanResultViewController else { return }
             resultVC.codeResult = codeResult
-            captureSession.stopRunning()
-            isReadyToScan = false;
+            self.prepareResultScreen()
+        } else if segue.identifier == "showHistory" {
+            guard let historyNavVC = segue.destination as? UINavigationController, let historyVC = historyNavVC.children[0] as? HistoryTableViewController else {
+                return
+            }
+            historyVC.delegate = self
+            historyVC.category = .scan
         }
+    }
+    
+    func prepareResultScreen() {
+        captureSession.stopRunning()
+        isReadyToScan = false;
+    }
+    
+    func userSelectedHistoryItem(item: HistoryItem) {
+        print(item)
+        self.codeResult = item.content
+        self.prepareResultScreen()
+        self.performSegue(withIdentifier: "resultSegue", sender: item)
     }
 }

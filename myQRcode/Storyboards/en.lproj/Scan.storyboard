@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YYb-AG-PfO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d7z-vm-uL9">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +18,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="nAa-mU-17H"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Scan" id="jMO-wS-otb"/>
+                    <navigationItem key="navigationItem" title="Scan" id="jMO-wS-otb">
+                        <barButtonItem key="rightBarButtonItem" title="About" image="History-Icon" id="NTk-Pb-EPH">
+                            <connections>
+                                <segue destination="Cmc-Je-jmf" kind="popoverPresentation" identifier="showHistory" popoverAnchorBarButtonItem="NTk-Pb-EPH" id="SXw-AD-jaP">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="eWd-Zz-orO" kind="presentation" identifier="resultSegue" id="Dq6-Oj-fE6"/>
                         <segue destination="fmC-dP-8Vh" kind="show" identifier="errorSegue" id="jyk-MM-hkU"/>
@@ -26,18 +34,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wP5-YN-7cU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="444" y="140"/>
+            <point key="canvasLocation" x="1383.2" y="139.880059970015"/>
         </scene>
         <!--Missing app capabilitys-->
         <scene sceneID="QG5-kk-116">
             <objects>
                 <viewController title="Missing app capabilitys" id="fmC-dP-8Vh" customClass="ScanRequestAccessViewController" customModule="myQRcode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cGK-ra-PSk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enable camera access in the settings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1a-tJ-n9F">
-                                <rect key="frame" x="16" y="313.5" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="323.5" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -56,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ABZ-hA-v6D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="444" y="830"/>
+            <point key="canvasLocation" x="1001" y="902"/>
         </scene>
         <!--Result-->
         <scene sceneID="auR-Ud-BNn">
@@ -119,7 +127,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4RW-e2-Qxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1173.5999999999999" y="139.880059970015"/>
+            <point key="canvasLocation" x="1794" y="902"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="dUQ-JB-2p9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="History" id="Cmc-Je-jmf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5lr-YL-qBP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1962" y="139"/>
+        </scene>
+        <!--Scan-->
+        <scene sceneID="e0Q-kp-MUE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d7z-vm-uL9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Scan" image="qrcode.viewfinder" catalog="system" id="gFh-1k-h9s"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aw3-wE-ESk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YYb-AG-PfO" kind="relationship" relationship="rootViewController" id="6je-jV-Dbp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zpe-bd-bEe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444" y="139.880059970015"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="History-Icon" width="25" height="25"/>
+        <image name="qrcode.viewfinder" catalog="system" width="128" height="114"/>
+    </resources>
 </document>

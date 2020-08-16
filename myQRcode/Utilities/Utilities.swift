@@ -65,3 +65,22 @@ func incrementCodeValue(of: String) {
 func showRateWindow() {
     SKStoreReviewController.requestReview()
 }
+
+func convertCIImageToCGImage(inputImage: CIImage) -> CGImage? {
+    let context = CIContext(options: nil)
+    if let cgImage = context.createCGImage(inputImage, from: inputImage.extent) {
+        return cgImage
+    }
+    return nil
+}
+
+func convertCGImageToUIImage(inputImage: CGImage) -> UIImage {
+    return UIImage(cgImage: inputImage)
+}
+
+func convertCIImageToUIImage(inputImage: CIImage) -> UIImage? {
+    guard let cgImage = convertCIImageToCGImage(inputImage: inputImage) else {
+        return nil
+    }
+    return convertCGImageToUIImage(inputImage: cgImage)
+}
