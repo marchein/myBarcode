@@ -1,0 +1,36 @@
+
+/* Class = "UITabBarItem"; title = "Generate"; ObjectID = "Dip-om-eee"; */
+"Dip-om-eee.title" = "Generate";
+
+/* Class = "UITextField"; placeholder = "Content of the QR code"; ObjectID = "DwH-hJ-Ipd"; */
+"DwH-hJ-Ipd.placeholder" = "Content of the QR code";
+
+/* Class = "UITableViewSection"; headerTitle = "QR Code"; ObjectID = "EeJ-pa-ZRx"; */
+"EeJ-pa-ZRx.headerTitle" = "QR Code";
+
+/* Class = "UINavigationController"; title = "Navigation"; ObjectID = "GAg-Vh-DJw"; */
+"GAg-Vh-DJw.title" = "Navigation";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "Un4-9b-sBJ"; */
+"Un4-9b-sBJ.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Export generated QR code"; ObjectID = "X4f-wI-1Pm"; */
+"X4f-wI-1Pm.normalTitle" = "Export generated QR code";
+
+/* Class = "UITabBarItem"; title = "Generate"; ObjectID = "YWT-57-rL4"; */
+"YWT-57-rL4.title" = "Generate";
+
+/* Class = "UIButton"; normalTitle = "Generate QR code"; ObjectID = "aBE-FK-kol"; */
+"aBE-FK-kol.normalTitle" = "Generate QR code";
+
+/* Class = "UINavigationItem"; title = "myQRcode"; ObjectID = "hFD-uy-cC7"; */
+"hFD-uy-cC7.title" = "myQRcode";
+
+/* Class = "UIBarButtonItem"; title = "About"; ObjectID = "jbV-8l-EOS"; */
+"jbV-8l-EOS.title" = "About";
+
+/* Class = "UIBarButtonItem"; title = "About"; ObjectID = "mbM-68-iH4"; */
+"mbM-68-iH4.title" = "About";
+
+/* Class = "UILabel"; text = "No QR code generated yet"; ObjectID = "njC-gD-BiU"; */
+"njC-gD-BiU.text" = "No QR code generated yet";

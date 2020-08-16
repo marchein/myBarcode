@@ -52,7 +52,6 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         if #available(iOS 13.0,*)  {
             settingsButton.image = UIImage(systemName: "gear")
             historyButton.image = UIImage(systemName: "clock")
-            
         }
     }
     
@@ -93,7 +92,6 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
                 return
             }
             self.tabBarController?.displayAnimatedActivityIndicatorView()
-            //hud.show(in: qrCodeImageView)
             
             DispatchQueue.global(qos: .background).async {
                 let qrCode = QRCode(content: qrData, category: .generate)
@@ -101,9 +99,9 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
                     if let resultImage = qrCode.image {
                         self.displayQRCodeImage(image: resultImage)
                         incrementCodeValue(of: localStoreKeys.codeGenerated)
+                        _ = qrCode.coreDataObject
                         self.generateButton.isEnabled = false
                     } else {
-                        //self.hud.dismiss()
                         self.tabBarController?.hideAnimatedActivityIndicatorView()
                         return
                     }
@@ -136,10 +134,10 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         let image = qrCodeImageView.image!
         
         let imageToShare = [image]
-        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view
+        let activityVC = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
         
-        self.present(activityViewController, animated: true, completion: nil)
+        activityVC.popoverPresentationController?.sourceView = sender
+        self.present(activityVC, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -153,7 +151,6 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     }
     
     func userSelectedHistoryItem(item: HistoryItem) {
-        print(item)
         self.resetView()
         self.qrContentTextField.text = item.content
         self.displayQRCodeImage(image: convertBase64ToImage(imageString: item.imageString!))

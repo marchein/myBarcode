@@ -152,7 +152,7 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
             do {
                 try context.save()
             } catch let error as NSError {
-                //self.showAlert(alertText: "Fehler", alertMessage: "Es konnte nicht gespeichert werden. \(error), \(error.userInfo)", closeButton: "Schließen")
+                fatalError("\(error) - \(error.userInfo)")
             }
         }
     }

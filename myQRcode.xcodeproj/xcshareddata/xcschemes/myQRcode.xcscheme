@@ -41,7 +41,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5BF98BBD21AB371D00AA5BBC"
+               BlueprintIdentifier = "5B5FAA9C24E97E6B00E719D4"
                BuildableName = "myQRcodeUITests.xctest"
                BlueprintName = "myQRcodeUITests"
                ReferencedContainer = "container:myQRcode.xcodeproj">
@@ -53,6 +53,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = "de"
+      region = "DE"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"

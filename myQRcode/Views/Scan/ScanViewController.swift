@@ -16,44 +16,62 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     var isReadyToScan = false
     var codeResult: String?
     var isSetup = false
+    @IBOutlet weak var historyButton: UIBarButtonItem!
+    let imageEN = #imageLiteral(resourceName: "myQRcode_EN")
+    let imageDE = #imageLiteral(resourceName: "myQRcode_DE")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         requestAccess()
         
+        if #available(iOS 13.0,*)  {
+            historyButton.image = UIImage(systemName: "clock")
+        }
+        
+        if isSimulator() {
+            self.setupDemoHistory()
+        }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(resetScanner), name:NSNotification.Name(rawValue: "resetView"), object: nil)
     }
     
     func requestAccess() {
-        if AVCaptureDevice.authorizationStatus(for: .video) ==  .authorized {
-            setupScanner()
-            resetScanner()
+        if isSimulator() {
+            self.setupDemoScanner()
         } else {
-            AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
-                if granted {
-                    self.setupScanner()
-                    self.resetScanner()
-                } else {
-                    print("restricted usage")
-                    DispatchQueue.main.async {
-                        self.setRequestView()
+            if AVCaptureDevice.authorizationStatus(for: .video) ==  .authorized {
+                self.setupScanner()
+            } else {
+                AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
+                    if granted {
+                        self.setupScanner()
+                    } else {
+                        print("restricted usage")
+                        DispatchQueue.main.async {
+                            self.setRequestView()
+                        }
                     }
-                }
-            })
+                })
+            }
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if !isSetup {
-            requestAccess()
+            self.requestAccess()
         }
-        resetScanner()
+        self.resetScanner()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         captureSession.stopRunning()
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
     }
     
     private func updatePreviewLayer(layer: AVCaptureConnection, orientation: AVCaptureVideoOrientation) {
@@ -94,6 +112,36 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         captureSession.startRunning()
     }
     
+    func setupDemoScanner() {
+        let lang = Bundle.main.preferredLocalizations.first?.prefix(2) ?? "en"
+        let imageView = UIImageView(image: lang == "en" ? imageEN : imageDE)
+        imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        imageView.contentMode = .scaleAspectFill
+        view.addSubview(imageView)
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    func setupDemoHistory() {
+        let demoStrings = ["https://marc-hein.de", "myQRcode", "BLÅHAJ", "Whatever", "0000 is the best pin"]
+        for string in demoStrings {
+            self.finishedScanning(content: string, performSegueValue: false)
+        }
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let tappedImageView = tapGestureRecognizer.view as! UIImageView
+        let tappedImage = tappedImageView.image!
+        
+        if tappedImage == imageDE {
+            finishedScanning(content: "Hallo und herzlich willkommen zu myQRcode")
+        } else {
+            finishedScanning(content: "Hello and welcome to myQRcode")
+        }
+    }
+    
     func setupScanner() {
         let deviceDiscoverySession = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
         
@@ -127,6 +175,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                 view.bringSubviewToFront(qrCodeFrameView)
             }
             isSetup = true
+            self.resetScanner()
         } catch {
             print(error)
             return
@@ -157,25 +206,29 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                 qrCodeFrameView?.frame = barCodeObject!.bounds
                 
                 if let contentOfCode = metadataObj.stringValue {
-                    codeResult = contentOfCode
-                    self.saveScannedCode(content: contentOfCode)
-                    incrementCodeValue(of: localStoreKeys.codeScanned)
-                    performSegue(withIdentifier: "resultSegue", sender: self)
-                    return
+                    self.finishedScanning(content: contentOfCode)
                 }
             }
         }
     }
     
-    func saveScannedCode(content: String) {
-        // _ = ... to supress unused warning
-        _ = QRCode(content: content, category: .scan)
+    func finishedScanning(content: String, performSegueValue: Bool = true) {
+        codeResult = content
+        let qrCode = QRCode(content: content, category: .scan)
+        incrementCodeValue(of: localStoreKeys.codeScanned)
+        if performSegueValue {
+            performSegue(withIdentifier: "resultSegue", sender: qrCode.coreDataObject)
+        } else {
+            _ = qrCode.coreDataObject
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resultSegue" {
-            guard let resultVC = segue.destination as? ScanResultViewController else { return }
-            resultVC.codeResult = codeResult
+            guard let resultNavVC = segue.destination as? UINavigationController, let resultVC = resultNavVC.children[0] as? ScanResultTableViewController else {
+                return
+            }
+            resultVC.historyItem = sender as? HistoryItem
             self.prepareResultScreen()
         } else if segue.identifier == "showHistory" {
             guard let historyNavVC = segue.destination as? UINavigationController, let historyVC = historyNavVC.children[0] as? HistoryTableViewController else {
@@ -192,8 +245,6 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     }
     
     func userSelectedHistoryItem(item: HistoryItem) {
-        print(item)
-        self.codeResult = item.content
         self.prepareResultScreen()
         self.performSegue(withIdentifier: "resultSegue", sender: item)
     }

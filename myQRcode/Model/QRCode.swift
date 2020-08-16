@@ -25,6 +25,24 @@ class QRCode {
             }
         }
     }
+    lazy var coreDataObject: HistoryItem? = {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return nil
+        }
+        
+        let managedObjectContext = appDelegate.persistentContainer.viewContext
+        let newItem = HistoryItem(context: managedObjectContext)
+        newItem.content = self.content
+        newItem.date = self.date
+        newItem.category = self.category == HistoryCategory.generate
+        newItem.imageString = self.imageString
+        do {
+            try managedObjectContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+        return newItem
+    }()
     
     init(content: String, category: HistoryCategory, date: Date = Date(), imageString: String? = nil, image: UIImage? = nil) {
         self.content = content
@@ -34,9 +52,6 @@ class QRCode {
         self.image = image
         
         self.generateQRCode(content: self.content)
-        DispatchQueue.main.async {
-            self.generateCoreDataItem()
-        }
     }
     
     func generateQRCode(content: String) {
@@ -51,25 +66,6 @@ class QRCode {
         if let output = filter.outputImage {
             let qrCode = output.transformed(by: CGAffineTransform(scaleX: scale, y: scale))
             self.image = convertCIImageToUIImage(inputImage: qrCode)
-        }
-    }
-    
-    func generateCoreDataItem() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedObjectContext = appDelegate.persistentContainer.viewContext
-        let newItem = HistoryItem(context: managedObjectContext)
-        newItem.content = self.content
-        newItem.date = self.date
-        newItem.category = self.category == HistoryCategory.generate
-        newItem.imageString = self.imageString
-        print(newItem)
-        do {
-            try managedObjectContext.save()
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
         }
     }
 }
