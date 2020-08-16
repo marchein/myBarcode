@@ -10,7 +10,7 @@
         <!--About-->
         <scene sceneID="Hwn-Br-bI6">
             <objects>
-                <tableViewController title="About" id="d3V-32-RIX" customClass="AboutTableViewController" customModule="myQRcode" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="About" id="d3V-32-RIX" customClass="SettingsTableViewController" customModule="myQRcode" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="vff-ol-Y3d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
