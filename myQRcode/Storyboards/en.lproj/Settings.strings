@@ -1,0 +1,63 @@
+
+/* Class = "UILabel"; text = "app_icon_label"; ObjectID = "2dZ-Vw-L95"; */
+"2dZ-Vw-L95.text" = "app_icon_label";
+
+/* Class = "UILabel"; text = "Rate myQRcode"; ObjectID = "ANl-Mk-QMH"; */
+"ANl-Mk-QMH.text" = "Rate myQRcode";
+
+/* Class = "UIButton"; normalTitle = "tip_price"; ObjectID = "AdG-II-7yX"; */
+"AdG-II-7yX.normalTitle" = "tip_price";
+
+/* Class = "UILabel"; text = "tip_name"; ObjectID = "FCo-bS-nK1"; */
+"FCo-bS-nK1.text" = "tip_name";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "HoM-Mw-uVh"; */
+"HoM-Mw-uVh.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Miz-H6-s6T"; */
+"Miz-H6-s6T.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "T3w-QR-w0N"; */
+"T3w-QR-w0N.title" = "Settings";
+
+/* Class = "UITableViewController"; title = "Tip Jar"; ObjectID = "XL1-gD-qrJ"; */
+"XL1-gD-qrJ.title" = "Tip Jar";
+
+/* Class = "UITableViewController"; title = "Change app icon"; ObjectID = "XYV-nO-z1g"; */
+"XYV-nO-z1g.title" = "Change app icon";
+
+/* Class = "UILabel"; text = "Support myQRcode"; ObjectID = "aeI-rr-3yC"; */
+"aeI-rr-3yC.text" = "Support myQRcode";
+
+/* Class = "UITableViewController"; title = "About"; ObjectID = "d3V-32-RIX"; */
+"d3V-32-RIX.title" = "About";
+
+/* Class = "UILabel"; text = "1.0 (XXX)"; ObjectID = "e2b-No-H44"; */
+"e2b-No-H44.text" = "1.0 (XXX)";
+
+/* Class = "UILabel"; text = "myQRcode support"; ObjectID = "eg5-mK-YoP"; */
+"eg5-mK-YoP.text" = "myQRcode support";
+
+/* Class = "UILabel"; text = "Developer website"; ObjectID = "gk2-gu-BZk"; */
+"gk2-gu-BZk.text" = "Developer website";
+
+/* Class = "UILabel"; text = "myQRcode on the App Store"; ObjectID = "kGT-5g-1ug"; */
+"kGT-5g-1ug.text" = "myQRcode on the App Store";
+
+/* Class = "UINavigationController"; title = "Settings"; ObjectID = "mMn-4x-nI7"; */
+"mMn-4x-nI7.title" = "Settings";
+
+/* Class = "UILabel"; text = "Change App Icon"; ObjectID = "t8x-1e-Dqo"; */
+"t8x-1e-Dqo.text" = "Change App Icon";
+
+/* Class = "UINavigationItem"; title = "Change app icon"; ObjectID = "vBM-oz-4cr"; */
+"vBM-oz-4cr.title" = "Change app icon";
+
+/* Class = "UIBarButtonItem"; title = "Close"; ObjectID = "vWa-8P-riK"; */
+"vWa-8P-riK.title" = "Close";
+
+/* Class = "UILabel"; text = "tip_desc"; ObjectID = "xM9-69-5s4"; */
+"xM9-69-5s4.text" = "tip_desc";
+
+/* Class = "UILabel"; text = "App Version"; ObjectID = "yTy-05-oos"; */
+"yTy-05-oos.text" = "App Version";

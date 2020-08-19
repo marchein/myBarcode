@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GAg-Vh-DJw">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings-->
+        <scene sceneID="uwe-0w-29s">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="deY-rb-GIn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2KV-i4-920" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2566" y="-1024"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="EcE-Px-LGa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="History" id="idU-Dk-P3W" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ydb-Xf-8hz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2566" y="-897"/>
+        </scene>
+        <!--myQRcode-->
+        <scene sceneID="IB0-wK-xzm">
+            <objects>
+                <tableViewController id="0zn-sQ-Gnv" customClass="GenerateViewController" customModule="myQRcode" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="syD-Pw-mOE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="a2k-a7-eYR">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="9Nn-zX-y9P">
+                                        <rect key="frame" x="0.0" y="18" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Nn-zX-y9P" id="vc5-eL-SDo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Content of the QR code" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="DwH-hJ-Ipd">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="alphabet" returnKeyType="done"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="DwH-hJ-Ipd" secondAttribute="trailing" constant="16" id="0ye-iu-3ao"/>
+                                                <constraint firstItem="DwH-hJ-Ipd" firstAttribute="leading" secondItem="vc5-eL-SDo" secondAttribute="leading" constant="16" id="8cy-mJ-cth"/>
+                                                <constraint firstAttribute="bottom" secondItem="DwH-hJ-Ipd" secondAttribute="bottom" id="GQH-gj-HPS"/>
+                                                <constraint firstItem="DwH-hJ-Ipd" firstAttribute="top" secondItem="vc5-eL-SDo" secondAttribute="top" id="zLJ-ZC-03T"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="ynF-FM-Lor">
+                                        <rect key="frame" x="0.0" y="62" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ynF-FM-Lor" id="HtY-M9-sc2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBE-FK-kol">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Generate QR code"/>
+                                                    <connections>
+                                                        <action selector="generateButtonAction:" destination="0zn-sQ-Gnv" eventType="touchUpInside" id="KEP-5k-cNQ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aBE-FK-kol" firstAttribute="top" secondItem="HtY-M9-sc2" secondAttribute="top" id="25B-Tb-mUO"/>
+                                                <constraint firstItem="aBE-FK-kol" firstAttribute="leading" secondItem="HtY-M9-sc2" secondAttribute="leading" id="3XH-rY-voG"/>
+                                                <constraint firstAttribute="bottom" secondItem="aBE-FK-kol" secondAttribute="bottom" id="7Up-GZ-NN6"/>
+                                                <constraint firstAttribute="trailing" secondItem="aBE-FK-kol" secondAttribute="trailing" id="t23-oL-r9f"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="QR Code" id="EeJ-pa-ZRx">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="300" id="0Gj-aS-pH7">
+                                        <rect key="frame" x="0.0" y="162" width="375" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Gj-aS-pH7" id="fE0-67-ELY">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blank QR" translatesAutoresizingMaskIntoConstraints="NO" id="cpL-AM-lsy">
+                                                    <rect key="frame" x="45.5" y="8" width="284" height="284"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="cpL-AM-lsy" secondAttribute="height" multiplier="1:1" id="ok3-Wq-bcf"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR code generated yet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njC-gD-BiU">
+                                                    <rect key="frame" x="87.5" y="119" width="200" height="62.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="oRP-16-Jtl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cpL-AM-lsy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fE0-67-ELY" secondAttribute="leading" constant="8" id="33g-Gn-FTD"/>
+                                                <constraint firstItem="cpL-AM-lsy" firstAttribute="centerY" secondItem="fE0-67-ELY" secondAttribute="centerY" id="6eU-4N-LWT"/>
+                                                <constraint firstItem="cpL-AM-lsy" firstAttribute="centerX" secondItem="fE0-67-ELY" secondAttribute="centerX" id="JJ6-iM-lKQ"/>
+                                                <constraint firstItem="cpL-AM-lsy" firstAttribute="top" secondItem="fE0-67-ELY" secondAttribute="top" constant="8" id="Oul-QQ-q07"/>
+                                                <constraint firstItem="njC-gD-BiU" firstAttribute="centerX" secondItem="fE0-67-ELY" secondAttribute="centerX" id="UhP-2o-oMd"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cpL-AM-lsy" secondAttribute="trailing" constant="8" id="sRO-0a-XJz"/>
+                                                <constraint firstAttribute="bottom" secondItem="cpL-AM-lsy" secondAttribute="bottom" constant="8" id="tu0-7r-Ept"/>
+                                                <constraint firstItem="njC-gD-BiU" firstAttribute="centerY" secondItem="fE0-67-ELY" secondAttribute="centerY" id="ww6-6H-tpF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="Wop-kp-T33">
+                                        <rect key="frame" x="0.0" y="462" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wop-kp-T33" id="0ov-mQ-Yjn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4f-wI-1Pm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Export generated QR code"/>
+                                                    <connections>
+                                                        <action selector="shareImageButton:" destination="0zn-sQ-Gnv" eventType="touchUpInside" id="wPa-mg-ILn"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="X4f-wI-1Pm" secondAttribute="bottom" id="MJk-SQ-gVb"/>
+                                                <constraint firstItem="X4f-wI-1Pm" firstAttribute="top" secondItem="0ov-mQ-Yjn" secondAttribute="top" id="d81-de-snp"/>
+                                                <constraint firstAttribute="trailing" secondItem="X4f-wI-1Pm" secondAttribute="trailing" id="vcv-YN-FdY"/>
+                                                <constraint firstItem="X4f-wI-1Pm" firstAttribute="leading" secondItem="0ov-mQ-Yjn" secondAttribute="leading" id="xCV-96-Sc2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="JB1-jG-Snj">
+                                <cells/>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="0zn-sQ-Gnv" id="irG-ah-HOC"/>
+                            <outlet property="delegate" destination="0zn-sQ-Gnv" id="Kgs-eU-nul"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Generate" image="Generate-Icon" id="YWT-57-rL4"/>
+                    <navigationItem key="navigationItem" title="myQRcode" id="hFD-uy-cC7">
+                        <barButtonItem key="leftBarButtonItem" title="About" image="Settings" id="mbM-68-iH4">
+                            <connections>
+                                <segue destination="deY-rb-GIn" kind="presentation" id="viF-h2-jNg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="About" image="History-Icon" id="jbV-8l-EOS">
+                            <connections>
+                                <segue destination="idU-Dk-P3W" kind="popoverPresentation" identifier="showHistory" popoverAnchorBarButtonItem="jbV-8l-EOS" id="05r-p4-BP0">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emptyLabel" destination="njC-gD-BiU" id="K6s-pN-gqB"/>
+                        <outlet property="exportButton" destination="X4f-wI-1Pm" id="UUb-sM-Suy"/>
+                        <outlet property="generateButton" destination="aBE-FK-kol" id="MoG-rv-JuH"/>
+                        <outlet property="historyButton" destination="jbV-8l-EOS" id="Aoz-om-nns"/>
+                        <outlet property="qrCodeImageView" destination="cpL-AM-lsy" id="gy3-03-kdt"/>
+                        <outlet property="qrContentTextField" destination="DwH-hJ-Ipd" id="02t-qr-V3n"/>
+                        <outlet property="settingsButton" destination="mbM-68-iH4" id="nhH-TW-Pzn"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BYp-g2-JIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2039" y="-1003"/>
+        </scene>
+        <!--Navigation-->
+        <scene sceneID="hwl-Wn-yNz">
+            <objects>
+                <navigationController title="Navigation" automaticallyAdjustsScrollViewInsets="NO" id="GAg-Vh-DJw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Generate" id="Dip-om-eee"/>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="dQp-Ed-dkF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dvm-DI-DNd">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="0zn-sQ-Gnv" kind="relationship" relationship="rootViewController" id="DV4-Ph-Xg1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcD-2A-Rh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1170" y="-1003"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Blank QR" width="258" height="258"/>
+        <image name="Generate-Icon" width="25" height="25"/>
+        <image name="History-Icon" width="25" height="25"/>
+        <image name="Settings" width="25" height="25"/>
+    </resources>
+</document>

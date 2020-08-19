@@ -22,6 +22,7 @@
 "mail_error" = "There is no mail account configured in Apple Mail. Please contact us at %@";
 "light_icon" = "Light";
 "dark_icon" = "Dark";
+"date_scanning" = "Time of scanning";
 
 
 /* No comment provided by engineer. */

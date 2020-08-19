@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u2K-z8-wej">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Generate-->
+        <scene sceneID="hAo-uI-sZx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Generate" id="9aq-Ns-8Ba" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Generate" image="Generate-Icon" id="3lQ-qy-LdL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w6k-HU-FsL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="699" y="-556"/>
+        </scene>
+        <!--Scan-->
+        <scene sceneID="vNb-u4-PKA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Scan" id="5Tp-CS-UQe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Scan" image="Scan-Icon" id="Wg4-bU-KMe"/>
+                    <navigationItem key="navigationItem" id="2Wa-vE-rc3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t0n-i1-D87" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="665" y="-406"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="1V7-TV-chW">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="u2K-z8-wej" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xGA-Gs-rWb">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9aq-Ns-8Ba" kind="relationship" relationship="viewControllers" id="m3O-77-5ec"/>
+                        <segue destination="5Tp-CS-UQe" kind="relationship" relationship="viewControllers" id="Zpi-Mw-019"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mRF-oI-y3J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-12" y="-508"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Generate-Icon" width="25" height="25"/>
+        <image name="Scan-Icon" width="25" height="25"/>
+    </resources>
+</document>

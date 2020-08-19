@@ -23,5 +23,8 @@
 
 "light_icon" = "Hell";
 "dark_icon" = "Dunkel";
+
+"date_scanning" = "Zeitpunkt des Einscannens";
+
 /* No comment provided by engineer. */
 "" = "";

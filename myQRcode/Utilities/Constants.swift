@@ -42,12 +42,8 @@ struct myQRcode {
         AppIcon(iconName: nil, iconTitle: "myQRcode - \(NSLocalizedString("light_icon", comment: ""))"),
         AppIcon(iconName: "myQRcode-dark", iconTitle: "myQRcode - \(NSLocalizedString("dark_icon", comment: ""))")
     ])
-    static let thanksItems = [
-        ["header": "Frameworks",
-         "items": [Thank(name: "IQKeyboardManager", url: "https://github.com/hackiftekhar/IQKeyboardManager"),
-                   Thank(name: "JGProgressHUD", url: "https://github.com/JonasGessner/JGProgressHUD")]]]
-    
-    static let askForReviewAtSingleAction = 5
-    static let askForReviewAtCombinedAction = 20
+
+    static let askForReviewAtSingleAction = 10
+    static let askForReviewAtCombinedAction = 30
 }
 
