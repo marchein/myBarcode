@@ -6,7 +6,7 @@
 "eeN-HA-oGd.text" = "CONTENT";
 
 /* Class = "UIBarButtonItem"; title = "About"; ObjectID = "NTk-Pb-EPH"; */
-"NTk-Pb-EPH.title" = "About";
+"NTk-Pb-EPH.title" = "History";
 
 /* Class = "UIViewController"; title = "Scan"; ObjectID = "YYb-AG-PfO"; */
 "YYb-AG-PfO.title" = "Scan";
@@ -29,3 +29,5 @@
 "tmj-tR-1PA.title" = "Close";
 
 "zr9-hr-oD8.title" = "Result";
+
+"xQv-tW-b83.title" = "RESULT";

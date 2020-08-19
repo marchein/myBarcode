@@ -35,7 +35,17 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         qrContentTextField.addTarget(self, action: #selector(checkIfGenerationIsPossible), for: UIControl.Event.editingChanged)
         
         checkIfGenerationIsPossible()
-        
+        if #available(iOS 13.0, *), let tabBarController = navigationController?.parent as? UITabBarController, let items = tabBarController.tabBar.items {
+            var index = 0;
+            for item in items {
+                if index == 0 {
+                    item.image = UIImage(systemName: "qrcode")
+                } else if index == 1 {
+                    item.image = UIImage(systemName: "qrcode.viewfinder")
+                }
+                index += 1
+            }
+        }
     }
     
     fileprivate func setupApp() {

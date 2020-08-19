@@ -42,3 +42,8 @@
 "tmj-tR-1PA.title" = "Schließen";
 
 "zr9-hr-oD8.title" = "Ergebnis";
+
+/* Class = "UIBarButtonItem"; title = "About"; ObjectID = "NTk-Pb-EPH"; */
+"NTk-Pb-EPH.title" = "Verlauf";
+
+"xQv-tW-b83.title" = "ERGEBNIS";

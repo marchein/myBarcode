@@ -130,7 +130,7 @@
         <scene sceneID="e0Q-kp-MUE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d7z-vm-uL9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Scan" image="qrcode.viewfinder" catalog="system" id="gFh-1k-h9s"/>
+                    <tabBarItem key="tabBarItem" title="Scan" image="Scan-Icon" id="gFh-1k-h9s"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aw3-wE-ESk">
@@ -167,6 +167,6 @@
     </scenes>
     <resources>
         <image name="History-Icon" width="25" height="25"/>
-        <image name="qrcode.viewfinder" catalog="system" width="128" height="114"/>
+        <image name="Scan-Icon" width="25" height="25"/>
     </resources>
 </document>

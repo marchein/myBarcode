@@ -27,10 +27,10 @@
 "hFD-uy-cC7.title" = "myQRcode";
 
 /* Class = "UIBarButtonItem"; title = "About"; ObjectID = "jbV-8l-EOS"; */
-"jbV-8l-EOS.title" = "About";
+"jbV-8l-EOS.title" = "History";
 
 /* Class = "UIBarButtonItem"; title = "About"; ObjectID = "mbM-68-iH4"; */
-"mbM-68-iH4.title" = "About";
+"mbM-68-iH4.title" = "Settings";
 
 /* Class = "UILabel"; text = "No QR code generated yet"; ObjectID = "njC-gD-BiU"; */
 "njC-gD-BiU.text" = "No QR code generated yet";

@@ -136,7 +136,8 @@ class myQRcodeUITests: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        
+        XCUIDevice.shared.orientation = .landscapeRight
+
         let app = XCUIApplication()
         app.launch()
         let tablesQuery = app.tables
@@ -151,12 +152,20 @@ class myQRcodeUITests: XCTestCase {
         tablesQuery/*@START_MENU_TOKEN@*/.buttons["Export generated QR code"]/*[[".cells.buttons[\"Export generated QR code\"]",".buttons[\"Export generated QR code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         sleep(2)
         saveScreenshot(name: "04_shared.jpeg")
-        app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Close"].tap()
+        if app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Close"].exists {
+            app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Close"].tap()
+        } else {
+            app.otherElements["PopoverDismissRegion"].tap()
+        }
         app.tabBars.buttons["Scan"].tap()
         sleep(2)
         saveScreenshot(name: "05_scanner.jpeg")
-        let image = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .image).element(boundBy: 1)
-        image.tap()
+        
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .image).element(boundBy: 1).tap()
+
+        /*
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .image).element(boundBy: 1).tap()*/
+        
         sleep(10)
         saveScreenshot(name: "06_scanner_result.jpeg")
         app.navigationBars["Result"].buttons["Close"].tap()
@@ -168,6 +177,9 @@ class myQRcodeUITests: XCTestCase {
     }
     
     func testScreenshotsDE() {
+        //         XCUIDevice.shared.orientation = .landscapeRight
+
+        
         let app = XCUIApplication()
         app.launch()
         saveScreenshot(name: "01_start.jpeg")
@@ -190,13 +202,13 @@ class myQRcodeUITests: XCTestCase {
         sleep(2)
         saveScreenshot(name: "05_scanner.jpeg")
         
-        let app = XCUIApplication()
         app.tabBars.buttons["Scannen"].tap()
-        app.windows.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .other).element(boundBy: 1).children(matching: .scrollView).element(boundBy: 1).children(matching: .other).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.tap()
-        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .image).element(boundBy: 1).tap()
+
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .image).element(boundBy: 1).tap()
         
-        let image = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .image).element(boundBy: 1)
-        image.tap()
+        /*app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .image).element(boundBy: 1).tap()*/
+                        
+        
         sleep(10)
         saveScreenshot(name: "06_scanner_result.jpeg")
         app.navigationBars["Ergebnis"].buttons["Schließen"].tap()

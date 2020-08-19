@@ -17,6 +17,9 @@
 /* Class = "UIBarButtonItem"; title = "About"; ObjectID = "Hud-aR-JWF"; */
 "Hud-aR-JWF.title" = "About";
 
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "Un4-9b-sBJ"; */
+"Un4-9b-sBJ.title" = "Item";
+
 /* Class = "UIButton"; normalTitle = "Generierten QR Code exportieren"; ObjectID = "X4f-wI-1Pm"; */
 "X4f-wI-1Pm.normalTitle" = "Generierten QR Code exportieren";
 
@@ -30,7 +33,10 @@
 "hFD-uy-cC7.title" = "myQRcode";
 
 /* Class = "UIBarButtonItem"; title = "About"; ObjectID = "mbM-68-iH4"; */
-"mbM-68-iH4.title" = "About";
+"mbM-68-iH4.title" = "Einstellungen";
+
+/* Class = "UIBarButtonItem"; title = "About"; ObjectID = "jbV-8l-EOS"; */
+"jbV-8l-EOS.title" = "Verlauf";
 
 /* Class = "UILabel"; text = "Bisher kein QR Code generiert"; ObjectID = "njC-gD-BiU"; */
 "njC-gD-BiU.text" = "Bisher kein QR Code generiert";

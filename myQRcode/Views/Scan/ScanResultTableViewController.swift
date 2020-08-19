@@ -10,18 +10,19 @@ import UIKit
 
 class ScanResultTableViewController: UITableViewController {
     var historyItem: HistoryItem!
+    var scanVC: ScanViewController?
     
     @IBOutlet weak var resultTextView: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.presentationController?.delegate = self
     }
     
     @IBAction func dismiss(_ sender: Any) {
         self.dismiss(animated: true) {
-            if let scanVC = self.presentingViewController as? ScanViewController {
-                scanVC.resetScanner()
-            }
+            self.resetScannerInScanVC()
         }
     }
     
@@ -43,5 +44,17 @@ class ScanResultTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return "\(NSLocalizedString("date_scanning", comment: "")): \(self.historyItem.isoDate) - \(self.historyItem.isoTime)"
+    }
+    
+    private func resetScannerInScanVC() {
+        if let scanVC = self.scanVC {
+            scanVC.resetScanner()
+        }
+    }
+}
+
+extension ScanResultTableViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        self.dismiss(presentationController)
     }
 }

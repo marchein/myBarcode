@@ -20,7 +20,6 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     let imageEN = #imageLiteral(resourceName: "myQRcode_EN")
     let imageDE = #imageLiteral(resourceName: "myQRcode_DE")
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         requestAccess()
@@ -229,6 +228,8 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                 return
             }
             resultVC.historyItem = sender as? HistoryItem
+            resultVC.scanVC = self
+            
             self.prepareResultScreen()
         } else if segue.identifier == "showHistory" {
             guard let historyNavVC = segue.destination as? UINavigationController, let historyVC = historyNavVC.children[0] as? HistoryTableViewController else {
