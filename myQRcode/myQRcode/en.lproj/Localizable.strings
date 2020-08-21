@@ -31,5 +31,23 @@
 "no_qr_code_error" = "No QR code";
 "no_qr_code_error_description" = "myQRcode was unable to detect any QR codes in the selected image";
 
+/* Templates */
+/* WiFi Template */
+"wifi_template" = "WiFi login data";
+"wifi_security" = "Security of the WiFi network";
+"wifi_name" = "Name of the WiFi network";
+"wifi_password" = "Password of the WiFi network";
+/* E-Mail Template */
+"email_template" = "Email address";
+"email_address" = "Email address";
+/* Phone Template */
+"phone_template" = "Phone call";
+"phone_number" = "Phone number";
+/* Message Template */
+"message_template" = "Phone message";
+"message_number" = "Phone number";
+
+
+
 /* No comment provided by engineer. */
 "" = "";

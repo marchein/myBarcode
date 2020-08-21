@@ -154,6 +154,11 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
             }
             historyVC.delegate = self
             historyVC.category = .generate
+        } else if segue.identifier == Segues.GenerateToTemplateSegue {
+            guard let templateNavVC = segue.destination as? UINavigationController, let templateList = templateNavVC.children[0] as? TemplateListTableViewController else {
+                return
+            }
+            templateList.generateVC = self
         }
     }
     
@@ -163,9 +168,24 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         self.displayQRCodeImage(image: convertBase64ToImage(imageString: item.imageString!))
     }
     
+    func enterQR(content: String?) {
+        guard let content = content, content.count > 0 else {
+            return
+        }
+        self.qrContentTextField.text = content
+        self.checkIfGenerationIsPossible()
+        if self.generateButton.isEnabled {
+            self.generateButtonAction(self)
+        }
+    }
+    
     func convertBase64ToImage(imageString: String) -> UIImage {
         let imageData = Data(base64Encoded: imageString, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!
         return UIImage(data: imageData)!
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

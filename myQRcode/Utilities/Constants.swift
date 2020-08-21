@@ -27,8 +27,9 @@ struct myQRcodeIAP {
     static let smallTip = "de.marc_hein.myQRcode.tip.small"
     static let mediumTip = "de.marc_hein.myQRcode.tip.medium"
     static let largeTip = "de.marc_hein.myQRcode.tip.large"
+    static let xl = "de.marc_hein.myQRcode.tip.xl"
     
-    static let allTips = [myQRcodeIAP.smallTip, myQRcodeIAP.mediumTip, myQRcodeIAP.largeTip]
+    static let allTips = [myQRcodeIAP.smallTip, myQRcodeIAP.mediumTip, myQRcodeIAP.largeTip, myQRcodeIAP.xl]
 }
 
 struct myQRcode {

@@ -26,7 +26,7 @@ extension TipJarTableViewController {
         if indexPath.section == 0 {
             let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "introCell")
             cell.textLabel?.text = "\(NSLocalizedString("tip_greeting", comment: "")) 😌"
-            cell.detailTextLabel?.numberOfLines = 5
+            cell.detailTextLabel?.numberOfLines = 0
             cell.detailTextLabel?.lineBreakMode = .byWordWrapping
             cell.detailTextLabel?.text = NSLocalizedString("tip_desc", comment: "")
             cell.selectionStyle = .none
@@ -37,7 +37,8 @@ extension TipJarTableViewController {
             if productsArray.count > indexPath.row {
                 if let product = productsArray[indexPath.row] {
                     cell.tipTitle.text = product.localizedTitle
-                    cell.tipDesc.text = product.localizedDescription
+                    //cell.tipDesc.text = product.localizedDescription
+                    cell.tipDesc.text = nil
                     cell.purchaseButton.isHidden = false
                     cell.purchaseButton.setTitle(product.localizedPrice, for: .normal)
                 }
