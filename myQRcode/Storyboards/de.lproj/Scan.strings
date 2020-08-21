@@ -2,9 +2,6 @@
 /* Class = "UIViewController"; title = "Fehlende Berechtigungen"; ObjectID = "3VH-yp-5Jc"; */
 "3VH-yp-5Jc.title" = "Fehlende Berechtigungen";
 
-/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "6H9-5X-CJh"; */
-"6H9-5X-CJh.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
-
 /* Class = "UIBarButtonItem"; title = "About"; ObjectID = "BoW-jw-h2c"; */
 "BoW-jw-h2c.title" = "About";
 
@@ -38,12 +35,15 @@
 /* Class = "UITableViewSection"; headerTitle = "CONTENT HEADLINE"; ObjectID = "E0h-tD-LST"; */
 "E0h-tD-LST.headerTitle" = "Inhalt des gescannten QR Codes";
 
-/* Class = "UIBarButtonItem"; title = "Close"; ObjectID = "tmj-tR-1PA"; */
-"tmj-tR-1PA.title" = "Schließen";
-
-"zr9-hr-oD8.title" = "Ergebnis";
+/* Class = "UIBarButtonItem"; title = "CLOSE_BUTTON"; ObjectID = "xyy-kc-08K"; */
+"xyy-kc-08K.title" = "Schließen";
 
 /* Class = "UIBarButtonItem"; title = "About"; ObjectID = "NTk-Pb-EPH"; */
 "NTk-Pb-EPH.title" = "Verlauf";
 
-"xQv-tW-b83.title" = "ERGEBNIS";
+"xnh-6g-KzD.title" = "Ergebnis";
+
+"2Ch-CP-mhc.text" = "Fehlende Erlaubnis zur Benutzung der Kamera";
+"TlJ-EN-afc.text" = "Ohne diese Erlaubnis kannst Du keine QR-Codes mit Deiner Kamera scannen. \n\n Du kannst dies über Einstellungen > myQRcode > Kamera ändern.\n\n\Wenn Du myQRcode den Zugriff auf die Kamera nicht erlauben möchtest, kannst Du die QR-Code in Bildern Erkennungsfunktion in der linken oberen Ecke weiterhin verwenden.";
+
+"hjP-Ar-tVB.title" = "Bild auswählen";

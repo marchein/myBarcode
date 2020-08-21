@@ -113,14 +113,11 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
                         self.generateButton.isEnabled = false
                     } else {
                         self.tabBarController?.hideAnimatedActivityIndicatorView()
-                        return
                     }
                 }
             }
         }
     }
-    
-    
     
     func displayQRCodeImage(image: UIImage) {
         qrCodeImageView.image = image

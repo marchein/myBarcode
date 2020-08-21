@@ -25,9 +25,13 @@
 /* Class = "UINavigationItem"; title = "Scan"; ObjectID = "jMO-wS-otb"; */
 "jMO-wS-otb.title" = "Scan";
 
-/* Class = "UIBarButtonItem"; title = "Close"; ObjectID = "tmj-tR-1PA"; */
-"tmj-tR-1PA.title" = "Close";
+/* Class = "UIBarButtonItem"; title = "CLOSE_BUTTON"; ObjectID = "xyy-kc-08K"; */
+"xyy-kc-08K.title" = "Close";
 
-"zr9-hr-oD8.title" = "Result";
+"xnh-6g-KzD.title" = "Result";
 
-"xQv-tW-b83.title" = "RESULT";
+"2Ch-CP-mhc.text" = "Missing permission to use the camera";
+"TlJ-EN-afc.text" = "Without this permission you cannot scan QR codes using your camera. \nYou can do this via Settings > myQRcode > Camera\n\nIf you do not want to allow myQRcode to use the camera, you can still use the image QR code recognition feature in the top left corner.";
+
+
+"hjP-Ar-tVB.title" = "Select an image";

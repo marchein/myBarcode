@@ -12,8 +12,6 @@ class ScanResultTableViewController: UITableViewController {
     var historyItem: HistoryItem!
     var scanVC: ScanViewController?
     
-    @IBOutlet weak var resultTextView: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,10 +34,13 @@ class ScanResultTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = self.historyItem.content
-        cell.textLabel?.numberOfLines = 0
+        let cell = tableView.dequeueReusableCell(withIdentifier: TextViewTableViewCell.reuseIdentifier, for: indexPath) as! TextViewTableViewCell
+        cell.textView?.text = self.historyItem.content
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return NSLocalizedString("result_headline", comment: "")
     }
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {

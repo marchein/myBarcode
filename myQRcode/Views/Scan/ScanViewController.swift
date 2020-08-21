@@ -10,63 +10,63 @@ import UIKit
 import AVFoundation
 
 class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, HistoryItemDelegate {
+    @IBOutlet weak var pickerButton: UIBarButtonItem!
+    @IBOutlet weak var historyButton: UIBarButtonItem!
+    @IBOutlet weak var errorIcon: UIImageView!
+    @IBOutlet weak var missingPermissionsView: UIView!
+    
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
     var isReadyToScan = false
     var codeResult: String?
     var isSetup = false
-    @IBOutlet weak var historyButton: UIBarButtonItem!
+    
     let imageEN = #imageLiteral(resourceName: "myQRcode_EN")
     let imageDE = #imageLiteral(resourceName: "myQRcode_DE")
+    var imagePicker = UIImagePickerController()
+    var originalView: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestAccess()
         
         if #available(iOS 13.0,*)  {
-            historyButton.image = UIImage(systemName: "clock")
+            self.pickerButton.image = UIImage(systemName: "photo.on.rectangle")
+            self.historyButton.image = UIImage(systemName: "clock")
+            self.errorIcon.image = UIImage(systemName: "exclamationmark.circle")
         }
         
-        if isSimulator() {
-            self.setupDemoHistory()
+        if !isSimulator() && AVCaptureDevice.authorizationStatus(for: .video) ==  .authorized {
+            self.setupScanner()
+        } else {
+            self.requestAccess()
         }
+        
+        /*if isSimulator() {
+         self.setupDemoHistory()
+         }*/
         
         NotificationCenter.default.addObserver(self, selector: #selector(resetScanner), name:NSNotification.Name(rawValue: "resetView"), object: nil)
     }
     
     func requestAccess() {
-        if isSimulator() {
-            self.setupDemoScanner()
-        } else {
-            if AVCaptureDevice.authorizationStatus(for: .video) ==  .authorized {
-                self.setupScanner()
-            } else {
-                AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
-                    if granted {
-                        self.setupScanner()
-                    } else {
-                        print("restricted usage")
-                        DispatchQueue.main.async {
-                            self.setRequestView()
-                        }
-                    }
-                })
+        AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
+            DispatchQueue.main.async {
+                granted ? self.setupScanner() : self.setRequestView()
             }
-        }
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if !isSetup {
-            self.requestAccess()
+        if isSetup {
+            self.resetScanner()
         }
-        self.resetScanner()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        captureSession.stopRunning()
+        self.captureSession.stopRunning()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -106,9 +106,9 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     
     @objc func resetScanner() {
-        resetQrCodeFrame()
-        isReadyToScan = true
-        captureSession.startRunning()
+        self.resetQrCodeFrame()
+        self.isReadyToScan = true
+        self.captureSession.startRunning()
     }
     
     func setupDemoScanner() {
@@ -142,47 +142,65 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     }
     
     func setupScanner() {
-        let deviceDiscoverySession = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
-        
-        guard let captureDevice = deviceDiscoverySession else {
-            print("Failed to get the camera device")
-            return
-        }
-        
-        do {
-            let input = try AVCaptureDeviceInput(device: captureDevice)
+        if !isSimulator() {
+            let deviceDiscoverySession = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
             
-            captureSession.addInput(input)
-            
-            let captureMetadataOutput = AVCaptureMetadataOutput()
-            captureSession.addOutput(captureMetadataOutput)
-            
-            captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            captureMetadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
-            
-            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-            videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            videoPreviewLayer?.frame = view.bounds
-            view.layer.addSublayer(videoPreviewLayer!)
-            
-            qrCodeFrameView = UIView()
-            
-            if let qrCodeFrameView = qrCodeFrameView {
-                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
-                qrCodeFrameView.layer.borderWidth = 2
-                view.addSubview(qrCodeFrameView)
-                view.bringSubviewToFront(qrCodeFrameView)
+            guard let captureDevice = deviceDiscoverySession else {
+                print("Failed to get the camera device")
+                return
             }
-            isSetup = true
-            self.resetScanner()
-        } catch {
-            print(error)
-            return
+            
+            do {
+                if !isSetup {
+                    if let inputs = captureSession.inputs as? [AVCaptureDeviceInput] {
+                        for input in inputs {
+                            captureSession.removeInput(input)
+                        }
+                    }
+                    
+                    if captureSession.inputs.isEmpty {
+                        let deviceInput = try AVCaptureDeviceInput(device: captureDevice)
+                        self.captureSession.addInput(deviceInput)
+                    }
+                    
+                    let captureMetadataOutput = AVCaptureMetadataOutput()
+                    captureSession.addOutput(captureMetadataOutput)
+                    
+                    captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+                    captureMetadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+                    
+                    videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+                    videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+                    videoPreviewLayer?.frame = view.bounds
+                    view.layer.addSublayer(videoPreviewLayer!)
+                    
+                    qrCodeFrameView = UIView()
+                    
+                    if let qrCodeFrameView = qrCodeFrameView {
+                        qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
+                        qrCodeFrameView.layer.borderWidth = 2
+                        view.addSubview(qrCodeFrameView)
+                        view.bringSubviewToFront(qrCodeFrameView)
+                    }
+                    isSetup = true
+                    self.resetScanner()
+                }
+            } catch {
+                print(error)
+                return
+            }
+        } else {
+            self.setupDemoScanner()
         }
     }
     
     func setRequestView() {
-        performSegue(withIdentifier: "errorSegue", sender: self)
+        self.originalView = self.view
+        self.view = self.missingPermissionsView
+    }
+    
+    func resetToOriginalView() {
+        self.view = self.originalView
     }
     
     fileprivate func resetQrCodeFrame() {

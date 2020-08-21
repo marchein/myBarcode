@@ -9,6 +9,9 @@
 import UIKit
 
 class AppIconTableViewCell: UITableViewCell {
+    
+    // MARK: - Properties
+    static let reuseIdentifier = "AppIconTableViewCell"
 
     @IBOutlet weak var appIcon: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!

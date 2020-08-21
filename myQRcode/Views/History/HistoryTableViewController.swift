@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 class HistoryTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+    @IBOutlet var noItemsView: NoItemsView!
     
     var category: HistoryCategory?
     // MARK: - Properties
@@ -29,28 +30,9 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
         }
         
         self.updateFetchedResultsController()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
     
-    // MARK: - Navigation
-    
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     if segue.identifier == SegueIdentifiers.ShowMoodIdentifier {
-     guard let historyVC = segue.destination as? MoodViewController, let indexPath = self.tableView.indexPathForSelectedRow else {
-     return
-     }
-     
-     moodVC.fetchedResultsController = self.fetchedResultsController
-     moodVC.mood = self.fetchedResultsController?.object(at: indexPath)
-     moodVC.indexPath = indexPath
-     
-     }
-     }*/
     
     // MARK: - Core Data
     func updateFetchedResultsController() {
@@ -86,7 +68,8 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         guard let sections = self.fetchedResultsController?.sections?.count, sections > 0 else {
-            //self.tableView.backgroundView = self.noItemsView
+            self.noItemsView.category = self.category
+            self.tableView.backgroundView = self.noItemsView
             self.tableView.separatorStyle = .none
             return 0
         }
