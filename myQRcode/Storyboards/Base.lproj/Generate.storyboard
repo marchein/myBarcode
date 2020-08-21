@@ -13,7 +13,7 @@
                 <viewControllerPlaceholder storyboardName="Settings" id="deY-rb-GIn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2KV-i4-920" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2566" y="-1024"/>
+            <point key="canvasLocation" x="1772" y="-1379"/>
         </scene>
         <!--History-->
         <scene sceneID="EcE-Px-LGa">
@@ -21,7 +21,7 @@
                 <viewControllerPlaceholder storyboardName="History" id="idU-Dk-P3W" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydb-Xf-8hz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2566" y="-897"/>
+            <point key="canvasLocation" x="2276" y="-1379"/>
         </scene>
         <!--myQRcode-->
         <scene sceneID="IB0-wK-xzm">
@@ -64,7 +64,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBE-FK-kol">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <state key="normal" title="Generate QR code"/>
                                                     <connections>
                                                         <action selector="generateButtonAction:" destination="0zn-sQ-Gnv" eventType="touchUpInside" id="KEP-5k-cNQ"/>
@@ -127,7 +127,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4f-wI-1Pm">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <state key="normal" title="Export generated QR code"/>
                                                     <connections>
                                                         <action selector="shareImageButton:" destination="0zn-sQ-Gnv" eventType="touchUpInside" id="wPa-mg-ILn"/>
@@ -145,7 +145,28 @@
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="JB1-jG-Snj">
-                                <cells/>
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="beF-PC-LeV" style="IBUITableViewCellStyleDefault" id="yyP-HG-gaD">
+                                        <rect key="frame" x="0.0" y="542" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yyP-HG-gaD" id="q7D-Fx-8V7">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Templates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="beF-PC-LeV">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="6YY-1Z-bav" kind="presentation" identifier="GenerateToTemplateSegue" id="Ilk-wE-B6U"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
                             </tableViewSection>
                         </sections>
                         <connections>
@@ -182,6 +203,175 @@
             </objects>
             <point key="canvasLocation" x="2039" y="-1003"/>
         </scene>
+        <!--Templates-->
+        <scene sceneID="ge0-bD-Pl5">
+            <objects>
+                <tableViewController id="VAU-Rp-eFD" customClass="TemplateListTableViewController" customModule="myQRcode" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="RO4-Kt-PdR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="templateCell" textLabel="XNl-he-7ff" style="IBUITableViewCellStyleDefault" id="r1N-bb-kVT">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r1N-bb-kVT" id="bgU-Eu-NA7">
+                                    <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XNl-he-7ff">
+                                            <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VAU-Rp-eFD" id="5Jm-FX-Ihn"/>
+                            <outlet property="delegate" destination="VAU-Rp-eFD" id="sQY-F8-TRb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Templates" id="ygU-Zj-EFm">
+                        <barButtonItem key="rightBarButtonItem" title="Close" style="done" id="Z2y-HK-CYq">
+                            <connections>
+                                <action selector="dismiss:" destination="VAU-Rp-eFD" id="QkL-Gf-1po"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Yqg-wX-zaE" kind="show" identifier="editTemplateSegue" id="AzX-yL-EiP"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9lS-4T-mfn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3590" y="-1003"/>
+        </scene>
+        <!--Input Data-->
+        <scene sceneID="qdR-Fm-6NJ">
+            <objects>
+                <tableViewController id="Yqg-wX-zaE" customClass="TemplateEditingTableViewController" customModule="myQRcode" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="7jQ-4A-hp7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="templateParameterCell" textLabel="tAT-rQ-sIM" style="IBUITableViewCellStyleDefault" id="BkS-GR-f0u">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BkS-GR-f0u" id="oFf-56-aZC">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tAT-rQ-sIM">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFieldTableViewCell" rowHeight="44" id="JH8-z7-11N" customClass="TextFieldTableViewCell" customModule="myQRcode" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="99" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JH8-z7-11N" id="9xw-c3-u08">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gMU-su-OmW">
+                                            <rect key="frame" x="20" y="0.0" width="335" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="VL5-Wa-jBx"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gMU-su-OmW" firstAttribute="top" secondItem="9xw-c3-u08" secondAttribute="top" id="5fE-yc-J6I"/>
+                                        <constraint firstAttribute="trailing" secondItem="gMU-su-OmW" secondAttribute="trailing" constant="20" id="EdR-nq-xg1"/>
+                                        <constraint firstAttribute="bottom" secondItem="gMU-su-OmW" secondAttribute="bottom" id="JcF-2O-thI"/>
+                                        <constraint firstItem="gMU-su-OmW" firstAttribute="leading" secondItem="9xw-c3-u08" secondAttribute="leading" constant="20" id="uaN-H9-Awg"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textField" destination="gMU-su-OmW" id="bgh-uw-iOf"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="segmentedControlCell" rowHeight="44" id="m7w-Uc-j98" customClass="SegmentedControlTableViewCell" customModule="myQRcode" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="143" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m7w-Uc-j98" id="3h6-4Z-AgE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="snB-Sp-SAz">
+                                            <rect key="frame" x="16" y="6" width="343" height="33"/>
+                                            <segments>
+                                                <segment title="First"/>
+                                                <segment title="Second"/>
+                                            </segments>
+                                        </segmentedControl>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="snB-Sp-SAz" secondAttribute="bottom" constant="6" id="1Q7-Ba-vEX"/>
+                                        <constraint firstAttribute="trailing" secondItem="snB-Sp-SAz" secondAttribute="trailing" constant="16" id="dEI-ln-y47"/>
+                                        <constraint firstItem="snB-Sp-SAz" firstAttribute="top" secondItem="3h6-4Z-AgE" secondAttribute="top" constant="6" id="dye-26-Dax"/>
+                                        <constraint firstItem="snB-Sp-SAz" firstAttribute="leading" secondItem="3h6-4Z-AgE" secondAttribute="leading" constant="16" id="q6t-pB-hk7"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="segmentedControl" destination="snB-Sp-SAz" id="3d7-Sp-jK9"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="generateCell" rowHeight="44" id="JZB-lg-HQF" customClass="ButtonTableViewCell" customModule="myQRcode" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="187" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JZB-lg-HQF" id="EVM-nA-XEY">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generate QR code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEO-z9-prC">
+                                            <rect key="frame" x="32" y="11.5" width="311" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qEO-z9-prC" firstAttribute="leading" secondItem="EVM-nA-XEY" secondAttribute="leadingMargin" constant="16" id="JJK-Od-Te3"/>
+                                        <constraint firstItem="qEO-z9-prC" firstAttribute="centerY" secondItem="EVM-nA-XEY" secondAttribute="centerY" id="Ppb-Mc-ZUd"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="qEO-z9-prC" secondAttribute="trailing" constant="16" id="aPJ-VI-TLM"/>
+                                        <constraint firstItem="qEO-z9-prC" firstAttribute="centerX" secondItem="EVM-nA-XEY" secondAttribute="centerX" id="v1N-Uc-2gm"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="buttonLabel" destination="qEO-z9-prC" id="ojy-Qm-zSX"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Yqg-wX-zaE" id="6mb-a3-brG"/>
+                            <outlet property="delegate" destination="Yqg-wX-zaE" id="DFt-7f-rcZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Input Data" id="wRj-ek-yHH">
+                        <barButtonItem key="rightBarButtonItem" title="Close" style="done" id="Ueu-BN-pe5">
+                            <connections>
+                                <action selector="dismiss:" destination="Yqg-wX-zaE" id="SoY-R3-eIg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="exy-hU-q2u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4378" y="-1003"/>
+        </scene>
         <!--Navigation-->
         <scene sceneID="hwl-Wn-yNz">
             <objects>
@@ -204,6 +394,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcD-2A-Rh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1170" y="-1003"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lfd-xE-vmp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6YY-1Z-bav" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7UO-Bt-Wbw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VAU-Rp-eFD" kind="relationship" relationship="rootViewController" id="lcz-tU-4G3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FMr-0l-7k6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2852" y="-1003.4482758620691"/>
         </scene>
     </scenes>
     <resources>

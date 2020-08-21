@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 class TipTableViewCell: UITableViewCell {
+    // MARK: - Properties
+    static let reuseIdentifier = "TipTableViewCell"
+    
     @IBOutlet weak var tipTitle: UILabel!
     @IBOutlet weak var tipDesc: UILabel!
     @IBOutlet weak var purchaseButton: BorderedButton!

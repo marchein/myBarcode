@@ -25,6 +25,31 @@
 "dark_icon" = "Dunkel";
 
 "date_scanning" = "Zeitpunkt des Einscannens";
+"result_headline" = "Inhalt des gescannten QR Codes";
+
+"no_scan_history" = "Bisher wurden noch kein QR Code gescannt";
+"no_generate_history" = "Bisher wurde noch kein QR Code generiert";
+
+"message_okay_action" = "Verstanden";
+
+"no_qr_code_error" = "Kein QR Code";
+"no_qr_code_error_description" = "myQRcode war nicht in der Lage einen QR Code im ausgewählten Bild zu entdecken";
+
+/* Templates */
+/* WiFi Template*/
+"wifi_template" = "WLAN Zugangsdaten";
+"wifi_security" = "Sicherheit des WLAN Netzwerkes";
+"wifi_name" = "Name des WLAN Netzwerkes";
+"wifi_password" = "Passwort des WLAN Netzwerkes";
+/* E-Mail Template */
+"email_template" = "E-Mail Adresse";
+"email_address" = "E-Mail Addresse";
+/* Phone Template */
+"phone_template" = "Telefon Anruf";
+"phone_number" = "Telefonnummer";
+/* Message Template */
+"message_template" = "Telefon Nachricht";
+"message_number" = "Telefonnummer";
 
 /* No comment provided by engineer. */
 "" = "";

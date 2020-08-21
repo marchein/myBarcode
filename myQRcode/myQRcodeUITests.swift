@@ -216,4 +216,25 @@ class myQRcodeUITests: XCTestCase {
         sleep(2)
         saveScreenshot(name: "07_scanner_history.jpeg")
     }
+    
+    func testNewScreenshotsEN() {
+        
+        let app = XCUIApplication()
+        let tablesQuery = app.tables
+        tablesQuery/*@START_MENU_TOKEN@*/.textFields["Content of the QR code"]/*[[".cells.textFields[\"Content of the QR code\"]",".textFields[\"Content of the QR code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.staticTexts["Continue"]/*[[".otherElements[\"UIContinuousPathIntroductionView\"]",".buttons[\"Continue\"].staticTexts[\"Continue\"]",".staticTexts[\"Continue\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Generate QR code"]/*[[".cells.buttons[\"Generate QR code\"]",".buttons[\"Generate QR code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let historyButton = app.navigationBars["myQRcode"].buttons["History"]
+        historyButton.tap()
+        app.navigationBars["History"].buttons["Close"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Templates"]/*[[".cells.staticTexts[\"Templates\"]",".staticTexts[\"Templates\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["WiFi login data"]/*[[".cells.staticTexts[\"WiFi login data\"]",".staticTexts[\"WiFi login data\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery.children(matching: .cell).element(boundBy: 1).children(matching: .textField).element.tap()
+        tablesQuery.children(matching: .cell).element(boundBy: 2).children(matching: .textField).element.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Generate QR code"]/*[[".cells.staticTexts[\"Generate QR code\"]",".staticTexts[\"Generate QR code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        historyButton.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["WIFI:T:WPA;S:Wifi name;P:password123;;"]/*[[".cells.staticTexts[\"WIFI:T:WPA;S:Wifi name;P:password123;;\"]",".staticTexts[\"WIFI:T:WPA;S:Wifi name;P:password123;;\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+                
+    }
 }

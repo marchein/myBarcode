@@ -40,3 +40,28 @@
 
 /* Class = "UILabel"; text = "Bisher kein QR Code generiert"; ObjectID = "njC-gD-BiU"; */
 "njC-gD-BiU.text" = "Bisher kein QR Code generiert";
+
+
+/* Generate View Controller */
+/* Templates Button */
+"beF-PC-LeV.text" = "Vorlagen";
+
+/* Templates View Controller */
+/* Title */
+"ygU-Zj-EFm.title" = "Vorlagen";
+/* Close Button */
+"Z2y-HK-CYq.title" = "Schließen";
+/* Template Name Placeholder */
+"XNl-he-7ff.text" = "TEMPLATE_NAME";
+
+
+/* Enter Data to Template View Controller */
+/* Title */
+"wRj-ek-yHH.title" = "Daten eingeben";
+/* Close Button */
+"Ueu-BN-pe5.title" = "Schließen";
+/* Segmented Control */
+"snB-Sp-SAz.segmentTitles[0]" = "PLACEHOLDER";
+"snB-Sp-SAz.segmentTitles[1]" = "PLACEHOLDER";
+/* Generate Button */
+"qEO-z9-prC.text" = "QR Code generieren";

@@ -28,6 +28,9 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
                 productsArray.append(product)
             }
             productsArray = productsArray.reversed()
+            productsArray.sort(by: { (p0, p1) -> Bool in
+                return p0!.price.floatValue < p1!.price.floatValue
+            })
         } else {
             print("There are no products.")
         }
