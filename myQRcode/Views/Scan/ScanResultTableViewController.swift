@@ -34,7 +34,7 @@ class ScanResultTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TextViewTableViewCell.reuseIdentifier, for: indexPath) as! TextViewTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: TextViewTableViewCell.Identifier, for: indexPath) as! TextViewTableViewCell
         cell.textView?.text = self.historyItem.content
         return cell
     }

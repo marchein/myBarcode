@@ -14,8 +14,8 @@
             filePath = "myQRcode/myQRcodeUITests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "myQRcodeUITests"
             landmarkType = "3">
          </BreakpointContent>
@@ -30,10 +30,23 @@
             filePath = "myQRcode/Views/Scan/ScanViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "setupScanner()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         <BreakpointContent
+            uuid = "E8175521-97D5-46FD-B766-7828DBBC882B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = ""
+            moduleName = "">
+            <Locations>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

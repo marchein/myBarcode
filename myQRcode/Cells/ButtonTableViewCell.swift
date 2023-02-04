@@ -11,7 +11,7 @@ import UIKit
 class ButtonTableViewCell: UITableViewCell {
     
     // MARK: - Properties
-    static let reuseIdentifier = "ButtonTableViewCell"
+    static let Identifier = "ButtonTableViewCell"
     
     @IBOutlet weak var buttonLabel: UILabel!
     

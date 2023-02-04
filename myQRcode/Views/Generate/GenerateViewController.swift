@@ -31,7 +31,6 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         qrCodeImageView.image = #imageLiteral(resourceName: "Blank QR")
         exportButton.isEnabled = false
         
-        
         qrContentTextField.addTarget(self, action: #selector(checkIfGenerationIsPossible), for: UIControl.Event.editingChanged)
         
         checkIfGenerationIsPossible()
@@ -74,7 +73,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     
     @objc func checkIfGenerationIsPossible() {
         let currentCount = qrContentTextField.text?.count ?? 0
-        generateButton.isEnabled = currentCount > 0 && currentCount < 1000
+        generateButton.isEnabled = currentCount > 0 && currentCount < 1500
     }
     
     func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem] {
@@ -148,13 +147,13 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showHistory" {
+        if segue.identifier == myQRcodeSegues.ShowHistorySegue {
             guard let historyNavVC = segue.destination as? UINavigationController, let historyVC = historyNavVC.children[0] as? HistoryTableViewController else {
                 return
             }
             historyVC.delegate = self
             historyVC.category = .generate
-        } else if segue.identifier == Segues.GenerateToTemplateSegue {
+        } else if segue.identifier == myQRcodeSegues.GenerateToTemplateSegue {
             guard let templateNavVC = segue.destination as? UINavigationController, let templateList = templateNavVC.children[0] as? TemplateListTableViewController else {
                 return
             }

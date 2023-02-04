@@ -29,22 +29,22 @@ class TemplateListTableViewController: UITableViewController {
         return Model.Templates.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "templateCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.TemplateCell, for: indexPath)
         cell.textLabel?.text = Model.Templates[indexPath.row].name
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Segues.EditTemplateSegue, sender: Model.Templates[indexPath.row])
+        performSegue(withIdentifier: myQRcodeSegues.EditTemplateSegue, sender: Model.Templates[indexPath.row])
     }
 
     // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Segues.EditTemplateSegue, let editVC = segue.destination as? TemplateEditingTableViewController {
+        if segue.identifier == myQRcodeSegues.EditTemplateSegue, let editVC = segue.destination as? TemplateEditingTableViewController {
+            // provide selected template to editing VC
             editVC.selectedTemplate = sender as? Template
+            // provide generate VC to editing VC
             editVC.generateVC = self.generateVC
         }
     }

@@ -12,15 +12,13 @@ import StoreKit
 
 // MARK: - Table View Extension
 extension SettingsTableViewController {
-    
+
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        if section == 2 {
-            return NSLocalizedString("caution_desc", comment: "")
+        if section == tableView.numberOfSections - 1 {
+            return "\(NSLocalizedString("SETTINGS_DEVELOPER_GREETING", comment: "")) (Version \(myQRcode.versionString) - Build \(myQRcode.buildNumber))"
         }
         return nil
     }
-    
-    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let selectedCell = tableView.cellForRow(at: indexPath) else { return }
@@ -32,7 +30,11 @@ extension SettingsTableViewController {
             openSafariViewControllerWith(url: myQRcode.website)
             break
         case rateCell:
-            SKStoreReviewController.requestReview()
+            if #available(iOS 14.0, *) {
+                SKStoreReviewController.requestReviewInCurrentScene()
+            } else {
+                SKStoreReviewController.requestReview()
+            }
             break
         case appStoreCell:
             appStoreAction()

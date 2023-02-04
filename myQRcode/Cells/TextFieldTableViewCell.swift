@@ -10,6 +10,7 @@ import UIKit
 
 class TextFieldTableViewCell: UITableViewCell {
     
+    // MARK: - Properties
     static let Identifier = "TextFieldTableViewCell"
 
     @IBOutlet weak var textField: UITextField!

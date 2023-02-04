@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B1551C7298D85DB00A4438B /* SKStoreReviewController+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1551C6298D85DB00A4438B /* SKStoreReviewController+Request.swift */; };
 		5B1C2CCB24EFEB4C003544D7 /* ScanViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1C2CCA24EFEB4C003544D7 /* ScanViewController+ImagePicker.swift */; };
 		5B1C2CCD24EFFB8A003544D7 /* TextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1C2CCC24EFFB8A003544D7 /* TextViewTableViewCell.swift */; };
 		5B2AE31021AA017E00976FE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AE30F21AA017E00976FE2 /* AppDelegate.swift */; };
@@ -30,6 +31,10 @@
 		5B67630823395B6000C563FD /* Scan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F262339597E005804AA /* Scan.storyboard */; };
 		5B67630923395B6500C563FD /* Generate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F2023395975005804AA /* Generate.storyboard */; };
 		5B915E9123390703008B8B59 /* fa-regular-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B915E90233906EE008B8B59 /* fa-regular-400.ttf */; };
+		5BAA4194298D28B600493175 /* UIDevice+Modelname.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4193298D28B600493175 /* UIDevice+Modelname.swift */; };
+		5BAA4196298D29DD00493175 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4195298D29DD00493175 /* String+Localizable.swift */; };
+		5BAA4197298D29DD00493175 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4195298D29DD00493175 /* String+Localizable.swift */; };
+		5BAA419A298D327600493175 /* ScanViewController+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4199298D327600493175 /* ScanViewController+Demo.swift */; };
 		5BB9DE0623396BF200854E41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BB9DE0823396BF200854E41 /* InfoPlist.strings */; };
 		5BCCE6AA23397445007A78D0 /* ScanRequestAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCCE6A923397445007A78D0 /* ScanRequestAccessViewController.swift */; };
 		5BCF1D4D24ED907C0018A211 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF1D4C24ED907C0018A211 /* Main.storyboard */; };
@@ -72,6 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B1551C6298D85DB00A4438B /* SKStoreReviewController+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKStoreReviewController+Request.swift"; sourceTree = "<group>"; };
 		5B1C2CCA24EFEB4C003544D7 /* ScanViewController+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScanViewController+ImagePicker.swift"; sourceTree = "<group>"; };
 		5B1C2CCC24EFFB8A003544D7 /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
 		5B2AE30C21AA017E00976FE2 /* myQRcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myQRcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +99,10 @@
 		5B642F0623393159005804AA /* AppIcon+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppIcon+TableView.swift"; sourceTree = "<group>"; };
 		5B642F0723393159005804AA /* AppIconTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconTableViewController.swift; sourceTree = "<group>"; };
 		5B915E90233906EE008B8B59 /* fa-regular-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-regular-400.ttf"; sourceTree = "<group>"; };
+		5BAA4193298D28B600493175 /* UIDevice+Modelname.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Modelname.swift"; sourceTree = "<group>"; };
+		5BAA4195298D29DD00493175 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
+		5BAA4198298D2CDD00493175 /* myQRcode.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = myQRcode.entitlements; sourceTree = "<group>"; };
+		5BAA4199298D327600493175 /* ScanViewController+Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScanViewController+Demo.swift"; sourceTree = "<group>"; };
 		5BB9DE0423396BCF00854E41 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BB9DE0723396BF200854E41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5BB9DE0923396BF400854E41 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -209,12 +219,13 @@
 				5BE4AA9B21AAF6A300D69E18 /* Cells */,
 				5BE4AAAA21AAF70900D69E18 /* Utilities */,
 				5BE4AAA321AAF6E000D69E18 /* Extensions */,
-				5B2AE31621AA017F00976FE2 /* Assets.xcassets */,
-				5B5C98A62339299000030C75 /* Alternative App Icons */,
 				5B2AE30F21AA017E00976FE2 /* AppDelegate.swift */,
-				5BB9DE0423396BCF00854E41 /* Info.plist */,
+				5BAA4198298D2CDD00493175 /* myQRcode.entitlements */,
 				5BB9DE0823396BF200854E41 /* InfoPlist.strings */,
 				5BEC8A23223FDF1B00BDF642 /* Localizable.strings */,
+				5B2AE31621AA017F00976FE2 /* Assets.xcassets */,
+				5B5C98A62339299000030C75 /* Alternative App Icons */,
+				5BB9DE0423396BCF00854E41 /* Info.plist */,
 			);
 			path = myQRcode;
 			sourceTree = "<group>";
@@ -240,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				5BF98BC021AB371D00AA5BBC /* myQRcodeUITests.swift */,
+				5BAA4193298D28B600493175 /* UIDevice+Modelname.swift */,
 				5B5FAAA124E97E6B00E719D4 /* Info.plist */,
 			);
 			path = myQRcodeUITests;
@@ -259,6 +271,7 @@
 			children = (
 				5BD63BC921AEBE4200885382 /* ScanViewController.swift */,
 				5B1C2CCA24EFEB4C003544D7 /* ScanViewController+ImagePicker.swift */,
+				5BAA4199298D327600493175 /* ScanViewController+Demo.swift */,
 				5BFE10DF24E96C3B00415E90 /* ScanResultTableViewController.swift */,
 				5BCCE6A923397445007A78D0 /* ScanRequestAccessViewController.swift */,
 			);
@@ -307,6 +320,8 @@
 				5B3D61CE24E92FA000C01F34 /* UIImage+Base64.swift */,
 				5B4B4AA324E93F2700E44302 /* HistoryItem+Date.swift */,
 				5B4B4AA724E9596200E44302 /* ActivityIndicatorOverlay.swift */,
+				5BAA4195298D29DD00493175 /* String+Localizable.swift */,
+				5B1551C6298D85DB00A4438B /* SKStoreReviewController+Request.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -326,9 +341,9 @@
 			children = (
 				5B5C98A9233929E200030C75 /* AppIcon.swift */,
 				5B3D61CC24E92C5300C01F34 /* QRCode.swift */,
-				5B3D621624E9355B00C01F34 /* History.xcdatamodeld */,
 				5BE530FD24F02310006A225D /* Template.swift */,
 				5BE5310424F02548006A225D /* Model.swift */,
+				5B3D621624E9355B00C01F34 /* History.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -409,7 +424,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = "Marc Hein Webdesign";
 				TargetAttributes = {
 					5B2AE30B21AA017E00976FE2 = {
@@ -487,12 +502,14 @@
 				5B2AE31221AA017E00976FE2 /* GenerateViewController.swift in Sources */,
 				5BE4AAB021AAF7CC00D69E18 /* UIView+Effects.swift in Sources */,
 				5BE5310724F0301A006A225D /* SegmentedControlTableViewCell.swift in Sources */,
+				5BAA419A298D327600493175 /* ScanViewController+Demo.swift in Sources */,
 				5B642F0823393159005804AA /* AppIcon+TableView.swift in Sources */,
 				5B642F0323392EC4005804AA /* AppIconTableViewCell.swift in Sources */,
 				5B5C98AA233929E200030C75 /* AppIcon.swift in Sources */,
 				5B4B4AA824E9596200E44302 /* ActivityIndicatorOverlay.swift in Sources */,
 				5BE4AA9321AAF62E00D69E18 /* TipJar+TableView.swift in Sources */,
 				5B4B4AA224E93D0300E44302 /* HistoryTableViewController.swift in Sources */,
+				5BAA4196298D29DD00493175 /* String+Localizable.swift in Sources */,
 				5BE4AA9221AAF62E00D69E18 /* TipJar+Transaction.swift in Sources */,
 				5BE5310124F0250E006A225D /* TemplateEditingTableViewController.swift in Sources */,
 				5BE4AA9821AAF62E00D69E18 /* Settings+SendSupportMail.swift in Sources */,
@@ -512,6 +529,7 @@
 				5BE530FE24F02310006A225D /* Template.swift in Sources */,
 				5BE530FC24F0192F006A225D /* NoItemsView.swift in Sources */,
 				5BE4AA9721AAF62E00D69E18 /* SettingsTableViewController.swift in Sources */,
+				5B1551C7298D85DB00A4438B /* SKStoreReviewController+Request.swift in Sources */,
 				5BE5310524F02548006A225D /* Model.swift in Sources */,
 				5BFE10E024E96C3B00415E90 /* ScanResultTableViewController.swift in Sources */,
 				5B1C2CCB24EFEB4C003544D7 /* ScanViewController+ImagePicker.swift in Sources */,
@@ -522,7 +540,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BAA4194298D28B600493175 /* UIDevice+Modelname.swift in Sources */,
 				5B5FAAA724E97E7300E719D4 /* myQRcodeUITests.swift in Sources */,
+				5BAA4197298D29DD00493175 /* String+Localizable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +653,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -695,6 +716,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -728,21 +750,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = myQRcode/myQRcode.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/myQRcode/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = myQRcode;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "";
@@ -753,21 +782,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = myQRcode/myQRcode.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/myQRcode/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = myQRcode;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "";

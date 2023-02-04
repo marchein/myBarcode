@@ -9,7 +9,6 @@
 import UIKit
 
 class TemplateEditingTableViewController: UITableViewController, UITextFieldDelegate {
-    
     var selectedTemplate: Template?
     var generateVC: GenerateViewController?
     var textFields: [UITextField] = []
@@ -37,7 +36,6 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
         return 1
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let template = selectedTemplate else {
             fatalError("Template is not set")
@@ -51,10 +49,16 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
                 self.isSetup = true
                 return cell
             } else {
-                return tableView.dequeueReusableCell(withIdentifier: TextFieldTableViewCell.Identifier, for: indexPath) as! TextFieldTableViewCell
+                let textFieldTableViewCell = tableView.dequeueReusableCell(withIdentifier: TextFieldTableViewCell.Identifier, for: indexPath) as! TextFieldTableViewCell
+                
+                if let placeholder = selectedTemplate?.placeholders[indexPath.section] {
+                    textFieldTableViewCell.textField.placeholder = placeholder
+                }
+
+                return textFieldTableViewCell
             }
         } else {
-            return tableView.dequeueReusableCell(withIdentifier: "generateCell", for: indexPath)
+            return tableView.dequeueReusableCell(withIdentifier: Cells.GenerateCell, for: indexPath)
         }
     }
     
@@ -62,11 +66,8 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
         guard let template = selectedTemplate else {
             return nil
         }
-        if template.parameters.count > section {
-            return template.parameters[section]
-        } else {
-            return nil
-        }
+        
+        return template.parameters.count > section ? template.parameters[section] : nil
     }
     
     
@@ -79,7 +80,8 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
     
     func generateButtonTapped() {
         var parameters: [String] = []
-        for i in 0..<tableView.numberOfSections - 1 {
+        let numberOfButtons = tableView.numberOfSections - 1
+        for i in 0..<numberOfButtons {
             let indexPath = IndexPath(row: 0, section: i)
             let cell = tableView.cellForRow(at: indexPath)
             if let segmentedCell = cell as? SegmentedControlTableViewCell, let options = segmentedCell.options {
@@ -90,6 +92,7 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
         }
         let usedTemplate = self.selectedTemplate!.copy() as! Template
         usedTemplate.parameters = parameters
+        
         self.dismiss(animated: true) {
             if let resultString = usedTemplate.resultString, let generateVC = self.generateVC {
                 generateVC.enterQR(content: resultString)
@@ -99,14 +102,13 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
     
     private func setupTextFields() {
         let numberOfLastImportantTF = selectedTemplate == Model.Templates[0] ? 2 : 1
-        for i in 0..<tableView.numberOfSections - numberOfLastImportantTF {
-            let indexPath = IndexPath(row: 0, section: i)
+        for sectionIndex in 0..<tableView.numberOfSections - numberOfLastImportantTF {
+            let indexPath = IndexPath(row: 0, section: sectionIndex)
             let cell = tableView.cellForRow(at: indexPath)
             if let textFieldCell = cell as? TextFieldTableViewCell {
                 self.textFields.append(textFieldCell.textField)
                 textFieldCell.textField.delegate = self
                 textFieldCell.textField.addTarget(self, action: #selector(setGenerateButton), for: UIControl.Event.editingChanged)
-
             }
         }
         self.setGenerateButton()
@@ -122,18 +124,10 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
     }
     
     @objc func setGenerateButton() {
-        let generateCell = tableView.cellForRow(at: IndexPath(row: 0, section: self.tableView.numberOfSections - 1)) as! ButtonTableViewCell
+        // last section is always generate button
+        let sectionOfGenerateButton = self.tableView.numberOfSections - 1
+        let generateCell = tableView.cellForRow(at: IndexPath(row: 0, section: sectionOfGenerateButton)) as! ButtonTableViewCell
+        generateCell.accessibilityIdentifier = "generateQRCodeFromTemplateCell"
         generateCell.isEnabled = checkIfGenerationIsPossible()
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

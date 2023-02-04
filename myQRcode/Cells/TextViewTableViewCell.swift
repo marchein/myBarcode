@@ -11,7 +11,7 @@ import UIKit
 class TextViewTableViewCell: UITableViewCell {
     
     // MARK: - Properties
-    static let reuseIdentifier = "TextViewTableViewCell"
+    static let Identifier = "TextViewTableViewCell"
     
     @IBOutlet weak var textView: UITextView!
     

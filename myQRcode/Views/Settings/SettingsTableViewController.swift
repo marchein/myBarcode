@@ -13,7 +13,6 @@ import SafariServices
 class SettingsTableViewController: UITableViewController {
 
     // MARK:- Outlets
-    @IBOutlet weak var appVersionCell: UITableViewCell!
     @IBOutlet weak var contactMailCell: UITableViewCell!
     @IBOutlet weak var developerTwitterCell: UITableViewCell!
     @IBOutlet weak var appStoreCell: UITableViewCell!
@@ -21,16 +20,13 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var developerCell: UITableViewCell!
     @IBOutlet weak var appIconIV: UIImageView!
     
-    
     // MARK:- Class Attributes
     private var hasTipped = false
     private var currentAppIcon: String?
 
-    
     // MARK: System Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        appVersionCell.detailTextLabel?.text = "\(myQRcode.versionString) (\(myQRcode.buildNumber))"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +37,7 @@ class SettingsTableViewController: UITableViewController {
     }
     
     fileprivate func reconfigureView() {
+        configureNavigator()
         currentAppIcon = UserDefaults.standard.string(forKey: localStoreKeys.currentAppIcon)
         if !myQRcode.appIcons.contains(iconName: currentAppIcon) {
             currentAppIcon = myQRcode.defaultAppIcon
@@ -52,6 +49,13 @@ class SettingsTableViewController: UITableViewController {
             appIconIV.roundCorners(radius: 6)
         }
         tableView.reloadData()
+    }
+    
+    private func configureNavigator() {
+        guard let navigationController = navigationController else { return }
+        navigationController.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .automatic
+        navigationController.navigationBar.sizeToFit()
     }
     
     func appStoreAction() {

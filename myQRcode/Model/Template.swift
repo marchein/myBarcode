@@ -10,24 +10,30 @@ import Foundation
 
 class Template: CustomStringConvertible, NSCopying, Equatable {
     static func == (lhs: Template, rhs: Template) -> Bool {
-        return lhs.name == rhs.name && lhs.parameters == rhs.parameters && lhs.parameterType == rhs.parameterType && lhs.templateString == rhs.templateString && lhs.options == rhs.options
+        return lhs.name == rhs.name && lhs.parameters == rhs.parameters && lhs.parameterType == rhs.parameterType && lhs.placeholders == rhs.placeholders && lhs.templateString == rhs.templateString && lhs.options == rhs.options
     }
     
     func copy(with zone: NSZone? = nil) -> Any {
-        return Template(name: name, templateString: templateString, parameters: parameters, parameterType: parameterType, options: options)
+        return Template(name: name, templateString: templateString, parameters: parameters, parameterType: parameterType, placeholders: placeholders, options: options)
     }
     
     var name: String
     var parameters: [String]
     var parameterType: [TemplateParameterType]
+    var placeholders: [String?]
     var templateString: String
     var options: [[String]?]
     
     
-    init(name: String, templateString: String, parameters: [String], parameterType: [TemplateParameterType], options: [[String]?]) {
+    init(name: String, templateString: String, parameters: [String], parameterType: [TemplateParameterType], placeholders: [String?], options: [[String]?]) {
         if parameters.count != parameterType.count {
             fatalError("Number of parameters must be equal to number of descriptions")
         }
+        
+        if parameters.count != placeholders.count {
+            fatalError("Every parameter needs a placeholder text")
+        }
+        
         if options.count != parameters.count {
             fatalError("Options must always be given!")
         }
@@ -36,6 +42,7 @@ class Template: CustomStringConvertible, NSCopying, Equatable {
         self.templateString = templateString
         self.parameters = parameters
         self.parameterType = parameterType
+        self.placeholders = placeholders
         self.options = options
     }
     
@@ -44,7 +51,7 @@ class Template: CustomStringConvertible, NSCopying, Equatable {
     }()
     
     var description: String {
-        return "Name: \(name), Parameters: \(parameters), Parameter Type: \(parameterType), Template String: \(templateString), Options: \(options)"
+        return "Name: \(name), Template String: \(templateString), Parameters: \(parameters), Parameter Type: \(parameterType), Placeholders: \(placeholders), Options: \(options)"
     }
 }
 

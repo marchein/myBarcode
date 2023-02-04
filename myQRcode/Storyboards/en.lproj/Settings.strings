@@ -27,7 +27,7 @@
 "XYV-nO-z1g.title" = "Change app icon";
 
 /* Class = "UILabel"; text = "Support myQRcode"; ObjectID = "aeI-rr-3yC"; */
-"aeI-rr-3yC.text" = "Support myQRcode";
+"aeI-rr-3yC.text" = "Donate to myQRcode";
 
 /* Class = "UITableViewController"; title = "About"; ObjectID = "d3V-32-RIX"; */
 "d3V-32-RIX.title" = "About";
@@ -58,6 +58,3 @@
 
 /* Class = "UILabel"; text = "tip_desc"; ObjectID = "xM9-69-5s4"; */
 "xM9-69-5s4.text" = "tip_desc";
-
-/* Class = "UILabel"; text = "App Version"; ObjectID = "yTy-05-oos"; */
-"yTy-05-oos.text" = "App Version";

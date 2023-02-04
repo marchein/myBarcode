@@ -43,7 +43,7 @@
 "wifi_password" = "Passwort des WLAN Netzwerkes";
 /* E-Mail Template */
 "email_template" = "E-Mail Adresse";
-"email_address" = "E-Mail Addresse";
+"email_address" = "E-Mail Adresse";
 /* Phone Template */
 "phone_template" = "Telefon Anruf";
 "phone_number" = "Telefonnummer";
@@ -51,5 +51,8 @@
 "message_template" = "Telefon Nachricht";
 "message_number" = "Telefonnummer";
 
-/* No comment provided by engineer. */
-"" = "";
+/* Templates */
+"TEMPLATES_PLACEHOLDER_WIFI_NAME" = "WLAN Name";
+
+/* Settings */
+"SETTINGS_DEVELOPER_GREETING" = "Erstellt mit ❤️ in Trier";

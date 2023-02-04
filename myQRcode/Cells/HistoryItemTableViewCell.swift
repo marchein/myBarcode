@@ -11,7 +11,7 @@ import UIKit
 class HistoryItemTableViewCell: UITableViewCell {
 
     // MARK: - Properties
-    static let reuseIdentifier = "HistoryItemTableCell"
+    static let Identifier = "HistoryItemTableCell"
     
     // MARK: -
     var historyItem: HistoryItem? {

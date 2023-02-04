@@ -11,7 +11,7 @@ import UIKit
 
 class TipTableViewCell: UITableViewCell {
     // MARK: - Properties
-    static let reuseIdentifier = "TipTableViewCell"
+    static let Identifier = "TipTableViewCell"
     
     @IBOutlet weak var tipTitle: UILabel!
     @IBOutlet weak var tipDesc: UILabel!

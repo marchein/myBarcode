@@ -63,7 +63,11 @@ func incrementCodeValue(of: String) {
 }
 
 func showRateWindow() {
-    SKStoreReviewController.requestReview()
+    if #available(iOS 14.0, *) {
+        SKStoreReviewController.requestReviewInCurrentScene()
+    } else {
+        SKStoreReviewController.requestReview()
+    }
 }
 
 func convertCIImageToCGImage(inputImage: CIImage) -> CGImage? {

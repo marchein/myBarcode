@@ -24,7 +24,7 @@ extension TipJarTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "introCell")
+            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: Cells.TipIntroCell)
             cell.textLabel?.text = "\(NSLocalizedString("tip_greeting", comment: "")) 😌"
             cell.detailTextLabel?.numberOfLines = 0
             cell.detailTextLabel?.lineBreakMode = .byWordWrapping
@@ -33,7 +33,7 @@ extension TipJarTableViewController {
             cell.isUserInteractionEnabled = false
             return cell
         } else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "tipCell", for: indexPath) as! TipTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: TipTableViewCell.Identifier, for: indexPath) as! TipTableViewCell
             if productsArray.count > indexPath.row {
                 if let product = productsArray[indexPath.row] {
                     cell.tipTitle.text = product.localizedTitle

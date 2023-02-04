@@ -47,7 +47,8 @@
 "message_template" = "Phone message";
 "message_number" = "Phone number";
 
+/* Templates */
+"TEMPLATES_PLACEHOLDER_WIFI_NAME" = "WiFi Name";
 
-
-/* No comment provided by engineer. */
-"" = "";
+/* Settings */
+"SETTINGS_DEVELOPER_GREETING" = "Created with ❤️ in Trier";

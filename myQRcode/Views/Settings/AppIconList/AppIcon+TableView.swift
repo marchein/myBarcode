@@ -35,7 +35,7 @@ extension AppIconTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "appIcons", for: indexPath) as! AppIconTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: AppIconTableViewCell.Identifier, for: indexPath) as! AppIconTableViewCell
         configureCell(cell: cell, on: indexPath)
         return cell
     }

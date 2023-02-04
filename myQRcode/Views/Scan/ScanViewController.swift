@@ -38,13 +38,10 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         
         if !isSimulator() && AVCaptureDevice.authorizationStatus(for: .video) ==  .authorized {
             self.setupScanner()
+            // self.setupDemoHistory()
         } else {
             self.requestAccess()
         }
-        
-        /*if isSimulator() {
-         self.setupDemoHistory()
-         }*/
         
         NotificationCenter.default.addObserver(self, selector: #selector(resetScanner), name:NSNotification.Name(rawValue: "resetView"), object: nil)
     }
@@ -108,42 +105,19 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     @objc func resetScanner() {
         self.resetQrCodeFrame()
         self.isReadyToScan = true
-        self.captureSession.startRunning()
-    }
-    
-    func setupDemoScanner() {
-        let lang = Bundle.main.preferredLocalizations.first?.prefix(2) ?? "en"
-        let imageView = UIImageView(image: lang == "en" ? imageEN : imageDE)
-        imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        imageView.contentMode = .scaleAspectFill
-        view.addSubview(imageView)
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(tapGestureRecognizer)
-    }
-    
-    func setupDemoHistory() {
-        let demoStrings = ["https://marc-hein.de", "myQRcode", "BLÅHAJ", "Whatever", "0000 is the best pin"]
-        for string in demoStrings {
-            self.finishedScanning(content: string, performSegueValue: false)
-        }
-    }
-    
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        let tappedImageView = tapGestureRecognizer.view as! UIImageView
-        let tappedImage = tappedImageView.image!
-        
-        if tappedImage == imageDE {
-            finishedScanning(content: "Hallo und herzlich willkommen zu myQRcode")
-        } else {
-            finishedScanning(content: "Hello and welcome to myQRcode")
+        DispatchQueue.global(qos: .background).async {
+            self.captureSession.startRunning()
         }
     }
     
     func setupScanner() {
         if !isSimulator() {
+            #if targetEnvironment(macCatalyst)
+            let deviceDiscoverySession = AVCaptureDevice.default(for: .video)
+            #else
             let deviceDiscoverySession = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
+            #endif
+            
             
             guard let captureDevice = deviceDiscoverySession else {
                 print("Failed to get the camera device")
@@ -234,14 +208,14 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         let qrCode = QRCode(content: content, category: .scan)
         incrementCodeValue(of: localStoreKeys.codeScanned)
         if performSegueValue {
-            performSegue(withIdentifier: "resultSegue", sender: qrCode.coreDataObject)
+            performSegue(withIdentifier: myQRcodeSegues.ResultSegue, sender: qrCode.coreDataObject)
         } else {
             _ = qrCode.coreDataObject
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "resultSegue" {
+        if segue.identifier == myQRcodeSegues.ResultSegue {
             guard let resultNavVC = segue.destination as? UINavigationController, let resultVC = resultNavVC.children[0] as? ScanResultTableViewController else {
                 return
             }
@@ -249,7 +223,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             resultVC.scanVC = self
             
             self.prepareResultScreen()
-        } else if segue.identifier == "showHistory" {
+        } else if segue.identifier == myQRcodeSegues.ShowHistorySegue {
             guard let historyNavVC = segue.destination as? UINavigationController, let historyVC = historyNavVC.children[0] as? HistoryTableViewController else {
                 return
             }
@@ -265,6 +239,6 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     func userSelectedHistoryItem(item: HistoryItem) {
         self.prepareResultScreen()
-        self.performSegue(withIdentifier: "resultSegue", sender: item)
+        self.performSegue(withIdentifier: myQRcodeSegues.ResultSegue, sender: item)
     }
 }

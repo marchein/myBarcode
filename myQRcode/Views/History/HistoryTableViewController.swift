@@ -93,7 +93,7 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HistoryItemTableViewCell.reuseIdentifier, for: indexPath) as? HistoryItemTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HistoryItemTableViewCell.Identifier, for: indexPath) as? HistoryItemTableViewCell else {
             fatalError("Unexpected Index Path")
         }
         
@@ -104,7 +104,6 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
     
     private func configureCell(cell: HistoryItemTableViewCell, indexPath: IndexPath) {
         guard let historyItem = self.fetchedResultsController?.object(at: indexPath) else {
-            //self.showAlert(alertText: "Fehler", alertMessage: "No mood retrieved for indexPath: \(indexPath)", closeButton: "Schließen")
             fatalError("No historyItem retrieved for indexPath: \(indexPath)")
         }
         cell.historyItem = historyItem
@@ -112,7 +111,6 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let historyItem = self.fetchedResultsController?.object(at: indexPath) else {
-            //self.showAlert(alertText: "Fehler", alertMessage: "No mood retrieved for indexPath: \(indexPath)", closeButton: "Schließen")
             fatalError("No historyItem retrieved for indexPath: \(indexPath)")
         }
         if self.category == HistoryCategory.generate {
@@ -183,6 +181,6 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
 }
 
 // protocol used for sending data back
-protocol HistoryItemDelegate: class {
+protocol HistoryItemDelegate: AnyObject {
     func userSelectedHistoryItem(item: HistoryItem)
 }

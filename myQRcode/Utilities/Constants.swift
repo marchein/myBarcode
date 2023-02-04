@@ -23,6 +23,23 @@ struct localStoreKeys {
     static let codeScanned = "codeScanned"
 }
 
+// MARK: - Cells
+struct Cells {
+    static let GenerateCell = "generateCell"
+    static let TemplateCell = "templateCell"
+    static let AppIconCell  = "appIcons"
+    static let TipIntroCell = "introCell"
+    static let TipCell      = "tipCell"
+}
+
+// MARK: - Segues
+struct myQRcodeSegues {
+    static let ResultSegue = "resultSegue"
+    static let ShowHistorySegue = "showHistory"
+    static let GenerateToTemplateSegue = "GenerateToTemplateSegue"
+    static let EditTemplateSegue = "editTemplateSegue"
+}
+
 struct myQRcodeIAP {
     static let smallTip = "de.marc_hein.myQRcode.tip.small"
     static let mediumTip = "de.marc_hein.myQRcode.tip.medium"
