@@ -3,7 +3,7 @@
   myQRcode
 
   Created by Marc Hein on 23.09.19.
-  Copyright © 2019 Marc Hein Webdesign. All rights reserved.
+  Copyright © 2023 Marc Hein. All rights reserved.
 */
 
 "NSCameraUsageDescription" = "Diese Anwendungs benötigt Zugriff auf die Rückkamera um QR Codes zu scannen";

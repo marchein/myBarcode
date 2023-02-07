@@ -3,21 +3,20 @@
 //  myQRcode
 //
 //  Created by Marc Hein on 24.11.18.
-//  Copyright © 2018 Marc Hein Webdesign. All rights reserved.
+//  Copyright © 2023 Marc Hein. All rights reserved.
 //
 
-import UIKit
 import CoreData
+import UIKit
 
 class GenerateViewController: UITableViewController, UIDragInteractionDelegate, UITextFieldDelegate, HistoryItemDelegate {
-    
-    @IBOutlet weak var qrCodeImageView: UIImageView!
-    @IBOutlet weak var qrContentTextField: UITextField!
-    @IBOutlet weak var generateButton: UIButton!
-    @IBOutlet weak var exportButton: UIButton!
-    @IBOutlet weak var emptyLabel: UILabel!
-    @IBOutlet weak var settingsButton: UIBarButtonItem!
-    @IBOutlet weak var historyButton: UIBarButtonItem!
+    @IBOutlet var qrCodeImageView: UIImageView!
+    @IBOutlet var qrContentTextField: UITextField!
+    @IBOutlet var generateButton: UIButton!
+    @IBOutlet var exportButton: UIButton!
+    @IBOutlet var emptyLabel: UILabel!
+    @IBOutlet var settingsButton: UIBarButtonItem!
+    @IBOutlet var historyButton: UIBarButtonItem!
     
     var qrCodeImage: CIImage!
     var firstAction = true
@@ -35,7 +34,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         
         checkIfGenerationIsPossible()
         if #available(iOS 13.0, *), let tabBarController = navigationController?.parent as? UITabBarController, let items = tabBarController.tabBar.items {
-            var index = 0;
+            var index = 0
             for item in items {
                 if index == 0 {
                     item.image = UIImage(systemName: "qrcode")
@@ -58,15 +57,14 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
             UserDefaults.standard.set(0, forKey: localStoreKeys.codeScanned)
         }
         
-        if #available(iOS 13.0,*)  {
+        if #available(iOS 13.0,*) {
             settingsButton.image = UIImage(systemName: "gear")
             historyButton.image = UIImage(systemName: "clock")
         }
     }
     
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        view.endEditing(true)
         generateButtonAction(textField)
         return false
     }
@@ -93,39 +91,36 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     }
     
     @IBAction func generateButtonAction(_ sender: Any) {
-        guard let qrData = qrContentTextField.text else { return }
+        guard
+            let qrData = qrContentTextField.text
+        else {
+            return
+        }
+        
         qrContentTextField.resignFirstResponder()
         
         if qrCodeImage == nil {
-            if qrData == "" {
-                return
-            }
-            self.tabBarController?.displayAnimatedActivityIndicatorView()
+            tabBarController?.displayAnimatedActivityIndicatorView()
             
             DispatchQueue.global(qos: .background).async {
                 let qrCode = QRCode(content: qrData, category: .generate)
                 DispatchQueue.main.async {
-                    if let resultImage = qrCode.image {
-                        self.displayQRCodeImage(image: resultImage)
-                        incrementCodeValue(of: localStoreKeys.codeGenerated)
-                        _ = qrCode.coreDataObject
-                        self.generateButton.isEnabled = false
-                    } else {
-                        self.tabBarController?.hideAnimatedActivityIndicatorView()
-                    }
+                    let resultImage = qrCode.generateImage()
+                    self.displayQRCodeImage(image: resultImage)
+                    incrementCodeValue(of: localStoreKeys.codeGenerated)
+                    _ = qrCode.coreDataObject
                 }
             }
         }
     }
     
-    func displayQRCodeImage(image: UIImage) {
-        qrCodeImageView.image = image
+    func displayQRCodeImage(image: CIImage) {
+        qrCodeImageView.image = convertCIImageToUIImage(inputImage: image)
         qrCodeImageView.isUserInteractionEnabled = true
         exportButton.isEnabled = true
         
-        self.checkForFirstAction()
-        self.tabBarController?.hideAnimatedActivityIndicatorView()
-        //hud.dismiss()
+        checkForFirstAction()
+        tabBarController?.hideAnimatedActivityIndicatorView()
     }
     
     func checkForFirstAction() {
@@ -143,18 +138,24 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         let activityVC = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
         
         activityVC.popoverPresentationController?.sourceView = sender
-        self.present(activityVC, animated: true, completion: nil)
+        present(activityVC, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == myQRcodeSegues.ShowHistorySegue {
-            guard let historyNavVC = segue.destination as? UINavigationController, let historyVC = historyNavVC.children[0] as? HistoryTableViewController else {
+            guard
+                let historyNavVC = segue.destination as? UINavigationController,
+                let historyVC = historyNavVC.children[0] as? HistoryTableViewController
+            else {
                 return
             }
             historyVC.delegate = self
             historyVC.category = .generate
         } else if segue.identifier == myQRcodeSegues.GenerateToTemplateSegue {
-            guard let templateNavVC = segue.destination as? UINavigationController, let templateList = templateNavVC.children[0] as? TemplateListTableViewController else {
+            guard
+                let templateNavVC = segue.destination as? UINavigationController,
+                let templateList = templateNavVC.children[0] as? TemplateListTableViewController
+            else {
                 return
             }
             templateList.generateVC = self
@@ -162,25 +163,19 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     }
     
     func userSelectedHistoryItem(item: HistoryItem) {
-        self.resetView()
-        self.qrContentTextField.text = item.content
-        self.displayQRCodeImage(image: convertBase64ToImage(imageString: item.imageString!))
+        resetView()
+        enterQR(content: item.content)
     }
     
     func enterQR(content: String?) {
         guard let content = content, content.count > 0 else {
             return
         }
-        self.qrContentTextField.text = content
-        self.checkIfGenerationIsPossible()
-        if self.generateButton.isEnabled {
-            self.generateButtonAction(self)
+        qrContentTextField.text = content
+        checkIfGenerationIsPossible()
+        if generateButton.isEnabled {
+            generateButtonAction(self)
         }
-    }
-    
-    func convertBase64ToImage(imageString: String) -> UIImage {
-        let imageData = Data(base64Encoded: imageString, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!
-        return UIImage(data: imageData)!
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

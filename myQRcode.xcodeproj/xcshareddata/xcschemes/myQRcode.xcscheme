@@ -47,6 +47,17 @@
                ReferencedContainer = "container:myQRcode.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5B1213A32992CA41007FDCE3"
+               BuildableName = "myQRcodeTests.xctest"
+               BlueprintName = "myQRcodeTests"
+               ReferencedContainer = "container:myQRcode.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

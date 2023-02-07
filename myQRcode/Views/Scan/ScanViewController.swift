@@ -3,17 +3,17 @@
 //  myQRcode
 //
 //  Created by Marc Hein on 28.11.18.
-//  Copyright © 2018 Marc Hein Webdesign. All rights reserved.
+//  Copyright © 2023 Marc Hein. All rights reserved.
 //
 
-import UIKit
 import AVFoundation
+import UIKit
 
 class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, HistoryItemDelegate {
-    @IBOutlet weak var pickerButton: UIBarButtonItem!
-    @IBOutlet weak var historyButton: UIBarButtonItem!
-    @IBOutlet weak var errorIcon: UIImageView!
-    @IBOutlet weak var missingPermissionsView: UIView!
+    @IBOutlet var pickerButton: UIBarButtonItem!
+    @IBOutlet var historyButton: UIBarButtonItem!
+    @IBOutlet var errorIcon: UIImageView!
+    @IBOutlet var missingPermissionsView: UIView!
     
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
@@ -30,20 +30,20 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 13.0,*)  {
+        if #available(iOS 13.0,*) {
             self.pickerButton.image = UIImage(systemName: "photo.on.rectangle")
             self.historyButton.image = UIImage(systemName: "clock")
             self.errorIcon.image = UIImage(systemName: "exclamationmark.circle")
         }
         
-        if !isSimulator() && AVCaptureDevice.authorizationStatus(for: .video) ==  .authorized {
-            self.setupScanner()
+        if !isSimulator() && AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
+            setupScanner()
             // self.setupDemoHistory()
         } else {
-            self.requestAccess()
+            requestAccess()
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(resetScanner), name:NSNotification.Name(rawValue: "resetView"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(resetScanner), name: NSNotification.Name(rawValue: "resetView"), object: nil)
     }
     
     func requestAccess() {
@@ -57,13 +57,13 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if isSetup {
-            self.resetScanner()
+            resetScanner()
         }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        self.captureSession.stopRunning()
+        captureSession.stopRunning()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -72,39 +72,38 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     private func updatePreviewLayer(layer: AVCaptureConnection, orientation: AVCaptureVideoOrientation) {
         layer.videoOrientation = orientation
-        if let videoPreviewLayer = self.videoPreviewLayer {
-            videoPreviewLayer.frame = self.view.bounds
+        if let videoPreviewLayer = videoPreviewLayer {
+            videoPreviewLayer.frame = view.bounds
         }
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        if let connection =  self.videoPreviewLayer?.connection  {
-            let currentDevice: UIDevice = UIDevice.current
+        if let connection = videoPreviewLayer?.connection {
+            let currentDevice = UIDevice.current
             let orientation: UIDeviceOrientation = currentDevice.orientation
-            let previewLayerConnection : AVCaptureConnection = connection
+            let previewLayerConnection: AVCaptureConnection = connection
             if previewLayerConnection.isVideoOrientationSupported {
-                switch (orientation) {
-                case .portrait: updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
-                    break
-                case .landscapeRight: updatePreviewLayer(layer: previewLayerConnection, orientation: .landscapeLeft)
-                    break
-                case .landscapeLeft: updatePreviewLayer(layer: previewLayerConnection, orientation: .landscapeRight)
-                    break
-                case .portraitUpsideDown: updatePreviewLayer(layer: previewLayerConnection, orientation: .portraitUpsideDown)
-                    break
-                default: updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
-                    break
+                switch orientation {
+                    case .portrait:
+                        updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
+                    case .landscapeRight:
+                        updatePreviewLayer(layer: previewLayerConnection, orientation: .landscapeLeft)
+                    case .landscapeLeft:
+                        updatePreviewLayer(layer: previewLayerConnection, orientation: .landscapeRight)
+                    case .portraitUpsideDown:
+                        updatePreviewLayer(layer: previewLayerConnection, orientation: .portraitUpsideDown)
+                    default:
+                        updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
                 }
             }
         }
     }
     
-    
     @objc func resetScanner() {
-        self.resetQrCodeFrame()
-        self.isReadyToScan = true
+        resetQrCodeFrame()
+        isReadyToScan = true
         DispatchQueue.global(qos: .background).async {
             self.captureSession.startRunning()
         }
@@ -117,7 +116,6 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             #else
             let deviceDiscoverySession = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
             #endif
-            
             
             guard let captureDevice = deviceDiscoverySession else {
                 print("Failed to get the camera device")
@@ -134,7 +132,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                     
                     if captureSession.inputs.isEmpty {
                         let deviceInput = try AVCaptureDeviceInput(device: captureDevice)
-                        self.captureSession.addInput(deviceInput)
+                        captureSession.addInput(deviceInput)
                     }
                     
                     let captureMetadataOutput = AVCaptureMetadataOutput()
@@ -157,24 +155,24 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                         view.bringSubviewToFront(qrCodeFrameView)
                     }
                     isSetup = true
-                    self.resetScanner()
+                    resetScanner()
                 }
             } catch {
                 print(error)
                 return
             }
         } else {
-            self.setupDemoScanner()
+            setupDemoScanner()
         }
     }
     
     func setRequestView() {
-        self.originalView = self.view
-        self.view = self.missingPermissionsView
+        originalView = view
+        view = missingPermissionsView
     }
     
     func resetToOriginalView() {
-        self.view = self.originalView
+        view = originalView
     }
     
     fileprivate func resetQrCodeFrame() {
@@ -197,7 +195,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                 qrCodeFrameView?.frame = barCodeObject!.bounds
                 
                 if let contentOfCode = metadataObj.stringValue {
-                    self.finishedScanning(content: contentOfCode)
+                    finishedScanning(content: contentOfCode)
                 }
             }
         }
@@ -222,7 +220,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             resultVC.historyItem = sender as? HistoryItem
             resultVC.scanVC = self
             
-            self.prepareResultScreen()
+            prepareResultScreen()
         } else if segue.identifier == myQRcodeSegues.ShowHistorySegue {
             guard let historyNavVC = segue.destination as? UINavigationController, let historyVC = historyNavVC.children[0] as? HistoryTableViewController else {
                 return
@@ -234,11 +232,11 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     func prepareResultScreen() {
         captureSession.stopRunning()
-        isReadyToScan = false;
+        isReadyToScan = false
     }
     
     func userSelectedHistoryItem(item: HistoryItem) {
-        self.prepareResultScreen()
-        self.performSegue(withIdentifier: myQRcodeSegues.ResultSegue, sender: item)
+        prepareResultScreen()
+        performSegue(withIdentifier: myQRcodeSegues.ResultSegue, sender: item)
     }
 }

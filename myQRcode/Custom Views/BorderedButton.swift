@@ -3,7 +3,7 @@
 //  myTodo
 //
 //  Created by Marc Hein on 13.11.18.
-//  Copyright © 2018 Marc Hein Webdesign. All rights reserved.
+//  Copyright © 2023 Marc Hein. All rights reserved.
 //
 
 import Foundation

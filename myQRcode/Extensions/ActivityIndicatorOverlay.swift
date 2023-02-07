@@ -3,7 +3,7 @@
 //  myQRcode
 //
 //  Created by Marc Hein on 16.08.20.
-//  Copyright © 2020 Marc Hein Webdesign. All rights reserved.
+//  Copyright © 2023 Marc Hein. All rights reserved.
 //
 // https://gist.github.com/edc0der/e4bed05b4c6653ffcd36c0609f27c7c6
 
