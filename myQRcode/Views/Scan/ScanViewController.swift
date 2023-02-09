@@ -206,9 +206,9 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         let qrCode = QRCode(content: content, category: .scan)
         incrementCodeValue(of: localStoreKeys.codeScanned)
         if performSegueValue {
-            performSegue(withIdentifier: myQRcodeSegues.ResultSegue, sender: qrCode.coreDataObject)
+            performSegue(withIdentifier: myQRcodeSegues.ResultSegue, sender: qrCode.addToCoreData())
         } else {
-            _ = qrCode.coreDataObject
+            _ = qrCode.addToCoreData()
         }
     }
     

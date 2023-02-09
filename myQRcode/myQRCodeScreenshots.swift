@@ -28,7 +28,7 @@ func getPlatformNSString() -> String {
 }
 
 
-class myQRcodeUITests: XCTestCase {
+class myQRCodeScreenshots: XCTestCase {
     
     var deviceScreenshotPath = ""
     

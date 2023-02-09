@@ -11,6 +11,7 @@ import UIKit
 
 extension UIView {
     func dropShadow() {
+        print("add drop shadow")
         self.layer.masksToBounds = false
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.5
@@ -24,6 +25,7 @@ extension UIView {
     }
     
     func roundCorners(radius: CGFloat) {
+        print("add round corners")
         self.layer.cornerRadius = radius
         self.layer.masksToBounds = true
     }

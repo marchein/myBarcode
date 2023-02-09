@@ -20,9 +20,11 @@ class Template: CustomStringConvertible, NSCopying, Equatable {
     var name: String
     var parameters: [String]
     var parameterType: [TemplateParameterType]
+    var parameterValues: [String] = []
     var placeholders: [String?]
     var templateString: String
     var options: [[String]?]
+    var modified: Bool = false
     
     
     init(name: String, templateString: String, parameters: [String], parameterType: [TemplateParameterType], placeholders: [String?], options: [[String]?]) {
@@ -47,11 +49,15 @@ class Template: CustomStringConvertible, NSCopying, Equatable {
     }
     
     lazy var resultString: String? = {
-        return String(format: templateString, arguments: parameters)
+        return String(format: templateString, arguments: parameterValues)
     }()
     
     var description: String {
         return "Name: \(name), Template String: \(templateString), Parameters: \(parameters), Parameter Type: \(parameterType), Placeholders: \(placeholders), Options: \(options)"
+    }
+    
+    func setModifiedTemplate() {
+        modified = true
     }
 }
 

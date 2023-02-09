@@ -38,6 +38,7 @@ struct myQRcodeSegues {
     static let ShowHistorySegue = "showHistory"
     static let GenerateToTemplateSegue = "GenerateToTemplateSegue"
     static let EditTemplateSegue = "editTemplateSegue"
+    static let ReuseTemplateSegue = "reuseTemplateSegue"
 }
 
 struct myQRcodeIAP {

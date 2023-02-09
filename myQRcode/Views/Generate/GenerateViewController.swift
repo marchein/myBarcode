@@ -20,6 +20,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     
     var qrCodeImage: CIImage!
     var firstAction = true
+    var usedTemplate: Template? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,9 +64,20 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         }
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 || section == 1 || (section == 2 && usedTemplate != nil) {
+            return 2
+        }
+        return 1
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
-        generateButtonAction(textField)
+        generateAction()
         return false
     }
     
@@ -90,15 +102,23 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         exportButton.isEnabled = false
     }
     
-    @IBAction func generateButtonAction(_ sender: Any) {
+    @IBAction func generateButtonPressed(_ sender: Any) {
+        generateAction()
+    }
+    
+    func generateAction(addToHistory: Bool = true) {
         guard
             let qrData = qrContentTextField.text
         else {
             return
         }
         
-        qrContentTextField.resignFirstResponder()
+        if let usedTemplate = self.usedTemplate {
+            print(usedTemplate)
+        }
         
+        qrContentTextField.resignFirstResponder()
+                
         if qrCodeImage == nil {
             tabBarController?.displayAnimatedActivityIndicatorView()
             
@@ -108,7 +128,10 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
                     let resultImage = qrCode.generateImage()
                     self.displayQRCodeImage(image: resultImage)
                     incrementCodeValue(of: localStoreKeys.codeGenerated)
-                    _ = qrCode.coreDataObject
+                    if addToHistory {
+                        _ = qrCode.addToCoreData()
+                    }
+                    self.generateButton.isEnabled = false
                 }
             }
         }
@@ -159,22 +182,31 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
                 return
             }
             templateList.generateVC = self
+        } else if segue.identifier == myQRcodeSegues.ReuseTemplateSegue {
+            print(segue.destination)
+            guard
+                let templateVC = segue.destination as? TemplateEditingTableViewController
+            else {
+                return
+            }
+            templateVC.selectedTemplate = usedTemplate
+            templateVC.tableView.reloadData()
         }
     }
     
     func userSelectedHistoryItem(item: HistoryItem) {
         resetView()
-        enterQR(content: item.content)
+        enterQR(content: item.content, addToHistory: false)
     }
     
-    func enterQR(content: String?) {
+    func enterQR(content: String?, addToHistory: Bool = true) {
         guard let content = content, content.count > 0 else {
             return
         }
         qrContentTextField.text = content
         checkIfGenerationIsPossible()
         if generateButton.isEnabled {
-            generateButtonAction(self)
+            generateAction()
         }
     }
     

@@ -6,21 +6,24 @@
 //  Copyright © 2023 Marc Hein. All rights reserved.
 //
 
-import UIKit
 import CoreData
+import UIKit
 
 class HistoryTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     @IBOutlet var noItemsView: NoItemsView!
     
     var category: HistoryCategory?
+
     // MARK: - Properties
+
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     var fetchedResultsController: NSFetchedResultsController<HistoryItem>? {
         didSet {
             fetchedResultsController?.delegate = self
         }
     }
-    weak var delegate: HistoryItemDelegate? = nil
+
+    weak var delegate: HistoryItemDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +36,8 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
         self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
     
-    
     // MARK: - Core Data
+
     func updateFetchedResultsController() {
         guard let context = container?.viewContext else {
             return
@@ -59,7 +62,7 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
                 try fetchedResultsController!.performFetch()
                 self.tableView.reloadData()
             } catch {
-                //self.showAlert(alertText: "Fehler", alertMessage: "Es ist ein Fehler bei der iCloud Synchronisation aufgetreten: \(error)", closeButton: "Schließen")
+                // self.showAlert(alertText: "Fehler", alertMessage: "Es ist ein Fehler bei der iCloud Synchronisation aufgetreten: \(error)", closeButton: "Schließen")
             }
         }
     }
@@ -71,10 +74,12 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
             self.noItemsView.category = self.category
             self.tableView.backgroundView = self.noItemsView
             self.tableView.separatorStyle = .none
+            self.navigationItem.leftBarButtonItem = nil
             return 0
         }
         self.tableView.backgroundView = nil
         self.tableView.separatorStyle = .singleLine
+        self.navigationItem.leftBarButtonItem = editButtonItem
         return sections
     }
     
@@ -97,7 +102,7 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
             fatalError("Unexpected Index Path")
         }
         
-        configureCell(cell: cell, indexPath: indexPath)
+        self.configureCell(cell: cell, indexPath: indexPath)
         
         return cell
     }
@@ -138,7 +143,8 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
         }
     }
     
-    // MARK:- NSFetchedResultsControllerDelegate
+    // MARK: - NSFetchedResultsControllerDelegate
+
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.tableView.beginUpdates()
     }
@@ -177,7 +183,6 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
     @IBAction func dismiss(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
 }
 
 // protocol used for sending data back

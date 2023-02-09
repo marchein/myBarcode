@@ -20,7 +20,8 @@ class AppIconTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        appIcon.dropShadow()
+        appIcon.layer.borderColor = UIColor.lightGray.cgColor
+        appIcon.layer.borderWidth = 1.0
         appIcon.roundCorners(radius: 12)
     }
 

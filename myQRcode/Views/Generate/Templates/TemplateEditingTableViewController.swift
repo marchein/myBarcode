@@ -51,6 +51,10 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
             } else {
                 let textFieldTableViewCell = tableView.dequeueReusableCell(withIdentifier: TextFieldTableViewCell.Identifier, for: indexPath) as! TextFieldTableViewCell
                 
+                if let selectedTemplate = selectedTemplate, selectedTemplate.modified {
+                    textFieldTableViewCell.textField.text = selectedTemplate.parameterValues[indexPath.section]
+                }
+                
                 if let placeholder = selectedTemplate?.placeholders[indexPath.section] {
                     textFieldTableViewCell.textField.placeholder = placeholder
                 }
@@ -79,22 +83,25 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
     }
     
     func generateButtonTapped() {
-        var parameters: [String] = []
+        var parameterValues: [String] = []
         let numberOfButtons = tableView.numberOfSections - 1
         for i in 0..<numberOfButtons {
             let indexPath = IndexPath(row: 0, section: i)
             let cell = tableView.cellForRow(at: indexPath)
             if let segmentedCell = cell as? SegmentedControlTableViewCell, let options = segmentedCell.options {
-                parameters.append(options[segmentedCell.segmentedControl.selectedSegmentIndex])
+                parameterValues.append(options[segmentedCell.segmentedControl.selectedSegmentIndex])
             } else if let textFieldCell = cell as? TextFieldTableViewCell, let parameter = textFieldCell.textField.text  {
-                parameters.append(parameter)
+                parameterValues.append(parameter)
             }
         }
         let usedTemplate = self.selectedTemplate!.copy() as! Template
-        usedTemplate.parameters = parameters
+        usedTemplate.parameterValues = parameterValues
         
         self.dismiss(animated: true) {
             if let resultString = usedTemplate.resultString, let generateVC = self.generateVC {
+                generateVC.usedTemplate = usedTemplate
+                generateVC.usedTemplate?.setModifiedTemplate()
+                generateVC.tableView.reloadData()
                 generateVC.enterQR(content: resultString)
             }
         }

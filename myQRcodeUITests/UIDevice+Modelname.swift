@@ -1,6 +1,5 @@
 //
 //  UIDevice+Modelname.swift
-//  myQRcodeUITests
 //
 //  Created by Marc Hein on 03.02.23.
 //  Copyright © 2023 Marc Hein. All rights reserved.

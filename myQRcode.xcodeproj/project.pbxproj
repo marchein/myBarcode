@@ -29,7 +29,7 @@
 		5B4B4AA824E9596200E44302 /* ActivityIndicatorOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4B4AA724E9596200E44302 /* ActivityIndicatorOverlay.swift */; };
 		5B5C98A82339299E00030C75 /* myQRcode-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B5C98A72339299E00030C75 /* myQRcode-dark.png */; };
 		5B5C98AA233929E200030C75 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C98A9233929E200030C75 /* AppIcon.swift */; };
-		5B5FAAA724E97E7300E719D4 /* myQRcodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF98BC021AB371D00AA5BBC /* myQRcodeUITests.swift */; };
+		5B5FAAA724E97E7300E719D4 /* myQRCodeScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF98BC021AB371D00AA5BBC /* myQRCodeScreenshots.swift */; };
 		5B642F0323392EC4005804AA /* AppIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B642F0223392EC4005804AA /* AppIconTableViewCell.swift */; };
 		5B642F0823393159005804AA /* AppIcon+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B642F0623393159005804AA /* AppIcon+TableView.swift */; };
 		5B642F0923393159005804AA /* AppIconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B642F0723393159005804AA /* AppIconTableViewController.swift */; };
@@ -95,6 +95,7 @@
 		5B1213A62992CA41007FDCE3 /* QRCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTests.swift; sourceTree = "<group>"; };
 		5B1213B32992CC73007FDCE3 /* QRCode+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QRCode+CoreData.swift"; sourceTree = "<group>"; };
 		5B1213B52992D82C007FDCE3 /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
+		5B1213B72992E660007FDCE3 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 		5B1551C6298D85DB00A4438B /* SKStoreReviewController+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKStoreReviewController+Request.swift"; sourceTree = "<group>"; };
 		5B1C2CCA24EFEB4C003544D7 /* ScanViewController+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScanViewController+ImagePicker.swift"; sourceTree = "<group>"; };
 		5B1C2CCC24EFFB8A003544D7 /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
@@ -151,7 +152,7 @@
 		5BE5310A24F04FFA006A225D /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		5BEC8A24223FDF1B00BDF642 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = myQRcode/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5BEC8A26223FDF2200BDF642 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = myQRcode/de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5BF98BC021AB371D00AA5BBC /* myQRcodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = myQRcodeUITests.swift; path = ../myQRcode/myQRcodeUITests.swift; sourceTree = "<group>"; };
+		5BF98BC021AB371D00AA5BBC /* myQRCodeScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = myQRCodeScreenshots.swift; path = ../myQRcode/myQRCodeScreenshots.swift; sourceTree = "<group>"; };
 		5BFE10CE24E9690500415E90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		5BFE10CF24E9690500415E90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Generate.storyboard; sourceTree = "<group>"; };
 		5BFE10D024E9690500415E90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -218,8 +219,8 @@
 			children = (
 				5B642F052339313D005804AA /* AppIconList */,
 				5BE4AA8C21AAF62E00D69E18 /* SettingsTableViewController.swift */,
-				5BE4AA8D21AAF62E00D69E18 /* Settings+SendSupportMail.swift */,
 				5BE4AA8821AAF62E00D69E18 /* Settings+TableView.swift */,
+				5BE4AA8D21AAF62E00D69E18 /* Settings+SendSupportMail.swift */,
 				5BE4AA8421AAF62E00D69E18 /* TipJar */,
 			);
 			path = Settings;
@@ -262,6 +263,7 @@
 				5B2AE31621AA017F00976FE2 /* Assets.xcassets */,
 				5B5C98A62339299000030C75 /* Alternative App Icons */,
 				5BB9DE0423396BCF00854E41 /* Info.plist */,
+				5B1213B72992E660007FDCE3 /* TestPlan.xctestplan */,
 			);
 			path = myQRcode;
 			sourceTree = "<group>";
@@ -286,7 +288,7 @@
 		5B5FAA9E24E97E6B00E719D4 /* myQRcodeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				5BF98BC021AB371D00AA5BBC /* myQRcodeUITests.swift */,
+				5BF98BC021AB371D00AA5BBC /* myQRCodeScreenshots.swift */,
 				5BAA4193298D28B600493175 /* UIDevice+Modelname.swift */,
 				5B5FAAA124E97E6B00E719D4 /* Info.plist */,
 			);
@@ -622,7 +624,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BAA4194298D28B600493175 /* UIDevice+Modelname.swift in Sources */,
-				5B5FAAA724E97E7300E719D4 /* myQRcodeUITests.swift in Sources */,
+				5B5FAAA724E97E7300E719D4 /* myQRCodeScreenshots.swift in Sources */,
 				5BAA4197298D29DD00493175 /* String+Localizable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

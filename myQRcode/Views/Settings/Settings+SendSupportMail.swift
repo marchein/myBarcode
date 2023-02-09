@@ -10,7 +10,8 @@ import Foundation
 import MessageUI
 import UIKit
 
-// MARK:- Mail Extension
+// MARK: - Mail Extension
+
 extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
     func sendSupportMail() {
         if MFMailComposeViewController.canSendMail() {
@@ -26,7 +27,7 @@ extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
             showMessage(title: NSLocalizedString("Error", comment: ""), message: String(format: mailErrorMessage, myQRcode.mailAdress), on: self)
         }
     }
-    
+
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
     }

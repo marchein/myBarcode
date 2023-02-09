@@ -6,32 +6,32 @@
 //  Copyright © 2023 Marc Hein. All rights reserved.
 //
 
-import UIKit
-import StoreKit
 import SafariServices
+import StoreKit
+import UIKit
 
 class TipJarTableViewController: UITableViewController {
     internal let impact = UIImpactFeedbackGenerator()
-    internal var productIDs: Array<String> = []
-    internal var productsArray: Array<SKProduct?> = []
+    internal var productIDs: [String] = []
+    internal var productsArray: [SKProduct?] = []
     internal var selectedProductIndex: Int!
     internal var transactionInProgress = false
     internal var hasData = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         SKPaymentQueue.default().add(self)
 
         setupProducts()
         requestProductInfo()
-        self.navigationController?.displayAnimatedActivityIndicatorView()
+        navigationController?.displayAnimatedActivityIndicatorView()
     }
 
-    // MARK:- IAP
+    // MARK: - IAP
     fileprivate func setupProducts() {
         productIDs = myQRcodeIAP.allTips
     }
-    
+
     @IBAction func tipButtonAction(_ sender: UIButton) {
         guard let cell = sender.superview?.superview?.superview as? TipTableViewCell else { return }
         guard let indexPath = tableView.indexPath(for: cell) else { return }
