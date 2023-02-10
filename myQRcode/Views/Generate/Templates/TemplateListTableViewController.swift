@@ -22,21 +22,26 @@ class TemplateListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return Model.Templates.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Model.Templates.count
+        return Model.Templates[section].count - 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.TemplateCell, for: indexPath)
-        cell.textLabel?.text = Model.Templates[indexPath.row].name
+        cell.textLabel?.text = Model.Templates[indexPath.section][indexPath.row + 1].name
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return Model.Templates[section][0].name
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: myQRcodeSegues.EditTemplateSegue, sender: Model.Templates[indexPath.row])
+        print(Model.Templates[indexPath.section][indexPath.row + 1])
+        performSegue(withIdentifier: myQRcodeSegues.EditTemplateSegue, sender: Model.Templates[indexPath.section][indexPath.row + 1])
     }
 
     // MARK: - Navigation

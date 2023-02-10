@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Template: CustomStringConvertible, NSCopying, Equatable {
+class Template: TemplateItem, CustomStringConvertible, NSCopying, Equatable {
     static func == (lhs: Template, rhs: Template) -> Bool {
         return lhs.name == rhs.name && lhs.parameters == rhs.parameters && lhs.parameterType == rhs.parameterType && lhs.placeholders == rhs.placeholders && lhs.templateString == rhs.templateString && lhs.options == rhs.options
     }
@@ -17,7 +17,6 @@ class Template: CustomStringConvertible, NSCopying, Equatable {
         return Template(name: name, templateString: templateString, parameters: parameters, parameterType: parameterType, placeholders: placeholders, options: options)
     }
     
-    var name: String
     var parameters: [String]
     var parameterType: [TemplateParameterType]
     var parameterValues: [String]
@@ -40,13 +39,15 @@ class Template: CustomStringConvertible, NSCopying, Equatable {
             fatalError("Options must always be given!")
         }
 
-        self.name = name
+        
         self.templateString = templateString
         self.parameters = parameters
         self.parameterType = parameterType
         self.placeholders = placeholders
         self.options = options
         self.parameterValues = parameters
+        super.init(name: name)
+
     }
     
     lazy var resultString: String? = {
@@ -65,4 +66,15 @@ class Template: CustomStringConvertible, NSCopying, Equatable {
 enum TemplateParameterType {
     case Text
     case Selector
+}
+
+class TemplateSeperator: TemplateItem {
+}
+
+class TemplateItem {
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+    }
 }

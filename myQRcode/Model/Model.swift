@@ -9,7 +9,8 @@
 import Foundation
 
 struct Model {
-    static let Templates = [
+    static let Templates: [[TemplateItem]] = [
+        [TemplateSeperator(name: "Allgemein"),
         // WIFI Template
         Template(
             name: NSLocalizedString("wifi_template", comment: ""),
@@ -45,7 +46,8 @@ struct Model {
             parameterType: [.Text],
             placeholders: ["+12 4567 89101112"],
             options: [nil]
-        ),
+        )],
+        [TemplateSeperator(name: "Social"),
         // Instagram Template
         Template(
             name: "Instagram",
@@ -54,6 +56,6 @@ struct Model {
             parameterType: [.Text],
             placeholders: [NSLocalizedString("TEMPLATE_INSTAGRAM_USERNAME_PLACEHOLDER", comment: "Templates Instagram Username Placeholder")],
             options: [nil]
-        )
+        )]
     ]
 }

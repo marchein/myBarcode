@@ -117,7 +117,7 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
     }
     
     private func setupTextFields() {
-        let numberOfLastImportantTF = selectedTemplate == Model.Templates[0] ? 2 : 1
+        let numberOfLastImportantTF = selectedTemplate == (Model.Templates[0][1] as! Template) ? 2 : 1
         for sectionIndex in 0..<tableView.numberOfSections - numberOfLastImportantTF {
             let indexPath = IndexPath(row: 0, section: sectionIndex)
             let cell = tableView.cellForRow(at: indexPath)
