@@ -885,7 +885,7 @@
 				CODE_SIGN_ENTITLEMENTS = myQRcode/myQRcode.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/myQRcode/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = myQRcode;
@@ -917,7 +917,7 @@
 				CODE_SIGN_ENTITLEMENTS = myQRcode/myQRcode.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/myQRcode/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = myQRcode;
