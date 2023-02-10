@@ -183,14 +183,14 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
             }
             templateList.generateVC = self
         } else if segue.identifier == myQRcodeSegues.ReuseTemplateSegue {
-            print(segue.destination)
             guard
-                let templateVC = segue.destination as? TemplateEditingTableViewController
+                let templateNavVC = segue.destination as? UINavigationController,
+                let templateList = templateNavVC.children[0] as? TemplateListTableViewController
             else {
                 return
             }
-            templateVC.selectedTemplate = usedTemplate
-            templateVC.tableView.reloadData()
+            templateList.generateVC = self
+            templateList.performSegue(withIdentifier: myQRcodeSegues.EditTemplateSegue, sender: usedTemplate)
         }
     }
     

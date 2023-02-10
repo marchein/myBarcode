@@ -20,7 +20,7 @@ class Template: CustomStringConvertible, NSCopying, Equatable {
     var name: String
     var parameters: [String]
     var parameterType: [TemplateParameterType]
-    var parameterValues: [String] = []
+    var parameterValues: [String]
     var placeholders: [String?]
     var templateString: String
     var options: [[String]?]
@@ -46,6 +46,7 @@ class Template: CustomStringConvertible, NSCopying, Equatable {
         self.parameterType = parameterType
         self.placeholders = placeholders
         self.options = options
+        self.parameterValues = parameters
     }
     
     lazy var resultString: String? = {

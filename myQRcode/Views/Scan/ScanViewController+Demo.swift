@@ -20,18 +20,6 @@ extension ScanViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
-        
-        if #available(iOS 15, macCatalyst 15.0, *) {
-            let navbarAppearance = UINavigationBarAppearance()
-            navbarAppearance.configureWithDefaultBackground()
-            navigationController?.navigationBar.standardAppearance = navbarAppearance
-            navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-                
-            let tabbarAppearance = UITabBarAppearance()
-            tabbarAppearance.configureWithDefaultBackground()
-            tabBarController?.tabBar.standardAppearance = tabbarAppearance
-            tabBarController?.tabBar.scrollEdgeAppearance = tabbarAppearance
-        }
     }
     
     func setupDemoHistory() {

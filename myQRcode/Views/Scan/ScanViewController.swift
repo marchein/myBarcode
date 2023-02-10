@@ -36,6 +36,19 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             self.errorIcon.image = UIImage(systemName: "exclamationmark.circle")
         }
         
+        // This is needed so the navbar and tabbar stay over the contents of scan view
+        if #available(iOS 15, macCatalyst 15.0, *) {
+            let navbarAppearance = UINavigationBarAppearance()
+            navbarAppearance.configureWithDefaultBackground()
+            navigationController?.navigationBar.standardAppearance = navbarAppearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+                
+            let tabbarAppearance = UITabBarAppearance()
+            tabbarAppearance.configureWithDefaultBackground()
+            tabBarController?.tabBar.standardAppearance = tabbarAppearance
+            tabBarController?.tabBar.scrollEdgeAppearance = tabbarAppearance
+        }
+        
         if !isSimulator() && AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
             setupScanner()
             // self.setupDemoHistory()

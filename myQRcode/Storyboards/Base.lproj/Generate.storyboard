@@ -14,7 +14,7 @@
                 <viewControllerPlaceholder storyboardName="Settings" id="deY-rb-GIn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2KV-i4-920" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1772" y="-1379"/>
+            <point key="canvasLocation" x="1804" y="-1412"/>
         </scene>
         <!--History-->
         <scene sceneID="EcE-Px-LGa">
@@ -22,7 +22,7 @@
                 <viewControllerPlaceholder storyboardName="History" id="idU-Dk-P3W" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydb-Xf-8hz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2276" y="-1379"/>
+            <point key="canvasLocation" x="2276" y="-1412"/>
         </scene>
         <!--myQRcode-->
         <scene sceneID="IB0-wK-xzm">
@@ -144,9 +144,9 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="JB1-jG-Snj">
+                            <tableViewSection id="JB1-jG-Snj" userLabel="Templates section">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="beF-PC-LeV" style="IBUITableViewCellStyleDefault" id="yyP-HG-gaD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="beF-PC-LeV" style="IBUITableViewCellStyleDefault" id="yyP-HG-gaD" userLabel="Templates">
                                         <rect key="frame" x="16" y="542" width="343" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yyP-HG-gaD" id="q7D-Fx-8V7">
@@ -166,15 +166,15 @@
                                             <segue destination="6YY-1Z-bav" kind="presentation" identifier="GenerateToTemplateSegue" id="Ilk-wE-B6U"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="vZP-N5-XQU" style="IBUITableViewCellStyleDefault" id="qXI-71-Ho1">
-                                        <rect key="frame" x="16" y="585.5" width="343" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="vZP-N5-XQU" style="IBUITableViewCellStyleDefault" id="qXI-71-Ho1" userLabel="Reuse Templates">
+                                        <rect key="frame" x="16" y="585.5" width="343" height="64.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qXI-71-Ho1" id="Ef1-1h-UVk">
-                                            <rect key="frame" x="0.0" y="0.0" width="316.5" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="316.5" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="GENERATE_USE_LAST_TEMPLATE_AGAIN" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vZP-N5-XQU">
-                                                    <rect key="frame" x="16" y="0.0" width="292.5" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="292.5" height="64.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
@@ -183,7 +183,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Yqg-wX-zaE" kind="presentation" identifier="reuseTemplateSegue" id="H4l-Iu-rnt"/>
+                                            <segue destination="6YY-1Z-bav" kind="presentation" identifier="reuseTemplateSegue" id="EZM-co-c1u"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -267,7 +267,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lS-4T-mfn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3590" y="-1003"/>
+            <point key="canvasLocation" x="2743" y="-187"/>
         </scene>
         <!--Input Data-->
         <scene sceneID="qdR-Fm-6NJ">
@@ -355,16 +355,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generate QR code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEO-z9-prC">
-                                            <rect key="frame" x="32" y="11.5" width="279" height="21"/>
+                                            <rect key="frame" x="99" y="11.5" width="145" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" systemColor="linkColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="qEO-z9-prC" firstAttribute="leading" secondItem="EVM-nA-XEY" secondAttribute="leadingMargin" constant="16" id="JJK-Od-Te3"/>
+                                        <constraint firstItem="qEO-z9-prC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EVM-nA-XEY" secondAttribute="leadingMargin" id="JJK-Od-Te3"/>
                                         <constraint firstItem="qEO-z9-prC" firstAttribute="centerY" secondItem="EVM-nA-XEY" secondAttribute="centerY" id="Ppb-Mc-ZUd"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="qEO-z9-prC" secondAttribute="trailing" constant="16" id="aPJ-VI-TLM"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="qEO-z9-prC" secondAttribute="trailing" id="aPJ-VI-TLM"/>
                                         <constraint firstItem="qEO-z9-prC" firstAttribute="centerX" secondItem="EVM-nA-XEY" secondAttribute="centerX" id="v1N-Uc-2gm"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -385,10 +385,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exy-hU-q2u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4378" y="-1003"/>
+            <point key="canvasLocation" x="3484" y="-188"/>
         </scene>
         <!--Navigation-->
         <scene sceneID="hwl-Wn-yNz">
@@ -429,11 +430,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMr-0l-7k6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2852" y="-1003.4482758620691"/>
+            <point key="canvasLocation" x="2038" y="-188"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="H4l-Iu-rnt"/>
+        <segue reference="EZM-co-c1u"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Blank QR" width="258" height="258"/>

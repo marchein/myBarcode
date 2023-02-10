@@ -9,13 +9,22 @@
 import UIKit
 
 class TemplateEditingTableViewController: UITableViewController, UITextFieldDelegate {
+    var isSingleView = false
     var selectedTemplate: Template?
     var generateVC: GenerateViewController?
     var textFields: [UITextField] = []
     var isSetup = false
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if (isSingleView) {
+            self.navigationItem.hidesBackButton = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.setupTextFields()
     }
     
@@ -96,11 +105,11 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
         }
         let usedTemplate = self.selectedTemplate!.copy() as! Template
         usedTemplate.parameterValues = parameterValues
+        usedTemplate.setModifiedTemplate()
         
         self.dismiss(animated: true) {
             if let resultString = usedTemplate.resultString, let generateVC = self.generateVC {
                 generateVC.usedTemplate = usedTemplate
-                generateVC.usedTemplate?.setModifiedTemplate()
                 generateVC.tableView.reloadData()
                 generateVC.enterQR(content: resultString)
             }

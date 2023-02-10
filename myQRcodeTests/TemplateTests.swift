@@ -20,9 +20,9 @@ final class TemplateTests: XCTestCase {
         let wifiPassword = "11735831216878134824"
         for option in ["nopass", "WEP", "WPA"] {
             let wifiTemplate = Model.Templates[0].copy() as! Template
-            wifiTemplate.parameters[0] = option
-            wifiTemplate.parameters[1] = wifiName
-            wifiTemplate.parameters[2] = wifiPassword
+            wifiTemplate.parameterValues[0] = option
+            wifiTemplate.parameterValues[1] = wifiName
+            wifiTemplate.parameterValues[2] = wifiPassword
             
             let expectedWifiResultString = "WIFI:T:\(option);S:\(wifiName);P:\(wifiPassword);;"
             XCTAssertEqual(wifiTemplate.resultString, expectedWifiResultString)
@@ -33,7 +33,7 @@ final class TemplateTests: XCTestCase {
     func testMailTemplate() throws {
         let mailTemplate = Model.Templates[1]
         let mailAdress = "test@testmail.com"
-        mailTemplate.parameters[0] = mailAdress
+        mailTemplate.parameterValues[0] = mailAdress
         let expectedMailResultString = "mailto:\(mailAdress)"
         XCTAssertEqual(mailTemplate.resultString, expectedMailResultString)
     }
@@ -41,7 +41,7 @@ final class TemplateTests: XCTestCase {
     func testPhoneTemplate() throws {
         let phoneTemplate = Model.Templates[2]
         let phoneNumber = "+49123456789"
-        phoneTemplate.parameters[0] = phoneNumber
+        phoneTemplate.parameterValues[0] = phoneNumber
         let expectedPhoneResultString = "tel:\(phoneNumber)"
         XCTAssertEqual(phoneTemplate.resultString, expectedPhoneResultString)
     }
@@ -49,7 +49,7 @@ final class TemplateTests: XCTestCase {
     func testSmsTemplate() throws {
         let smsTemplate = Model.Templates[3]
         let smsNumber = "+49123456789"
-        smsTemplate.parameters[0] = smsNumber
+        smsTemplate.parameterValues[0] = smsNumber
         let expectedSmsResultString = "sms:\(smsNumber)"
         XCTAssertEqual(smsTemplate.resultString, expectedSmsResultString)
     }

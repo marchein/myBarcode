@@ -46,6 +46,11 @@ class TemplateListTableViewController: UITableViewController {
             editVC.selectedTemplate = sender as? Template
             // provide generate VC to editing VC
             editVC.generateVC = self.generateVC
+            
+            // If template has been modified (^= reused) hide back button
+            if let selectedTemplate = editVC.selectedTemplate, selectedTemplate.modified {
+                editVC.isSingleView = true
+            }
         }
     }
 }
