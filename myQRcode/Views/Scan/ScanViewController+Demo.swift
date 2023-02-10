@@ -24,6 +24,7 @@ extension ScanViewController {
     
     func setupDemoHistory() {
         let demoStrings = ["https://marc-hein.de", "myQRcode", "BLÅHAJ", "Whatever", "0000 is the best pin"]
+        
         for string in demoStrings {
             self.finishedScanning(content: string, performSegueValue: false)
         }
@@ -33,6 +34,6 @@ extension ScanViewController {
         let tappedImageView = tapGestureRecognizer.view as! UIImageView
         let tappedImage = tappedImageView.image!
         
-        finishedScanning(content: tappedImage == imageDE ?"Hallo und herzlich willkommen zu myQRcode" : "Hello and welcome to myQRcode")
+        finishedScanning(content: tappedImage == imageDE ? "Hallo und herzlich willkommen zu myQRcode" : "Hello and welcome to myQRcode")
     }
 }

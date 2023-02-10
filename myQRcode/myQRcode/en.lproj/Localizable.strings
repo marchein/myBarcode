@@ -50,5 +50,9 @@
 /* Templates */
 "TEMPLATES_PLACEHOLDER_WIFI_NAME" = "WiFi Name";
 
+/* Instagram */
+"TEMPLATE_INSTAGRAM_USERNAME" = "Username";
+"TEMPLATE_INSTAGRAM_USERNAME_PLACEHOLDER" = "Your Instagram username";
+
 /* Settings */
 "SETTINGS_DEVELOPER_GREETING" = "Created with ❤️ in Trier";

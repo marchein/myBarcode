@@ -45,6 +45,8 @@
 /* Generate View Controller */
 /* Templates Button */
 "beF-PC-LeV.text" = "Vorlagen";
+/* Use last Templazte Button */
+"vZP-N5-XQU.text" = "Letzte Vorlage erneut verwenden";
 
 /* Templates View Controller */
 /* Title */

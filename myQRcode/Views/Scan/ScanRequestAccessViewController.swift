@@ -14,6 +14,5 @@ class ScanRequestAccessViewController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.hidesBackButton = true;
-        // Do any additional setup after loading the view.
     }
 }

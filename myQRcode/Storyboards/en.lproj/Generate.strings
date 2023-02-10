@@ -38,6 +38,8 @@
 /* Generate View Controller */
 /* Templates Button */
 "beF-PC-LeV.text" = "Templates";
+/* Use last Templazte Button */
+"vZP-N5-XQU.text" = "Use last template again";
 
 /* Templates View Controller */
 /* Title */

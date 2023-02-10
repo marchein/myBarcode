@@ -18,6 +18,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     @IBOutlet var settingsButton: UIBarButtonItem!
     @IBOutlet var historyButton: UIBarButtonItem!
     
+    let hapticsGenerator = UINotificationFeedbackGenerator()
     var qrCodeImage: CIImage!
     var firstAction = true
     var usedTemplate: Template? = nil
@@ -113,10 +114,6 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
             return
         }
         
-        if let usedTemplate = self.usedTemplate {
-            print(usedTemplate)
-        }
-        
         qrContentTextField.resignFirstResponder()
                 
         if qrCodeImage == nil {
@@ -125,6 +122,8 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
             DispatchQueue.global(qos: .background).async {
                 let qrCode = QRCode(content: qrData, category: .generate)
                 DispatchQueue.main.async {
+                    self.hapticsGenerator.prepare()
+                    self.hapticsGenerator.notificationOccurred(.success)
                     let resultImage = qrCode.generateImage()
                     self.displayQRCodeImage(image: resultImage)
                     incrementCodeValue(of: localStoreKeys.codeGenerated)

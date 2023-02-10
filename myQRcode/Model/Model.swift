@@ -50,9 +50,9 @@ struct Model {
         Template(
             name: "Instagram",
             templateString: "https://instagram.com/%@?utm_source=qr",
-            parameters: [NSLocalizedString("template_instagram_username", comment: "Templates Instagram Username")],
+            parameters: [NSLocalizedString("TEMPLATE_INSTAGRAM_USERNAME", comment: "Templates Instagram Username")],
             parameterType: [.Text],
-            placeholders: [NSLocalizedString("template_instagram_username_placeholder", comment: "Templates Instagram Username Placeholder")],
+            placeholders: [NSLocalizedString("TEMPLATE_INSTAGRAM_USERNAME_PLACEHOLDER", comment: "Templates Instagram Username Placeholder")],
             options: [nil]
         )
     ]
