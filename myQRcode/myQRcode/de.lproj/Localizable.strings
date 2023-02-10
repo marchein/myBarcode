@@ -25,15 +25,15 @@
 "dark_icon" = "Dunkel";
 
 "date_scanning" = "Zeitpunkt des Einscannens";
-"result_headline" = "Inhalt des gescannten QR Codes";
+"result_headline" = "Inhalt des gescannten QR-Codes";
 
-"no_scan_history" = "Bisher wurden noch kein QR Code gescannt";
-"no_generate_history" = "Bisher wurde noch kein QR Code generiert";
+"no_scan_history" = "Bisher wurden noch kein QR-Code gescannt";
+"no_generate_history" = "Bisher wurde noch kein QR-Code generiert";
 
 "message_okay_action" = "Verstanden";
 
-"no_qr_code_error" = "Kein QR Code";
-"no_qr_code_error_description" = "myQRcode war nicht in der Lage einen QR Code im ausgewählten Bild zu entdecken";
+"no_qr_code_error" = "Kein QR-Code";
+"no_qr_code_error_description" = "myQRcode war nicht in der Lage einen QR-Code im ausgewählten Bild zu entdecken";
 
 /* Templates */
 /* WiFi Template*/

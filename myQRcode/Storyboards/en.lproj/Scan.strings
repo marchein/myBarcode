@@ -1,6 +1,6 @@
 
 /* Class = "UITableViewSection"; headerTitle = "CONTENT HEADLINE"; ObjectID = "E0h-tD-LST"; */
-"E0h-tD-LST.headerTitle" = "Content of scannend QR code";
+"E0h-tD-LST.headerTitle" = "Content of scannend QR-code";
 
 /* Class = "UILabel"; text = "CONTENT"; ObjectID = "eeN-HA-oGd"; */
 "eeN-HA-oGd.text" = "CONTENT";
@@ -31,7 +31,7 @@
 "xnh-6g-KzD.title" = "Result";
 
 "2Ch-CP-mhc.text" = "Missing permission to use the camera";
-"TlJ-EN-afc.text" = "Without this permission you cannot scan QR codes using your camera. \nYou can do this via Settings > myQRcode > Camera\n\nIf you do not want to allow myQRcode to use the camera, you can still use the image QR code recognition feature in the top left corner.";
+"TlJ-EN-afc.text" = "Without this permission you cannot scan QR-codes using your camera. \nYou can do this via Settings > myQRcode > Camera\n\nIf you do not want to allow myQRcode to use the camera, you can still use the image QR-code recognition feature in the top left corner.";
 
 
 "hjP-Ar-tVB.title" = "Select an image";

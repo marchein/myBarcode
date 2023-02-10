@@ -23,13 +23,13 @@
 "light_icon" = "Light";
 "dark_icon" = "Dark";
 "date_scanning" = "Time of scanning";
-"result_headline" = "Content of scanned QR code";
-"no_scan_history" = "Currently no QR codes have been scanned";
-"no_generate_history" = "Currently no QR codes have been generated";
+"result_headline" = "Content of scanned QR-code";
+"no_scan_history" = "Currently no QR-codes have been scanned";
+"no_generate_history" = "Currently no QR-codes have been generated";
 "message_okay_action" = "Got it";
 
-"no_qr_code_error" = "No QR code";
-"no_qr_code_error_description" = "myQRcode was unable to detect any QR codes in the selected image";
+"no_qr_code_error" = "No QR-code";
+"no_qr_code_error_description" = "myQRcode was unable to detect any QR-codes in the selected image";
 
 /* Templates */
 /* WiFi Template */

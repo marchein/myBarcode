@@ -195,7 +195,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if metadataObjects.count == 0 {
             resetQrCodeFrame()
-            print("No QR code is detected")
+            print("No QR-code is detected")
             return
         }
         
@@ -251,5 +251,40 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     func userSelectedHistoryItem(item: HistoryItem) {
         prepareResultScreen()
         performSegue(withIdentifier: myQRcodeSegues.ResultSegue, sender: item)
+    }
+    
+    @IBAction func gallerySelectionButtonTapped() {
+        if #available(iOS 14.0, *) {
+            pickPhotoUsingPHPicker()
+        } else {
+            pickImageUsingUIImagePicker()
+        }
+    }
+    
+    func processSelectedImage(_ image: UIImage) -> String {
+        guard
+            let detector:CIDetector=CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh]),
+            let ciImage:CIImage=CIImage(image: image),
+            let features = detector.features(in: ciImage) as? [CIQRCodeFeature]
+        else {
+            fatalError("Something went wrong in the image picker code")
+        }
+        
+        var qrCodeResult = ""
+        for feature in features  {
+            if let message = feature.messageString {
+                qrCodeResult += message
+            }
+        }
+        
+        return qrCodeResult
+    }
+    
+    func processingImageComplete(_ qrCodeContent: String) {
+        if qrCodeContent.isEmpty {
+            showMessage(title: NSLocalizedString("no_qr_code_error", comment: ""), message: NSLocalizedString("no_qr_code_error_description", comment: ""), on: self.navigationController!)
+        } else {
+            self.finishedScanning(content: qrCodeContent)
+        }
     }
 }

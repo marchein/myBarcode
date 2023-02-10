@@ -41,7 +41,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Content of the QR code" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="DwH-hJ-Ipd">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Content of the QR-code" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="DwH-hJ-Ipd">
                                                     <rect key="frame" x="16" y="0.0" width="311" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="alphabet" returnKeyType="done"/>
@@ -65,7 +65,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBE-FK-kol">
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <state key="normal" title="Generate QR code"/>
+                                                    <state key="normal" title="Generate QR-code"/>
                                                     <connections>
                                                         <action selector="generateButtonPressed:" destination="0zn-sQ-Gnv" eventType="touchUpInside" id="pbe-9t-zLq"/>
                                                     </connections>
@@ -81,7 +81,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="QR Code" id="EeJ-pa-ZRx">
+                            <tableViewSection headerTitle="QR-Code" id="EeJ-pa-ZRx">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="300" id="0Gj-aS-pH7">
                                         <rect key="frame" x="16" y="162" width="343" height="300"/>
@@ -96,7 +96,7 @@
                                                         <constraint firstAttribute="width" secondItem="cpL-AM-lsy" secondAttribute="height" multiplier="1:1" id="ok3-Wq-bcf"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR code generated yet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njC-gD-BiU">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR-code generated yet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njC-gD-BiU">
                                                     <rect key="frame" x="71.5" y="119" width="200" height="62.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="oRP-16-Jtl"/>
@@ -128,7 +128,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4f-wI-1Pm">
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <state key="normal" title="Export generated QR code"/>
+                                                    <state key="normal" title="Export generated QR-code"/>
                                                     <connections>
                                                         <action selector="shareImageButton:" destination="0zn-sQ-Gnv" eventType="touchUpInside" id="wPa-mg-ILn"/>
                                                     </connections>
@@ -354,8 +354,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generate QR code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEO-z9-prC">
-                                            <rect key="frame" x="99" y="11.5" width="145" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generate QR-code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEO-z9-prC">
+                                            <rect key="frame" x="97.5" y="11.5" width="148.5" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" systemColor="linkColor"/>
                                             <nil key="highlightedColor"/>

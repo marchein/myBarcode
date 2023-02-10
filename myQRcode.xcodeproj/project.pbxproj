@@ -15,7 +15,7 @@
 		5B1213B42992CC73007FDCE3 /* QRCode+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1213B32992CC73007FDCE3 /* QRCode+CoreData.swift */; };
 		5B1213B62992D82C007FDCE3 /* TemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1213B52992D82C007FDCE3 /* TemplateTests.swift */; };
 		5B1551C7298D85DB00A4438B /* SKStoreReviewController+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1551C6298D85DB00A4438B /* SKStoreReviewController+Request.swift */; };
-		5B1C2CCB24EFEB4C003544D7 /* ScanViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1C2CCA24EFEB4C003544D7 /* ScanViewController+ImagePicker.swift */; };
+		5B1C2CCB24EFEB4C003544D7 /* ScanViewController+UIImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1C2CCA24EFEB4C003544D7 /* ScanViewController+UIImagePicker.swift */; };
 		5B1C2CCD24EFFB8A003544D7 /* TextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1C2CCC24EFFB8A003544D7 /* TextViewTableViewCell.swift */; };
 		5B2AE31021AA017E00976FE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AE30F21AA017E00976FE2 /* AppDelegate.swift */; };
 		5B2AE31221AA017E00976FE2 /* GenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AE31121AA017E00976FE2 /* GenerateViewController.swift */; };
@@ -37,6 +37,7 @@
 		5B642F2123395979005804AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F2323395979005804AA /* LaunchScreen.storyboard */; };
 		5B67630823395B6000C563FD /* Scan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F262339597E005804AA /* Scan.storyboard */; };
 		5B67630923395B6500C563FD /* Generate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F2023395975005804AA /* Generate.storyboard */; };
+		5B80B21129967C2300C87939 /* ScanViewController+PHPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80B21029967C2300C87939 /* ScanViewController+PHPicker.swift */; };
 		5B915E9123390703008B8B59 /* fa-regular-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B915E90233906EE008B8B59 /* fa-regular-400.ttf */; };
 		5BAA4194298D28B600493175 /* UIDevice+Modelname.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4193298D28B600493175 /* UIDevice+Modelname.swift */; };
 		5BAA4196298D29DD00493175 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4195298D29DD00493175 /* String+Localizable.swift */; };
@@ -97,7 +98,7 @@
 		5B1213B52992D82C007FDCE3 /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
 		5B1213B72992E660007FDCE3 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 		5B1551C6298D85DB00A4438B /* SKStoreReviewController+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKStoreReviewController+Request.swift"; sourceTree = "<group>"; };
-		5B1C2CCA24EFEB4C003544D7 /* ScanViewController+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScanViewController+ImagePicker.swift"; sourceTree = "<group>"; };
+		5B1C2CCA24EFEB4C003544D7 /* ScanViewController+UIImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScanViewController+UIImagePicker.swift"; sourceTree = "<group>"; };
 		5B1C2CCC24EFFB8A003544D7 /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
 		5B2AE30C21AA017E00976FE2 /* myQRcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myQRcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2AE30F21AA017E00976FE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 		5B642F0223392EC4005804AA /* AppIconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconTableViewCell.swift; sourceTree = "<group>"; };
 		5B642F0623393159005804AA /* AppIcon+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppIcon+TableView.swift"; sourceTree = "<group>"; };
 		5B642F0723393159005804AA /* AppIconTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconTableViewController.swift; sourceTree = "<group>"; };
+		5B80B21029967C2300C87939 /* ScanViewController+PHPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScanViewController+PHPicker.swift"; sourceTree = "<group>"; };
 		5B915E90233906EE008B8B59 /* fa-regular-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-regular-400.ttf"; sourceTree = "<group>"; };
 		5BAA4193298D28B600493175 /* UIDevice+Modelname.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Modelname.swift"; sourceTree = "<group>"; };
 		5BAA4195298D29DD00493175 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
@@ -308,7 +310,8 @@
 			isa = PBXGroup;
 			children = (
 				5BD63BC921AEBE4200885382 /* ScanViewController.swift */,
-				5B1C2CCA24EFEB4C003544D7 /* ScanViewController+ImagePicker.swift */,
+				5B1C2CCA24EFEB4C003544D7 /* ScanViewController+UIImagePicker.swift */,
+				5B80B21029967C2300C87939 /* ScanViewController+PHPicker.swift */,
 				5BAA4199298D327600493175 /* ScanViewController+Demo.swift */,
 				5BFE10DF24E96C3B00415E90 /* ScanResultTableViewController.swift */,
 				5BCCE6A923397445007A78D0 /* ScanRequestAccessViewController.swift */,
@@ -609,13 +612,14 @@
 				5BE5310324F02519006A225D /* TemplateListTableViewController.swift in Sources */,
 				5B4B4AA624E93FEC00E44302 /* HistoryItemTableViewCell.swift in Sources */,
 				5BE4AAAE21AAF71200D69E18 /* Utilities.swift in Sources */,
+				5B80B21129967C2300C87939 /* ScanViewController+PHPicker.swift in Sources */,
 				5BE530FE24F02310006A225D /* Template.swift in Sources */,
 				5BE530FC24F0192F006A225D /* NoItemsView.swift in Sources */,
 				5BE4AA9721AAF62E00D69E18 /* SettingsTableViewController.swift in Sources */,
 				5B1551C7298D85DB00A4438B /* SKStoreReviewController+Request.swift in Sources */,
 				5BE5310524F02548006A225D /* Model.swift in Sources */,
 				5BFE10E024E96C3B00415E90 /* ScanResultTableViewController.swift in Sources */,
-				5B1C2CCB24EFEB4C003544D7 /* ScanViewController+ImagePicker.swift in Sources */,
+				5B1C2CCB24EFEB4C003544D7 /* ScanViewController+UIImagePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,7 +905,7 @@
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "";
 			};
 			name = Debug;
@@ -933,7 +937,7 @@
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "";
 			};
 			name = Release;
