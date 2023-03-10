@@ -35,17 +35,6 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         qrContentTextField.addTarget(self, action: #selector(checkIfGenerationIsPossible), for: UIControl.Event.editingChanged)
         
         checkIfGenerationIsPossible()
-        if #available(iOS 13.0, *), let tabBarController = navigationController?.parent as? UITabBarController, let items = tabBarController.tabBar.items {
-            var index = 0
-            for item in items {
-                if index == 0 {
-                    item.image = UIImage(systemName: "qrcode")
-                } else if index == 1 {
-                    item.image = UIImage(systemName: "qrcode.viewfinder")
-                }
-                index += 1
-            }
-        }
     }
     
     fileprivate func setupApp() {
@@ -53,10 +42,12 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         
         if !appSetup {
             UserDefaults.standard.set(isSimulatorOrTestFlight(), forKey: localStoreKeys.isTester)
+            UserDefaults.standard.set(TabOption.GENERATE.rawValue, forKey: localStoreKeys.defaultTab)
             UserDefaults.standard.set(myQRcode.defaultAppIcon, forKey: localStoreKeys.currentAppIcon)
             UserDefaults.standard.set(true, forKey: localStoreKeys.appSetup)
             UserDefaults.standard.set(0, forKey: localStoreKeys.codeGenerated)
             UserDefaults.standard.set(0, forKey: localStoreKeys.codeScanned)
+            UserDefaults.standard.synchronize()
         }
         
         if #available(iOS 13.0,*) {
@@ -77,8 +68,10 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        view.endEditing(true)
-        generateAction()
+        if generateButton.isEnabled {
+            view.endEditing(true)
+            generateAction()
+        }
         return false
     }
     
@@ -128,7 +121,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
                     self.displayQRCodeImage(image: resultImage)
                     incrementCodeValue(of: localStoreKeys.codeGenerated)
                     if addToHistory {
-                        _ = qrCode.addToCoreData()
+                        qrCode.addToCoreData()
                     }
                     self.generateButton.isEnabled = false
                 }

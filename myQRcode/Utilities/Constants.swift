@@ -21,6 +21,8 @@ struct localStoreKeys {
     // how many actions are taken
     static let codeGenerated = "codeGenerated"
     static let codeScanned = "codeScanned"
+    
+    static let defaultTab = "defaultSelectedTab"
 }
 
 // MARK: - Cells
@@ -30,6 +32,12 @@ struct Cells {
     static let AppIconCell  = "appIcons"
     static let TipIntroCell = "introCell"
     static let TipCell      = "tipCell"
+}
+
+//MARK: - TabOption
+enum TabOption: Int {
+    case GENERATE = 0
+    case SCAN = 1
 }
 
 // MARK: - Segues
@@ -64,5 +72,11 @@ struct myQRcode {
 
     static let askForReviewAtSingleAction = 10
     static let askForReviewAtCombinedAction = 30
+    
+    static let tabValues: [TabOption: String] = [
+        .GENERATE: NSLocalizedString("TAB_GENERATE", comment: "Title of generate tab"),
+        .SCAN: NSLocalizedString("TAB_SCAN", comment: "Title of scan tab")
+    ]
+    
 }
 

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import StoreKit
+import HeinHelpers
 
 extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransactionObserver {
     func requestProductInfo() {
@@ -18,7 +19,7 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
             productRequest.delegate = self
             productRequest.start()
         } else {
-            print("Cannot perform In App Purchases.")
+            HeinHelpers.logMessage("Cannot perform In App Purchases.")
         }
     }
     
@@ -32,7 +33,7 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
                 return p0!.price.floatValue < p1!.price.floatValue
             })
         } else {
-            print("There are no products.")
+            HeinHelpers.logMessage("There are no products.")
         }
         hasData = true
         DispatchQueue.main.async {
@@ -40,7 +41,7 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
             self.tableView.reloadData()
         }
         if response.invalidProductIdentifiers.count != 0 {
-            print(response.invalidProductIdentifiers.description)
+            HeinHelpers.logMessage(response.invalidProductIdentifiers.description)
         }
     }
     
@@ -62,6 +63,7 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
             case SKPaymentTransactionState.purchased:
                 self.navigationController?.hideAnimatedActivityIndicatorView()
                 UserDefaults.standard.set(true, forKey: localStoreKeys.hasTipped)
+                UserDefaults.standard.synchronize()
                 SKPaymentQueue.default().finishTransaction(transaction)
                 transactionInProgress = false
                 impact.impactOccurred()
@@ -72,7 +74,7 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
                 transactionInProgress = false
                 showMessage(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("transaction_error", comment: ""), on: self)
             default:
-                print(transaction.transactionState.rawValue)
+                HeinHelpers.logMessage("\(transaction.transactionState.rawValue)")
             }
         }
     }

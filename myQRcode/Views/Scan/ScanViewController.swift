@@ -8,6 +8,7 @@
 
 import AVFoundation
 import UIKit
+import HeinHelpers
 
 class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, HistoryItemDelegate {
     @IBOutlet var pickerButton: UIBarButtonItem!
@@ -119,7 +120,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         #endif
             
         guard let captureDevice = deviceDiscoverySession else {
-            print("Failed to get the camera device")
+            HeinHelpers.logMessage("Failed to get the camera device")
             return
         }
             
@@ -148,7 +149,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                 view.layer.addSublayer(videoPreviewLayer!)
                         
             } catch {
-                print(error)
+                HeinHelpers.logMessage(error.localizedDescription)
                 return
             }
                     
@@ -183,7 +184,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             resetQrCodeFrame()
             hapticsGenerator.prepare()
             hapticsGenerator.notificationOccurred(.error)
-            print("No QR-code is detected")
+            HeinHelpers.logMessage("No QR-code is detected")
             return
         }
         
@@ -208,12 +209,12 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
 
         codeResult = content
         let qrCode = QRCode(content: content, category: .scan)
-        let qrCodeHistoryItem = qrCode.addToCoreData()
+        let historyItem = qrCode.addToCoreData()
         
         incrementCodeValue(of: localStoreKeys.codeScanned)
         
         if performSegueValue {
-            performSegue(withIdentifier: myQRcodeSegues.ResultSegue, sender: qrCodeHistoryItem)
+            performSegue(withIdentifier: myQRcodeSegues.ResultSegue, sender: historyItem)
         }
     }
     

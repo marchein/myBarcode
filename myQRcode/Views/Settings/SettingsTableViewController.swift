@@ -13,6 +13,7 @@ import UIKit
 class SettingsTableViewController: UITableViewController {
     // MARK: - Outlets
 
+    @IBOutlet var selectedTabName: UILabel!
     @IBOutlet var contactMailCell: UITableViewCell!
     @IBOutlet var developerTwitterCell: UITableViewCell!
     @IBOutlet var appStoreCell: UITableViewCell!
@@ -44,7 +45,10 @@ class SettingsTableViewController: UITableViewController {
         if !myQRcode.appIcons.contains(iconName: currentAppIcon) {
             currentAppIcon = myQRcode.defaultAppIcon
             UserDefaults.standard.set(currentAppIcon, forKey: localStoreKeys.currentAppIcon)
+            UserDefaults.standard.synchronize()
         }
+        
+        self.updateCurrentTab()
         
         if let appIcon = currentAppIcon {
             appIconIV.image = appIcon == myQRcode.defaultAppIcon ? Bundle.main.icon : UIImage(named: appIcon)
@@ -53,6 +57,13 @@ class SettingsTableViewController: UITableViewController {
             appIconIV.roundCorners(radius: 6)
         }
         tableView.reloadData()
+    }
+    
+    func updateCurrentTab() {
+        guard let resultValue = TabOption(rawValue: UserDefaults.standard.integer(forKey: localStoreKeys.defaultTab)) else {
+            fatalError()
+        }
+        self.selectedTabName.text = myQRcode.tabValues[resultValue]
     }
     
     private func configureNavigator() {

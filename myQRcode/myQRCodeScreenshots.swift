@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import HeinHelpers
 
 func getPlatformNSString() -> String {
     #if targetEnvironment(simulator)
@@ -55,12 +56,12 @@ class myQRCodeScreenshots: XCTestCase {
         let screenshot = XCUIScreen.main.screenshot().image
         let imageData =  screenshot.jpegData(compressionQuality: 1.0)!
         let url = URL(fileURLWithPath: deviceScreenshotPath + "/" + name)
-        print(url)
+        HeinHelpers.logMessage(url.absoluteString)
         
         do {
             try imageData.write(to: url)
         } catch {
-            print("Error while saving screenshot at: \(url.absoluteString)")
+            HeinHelpers.logMessage("Error while saving screenshot at: \(url.absoluteString)")
         }
     }
     
@@ -70,7 +71,7 @@ class myQRCodeScreenshots: XCTestCase {
         do {
             try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: false, attributes: nil)
         } catch let error as NSError {
-            print(error.localizedDescription);
+            HeinHelpers.logMessage(error.localizedDescription);
         }
         
         return path
@@ -123,13 +124,13 @@ class myQRCodeScreenshots: XCTestCase {
         app.launch()
         saveScreenshot(name: "01_start.jpeg")
         let tablesQuery = app.tables
-        tablesQuery/*@START_MENU_TOKEN@*/.textFields["Inhalt des QR Codes"]/*[[".cells.textFields[\"Inhalt des QR Codes\"]",".textFields[\"Inhalt des QR Codes\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery.textFields["Inhalt des QR Codes"].typeText("Inhalt Deines QR Codes")
+        tablesQuery.textFields["Inhalt des QR-Codes"].tap()
+        tablesQuery.textFields["Inhalt des QR-Codes"].typeText("Inhalt Deines QR Codes")
         saveScreenshot(name: "02_entered.jpeg")
-        tablesQuery/*@START_MENU_TOKEN@*/.buttons["QR Code generieren"]/*[[".cells.buttons[\"QR Code generieren\"]",".buttons[\"QR Code generieren\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery.buttons["QR-Code generieren"].tap()
         sleep(3)
         saveScreenshot(name: "03_generated.jpeg")
-        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Generierten QR Code exportieren"]/*[[".cells.buttons[\"Generierten QR Code exportieren\"]",".buttons[\"Generierten QR Code exportieren\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery.buttons["Generierten QR-Code exportieren"].tap()
         sleep(1)
         saveScreenshot(name: "04_shared.jpeg")
         if app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Schließen"].exists {
@@ -164,7 +165,7 @@ class myQRCodeScreenshots: XCTestCase {
         tablesQuery/*@START_MENU_TOKEN@*/.textFields["hello@placeholder.com"]/*[[".cells.textFields[\"hello@placeholder.com\"]",".textFields[\"hello@placeholder.com\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         tablesQuery.textFields["hello@placeholder.com"].typeText("dev@marc-hein.de")
         
-        tablesQuery.staticTexts["generateQRCodeFromTemplateCell"].tap()
+        tablesQuery.cells["generateQRCodeFromTemplateCell"].staticTexts.firstMatch.tap()
         sleep(2)
         saveScreenshot(name: "10_templates_generated.jpeg")
     }

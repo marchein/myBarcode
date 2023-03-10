@@ -58,5 +58,26 @@
 "TEMPLATE_INSTAGRAM_USERNAME" = "Benutzername";
 "TEMPLATE_INSTAGRAM_USERNAME_PLACEHOLDER" = "Dein Instagram Benutzername";
 
+/* Twitter */
+"TEMPLATE_TWITTER_USERNAME" = "Benutzername";
+"TEMPLATE_TWITTER_USERNAME_PLACEHOLDER" = "Dein Twitter @Benutzername";
+
+/* Mail */
+"TEMPLATE_EMAIL_WITH_CONTENT" = "E-Mail mit Inhalt";
+"TEMPLATE_EMAIL_WITH_CONTENT_RECEIPIENT" = "Empfänger";
+"TEMPLATE_EMAIL_WITH_CONTENT_RECEIPIENT_PLACEHOLDER" = "empfaenger@anbieter.de";
+
+"TEMPLATE_EMAIL_WITH_CONTENT_SUBJECT" = "Betreff der E-Mail";
+"TEMPLATE_EMAIL_WITH_CONTENT_SUBJECT_PLACEHOLDER" = "Betreff";
+
+"TEMPLATE_EMAIL_WITH_CONTENT_BODY" = "Inhalt der E-Mail";
+"TEMPLATE_EMAIL_WITH_CONTENT_BODY_PLACEHOLDER" = "Nachricht an Empfänger";
+
 /* Settings */
 "SETTINGS_DEVELOPER_GREETING" = "Erstellt mit ❤️ in Trier";
+
+/* Tab Selection */
+"TAB_SELECTION_HEADER" = "Standard Tab";
+"TAB_GENERATE" = "Generieren";
+"TAB_SCAN" = "Scannen";
+"TAB_SELECTION_FOOTER" = "Hier kannst Du auswählen, welcher Tab beim Start von myQRcode geladen werden soll.";

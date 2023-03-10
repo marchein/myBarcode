@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import HeinHelpers
 
 extension QRCode {
+    @discardableResult
     func addToCoreData() -> HistoryItem {
         guard
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -24,7 +26,7 @@ extension QRCode {
         do {
             try managedObjectContext.save()
         } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            HeinHelpers.logMessage("Could not save. \(error), \(error.userInfo)")
         }
         return newItem
     }

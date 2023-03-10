@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		5B2AE31021AA017E00976FE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AE30F21AA017E00976FE2 /* AppDelegate.swift */; };
 		5B2AE31221AA017E00976FE2 /* GenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AE31121AA017E00976FE2 /* GenerateViewController.swift */; };
 		5B2AE31721AA017F00976FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AE31621AA017F00976FE2 /* Assets.xcassets */; };
+		5B30F8EE29B0FF2C0012602D /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE530FD24F02310006A225D /* Template.swift */; };
 		5B3D61CD24E92C5300C01F34 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D61CC24E92C5300C01F34 /* QRCode.swift */; };
 		5B3D61CF24E92FA000C01F34 /* UIImage+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D61CE24E92FA000C01F34 /* UIImage+Base64.swift */; };
 		5B3D621824E9355B00C01F34 /* History.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D621624E9355B00C01F34 /* History.xcdatamodeld */; };
@@ -27,6 +28,8 @@
 		5B4B4AA424E93F2700E44302 /* HistoryItem+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4B4AA324E93F2700E44302 /* HistoryItem+Date.swift */; };
 		5B4B4AA624E93FEC00E44302 /* HistoryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4B4AA524E93FEC00E44302 /* HistoryItemTableViewCell.swift */; };
 		5B4B4AA824E9596200E44302 /* ActivityIndicatorOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4B4AA724E9596200E44302 /* ActivityIndicatorOverlay.swift */; };
+		5B4D14E92998EDCC0000BC94 /* SettingsTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D14E82998EDCC0000BC94 /* SettingsTabTableViewController.swift */; };
+		5B4D14EC2998F0900000BC94 /* HeinHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 5B4D14EB2998F0900000BC94 /* HeinHelpers */; };
 		5B5C98A82339299E00030C75 /* myQRcode-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B5C98A72339299E00030C75 /* myQRcode-dark.png */; };
 		5B5C98AA233929E200030C75 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C98A9233929E200030C75 /* AppIcon.swift */; };
 		5B5FAAA724E97E7300E719D4 /* myQRCodeScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF98BC021AB371D00AA5BBC /* myQRCodeScreenshots.swift */; };
@@ -111,6 +114,7 @@
 		5B4B4AA324E93F2700E44302 /* HistoryItem+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryItem+Date.swift"; sourceTree = "<group>"; };
 		5B4B4AA524E93FEC00E44302 /* HistoryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemTableViewCell.swift; sourceTree = "<group>"; };
 		5B4B4AA724E9596200E44302 /* ActivityIndicatorOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorOverlay.swift; sourceTree = "<group>"; };
+		5B4D14E82998EDCC0000BC94 /* SettingsTabTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTabTableViewController.swift; sourceTree = "<group>"; };
 		5B5C98A72339299E00030C75 /* myQRcode-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myQRcode-dark.png"; sourceTree = "<group>"; };
 		5B5C98A9233929E200030C75 /* AppIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		5B5FAA9D24E97E6B00E719D4 /* myQRcodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myQRcodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B4D14EC2998F0900000BC94 /* HeinHelpers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +224,7 @@
 		5B19FB2D21AAF60500BA102F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				5B4D14E72998EDB60000BC94 /* DefaultAction */,
 				5B642F052339313D005804AA /* AppIconList */,
 				5BE4AA8C21AAF62E00D69E18 /* SettingsTableViewController.swift */,
 				5BE4AA8821AAF62E00D69E18 /* Settings+TableView.swift */,
@@ -277,6 +283,14 @@
 				5BE530FB24F0192F006A225D /* NoItemsView.swift */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		5B4D14E72998EDB60000BC94 /* DefaultAction */ = {
+			isa = PBXGroup;
+			children = (
+				5B4D14E82998EDCC0000BC94 /* SettingsTabTableViewController.swift */,
+			);
+			path = DefaultAction;
 			sourceTree = "<group>";
 		};
 		5B5C98A62339299000030C75 /* Alternative App Icons */ = {
@@ -455,6 +469,9 @@
 			dependencies = (
 			);
 			name = myQRcode;
+			packageProductDependencies = (
+				5B4D14EB2998F0900000BC94 /* HeinHelpers */,
+			);
 			productName = myQRgenerator;
 			productReference = 5B2AE30C21AA017E00976FE2 /* myQRcode.app */;
 			productType = "com.apple.product-type.application";
@@ -511,6 +528,9 @@
 				Base,
 			);
 			mainGroup = 5B2AE30321AA017E00976FE2;
+			packageReferences = (
+				5B4D14EA2998F0900000BC94 /* XCRemoteSwiftPackageReference "HeinHelpers" */,
+			);
 			productRefGroup = 5B2AE30D21AA017E00976FE2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -601,6 +621,7 @@
 				5BE4AA9821AAF62E00D69E18 /* Settings+SendSupportMail.swift in Sources */,
 				5BE4AAA821AAF6F300D69E18 /* Bundle+Icon.swift in Sources */,
 				5B1C2CCD24EFFB8A003544D7 /* TextViewTableViewCell.swift in Sources */,
+				5B4D14E92998EDCC0000BC94 /* SettingsTabTableViewController.swift in Sources */,
 				5BCCE6AA23397445007A78D0 /* ScanRequestAccessViewController.swift in Sources */,
 				5B3D61CF24E92FA000C01F34 /* UIImage+Base64.swift in Sources */,
 				5BE4AAA721AAF6F300D69E18 /* SKProduct+LocalizedPrice.swift in Sources */,
@@ -628,6 +649,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BAA4194298D28B600493175 /* UIDevice+Modelname.swift in Sources */,
+				5B30F8EE29B0FF2C0012602D /* Template.swift in Sources */,
 				5B5FAAA724E97E7300E719D4 /* myQRCodeScreenshots.swift in Sources */,
 				5BAA4197298D29DD00493175 /* String+Localizable.swift in Sources */,
 			);
@@ -902,7 +924,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -934,7 +956,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1024,6 +1046,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5B4D14EA2998F0900000BC94 /* XCRemoteSwiftPackageReference "HeinHelpers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marchein/HeinHelpers.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5B4D14EB2998F0900000BC94 /* HeinHelpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B4D14EA2998F0900000BC94 /* XCRemoteSwiftPackageReference "HeinHelpers" */;
+			productName = HeinHelpers;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5B3D621624E9355B00C01F34 /* History.xcdatamodeld */ = {

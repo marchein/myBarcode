@@ -6,18 +6,27 @@
 //  Copyright © 2023 Marc Hein. All rights reserved.
 //
 
-import UIKit
 import CoreData
+import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
     var window: UIWindow?
-    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        return true
+        
+        if let tabBarController = self.window?.rootViewController as? UITabBarController, let items = tabBarController.tabBar.items {
+            if #available(iOS 13.0, *) {
+                items[0].image = UIImage(systemName: "qrcode")
+                items[1].image = UIImage(systemName: "qrcode.viewfinder")
+            }
+            
+            setDefaultTab(tabVC: tabBarController)
+            return true
+        }
+        
+        return false
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -42,20 +51,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         
         // Save changes in the application's managed object context when the application transitions to the background.
-        self.saveContext()
+        saveContext()
     }
     
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
         /*
-         The persistent container for the application. This implementation
-         creates and returns a container, having loaded the store for the
-         application to it. This property is optional since there are legitimate
-         error conditions that could cause the creation of the store to fail.
-        */
+          The persistent container for the application. This implementation
+          creates and returns a container, having loaded the store for the
+          application to it. This property is optional since there are legitimate
+          error conditions that could cause the creation of the store to fail.
+         */
         let container = NSPersistentContainer(name: "History")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        container.loadPersistentStores(completionHandler: { _, error in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -76,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data Saving support
 
-    func saveContext () {
+    func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
@@ -89,5 +98,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    // MARK: - Tab Bar
+    func setDefaultTab(tabVC: UITabBarController) {
+        guard let selectedTab = TabOption(rawValue: UserDefaults.standard.integer(forKey: localStoreKeys.defaultTab)) else {
+            fatalError()
+        }
+        tabVC.selectedIndex = selectedTab.rawValue
+    }
 }
-

@@ -40,7 +40,6 @@ class TemplateListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(Model.Templates[indexPath.section][indexPath.row + 1])
         performSegue(withIdentifier: myQRcodeSegues.EditTemplateSegue, sender: Model.Templates[indexPath.section][indexPath.row + 1])
     }
 

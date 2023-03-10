@@ -27,6 +27,7 @@ extension AppIconTableViewController {
         let selectedIcon = myQRcode.appIcons.getIcon(for: indexPath.row)?.iconName
         DispatchQueue.main.async(execute: { () -> Void in
             UserDefaults.standard.set(selectedIcon ?? myQRcode.defaultAppIcon, forKey: localStoreKeys.currentAppIcon)
+            UserDefaults.standard.synchronize()
             self.setSelectedImage(key: selectedIcon, cell: tableView.cellForRow(at: indexPath))
             self.tableView.reloadData()
         })

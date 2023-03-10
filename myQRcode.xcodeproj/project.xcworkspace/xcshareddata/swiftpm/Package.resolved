@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "heinhelpers",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/marchein/HeinHelpers.git",
+      "state" : {
+        "revision" : "d11ffab201dd5ca0c175e959784327331216c42b",
+        "version" : "1.1.4"
+      }
+    }
+  ],
+  "version" : 2
+}

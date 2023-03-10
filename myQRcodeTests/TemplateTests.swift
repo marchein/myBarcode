@@ -10,16 +10,16 @@ import XCTest
 
 final class TemplateTests: XCTestCase {
     func testTemplateActions() throws {
-        let copiedTemplate = Model.Templates.first?.copy() as! Template
+        let copiedTemplate = (Model.Templates[0][1] as! Template).copy() as! Template
         XCTAssertNotNil(copiedTemplate)
-        XCTAssertTrue(copiedTemplate == Model.Templates.first)
+        XCTAssertTrue(copiedTemplate == Model.Templates[0][1] as! Template)
     }
     
     func testWifiTemplate() throws {
         let wifiName = "Test Network 1234 !%&/()"
         let wifiPassword = "11735831216878134824"
         for option in ["nopass", "WEP", "WPA"] {
-            let wifiTemplate = Model.Templates[0].copy() as! Template
+            let wifiTemplate = (Model.Templates[0][1] as! Template).copy() as! Template
             wifiTemplate.parameterValues[0] = option
             wifiTemplate.parameterValues[1] = wifiName
             wifiTemplate.parameterValues[2] = wifiPassword
@@ -31,7 +31,7 @@ final class TemplateTests: XCTestCase {
     }
     
     func testMailTemplate() throws {
-        let mailTemplate = Model.Templates[1]
+        let mailTemplate = Model.Templates[0][2] as! Template
         let mailAdress = "test@testmail.com"
         mailTemplate.parameterValues[0] = mailAdress
         let expectedMailResultString = "mailto:\(mailAdress)"
@@ -39,7 +39,7 @@ final class TemplateTests: XCTestCase {
     }
     
     func testPhoneTemplate() throws {
-        let phoneTemplate = Model.Templates[2]
+        let phoneTemplate = Model.Templates[0][3] as! Template
         let phoneNumber = "+49123456789"
         phoneTemplate.parameterValues[0] = phoneNumber
         let expectedPhoneResultString = "tel:\(phoneNumber)"
@@ -47,7 +47,7 @@ final class TemplateTests: XCTestCase {
     }
     
     func testSmsTemplate() throws {
-        let smsTemplate = Model.Templates[3]
+        let smsTemplate = Model.Templates[0][4] as! Template
         let smsNumber = "+49123456789"
         smsTemplate.parameterValues[0] = smsNumber
         let expectedSmsResultString = "sms:\(smsNumber)"

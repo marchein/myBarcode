@@ -9,6 +9,7 @@
 import Foundation
 import MessageUI
 import UIKit
+import HeinHelpers
 
 // MARK: - Mail Extension
 
@@ -22,7 +23,7 @@ extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
             mail.setMessageBody(NSLocalizedString("support_mail_body", comment: ""), isHTML: false)
             present(mail, animated: true)
         } else {
-            print("No mail account configured")
+            HeinHelpers.logMessage("No mail account configured")
             let mailErrorMessage = NSLocalizedString("mail_error", comment: "")
             showMessage(title: NSLocalizedString("Error", comment: ""), message: String(format: mailErrorMessage, myQRcode.mailAdress), on: self)
         }

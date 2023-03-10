@@ -55,6 +55,7 @@ func getCodeValue(from: String) -> Int {
 func incrementCodeValue(of: String) {
     let result = getCodeValue(from: of) + 1
     UserDefaults.standard.set(result, forKey: of)
+    UserDefaults.standard.synchronize()
     if result == myQRcode.askForReviewAtSingleAction {
         showRateWindow()
     } else if (getCodeValue(from: localStoreKeys.codeGenerated) + getCodeValue(from: localStoreKeys.codeScanned) == myQRcode.askForReviewAtCombinedAction) {
