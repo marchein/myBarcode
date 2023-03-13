@@ -244,6 +244,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="characterLimitLabel" destination="ZNT-9e-QHC" id="S7y-7e-CTA"/>
+                        <outlet property="characterLimitLabelHeight" destination="AmQ-IO-jEF" id="Pcy-eq-YnV"/>
                         <outlet property="clearButton" destination="4KR-c3-vuV" id="e9J-fg-iNI"/>
                         <outlet property="emptyLabel" destination="njC-gD-BiU" id="K6s-pN-gqB"/>
                         <outlet property="exportButton" destination="X4f-wI-1Pm" id="UUb-sM-Suy"/>

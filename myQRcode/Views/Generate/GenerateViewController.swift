@@ -14,6 +14,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     @IBOutlet var qrContentTextView: UITextView!
     //@IBOutlet var qrContentTextField: UITextField!
     @IBOutlet var characterLimitLabel: UILabel!
+    @IBOutlet var characterLimitLabelHeight: NSLayoutConstraint!
     @IBOutlet var clearButton: UIButton!
     @IBOutlet var generateButton: UIButton!
     @IBOutlet var exportButton: UIButton!
@@ -83,6 +84,11 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     }
     
     func textViewDidEndEditing (_ textView: UITextView) {
+        resetTextView()
+        qrContentTextView.resignFirstResponder()
+    }
+    
+    func resetTextView() {
         if qrContentTextView.text.isEmpty || qrContentTextView.text == "" {
             if #available(iOS 13.0,*) {
                 qrContentTextView.textColor = .placeholderText
@@ -90,17 +96,12 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
                 qrContentTextView.textColor = .lightGray
             }
             qrContentTextView.text = defaultString
+            resignTextViewFirstResponder()
         }
-        qrContentTextView.resignFirstResponder()
     }
     
     // MARK: UITextViewDelegate
     func textViewDidChange(_ textView: UITextView) {
-        
-        // Calculate if the text view will change height, then only force
-        // the table to update if it does.  Also disable animations to
-        // prevent "jankiness".
-        
         let startHeight = textView.frame.size.height
         let calcHeight = textView.sizeThatFits(textView.frame.size).height  //iOS 8+ only
         
@@ -123,6 +124,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         }
         setMaxCharacterLabel()
         checkIfGenerationIsPossible()
+        resetTextView()
     }
     
     func setMaxCharacterLabel() {
@@ -130,8 +132,11 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         
         let currentCount = qrContent == defaultString ? 0 : qrContent.count
         characterLimitLabel.text = "\(maxLength - currentCount) Zeichen verbleibend"
-        characterLimitLabel.isHidden = Double(currentCount) < Double(maxLength) * 0.001
+        characterLimitLabelHeight.constant = Double(currentCount) > Double(maxLength) * 0.8 ? 14 : 0
         setClearButton()
+        
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
