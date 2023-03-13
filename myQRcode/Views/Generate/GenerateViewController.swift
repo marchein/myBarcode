@@ -9,9 +9,12 @@
 import CoreData
 import UIKit
 
-class GenerateViewController: UITableViewController, UIDragInteractionDelegate, UITextFieldDelegate, HistoryItemDelegate {
+class GenerateViewController: UITableViewController, UIDragInteractionDelegate, UITextViewDelegate, HistoryItemDelegate {
     @IBOutlet var qrCodeImageView: UIImageView!
-    @IBOutlet var qrContentTextField: UITextField!
+    @IBOutlet var qrContentTextView: UITextView!
+    //@IBOutlet var qrContentTextField: UITextField!
+    @IBOutlet var characterLimitLabel: UILabel!
+    @IBOutlet var clearButton: UIButton!
     @IBOutlet var generateButton: UIButton!
     @IBOutlet var exportButton: UIButton!
     @IBOutlet var emptyLabel: UILabel!
@@ -23,17 +26,23 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     var firstAction = true
     var usedTemplate: Template? = nil
     
+    var defaultString = NSLocalizedString("GENERATE_QR_CODE_PLACEHOLDER", comment: "Placeholder for textview")
+    let maxLength = 1500
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupApp()
         
         qrCodeImageView.addInteraction(UIDragInteraction(delegate: self))
-        qrContentTextField.delegate = self
+        qrContentTextView.delegate = self
         qrCodeImageView.image = #imageLiteral(resourceName: "Blank QR")
         exportButton.isEnabled = false
         
-        qrContentTextField.addTarget(self, action: #selector(checkIfGenerationIsPossible), for: UIControl.Event.editingChanged)
+        setupTextView()
+        //qrContentTextView.addTarget(self, action: #selector(checkIfGenerationIsPossible), for: UIControl.Event.editingChanged)
         
+        setClearButton()
+        setMaxCharacterLabel()
         checkIfGenerationIsPossible()
     }
     
@@ -56,15 +65,99 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         }
     }
     
+    func setupTextView() {
+        if #available(iOS 13.0,*) {
+            qrContentTextView.textColor = .placeholderText
+        }
+        qrContentTextView.isScrollEnabled = false
+        qrContentTextView.text = defaultString
+    }
+    
+    func textViewDidBeginEditing (_ textView: UITextView) {
+        if #available(iOS 13.0,*) {
+            if qrContentTextView.textColor == .placeholderText && qrContentTextView.isFirstResponder {
+                qrContentTextView.text = nil
+                qrContentTextView.textColor = .label
+            }
+        }
+    }
+    
+    func textViewDidEndEditing (_ textView: UITextView) {
+        if qrContentTextView.text.isEmpty || qrContentTextView.text == "" {
+            if #available(iOS 13.0,*) {
+                qrContentTextView.textColor = .placeholderText
+            } else {
+                qrContentTextView.textColor = .lightGray
+            }
+            qrContentTextView.text = defaultString
+        }
+        qrContentTextView.resignFirstResponder()
+    }
+    
+    // MARK: UITextViewDelegate
+    func textViewDidChange(_ textView: UITextView) {
+        
+        // Calculate if the text view will change height, then only force
+        // the table to update if it does.  Also disable animations to
+        // prevent "jankiness".
+        
+        let startHeight = textView.frame.size.height
+        let calcHeight = textView.sizeThatFits(textView.frame.size).height  //iOS 8+ only
+        
+        if startHeight != calcHeight {
+            
+            UIView.setAnimationsEnabled(false) // Disable animations
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+            
+            // Might need to insert additional stuff here if scrolls
+            // table in an unexpected way.  This scrolls to the bottom
+            // of the table. (Though you might need something more
+            // complicated if editing in the middle.)
+            
+            let scrollTo = self.tableView.contentSize.height - self.tableView.frame.size.height
+            self.tableView.setContentOffset(CGPoint(x: 0, y: scrollTo), animated: false)
+            
+            UIView.setAnimationsEnabled(true)  // Re-enable animations.
+            
+        }
+        setMaxCharacterLabel()
+        checkIfGenerationIsPossible()
+    }
+    
+    func setMaxCharacterLabel() {
+        guard let qrContent = qrContentTextView.text else { return }
+        
+        let currentCount = qrContent == defaultString ? 0 : qrContent.count
+        characterLimitLabel.text = "\(maxLength - currentCount) Zeichen verbleibend"
+        characterLimitLabel.isHidden = Double(currentCount) < Double(maxLength) * 0.001
+        setClearButton()
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 || section == 1 || (section == 2 && usedTemplate != nil) {
+        if section == 0 ||  section == 1 || (section == 2 && usedTemplate != nil) {
             return 2
         }
         return 1
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            if generateButton.isEnabled {
+                view.endEditing(true)
+                generateAction()
+            }
+            return false
+        }
+        return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -76,8 +169,8 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     }
     
     @objc func checkIfGenerationIsPossible() {
-        let currentCount = qrContentTextField.text?.count ?? 0
-        generateButton.isEnabled = currentCount > 0 && currentCount < 1500
+        let currentCount = qrContentTextView.text?.count ?? 0
+        generateButton.isEnabled = currentCount > 0 && currentCount < maxLength && qrContentTextView.text! != defaultString
     }
     
     func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem] {
@@ -88,10 +181,12 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     }
     
     fileprivate func resetView() {
+        resignTextViewFirstResponder()
+        setClearButton()
         generateButton.isEnabled = false
         qrCodeImageView.isUserInteractionEnabled = false
         qrCodeImageView.image = #imageLiteral(resourceName: "Blank QR")
-        qrContentTextField.text = nil
+        qrContentTextView.text = nil
         qrCodeImage = nil
         exportButton.isEnabled = false
     }
@@ -102,12 +197,12 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     
     func generateAction(addToHistory: Bool = true) {
         guard
-            let qrData = qrContentTextField.text
+            let qrData = qrContentTextView.text
         else {
             return
         }
         
-        qrContentTextField.resignFirstResponder()
+        qrContentTextView.resignFirstResponder()
                 
         if qrCodeImage == nil {
             tabBarController?.displayAnimatedActivityIndicatorView()
@@ -157,6 +252,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        qrContentTextView.resignFirstResponder()
         if segue.identifier == myQRcodeSegues.ShowHistorySegue {
             guard
                 let historyNavVC = segue.destination as? UINavigationController,
@@ -195,7 +291,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         guard let content = content, content.count > 0 else {
             return
         }
-        qrContentTextField.text = content
+        qrContentTextView.text = content
         checkIfGenerationIsPossible()
         if generateButton.isEnabled {
             generateAction()
@@ -203,7 +299,30 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        resignTextViewFirstResponder()
         self.tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func resignTextViewFirstResponder() {
+        qrContentTextView.resignFirstResponder()
+    }
+    
+    func setClearButton() {
+        guard let qrContent = qrContentTextView.text else { return }
+
+        clearButton.isHidden = qrContent == defaultString || qrContent.isEmpty
+    }
+    
+    @IBAction func clearButtonTapped(_ sender: Any) {
+        qrContentTextView.text = defaultString
+        if #available(iOS 13.0,*) {
+            qrContentTextView.textColor = .placeholderText
+        } else {
+            qrContentTextView.textColor = .lightGray
+        }
+        setMaxCharacterLabel()
+        checkIfGenerationIsPossible()
+        resignTextViewFirstResponder()
     }
 }
 

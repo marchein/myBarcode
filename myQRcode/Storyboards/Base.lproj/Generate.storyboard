@@ -34,29 +34,56 @@
                         <sections>
                             <tableViewSection id="a2k-a7-eYR">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="9Nn-zX-y9P">
-                                        <rect key="frame" x="16" y="18" width="343" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="9Nn-zX-y9P">
+                                        <rect key="frame" x="16" y="18" width="343" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Nn-zX-y9P" id="vc5-eL-SDo">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Content of the QR-code" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="DwH-hJ-Ipd">
-                                                    <rect key="frame" x="16" y="0.0" width="311" height="44"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="alphabet" returnKeyType="done"/>
-                                                </textField>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="PLACEHOLDER TEXT" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qFb-6n-8ju">
+                                                    <rect key="frame" x="12" y="11" width="299" height="48"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KR-c3-vuV">
+                                                    <rect key="frame" x="311" y="19" width="16" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="gSu-Av-hDR"/>
+                                                        <constraint firstAttribute="width" constant="16" id="vnD-gF-TKt"/>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="xmark.circle.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="clearButtonTapped:" destination="0zn-sQ-Gnv" eventType="touchUpInside" id="eAo-Tm-pXr"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXX Zeichen verbleibend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNT-9e-QHC">
+                                                    <rect key="frame" x="16" y="55" width="142" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="AmQ-IO-jEF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="DwH-hJ-Ipd" secondAttribute="trailing" constant="16" id="0ye-iu-3ao"/>
-                                                <constraint firstItem="DwH-hJ-Ipd" firstAttribute="leading" secondItem="vc5-eL-SDo" secondAttribute="leading" constant="16" id="8cy-mJ-cth"/>
-                                                <constraint firstAttribute="bottom" secondItem="DwH-hJ-Ipd" secondAttribute="bottom" id="GQH-gj-HPS"/>
-                                                <constraint firstItem="DwH-hJ-Ipd" firstAttribute="top" secondItem="vc5-eL-SDo" secondAttribute="top" id="zLJ-ZC-03T"/>
+                                                <constraint firstItem="ZNT-9e-QHC" firstAttribute="top" secondItem="qFb-6n-8ju" secondAttribute="bottomMargin" constant="4" id="4sS-Kc-LbS"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="4KR-c3-vuV" secondAttribute="trailing" id="6M9-TF-akY"/>
+                                                <constraint firstItem="ZNT-9e-QHC" firstAttribute="leading" secondItem="vc5-eL-SDo" secondAttribute="leadingMargin" id="7D3-19-CLW"/>
+                                                <constraint firstItem="qFb-6n-8ju" firstAttribute="top" secondItem="vc5-eL-SDo" secondAttribute="topMargin" id="BPa-vk-iJo"/>
+                                                <constraint firstItem="4KR-c3-vuV" firstAttribute="top" secondItem="vc5-eL-SDo" secondAttribute="topMargin" constant="8" id="OyT-4X-VLh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ZNT-9e-QHC" secondAttribute="bottom" id="Zl4-MC-nfR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qFb-6n-8ju" secondAttribute="trailing" constant="16" id="jx3-rg-arh"/>
+                                                <constraint firstItem="qFb-6n-8ju" firstAttribute="leading" secondItem="vc5-eL-SDo" secondAttribute="leadingMargin" constant="-4" id="l02-KR-FFk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="ynF-FM-Lor">
-                                        <rect key="frame" x="16" y="62" width="343" height="44"/>
+                                        <rect key="frame" x="16" y="98" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ynF-FM-Lor" id="HtY-M9-sc2">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
@@ -64,6 +91,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBE-FK-kol">
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="k42-Mb-m06"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <state key="normal" title="Generate QR-code"/>
                                                     <connections>
@@ -84,7 +114,7 @@
                             <tableViewSection headerTitle="QR-Code" id="EeJ-pa-ZRx">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="300" id="0Gj-aS-pH7">
-                                        <rect key="frame" x="16" y="162" width="343" height="300"/>
+                                        <rect key="frame" x="16" y="198" width="343" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Gj-aS-pH7" id="fE0-67-ELY">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="300"/>
@@ -119,7 +149,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="Wop-kp-T33">
-                                        <rect key="frame" x="16" y="462" width="343" height="44"/>
+                                        <rect key="frame" x="16" y="498" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wop-kp-T33" id="0ov-mQ-Yjn">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
@@ -127,6 +157,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4f-wI-1Pm">
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="lM6-Cr-Po4"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <state key="normal" title="Export generated QR-code"/>
                                                     <connections>
@@ -147,7 +180,7 @@
                             <tableViewSection id="JB1-jG-Snj" userLabel="Templates section">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="beF-PC-LeV" style="IBUITableViewCellStyleDefault" id="yyP-HG-gaD" userLabel="Templates">
-                                        <rect key="frame" x="16" y="542" width="343" height="43.5"/>
+                                        <rect key="frame" x="16" y="578" width="343" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yyP-HG-gaD" id="q7D-Fx-8V7">
                                             <rect key="frame" x="0.0" y="0.0" width="316.5" height="43.5"/>
@@ -167,7 +200,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="vZP-N5-XQU" style="IBUITableViewCellStyleDefault" id="qXI-71-Ho1" userLabel="Reuse Templates">
-                                        <rect key="frame" x="16" y="585.5" width="343" height="64.5"/>
+                                        <rect key="frame" x="16" y="621.5" width="343" height="64.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qXI-71-Ho1" id="Ef1-1h-UVk">
                                             <rect key="frame" x="0.0" y="0.0" width="316.5" height="64.5"/>
@@ -210,12 +243,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="characterLimitLabel" destination="ZNT-9e-QHC" id="S7y-7e-CTA"/>
+                        <outlet property="clearButton" destination="4KR-c3-vuV" id="e9J-fg-iNI"/>
                         <outlet property="emptyLabel" destination="njC-gD-BiU" id="K6s-pN-gqB"/>
                         <outlet property="exportButton" destination="X4f-wI-1Pm" id="UUb-sM-Suy"/>
                         <outlet property="generateButton" destination="aBE-FK-kol" id="MoG-rv-JuH"/>
                         <outlet property="historyButton" destination="jbV-8l-EOS" id="Aoz-om-nns"/>
                         <outlet property="qrCodeImageView" destination="cpL-AM-lsy" id="gy3-03-kdt"/>
-                        <outlet property="qrContentTextField" destination="DwH-hJ-Ipd" id="02t-qr-V3n"/>
+                        <outlet property="qrContentTextView" destination="qFb-6n-8ju" id="jKy-DU-J1a"/>
                         <outlet property="settingsButton" destination="mbM-68-iH4" id="nhH-TW-Pzn"/>
                     </connections>
                 </tableViewController>
@@ -355,7 +390,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generate QR-code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEO-z9-prC">
-                                            <rect key="frame" x="97.5" y="11.5" width="148.5" height="21"/>
+                                            <rect key="frame" x="97" y="11.5" width="149" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" systemColor="linkColor"/>
                                             <nil key="highlightedColor"/>
@@ -441,8 +476,15 @@
         <image name="Generate-Icon" width="25" height="25"/>
         <image name="History-Icon" width="25" height="25"/>
         <image name="Settings" width="25" height="25"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

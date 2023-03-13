@@ -51,6 +51,9 @@
 "message_template" = "Telefon Nachricht";
 "message_number" = "Telefonnummer";
 
+/* Generate */
+"GENERATE_QR_CODE_PLACEHOLDER" = "Inhalt des QR-Codes";
+
 /* Templates */
 "TEMPLATES_PLACEHOLDER_WIFI_NAME" = "WLAN Name";
 
