@@ -52,7 +52,9 @@
 "message_number" = "Telefonnummer";
 
 /* Generate */
+"GENERATE_CHARS_LEFT" = "Zeichen verbleibend";
 "GENERATE_QR_CODE_PLACEHOLDER" = "Inhalt des QR-Codes";
+
 
 /* Templates */
 "TEMPLATES_PLACEHOLDER_WIFI_NAME" = "WLAN Name";

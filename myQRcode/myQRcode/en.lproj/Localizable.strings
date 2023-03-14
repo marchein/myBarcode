@@ -32,6 +32,7 @@
 "no_qr_code_error_description" = "myQRcode was unable to detect any QR-codes in the selected image";
 
 /* Generate */
+"GENERATE_CHARS_LEFT" = "characters left";
 "GENERATE_QR_CODE_PLACEHOLDER" = "Content of the QR-code";
 
 /* Templates */

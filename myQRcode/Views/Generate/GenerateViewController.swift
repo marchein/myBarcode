@@ -131,7 +131,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         guard let qrContent = qrContentTextView.text else { return }
         
         let currentCount = qrContent == defaultString ? 0 : qrContent.count
-        characterLimitLabel.text = "\(maxLength - currentCount) Zeichen verbleibend"
+        characterLimitLabel.text = "\(maxLength - currentCount) \(NSLocalizedString("GENERATE_CHARS_LEFT", comment: "000 x left"))"
         characterLimitLabelHeight.constant = Double(currentCount) > Double(maxLength) * 0.8 ? 14 : 0
         setClearButton()
         
