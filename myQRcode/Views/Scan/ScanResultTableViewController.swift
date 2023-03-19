@@ -40,11 +40,11 @@ class ScanResultTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return NSLocalizedString("result_headline", comment: "")
+        return "result_headline".localized
     }
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "\(NSLocalizedString("date_scanning", comment: "")): \(self.historyItem.isoDate) - \(self.historyItem.isoTime)"
+        return "\("date_scanning".localized): \(self.historyItem.isoDate) - \(self.historyItem.isoTime)"
     }
     
     private func resetScannerInScanVC() {

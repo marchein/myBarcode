@@ -66,16 +66,16 @@ struct myQRcode {
     static let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
     static let defaultAppIcon = "default"
     static var appIcons = AppIcons(icons: [
-        AppIcon(iconName: nil, iconTitle: "myQRcode - \(NSLocalizedString("light_icon", comment: ""))"),
-        AppIcon(iconName: "myQRcode-dark", iconTitle: "myQRcode - \(NSLocalizedString("dark_icon", comment: ""))")
+        AppIcon(iconName: nil, iconTitle: "myQRcode - \("light_icon".localized)"),
+        AppIcon(iconName: "myQRcode-dark", iconTitle: "myQRcode - \("dark_icon".localized)")
     ])
 
     static let askForReviewAtSingleAction = 10
     static let askForReviewAtCombinedAction = 30
     
     static let tabValues: [TabOption: String] = [
-        .GENERATE: NSLocalizedString("TAB_GENERATE", comment: "Title of generate tab"),
-        .SCAN: NSLocalizedString("TAB_SCAN", comment: "Title of scan tab")
+        .GENERATE: "TAB_GENERATE".localized,
+        .SCAN: "TAB_SCAN".localized
     ]
     
 }

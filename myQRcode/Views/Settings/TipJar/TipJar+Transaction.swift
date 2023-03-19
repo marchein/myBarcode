@@ -67,12 +67,12 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
                 SKPaymentQueue.default().finishTransaction(transaction)
                 transactionInProgress = false
                 impact.impactOccurred()
-                showMessage(title: NSLocalizedString("tip_success", comment: ""), message: NSLocalizedString("tip_success_message", comment: ""), on: self)
+                showMessage(title: "tip_success".localized, message: "tip_success_message".localized, on: self)
             case SKPaymentTransactionState.failed:
                 self.navigationController?.hideAnimatedActivityIndicatorView()
                 SKPaymentQueue.default().finishTransaction(transaction)
                 transactionInProgress = false
-                showMessage(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("transaction_error", comment: ""), on: self)
+                showMessage(title: "Error".localized, message: "transaction_error".localized, on: self)
             default:
                 HeinHelpers.logMessage("\(transaction.transactionState.rawValue)")
             }

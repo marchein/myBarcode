@@ -15,7 +15,7 @@ import UIKit
 extension SettingsTableViewController {
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == tableView.numberOfSections - 1 {
-            return "\(NSLocalizedString("SETTINGS_DEVELOPER_GREETING", comment: "")) (Version \(myQRcode.versionString) - Build \(myQRcode.buildNumber))"
+            return "\("SETTINGS_DEVELOPER_GREETING".localized) (Version \(myQRcode.versionString))"
         }
         return nil
     }

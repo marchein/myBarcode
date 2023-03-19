@@ -12,10 +12,6 @@ class TemplateListTableViewController: UITableViewController {
     
     var generateVC: GenerateViewController?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     @IBAction func dismiss(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -45,7 +41,8 @@ class TemplateListTableViewController: UITableViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == myQRcodeSegues.EditTemplateSegue, let editVC = segue.destination as? TemplateEditingTableViewController {
+        if segue.identifier == myQRcodeSegues.EditTemplateSegue,
+            let editVC = segue.destination as? TemplateEditingTableViewController {
             // provide selected template to editing VC
             editVC.selectedTemplate = sender as? Template
             // provide generate VC to editing VC

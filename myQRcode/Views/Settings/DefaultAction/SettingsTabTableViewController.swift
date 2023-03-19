@@ -52,11 +52,11 @@ class SettingsTabTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-         return NSLocalizedString("TAB_SELECTION_HEADER", comment: "")
+        return "TAB_SELECTION_HEADER".localized
      }
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return NSLocalizedString("TAB_SELECTION_FOOTER", comment: "")
+        return "TAB_SELECTION_FOOTER".localized
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

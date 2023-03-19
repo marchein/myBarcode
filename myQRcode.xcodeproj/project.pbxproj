@@ -30,6 +30,9 @@
 		5B4B4AA824E9596200E44302 /* ActivityIndicatorOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4B4AA724E9596200E44302 /* ActivityIndicatorOverlay.swift */; };
 		5B4D14E92998EDCC0000BC94 /* SettingsTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D14E82998EDCC0000BC94 /* SettingsTabTableViewController.swift */; };
 		5B4D14EC2998F0900000BC94 /* HeinHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 5B4D14EB2998F0900000BC94 /* HeinHelpers */; };
+		5B59970A29C75AC600BC0E78 /* GenerateViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59970929C75AC600BC0E78 /* GenerateViewController+TableView.swift */; };
+		5B59970C29C75BBA00BC0E78 /* GenerateViewController+TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59970B29C75BBA00BC0E78 /* GenerateViewController+TextView.swift */; };
+		5B59970E29C75CD900BC0E78 /* GenerateViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59970D29C75CD900BC0E78 /* GenerateViewController+Helpers.swift */; };
 		5B5C98A82339299E00030C75 /* myQRcode-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B5C98A72339299E00030C75 /* myQRcode-dark.png */; };
 		5B5C98AA233929E200030C75 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C98A9233929E200030C75 /* AppIcon.swift */; };
 		5B5FAAA724E97E7300E719D4 /* myQRCodeScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF98BC021AB371D00AA5BBC /* myQRCodeScreenshots.swift */; };
@@ -115,6 +118,9 @@
 		5B4B4AA524E93FEC00E44302 /* HistoryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemTableViewCell.swift; sourceTree = "<group>"; };
 		5B4B4AA724E9596200E44302 /* ActivityIndicatorOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorOverlay.swift; sourceTree = "<group>"; };
 		5B4D14E82998EDCC0000BC94 /* SettingsTabTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTabTableViewController.swift; sourceTree = "<group>"; };
+		5B59970929C75AC600BC0E78 /* GenerateViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenerateViewController+TableView.swift"; sourceTree = "<group>"; };
+		5B59970B29C75BBA00BC0E78 /* GenerateViewController+TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenerateViewController+TextView.swift"; sourceTree = "<group>"; };
+		5B59970D29C75CD900BC0E78 /* GenerateViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenerateViewController+Helpers.swift"; sourceTree = "<group>"; };
 		5B5C98A72339299E00030C75 /* myQRcode-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myQRcode-dark.png"; sourceTree = "<group>"; };
 		5B5C98A9233929E200030C75 /* AppIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		5B5FAA9D24E97E6B00E719D4 /* myQRcodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myQRcodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -408,6 +414,9 @@
 			isa = PBXGroup;
 			children = (
 				5B2AE31121AA017E00976FE2 /* GenerateViewController.swift */,
+				5B59970929C75AC600BC0E78 /* GenerateViewController+TableView.swift */,
+				5B59970B29C75BBA00BC0E78 /* GenerateViewController+TextView.swift */,
+				5B59970D29C75CD900BC0E78 /* GenerateViewController+Helpers.swift */,
 				5BE530FF24F024F4006A225D /* Templates */,
 			);
 			path = Generate;
@@ -616,12 +625,15 @@
 				5B4B4AA224E93D0300E44302 /* HistoryTableViewController.swift in Sources */,
 				5BAA4196298D29DD00493175 /* String+Localizable.swift in Sources */,
 				5B1213B42992CC73007FDCE3 /* QRCode+CoreData.swift in Sources */,
+				5B59970C29C75BBA00BC0E78 /* GenerateViewController+TextView.swift in Sources */,
 				5BE4AA9221AAF62E00D69E18 /* TipJar+Transaction.swift in Sources */,
 				5BE5310124F0250E006A225D /* TemplateEditingTableViewController.swift in Sources */,
 				5BE4AA9821AAF62E00D69E18 /* Settings+SendSupportMail.swift in Sources */,
 				5BE4AAA821AAF6F300D69E18 /* Bundle+Icon.swift in Sources */,
+				5B59970A29C75AC600BC0E78 /* GenerateViewController+TableView.swift in Sources */,
 				5B1C2CCD24EFFB8A003544D7 /* TextViewTableViewCell.swift in Sources */,
 				5B4D14E92998EDCC0000BC94 /* SettingsTabTableViewController.swift in Sources */,
+				5B59970E29C75CD900BC0E78 /* GenerateViewController+Helpers.swift in Sources */,
 				5BCCE6AA23397445007A78D0 /* ScanRequestAccessViewController.swift in Sources */,
 				5B3D61CF24E92FA000C01F34 /* UIImage+Base64.swift in Sources */,
 				5BE4AAA721AAF6F300D69E18 /* SKProduct+LocalizedPrice.swift in Sources */,

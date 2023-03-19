@@ -279,7 +279,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         if qrCodeContent.isEmpty {
             hapticsGenerator.prepare()
             hapticsGenerator.notificationOccurred(.error)
-            showMessage(title: NSLocalizedString("no_qr_code_error", comment: ""), message: NSLocalizedString("no_qr_code_error_description", comment: ""), on: navigationController!)
+            showMessage(title: "no_qr_code_error".localized, message: "no_qr_code_error_description".localized, on: navigationController!)
         } else {
             finishedScanning(content: qrCodeContent)
         }

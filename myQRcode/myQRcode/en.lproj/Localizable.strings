@@ -33,6 +33,7 @@
 
 /* Generate */
 "GENERATE_CHARS_LEFT" = "characters left";
+"GENERATE_CHARS_TOO_MUCH" = "characters above the limit";
 "GENERATE_QR_CODE_PLACEHOLDER" = "Content of the QR-code";
 
 /* Templates */

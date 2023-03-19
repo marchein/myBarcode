@@ -53,6 +53,7 @@
 
 /* Generate */
 "GENERATE_CHARS_LEFT" = "Zeichen verbleibend";
+"GENERATE_CHARS_TOO_MUCH" = "Zeichen über dem Limit";
 "GENERATE_QR_CODE_PLACEHOLDER" = "Inhalt des QR-Codes";
 
 

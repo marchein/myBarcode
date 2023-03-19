@@ -10,12 +10,11 @@ import CoreData
 import UIKit
 
 class HistoryTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+    // MARK: - Outlets
     @IBOutlet var noItemsView: NoItemsView!
     
-    var category: HistoryCategory?
-
     // MARK: - Properties
-
+    var category: HistoryCategory?
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     var fetchedResultsController: NSFetchedResultsController<HistoryItem>? {
         didSet {
@@ -25,6 +24,7 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
 
     weak var delegate: HistoryItemDelegate?
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,7 +52,7 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
             fetchRequest.predicate = NSPredicate(format: "category == %@", NSNumber(value: self.category == HistoryCategory.generate))
             
-            // Create fetched results controlelr
+            // Create fetched results controller
             fetchedResultsController = NSFetchedResultsController<HistoryItem>(
                 fetchRequest: fetchRequest,
                 managedObjectContext: context,
@@ -180,6 +180,7 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
         self.tableView.endUpdates()
     }
     
+    // MARK: - Actions
     @IBAction func dismiss(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

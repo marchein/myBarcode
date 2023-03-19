@@ -25,10 +25,10 @@ extension TipJarTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = UITableViewCell(style: .subtitle, reuseIdentifier: Cells.TipIntroCell)
-            cell.textLabel?.text = "\(NSLocalizedString("tip_greeting", comment: "")) 😌"
+            cell.textLabel?.text = "\("tip_greeting".localized) 😌"
             cell.detailTextLabel?.numberOfLines = 0
             cell.detailTextLabel?.lineBreakMode = .byWordWrapping
-            cell.detailTextLabel?.text = NSLocalizedString("tip_desc", comment: "")
+            cell.detailTextLabel?.text = "tip_desc".localized
             cell.selectionStyle = .none
             cell.isUserInteractionEnabled = false
             return cell
@@ -43,8 +43,8 @@ extension TipJarTableViewController {
                     cell.purchaseButton.setTitle(product.localizedPrice, for: .normal)
                 }
             } else {
-                cell.tipTitle.text = NSLocalizedString("no_tips", comment: "")
-                cell.tipDesc.text = NSLocalizedString("no_tips_desc", comment: "")
+                cell.tipTitle.text = "no_tips".localized
+                cell.tipDesc.text = "no_tips_desc".localized
                 cell.purchaseButton.isHidden = true
                 cell.tipDesc.isHidden = false
             }

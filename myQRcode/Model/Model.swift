@@ -15,35 +15,35 @@ struct Model {
          Template(
              name: "Instagram",
              templateString: "https://instagram.com/%@",
-             parameters: [NSLocalizedString("TEMPLATE_INSTAGRAM_USERNAME", comment: "Templates Instagram Username")],
+             parameters: ["TEMPLATE_INSTAGRAM_USERNAME".localized],
              parameterType: [.Text],
-             placeholders: [NSLocalizedString("TEMPLATE_INSTAGRAM_USERNAME_PLACEHOLDER", comment: "Templates Instagram Username Placeholder")],
+             placeholders: ["TEMPLATE_INSTAGRAM_USERNAME_PLACEHOLDER".localized],
              options: [nil]
          ),
         // Twitter Template
         Template(
             name: "Twitter",
             templateString: "https://twitter.com/%@",
-            parameters: [NSLocalizedString("TEMPLATE_TWITTER_USERNAME", comment: "Templates Twitter Username")],
+            parameters: ["TEMPLATE_TWITTER_USERNAME".localized],
             parameterType: [.Text],
-            placeholders: [NSLocalizedString("TEMPLATE_TWITTER_USERNAME_PLACEHOLDER", comment: "Templates Twitter Username Placeholder")],
+            placeholders: ["TEMPLATE_TWITTER_USERNAME_PLACEHOLDER".localized],
             options: [nil]
         )],
         [TemplateSeperator(name: "Phone"),
         // Phone Template
         Template(
-            name: NSLocalizedString("phone_template", comment: ""),
+            name: "phone_template".localized,
             templateString: "tel:%@",
-            parameters: [NSLocalizedString("phone_number", comment: "")],
+            parameters: ["phone_number".localized],
             parameterType: [.Text],
             placeholders: ["+12 4567 89101112"],
             options: [nil]
         ),
         // Message Template
         Template(
-            name: NSLocalizedString("message_template", comment: ""),
+            name: "message_template".localized,
             templateString: "sms:%@",
-            parameters: [NSLocalizedString("message_number", comment: "")],
+            parameters: ["message_number".localized],
             parameterType: [.Text],
             placeholders: ["+12 4567 89101112"],
             options: [nil]
@@ -51,31 +51,39 @@ struct Model {
         [TemplateSeperator(name: "Mail"),
         // Mail Template
         Template(
-            name: NSLocalizedString("email_template", comment: ""),
+            name: "email_template".localized,
             templateString: "mailto:%@",
-            parameters: [NSLocalizedString("email_address", comment: "")],
+            parameters: ["email_address".localized],
             parameterType: [.Text],
             placeholders: ["hello@placeholder.com"],
             options: [nil]
         ),
         // Complete Mail Template
         Template(
-             name: NSLocalizedString("TEMPLATE_EMAIL_WITH_CONTENT", comment: ""),
+             name: "TEMPLATE_EMAIL_WITH_CONTENT".localized,
              templateString: "MATMSG:TO:%@;SUB:%@;BODY:%@;;",
-             parameters: [NSLocalizedString("TEMPLATE_EMAIL_WITH_CONTENT_RECEIPIENT", comment: "Receipient Header"), NSLocalizedString("TEMPLATE_EMAIL_WITH_CONTENT_SUBJECT", comment: "Subject header"), NSLocalizedString("TEMPLATE_EMAIL_WITH_CONTENT_BODY", comment: "")],
+             parameters: [
+                "TEMPLATE_EMAIL_WITH_CONTENT_RECEIPIENT".localized,
+                "TEMPLATE_EMAIL_WITH_CONTENT_SUBJECT".localized,
+                "TEMPLATE_EMAIL_WITH_CONTENT_BODY".localized
+             ],
              parameterType: [.Text, .Text, .Text],
-             placeholders: [NSLocalizedString("TEMPLATE_EMAIL_WITH_CONTENT_RECEIPIENT_PLACEHOLDER", comment: ""), NSLocalizedString("TEMPLATE_EMAIL_WITH_CONTENT_SUBJECT_PLACEHOLDER", comment: ""), NSLocalizedString("TEMPLATE_EMAIL_WITH_CONTENT_BODY_PLACEHOLDER", comment: "")],
+             placeholders: [
+                "TEMPLATE_EMAIL_WITH_CONTENT_RECEIPIENT_PLACEHOLDER".localized,
+                "TEMPLATE_EMAIL_WITH_CONTENT_SUBJECT_PLACEHOLDER".localized,
+                "TEMPLATE_EMAIL_WITH_CONTENT_BODY_PLACEHOLDER".localized
+             ],
              options: [nil, nil, nil],
              indexOflastImportantField: 0
          )],
         [TemplateSeperator(name: "Sonstiges"),
         // WIFI Template
         Template(
-            name: NSLocalizedString("wifi_template", comment: ""),
+            name: "wifi_template".localized,
             templateString: "WIFI:T:%@;S:%@;P:%@;;",
-            parameters: [NSLocalizedString("wifi_security", comment: ""), NSLocalizedString("wifi_name", comment: ""), NSLocalizedString("wifi_password", comment: "")],
+            parameters: ["wifi_security".localized, "wifi_name".localized, "wifi_password".localized],
             parameterType: [.Selector, .Text, .Text],
-            placeholders: [nil, NSLocalizedString("TEMPLATES_PLACEHOLDER_WIFI_NAME", comment: ""), "123password!?$%"],
+            placeholders: [nil, "TEMPLATES_PLACEHOLDER_WIFI_NAME".localized, "123password!?$%"],
             options: [["nopass", "WEP", "WPA"], nil, nil],
             indexOflastImportantField: 1
         )]
