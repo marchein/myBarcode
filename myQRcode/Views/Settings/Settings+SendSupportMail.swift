@@ -23,7 +23,7 @@ extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
             mail.setMessageBody("support_mail_body".localized, isHTML: false)
             present(mail, animated: true)
         } else {
-            HeinHelpers.logMessage("No mail account configured")
+            print("No mail account configured")
             let mailErrorMessage = "mail_error".localized
             showMessage(title: "Error".localized, message: String(format: mailErrorMessage, myQRcode.mailAdress), on: self)
         }

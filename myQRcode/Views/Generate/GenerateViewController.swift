@@ -28,7 +28,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     var usedTemplate: Template? = nil
     
     var qrPlaceholder = "GENERATE_QR_CODE_PLACEHOLDER".localized
-    let maxLength = 10
+    let maxLength = 2000
     
     // MARK: - Lifecycle
     override func viewDidLoad() {

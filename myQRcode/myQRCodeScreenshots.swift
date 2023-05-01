@@ -56,12 +56,12 @@ class myQRCodeScreenshots: XCTestCase {
         let screenshot = XCUIScreen.main.screenshot().image
         let imageData =  screenshot.jpegData(compressionQuality: 1.0)!
         let url = URL(fileURLWithPath: deviceScreenshotPath + "/" + name)
-        HeinHelpers.logMessage(url.absoluteString)
+        print(url.absoluteString)
         
         do {
             try imageData.write(to: url)
         } catch {
-            HeinHelpers.logMessage("Error while saving screenshot at: \(url.absoluteString)")
+            print("Error while saving screenshot at: \(url.absoluteString)")
         }
     }
     
@@ -71,7 +71,7 @@ class myQRCodeScreenshots: XCTestCase {
         do {
             try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: false, attributes: nil)
         } catch let error as NSError {
-            HeinHelpers.logMessage(error.localizedDescription);
+            print(error.localizedDescription);
         }
         
         return path
@@ -117,15 +117,14 @@ class myQRCodeScreenshots: XCTestCase {
     }
     
     func testScreenshotsDE() {
-        //         XCUIDevice.shared.orientation = .landscapeRight
-
-        
         let app = XCUIApplication()
         app.launch()
+        
         saveScreenshot(name: "01_start.jpeg")
         let tablesQuery = app.tables
-        tablesQuery.textFields["Inhalt des QR-Codes"].tap()
-        tablesQuery.textFields["Inhalt des QR-Codes"].typeText("Inhalt Deines QR Codes")
+        let qrCodeContentField = tablesQuery.textViews.element(boundBy: 0)
+        qrCodeContentField.tap()
+        qrCodeContentField.typeText("Inhalt Deines QR Codes")
         saveScreenshot(name: "02_entered.jpeg")
         tablesQuery.buttons["QR-Code generieren"].tap()
         sleep(3)
@@ -168,26 +167,5 @@ class myQRCodeScreenshots: XCTestCase {
         tablesQuery.cells["generateQRCodeFromTemplateCell"].staticTexts.firstMatch.tap()
         sleep(2)
         saveScreenshot(name: "10_templates_generated.jpeg")
-    }
-    
-    func testNewScreenshotsEN() {
-        
-        let app = XCUIApplication()
-        let tablesQuery = app.tables
-        tablesQuery/*@START_MENU_TOKEN@*/.textFields["Content of the QR code"]/*[[".cells.textFields[\"Content of the QR code\"]",".textFields[\"Content of the QR code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app/*@START_MENU_TOKEN@*/.staticTexts["Continue"]/*[[".otherElements[\"UIContinuousPathIntroductionView\"]",".buttons[\"Continue\"].staticTexts[\"Continue\"]",".staticTexts[\"Continue\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Generate QR code"]/*[[".cells.buttons[\"Generate QR code\"]",".buttons[\"Generate QR code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        
-        let historyButton = app.navigationBars["myQRcode"].buttons["History"]
-        historyButton.tap()
-        app.navigationBars["History"].buttons["Close"].tap()
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Templates"]/*[[".cells.staticTexts[\"Templates\"]",".staticTexts[\"Templates\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["WiFi login data"]/*[[".cells.staticTexts[\"WiFi login data\"]",".staticTexts[\"WiFi login data\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery.children(matching: .cell).element(boundBy: 1).children(matching: .textField).element.tap()
-        tablesQuery.children(matching: .cell).element(boundBy: 2).children(matching: .textField).element.tap()
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Generate QR code"]/*[[".cells.staticTexts[\"Generate QR code\"]",".staticTexts[\"Generate QR code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        historyButton.tap()
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["WIFI:T:WPA;S:Wifi name;P:password123;;"]/*[[".cells.staticTexts[\"WIFI:T:WPA;S:Wifi name;P:password123;;\"]",".staticTexts[\"WIFI:T:WPA;S:Wifi name;P:password123;;\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-                
     }
 }

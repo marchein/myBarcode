@@ -19,7 +19,7 @@ final class TemplateTests: XCTestCase {
         let wifiName = "Test Network 1234 !%&/()"
         let wifiPassword = "11735831216878134824"
         for option in ["nopass", "WEP", "WPA"] {
-            let wifiTemplate = (Model.Templates[0][1] as! Template).copy() as! Template
+            let wifiTemplate = (Model.Templates[3][1] as! Template).copy() as! Template
             wifiTemplate.parameterValues[0] = option
             wifiTemplate.parameterValues[1] = wifiName
             wifiTemplate.parameterValues[2] = wifiPassword
@@ -30,16 +30,8 @@ final class TemplateTests: XCTestCase {
         
     }
     
-    func testMailTemplate() throws {
-        let mailTemplate = Model.Templates[0][2] as! Template
-        let mailAdress = "test@testmail.com"
-        mailTemplate.parameterValues[0] = mailAdress
-        let expectedMailResultString = "mailto:\(mailAdress)"
-        XCTAssertEqual(mailTemplate.resultString, expectedMailResultString)
-    }
-    
     func testPhoneTemplate() throws {
-        let phoneTemplate = Model.Templates[0][3] as! Template
+        let phoneTemplate = Model.Templates[1][1] as! Template
         let phoneNumber = "+49123456789"
         phoneTemplate.parameterValues[0] = phoneNumber
         let expectedPhoneResultString = "tel:\(phoneNumber)"
@@ -47,10 +39,18 @@ final class TemplateTests: XCTestCase {
     }
     
     func testSmsTemplate() throws {
-        let smsTemplate = Model.Templates[0][4] as! Template
+        let smsTemplate = Model.Templates[1][2] as! Template
         let smsNumber = "+49123456789"
         smsTemplate.parameterValues[0] = smsNumber
         let expectedSmsResultString = "sms:\(smsNumber)"
         XCTAssertEqual(smsTemplate.resultString, expectedSmsResultString)
+    }
+    
+    func testMailTemplate() throws {
+        let mailTemplate = Model.Templates[2][1] as! Template
+        let mailAdress = "test@testmail.com"
+        mailTemplate.parameterValues[0] = mailAdress
+        let expectedMailResultString = "mailto:\(mailAdress)"
+        XCTAssertEqual(mailTemplate.resultString, expectedMailResultString)
     }
 }

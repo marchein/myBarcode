@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import HeinHelpers
 
 extension QRCode {
     @discardableResult
@@ -26,7 +25,7 @@ extension QRCode {
         do {
             try managedObjectContext.save()
         } catch let error as NSError {
-            HeinHelpers.logMessage("Could not save. \(error), \(error.userInfo)")
+            print("Could not save. \(error), \(error.userInfo)")
         }
         return newItem
     }

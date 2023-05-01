@@ -20,11 +20,11 @@ class QRCode: CustomStringConvertible {
     }
     
     func generateImage() -> CIImage {
-        let data = content.data(using: String.Encoding.isoLatin1, allowLossyConversion: false)
+        let data = content.data(using: String.Encoding.utf8, allowLossyConversion: false)
         let filter = CIFilter(name: "CIQRCodeGenerator")!
         
         filter.setValue(data, forKey: "inputMessage")
-        filter.setValue("Q", forKey: "inputCorrectionLevel")
+        filter.setValue("M", forKey: "inputCorrectionLevel")
         
         let scale: CGFloat = 44
         

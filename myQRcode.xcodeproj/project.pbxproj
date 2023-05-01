@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,7 +29,6 @@
 		5B4B4AA624E93FEC00E44302 /* HistoryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4B4AA524E93FEC00E44302 /* HistoryItemTableViewCell.swift */; };
 		5B4B4AA824E9596200E44302 /* ActivityIndicatorOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4B4AA724E9596200E44302 /* ActivityIndicatorOverlay.swift */; };
 		5B4D14E92998EDCC0000BC94 /* SettingsTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D14E82998EDCC0000BC94 /* SettingsTabTableViewController.swift */; };
-		5B4D14EC2998F0900000BC94 /* HeinHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 5B4D14EB2998F0900000BC94 /* HeinHelpers */; };
 		5B59970A29C75AC600BC0E78 /* GenerateViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59970929C75AC600BC0E78 /* GenerateViewController+TableView.swift */; };
 		5B59970C29C75BBA00BC0E78 /* GenerateViewController+TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59970B29C75BBA00BC0E78 /* GenerateViewController+TextView.swift */; };
 		5B59970E29C75CD900BC0E78 /* GenerateViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59970D29C75CD900BC0E78 /* GenerateViewController+Helpers.swift */; };
@@ -76,6 +75,9 @@
 		5BE5310924F03CC0006A225D /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE5310824F03CC0006A225D /* TextFieldTableViewCell.swift */; };
 		5BE5310B24F04FFA006A225D /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE5310A24F04FFA006A225D /* ButtonTableViewCell.swift */; };
 		5BEC8A25223FDF1B00BDF642 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BEC8A23223FDF1B00BDF642 /* Localizable.strings */; };
+		5BF419A62A00104700BA6EB6 /* HeinHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 5BF419A52A00104700BA6EB6 /* HeinHelpers */; };
+		5BF419A82A00106100BA6EB6 /* HeinHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 5BF419A72A00106100BA6EB6 /* HeinHelpers */; };
+		5BF648C129F2DA770077D910 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4195298D29DD00493175 /* String+Localizable.swift */; };
 		5BFE10CA24E9686C00415E90 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BFE10CC24E9686C00415E90 /* History.storyboard */; };
 		5BFE10E024E96C3B00415E90 /* ScanResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFE10DF24E96C3B00415E90 /* ScanResultTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -186,6 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BF419A62A00104700BA6EB6 /* HeinHelpers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B4D14EC2998F0900000BC94 /* HeinHelpers in Frameworks */,
+				5BF419A82A00106100BA6EB6 /* HeinHelpers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +250,7 @@
 				5B5FAA9E24E97E6B00E719D4 /* myQRcodeUITests */,
 				5B1213A52992CA41007FDCE3 /* myQRcodeTests */,
 				5B2AE30D21AA017E00976FE2 /* Products */,
+				5B5AEE9E2A000DDD00682CF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -297,6 +301,13 @@
 				5B4D14E82998EDCC0000BC94 /* SettingsTabTableViewController.swift */,
 			);
 			path = DefaultAction;
+			sourceTree = "<group>";
+		};
+		5B5AEE9E2A000DDD00682CF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5B5C98A62339299000030C75 /* Alternative App Icons */ = {
@@ -461,6 +472,9 @@
 				5B1213A92992CA41007FDCE3 /* PBXTargetDependency */,
 			);
 			name = myQRcodeTests;
+			packageProductDependencies = (
+				5BF419A52A00104700BA6EB6 /* HeinHelpers */,
+			);
 			productName = myQRcodeTests;
 			productReference = 5B1213A42992CA41007FDCE3 /* myQRcodeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -479,7 +493,7 @@
 			);
 			name = myQRcode;
 			packageProductDependencies = (
-				5B4D14EB2998F0900000BC94 /* HeinHelpers */,
+				5BF419A72A00106100BA6EB6 /* HeinHelpers */,
 			);
 			productName = myQRgenerator;
 			productReference = 5B2AE30C21AA017E00976FE2 /* myQRcode.app */;
@@ -509,9 +523,10 @@
 		5B2AE30421AA017E00976FE2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
-				ORGANIZATIONNAME = "Marc Hein Webdesign";
+				LastUpgradeCheck = 1430;
+				ORGANIZATIONNAME = "Marc Hein";
 				TargetAttributes = {
 					5B1213A32992CA41007FDCE3 = {
 						CreatedOnToolsVersion = 14.2;
@@ -597,6 +612,7 @@
 				5B1213AF2992CB79007FDCE3 /* Template.swift in Sources */,
 				5B1213AD2992CB72007FDCE3 /* QRCode.swift in Sources */,
 				5B1213AE2992CB76007FDCE3 /* AppIcon.swift in Sources */,
+				5BF648C129F2DA770077D910 /* String+Localizable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1071,7 +1087,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5B4D14EB2998F0900000BC94 /* HeinHelpers */ = {
+		5BF419A52A00104700BA6EB6 /* HeinHelpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B4D14EA2998F0900000BC94 /* XCRemoteSwiftPackageReference "HeinHelpers" */;
+			productName = HeinHelpers;
+		};
+		5BF419A72A00106100BA6EB6 /* HeinHelpers */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5B4D14EA2998F0900000BC94 /* XCRemoteSwiftPackageReference "HeinHelpers" */;
 			productName = HeinHelpers;

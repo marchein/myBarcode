@@ -120,7 +120,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         #endif
             
         guard let captureDevice = deviceDiscoverySession else {
-            HeinHelpers.logMessage("Failed to get the camera device")
+            print("Failed to get the camera device")
             return
         }
             
@@ -149,7 +149,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                 view.layer.addSublayer(videoPreviewLayer!)
                         
             } catch {
-                HeinHelpers.logMessage(error.localizedDescription)
+                print(error.localizedDescription)
                 return
             }
                     
@@ -184,7 +184,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             resetQrCodeFrame()
             hapticsGenerator.prepare()
             hapticsGenerator.notificationOccurred(.error)
-            HeinHelpers.logMessage("No QR-code is detected")
+            print("No QR-code is detected")
             return
         }
         

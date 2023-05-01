@@ -35,7 +35,7 @@ extension GenerateViewController {
     @objc func checkIfGenerationIsPossible() {
         let currentCount = qrContentTextView.text?.count ?? 0
         let hasContent = currentCount > 0
-        let contentInLimit = currentCount < maxLength
+        let contentInLimit = currentCount <= maxLength
         let hasPlaceholderText = qrContentTextView.text! == qrPlaceholder
         
         generateButton.isEnabled = hasContent && contentInLimit && !hasPlaceholderText

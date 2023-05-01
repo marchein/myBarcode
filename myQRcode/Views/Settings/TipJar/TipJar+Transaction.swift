@@ -19,7 +19,7 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
             productRequest.delegate = self
             productRequest.start()
         } else {
-            HeinHelpers.logMessage("Cannot perform In App Purchases.")
+            print("Cannot perform In App Purchases.")
         }
     }
     
@@ -33,7 +33,7 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
                 return p0!.price.floatValue < p1!.price.floatValue
             })
         } else {
-            HeinHelpers.logMessage("There are no products.")
+            print("There are no products.")
         }
         hasData = true
         DispatchQueue.main.async {
@@ -41,7 +41,7 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
             self.tableView.reloadData()
         }
         if response.invalidProductIdentifiers.count != 0 {
-            HeinHelpers.logMessage(response.invalidProductIdentifiers.description)
+            print(response.invalidProductIdentifiers.description)
         }
     }
     
@@ -74,7 +74,7 @@ extension TipJarTableViewController: SKProductsRequestDelegate, SKPaymentTransac
                 transactionInProgress = false
                 showMessage(title: "Error".localized, message: "transaction_error".localized, on: self)
             default:
-                HeinHelpers.logMessage("\(transaction.transactionState.rawValue)")
+                print("\(transaction.transactionState.rawValue)")
             }
         }
     }
