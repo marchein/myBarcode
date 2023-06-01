@@ -29,6 +29,8 @@ extension ScanViewController: UINavigationControllerDelegate, UIImagePickerContr
         self.dismiss(animated: true) {
             let qrCodeContents = self.processSelectedImage(qrCodeImg)
             self.processingImageComplete(qrCodeContents)
+            
+            myQRcodeMatomo.track(action: myQRcodeMatomo.scanAction, name: myQRcodeMatomo.scanImageScanned)
         }
     }
 }

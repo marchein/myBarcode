@@ -12,6 +12,12 @@ class TemplateListTableViewController: UITableViewController {
     
     var generateVC: GenerateViewController?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        myQRcodeMatomo.track(action: myQRcodeMatomo.generateAction, name: myQRcodeMatomo.generateOpenTemplates)
+    }
+    
     @IBAction func dismiss(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

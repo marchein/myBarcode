@@ -28,6 +28,8 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
         super.viewDidLoad()
         // Disable generate button on load
         setGenerateButton()
+        
+        myQRcodeMatomo.track(action: myQRcodeMatomo.generateAction, name: myQRcodeMatomo.generateOpenTemplates)
     }
     
     @IBAction func dismiss(_ sender: Any) {
@@ -58,23 +60,23 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
                 // cell.selectedIndex = 1
                 isSetup = true
                 return cell
-            } else {
-                // current cell is textview cell
-                let textFieldTableViewCell = tableView.dequeueReusableCell(withIdentifier: TextFieldTableViewCell.Identifier, for: indexPath) as! TextFieldTableViewCell
-                
-                if let selectedTemplate = selectedTemplate, selectedTemplate.modified {
-                    textFieldTableViewCell.textField.text = selectedTemplate.parameterValues[indexPath.section]
-                }
-                
-                if let placeholder = selectedTemplate?.placeholders[indexPath.section] {
-                    textFieldTableViewCell.textField.placeholder = placeholder
-                }
-                
-                textFieldTableViewCell.textField.delegate = self
-                textFieldTableViewCell.textField.addTarget(self, action: #selector(setGenerateButton), for: UIControl.Event.editingChanged)
-
-                return textFieldTableViewCell
             }
+            
+            // current cell is textview cell
+            let textFieldTableViewCell = tableView.dequeueReusableCell(withIdentifier: TextFieldTableViewCell.Identifier, for: indexPath) as! TextFieldTableViewCell
+            
+            if let selectedTemplate = selectedTemplate, selectedTemplate.modified {
+                textFieldTableViewCell.textField.text = selectedTemplate.parameterValues[indexPath.section]
+            }
+            
+            if let placeholder = selectedTemplate?.placeholders[indexPath.section] {
+                textFieldTableViewCell.textField.placeholder = placeholder
+            }
+            
+            textFieldTableViewCell.textField.delegate = self
+            textFieldTableViewCell.textField.addTarget(self, action: #selector(setGenerateButton), for: UIControl.Event.editingChanged)
+
+            return textFieldTableViewCell
         } else {
             // Generate button cell
             return tableView.dequeueReusableCell(withIdentifier: Cells.GenerateCell, for: indexPath)
@@ -117,20 +119,7 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
             }
         }
     }
-    
-    /* private func setupTextFields() {
-         for sectionIndex in 0..<tableView.numberOfSections - selectedTemplate.indexOflastImportantField  {
-             let indexPath = IndexPath(row: 0, section: sectionIndex)
-             let cell = tableView.cellForRow(at: indexPath)
-             if let textFieldCell = cell as? TextFieldTableViewCell {
-                 self.textFields.append(textFieldCell.textField)
-                 textFieldCell.textField.delegate = self
-                 textFieldCell.textField.addTarget(self, action: #selector(setGenerateButton), for: UIControl.Event.editingChanged)
-             }
-         }
-         self.setGenerateButton()
-     } */
-    
+
     private func checkIfGenerationIsPossible() -> Bool {
         // by default generation is possible
         var generationPossible = true

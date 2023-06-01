@@ -44,6 +44,9 @@
 		5B67630923395B6500C563FD /* Generate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F2023395975005804AA /* Generate.storyboard */; };
 		5B80B21129967C2300C87939 /* ScanViewController+PHPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80B21029967C2300C87939 /* ScanViewController+PHPicker.swift */; };
 		5B915E9123390703008B8B59 /* fa-regular-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B915E90233906EE008B8B59 /* fa-regular-400.ttf */; };
+		5B9C3BDB2A286F5D00B03B53 /* MatomoTracker in Frameworks */ = {isa = PBXBuildFile; productRef = 5B9C3BDA2A286F5D00B03B53 /* MatomoTracker */; };
+		5B9C3BDD2A28701300B03B53 /* MatomoTracker+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C3BDC2A28701300B03B53 /* MatomoTracker+Shared.swift */; };
+		5B9C3BDF2A28705700B03B53 /* myQRcodeMatomo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C3BDE2A28705700B03B53 /* myQRcodeMatomo.swift */; };
 		5BAA4194298D28B600493175 /* UIDevice+Modelname.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4193298D28B600493175 /* UIDevice+Modelname.swift */; };
 		5BAA4196298D29DD00493175 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4195298D29DD00493175 /* String+Localizable.swift */; };
 		5BAA4197298D29DD00493175 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4195298D29DD00493175 /* String+Localizable.swift */; };
@@ -132,6 +135,8 @@
 		5B642F0723393159005804AA /* AppIconTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconTableViewController.swift; sourceTree = "<group>"; };
 		5B80B21029967C2300C87939 /* ScanViewController+PHPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScanViewController+PHPicker.swift"; sourceTree = "<group>"; };
 		5B915E90233906EE008B8B59 /* fa-regular-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-regular-400.ttf"; sourceTree = "<group>"; };
+		5B9C3BDC2A28701300B03B53 /* MatomoTracker+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatomoTracker+Shared.swift"; sourceTree = "<group>"; };
+		5B9C3BDE2A28705700B03B53 /* myQRcodeMatomo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myQRcodeMatomo.swift; sourceTree = "<group>"; };
 		5BAA4193298D28B600493175 /* UIDevice+Modelname.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Modelname.swift"; sourceTree = "<group>"; };
 		5BAA4195298D29DD00493175 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
 		5BAA4198298D2CDD00493175 /* myQRcode.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = myQRcode.entitlements; sourceTree = "<group>"; };
@@ -196,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B9C3BDB2A286F5D00B03B53 /* MatomoTracker in Frameworks */,
 				5BF419A82A00106100BA6EB6 /* HeinHelpers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +401,7 @@
 				5BAA4195298D29DD00493175 /* String+Localizable.swift */,
 				5B1551C6298D85DB00A4438B /* SKStoreReviewController+Request.swift */,
 				5B1213B32992CC73007FDCE3 /* QRCode+CoreData.swift */,
+				5B9C3BDC2A28701300B03B53 /* MatomoTracker+Shared.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -404,6 +411,7 @@
 			children = (
 				5BE4AAAB21AAF71200D69E18 /* Constants.swift */,
 				5BE4AAAC21AAF71200D69E18 /* Utilities.swift */,
+				5B9C3BDE2A28705700B03B53 /* myQRcodeMatomo.swift */,
 				5B915E90233906EE008B8B59 /* fa-regular-400.ttf */,
 			);
 			path = Utilities;
@@ -494,6 +502,7 @@
 			name = myQRcode;
 			packageProductDependencies = (
 				5BF419A72A00106100BA6EB6 /* HeinHelpers */,
+				5B9C3BDA2A286F5D00B03B53 /* MatomoTracker */,
 			);
 			productName = myQRgenerator;
 			productReference = 5B2AE30C21AA017E00976FE2 /* myQRcode.app */;
@@ -554,6 +563,7 @@
 			mainGroup = 5B2AE30321AA017E00976FE2;
 			packageReferences = (
 				5B4D14EA2998F0900000BC94 /* XCRemoteSwiftPackageReference "HeinHelpers" */,
+				5B9C3BD92A286F5D00B03B53 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */,
 			);
 			productRefGroup = 5B2AE30D21AA017E00976FE2 /* Products */;
 			projectDirPath = "";
@@ -620,6 +630,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B9C3BDD2A28701300B03B53 /* MatomoTracker+Shared.swift in Sources */,
 				5BE4AAA921AAF6F300D69E18 /* UIViewController+SafariActions.swift in Sources */,
 				5BE4AAAD21AAF71200D69E18 /* Constants.swift in Sources */,
 				5BE4AA9121AAF62E00D69E18 /* TipJarTableViewController.swift in Sources */,
@@ -652,6 +663,7 @@
 				5B59970E29C75CD900BC0E78 /* GenerateViewController+Helpers.swift in Sources */,
 				5BCCE6AA23397445007A78D0 /* ScanRequestAccessViewController.swift in Sources */,
 				5B3D61CF24E92FA000C01F34 /* UIImage+Base64.swift in Sources */,
+				5B9C3BDF2A28705700B03B53 /* myQRcodeMatomo.swift in Sources */,
 				5BE4AAA721AAF6F300D69E18 /* SKProduct+LocalizedPrice.swift in Sources */,
 				5B642F0923393159005804AA /* AppIconTableViewController.swift in Sources */,
 				5BE5310B24F04FFA006A225D /* ButtonTableViewCell.swift in Sources */,
@@ -935,7 +947,7 @@
 				CODE_SIGN_ENTITLEMENTS = myQRcode/myQRcode.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/myQRcode/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = myQRcode;
@@ -967,7 +979,7 @@
 				CODE_SIGN_ENTITLEMENTS = myQRcode/myQRcode.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/myQRcode/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = myQRcode;
@@ -1084,9 +1096,22 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		5B9C3BD92A286F5D00B03B53 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/matomo-org/matomo-sdk-ios.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5B9C3BDA2A286F5D00B03B53 /* MatomoTracker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B9C3BD92A286F5D00B03B53 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */;
+			productName = MatomoTracker;
+		};
 		5BF419A52A00104700BA6EB6 /* HeinHelpers */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5B4D14EA2998F0900000BC94 /* XCRemoteSwiftPackageReference "HeinHelpers" */;

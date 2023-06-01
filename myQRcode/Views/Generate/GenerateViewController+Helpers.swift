@@ -78,6 +78,8 @@ extension GenerateViewController {
                         qrCode.addToCoreData()
                     }
                     self.generateButton.isEnabled = false
+                    
+                    myQRcodeMatomo.track(action: myQRcodeMatomo.generateAction, name: myQRcodeMatomo.generateGeneratedQR, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeGenerated)))
                 }
             }
         }

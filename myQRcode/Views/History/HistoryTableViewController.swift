@@ -34,6 +34,12 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
         
         self.updateFetchedResultsController()
         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        
+        if category == HistoryCategory.generate {
+            myQRcodeMatomo.track(action: myQRcodeMatomo.generateAction, name: myQRcodeMatomo.generateHistory)
+        } else {
+            myQRcodeMatomo.track(action: myQRcodeMatomo.scanAction, name: myQRcodeMatomo.scanHistory)
+        }
     }
     
     // MARK: - Core Data
@@ -118,13 +124,14 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
         guard let historyItem = self.fetchedResultsController?.object(at: indexPath) else {
             fatalError("No historyItem retrieved for indexPath: \(indexPath)")
         }
+        
+        self.delegate?.userSelectedHistoryItem(item: historyItem)
+        self.dismiss(self)
+        
         if self.category == HistoryCategory.generate {
-            self.delegate?.userSelectedHistoryItem(item: historyItem)
-            self.dismiss(self)
+            myQRcodeMatomo.track(action: myQRcodeMatomo.generateAction, name: myQRcodeMatomo.generateHistorySelected)
         } else {
-            self.dismiss(animated: true) {
-                self.delegate?.userSelectedHistoryItem(item: historyItem)
-            }
+            myQRcodeMatomo.track(action: myQRcodeMatomo.scanAction, name: myQRcodeMatomo.scanHistorySelected)
         }
     }
     
@@ -139,6 +146,11 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
                 try context.save()
             } catch let error as NSError {
                 fatalError("\(error) - \(error.userInfo)")
+            }
+            if category == HistoryCategory.generate {
+                myQRcodeMatomo.track(action: myQRcodeMatomo.generateAction, name: myQRcodeMatomo.generateHistoryDeleted)
+            } else {
+                myQRcodeMatomo.track(action: myQRcodeMatomo.scanAction, name: myQRcodeMatomo.generateHistoryDeleted)
             }
         }
     }
