@@ -25,15 +25,15 @@
 "dark_icon" = "Dunkel";
 
 "date_scanning" = "Zeitpunkt des Einscannens";
-"result_headline" = "Inhalt des gescannten QR Codes";
+"result_headline" = "Inhalt des gescannten QR-Codes";
 
-"no_scan_history" = "Bisher wurden noch kein QR Code gescannt";
-"no_generate_history" = "Bisher wurde noch kein QR Code generiert";
+"no_scan_history" = "Bisher wurden noch kein QR-Code gescannt";
+"no_generate_history" = "Bisher wurde noch kein QR-Code generiert";
 
 "message_okay_action" = "Verstanden";
 
-"no_qr_code_error" = "Kein QR Code";
-"no_qr_code_error_description" = "myQRcode war nicht in der Lage einen QR Code im ausgewählten Bild zu entdecken";
+"no_qr_code_error" = "Kein QR-Code";
+"no_qr_code_error_description" = "myQRcode war nicht in der Lage einen QR-Code im ausgewählten Bild zu entdecken";
 
 /* Templates */
 /* WiFi Template*/
@@ -51,8 +51,45 @@
 "message_template" = "Telefon Nachricht";
 "message_number" = "Telefonnummer";
 
+/* Generate */
+"GENERATE_CHARS_LEFT" = "Zeichen verbleibend";
+"GENERATE_CHARS_TOO_MUCH" = "Zeichen über dem Limit";
+"GENERATE_QR_CODE_PLACEHOLDER" = "Inhalt des QR-Codes";
+
+
 /* Templates */
+/* Categories headlines */
+"TEMPLATE_CATEGORY_SOCIAL" = "Soziale Netzwerke";
+"TEMPLATE_CATEGORY_PHONE" = "Telefon";
+"TEMPLATE_CATEGORY_MAIL" = "E-Mail";
+"TEMPLATE_CATEGORY_MISCELLANEOUS" = "Sonstiges";
+
+/* Instagram */
+"TEMPLATE_INSTAGRAM_USERNAME" = "Benutzername";
+"TEMPLATE_INSTAGRAM_USERNAME_PLACEHOLDER" = "Dein Instagram Benutzername";
+
+/* Twitter */
+"TEMPLATE_TWITTER_USERNAME" = "Benutzername";
+"TEMPLATE_TWITTER_USERNAME_PLACEHOLDER" = "Dein Twitter @Benutzername";
+
+/* Mail */
+"TEMPLATE_EMAIL_WITH_CONTENT" = "E-Mail mit Inhalt";
+"TEMPLATE_EMAIL_WITH_CONTENT_RECEIPIENT" = "Empfänger";
+"TEMPLATE_EMAIL_WITH_CONTENT_RECEIPIENT_PLACEHOLDER" = "empfaenger@anbieter.de";
+
+"TEMPLATE_EMAIL_WITH_CONTENT_SUBJECT" = "Betreff der E-Mail";
+"TEMPLATE_EMAIL_WITH_CONTENT_SUBJECT_PLACEHOLDER" = "Betreff";
+
+"TEMPLATE_EMAIL_WITH_CONTENT_BODY" = "Inhalt der E-Mail";
+"TEMPLATE_EMAIL_WITH_CONTENT_BODY_PLACEHOLDER" = "Nachricht an Empfänger";
+
 "TEMPLATES_PLACEHOLDER_WIFI_NAME" = "WLAN Name";
 
 /* Settings */
 "SETTINGS_DEVELOPER_GREETING" = "Erstellt mit ❤️ in Trier";
+
+/* Tab Selection */
+"TAB_SELECTION_HEADER" = "Standard Tab";
+"TAB_GENERATE" = "Generieren";
+"TAB_SCAN" = "Scannen";
+"TAB_SELECTION_FOOTER" = "Hier kannst Du auswählen, welcher Tab beim Start von myQRcode geladen werden soll.";

@@ -2,11 +2,8 @@
 /* Class = "UITabBarItem"; title = "Generate"; ObjectID = "Dip-om-eee"; */
 "Dip-om-eee.title" = "Generate";
 
-/* Class = "UITextField"; placeholder = "Content of the QR code"; ObjectID = "DwH-hJ-Ipd"; */
-"DwH-hJ-Ipd.placeholder" = "Content of the QR code";
-
-/* Class = "UITableViewSection"; headerTitle = "QR Code"; ObjectID = "EeJ-pa-ZRx"; */
-"EeJ-pa-ZRx.headerTitle" = "QR Code";
+/* Class = "UITextField"; placeholder = "Content of the QR-code"; ObjectID = "DwH-hJ-Ipd"; */
+"DwH-hJ-Ipd.placeholder" = "Content of the QR-code";
 
 /* Class = "UINavigationController"; title = "Navigation"; ObjectID = "GAg-Vh-DJw"; */
 "GAg-Vh-DJw.title" = "Navigation";
@@ -14,14 +11,14 @@
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "Un4-9b-sBJ"; */
 "Un4-9b-sBJ.title" = "Item";
 
-/* Class = "UIButton"; normalTitle = "Export generated QR code"; ObjectID = "X4f-wI-1Pm"; */
-"X4f-wI-1Pm.normalTitle" = "Export generated QR code";
+/* Class = "UIButton"; normalTitle = "Export generated QR-code"; ObjectID = "X4f-wI-1Pm"; */
+"X4f-wI-1Pm.normalTitle" = "Export generated QR-code";
 
 /* Class = "UITabBarItem"; title = "Generate"; ObjectID = "YWT-57-rL4"; */
 "YWT-57-rL4.title" = "Generate";
 
-/* Class = "UIButton"; normalTitle = "Generate QR code"; ObjectID = "aBE-FK-kol"; */
-"aBE-FK-kol.normalTitle" = "Generate QR code";
+/* Class = "UIButton"; normalTitle = "Generate QR-code"; ObjectID = "aBE-FK-kol"; */
+"aBE-FK-kol.normalTitle" = "Generate QR-code";
 
 /* Class = "UINavigationItem"; title = "myQRcode"; ObjectID = "hFD-uy-cC7"; */
 "hFD-uy-cC7.title" = "myQRcode";
@@ -32,12 +29,17 @@
 /* Class = "UIBarButtonItem"; title = "About"; ObjectID = "mbM-68-iH4"; */
 "mbM-68-iH4.title" = "Settings";
 
-/* Class = "UILabel"; text = "No QR code generated yet"; ObjectID = "njC-gD-BiU"; */
-"njC-gD-BiU.text" = "No QR code generated yet";
+/* Class = "UILabel"; text = "No QR-code generated yet"; ObjectID = "njC-gD-BiU"; */
+"njC-gD-BiU.text" = "No QR-code generated yet";
 
 /* Generate View Controller */
+
+/* XY Items left placeholder */
+"ZNT-9e-QHC.text" = "XYZ charaters left";
 /* Templates Button */
 "beF-PC-LeV.text" = "Templates";
+/* Use last Templazte Button */
+"vZP-N5-XQU.text" = "Use last template again";
 
 /* Templates View Controller */
 /* Title */
@@ -56,4 +58,4 @@
 "snB-Sp-SAz.segmentTitles[0]" = "PLACEHOLDER";
 "snB-Sp-SAz.segmentTitles[1]" = "PLACEHOLDER";
 /* Generate Button */
-"qEO-z9-prC.text" = "Generate QR code";
+"qEO-z9-prC.text" = "Generate QR-code";

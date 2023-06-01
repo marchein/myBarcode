@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,11 +15,12 @@
 		5B1213B42992CC73007FDCE3 /* QRCode+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1213B32992CC73007FDCE3 /* QRCode+CoreData.swift */; };
 		5B1213B62992D82C007FDCE3 /* TemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1213B52992D82C007FDCE3 /* TemplateTests.swift */; };
 		5B1551C7298D85DB00A4438B /* SKStoreReviewController+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1551C6298D85DB00A4438B /* SKStoreReviewController+Request.swift */; };
-		5B1C2CCB24EFEB4C003544D7 /* ScanViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1C2CCA24EFEB4C003544D7 /* ScanViewController+ImagePicker.swift */; };
+		5B1C2CCB24EFEB4C003544D7 /* ScanViewController+UIImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1C2CCA24EFEB4C003544D7 /* ScanViewController+UIImagePicker.swift */; };
 		5B1C2CCD24EFFB8A003544D7 /* TextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1C2CCC24EFFB8A003544D7 /* TextViewTableViewCell.swift */; };
 		5B2AE31021AA017E00976FE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AE30F21AA017E00976FE2 /* AppDelegate.swift */; };
 		5B2AE31221AA017E00976FE2 /* GenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AE31121AA017E00976FE2 /* GenerateViewController.swift */; };
 		5B2AE31721AA017F00976FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AE31621AA017F00976FE2 /* Assets.xcassets */; };
+		5B30F8EE29B0FF2C0012602D /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE530FD24F02310006A225D /* Template.swift */; };
 		5B3D61CD24E92C5300C01F34 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D61CC24E92C5300C01F34 /* QRCode.swift */; };
 		5B3D61CF24E92FA000C01F34 /* UIImage+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D61CE24E92FA000C01F34 /* UIImage+Base64.swift */; };
 		5B3D621824E9355B00C01F34 /* History.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D621624E9355B00C01F34 /* History.xcdatamodeld */; };
@@ -27,9 +28,13 @@
 		5B4B4AA424E93F2700E44302 /* HistoryItem+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4B4AA324E93F2700E44302 /* HistoryItem+Date.swift */; };
 		5B4B4AA624E93FEC00E44302 /* HistoryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4B4AA524E93FEC00E44302 /* HistoryItemTableViewCell.swift */; };
 		5B4B4AA824E9596200E44302 /* ActivityIndicatorOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4B4AA724E9596200E44302 /* ActivityIndicatorOverlay.swift */; };
+		5B4D14E92998EDCC0000BC94 /* SettingsTabTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D14E82998EDCC0000BC94 /* SettingsTabTableViewController.swift */; };
+		5B59970A29C75AC600BC0E78 /* GenerateViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59970929C75AC600BC0E78 /* GenerateViewController+TableView.swift */; };
+		5B59970C29C75BBA00BC0E78 /* GenerateViewController+TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59970B29C75BBA00BC0E78 /* GenerateViewController+TextView.swift */; };
+		5B59970E29C75CD900BC0E78 /* GenerateViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59970D29C75CD900BC0E78 /* GenerateViewController+Helpers.swift */; };
 		5B5C98A82339299E00030C75 /* myQRcode-dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B5C98A72339299E00030C75 /* myQRcode-dark.png */; };
 		5B5C98AA233929E200030C75 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C98A9233929E200030C75 /* AppIcon.swift */; };
-		5B5FAAA724E97E7300E719D4 /* myQRcodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF98BC021AB371D00AA5BBC /* myQRcodeUITests.swift */; };
+		5B5FAAA724E97E7300E719D4 /* myQRCodeScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF98BC021AB371D00AA5BBC /* myQRCodeScreenshots.swift */; };
 		5B642F0323392EC4005804AA /* AppIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B642F0223392EC4005804AA /* AppIconTableViewCell.swift */; };
 		5B642F0823393159005804AA /* AppIcon+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B642F0623393159005804AA /* AppIcon+TableView.swift */; };
 		5B642F0923393159005804AA /* AppIconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B642F0723393159005804AA /* AppIconTableViewController.swift */; };
@@ -37,6 +42,7 @@
 		5B642F2123395979005804AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F2323395979005804AA /* LaunchScreen.storyboard */; };
 		5B67630823395B6000C563FD /* Scan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F262339597E005804AA /* Scan.storyboard */; };
 		5B67630923395B6500C563FD /* Generate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F2023395975005804AA /* Generate.storyboard */; };
+		5B80B21129967C2300C87939 /* ScanViewController+PHPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80B21029967C2300C87939 /* ScanViewController+PHPicker.swift */; };
 		5B915E9123390703008B8B59 /* fa-regular-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B915E90233906EE008B8B59 /* fa-regular-400.ttf */; };
 		5BAA4194298D28B600493175 /* UIDevice+Modelname.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4193298D28B600493175 /* UIDevice+Modelname.swift */; };
 		5BAA4196298D29DD00493175 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4195298D29DD00493175 /* String+Localizable.swift */; };
@@ -69,6 +75,9 @@
 		5BE5310924F03CC0006A225D /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE5310824F03CC0006A225D /* TextFieldTableViewCell.swift */; };
 		5BE5310B24F04FFA006A225D /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE5310A24F04FFA006A225D /* ButtonTableViewCell.swift */; };
 		5BEC8A25223FDF1B00BDF642 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BEC8A23223FDF1B00BDF642 /* Localizable.strings */; };
+		5BF419A62A00104700BA6EB6 /* HeinHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 5BF419A52A00104700BA6EB6 /* HeinHelpers */; };
+		5BF419A82A00106100BA6EB6 /* HeinHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 5BF419A72A00106100BA6EB6 /* HeinHelpers */; };
+		5BF648C129F2DA770077D910 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4195298D29DD00493175 /* String+Localizable.swift */; };
 		5BFE10CA24E9686C00415E90 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BFE10CC24E9686C00415E90 /* History.storyboard */; };
 		5BFE10E024E96C3B00415E90 /* ScanResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFE10DF24E96C3B00415E90 /* ScanResultTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -95,8 +104,9 @@
 		5B1213A62992CA41007FDCE3 /* QRCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTests.swift; sourceTree = "<group>"; };
 		5B1213B32992CC73007FDCE3 /* QRCode+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QRCode+CoreData.swift"; sourceTree = "<group>"; };
 		5B1213B52992D82C007FDCE3 /* TemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTests.swift; sourceTree = "<group>"; };
+		5B1213B72992E660007FDCE3 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 		5B1551C6298D85DB00A4438B /* SKStoreReviewController+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKStoreReviewController+Request.swift"; sourceTree = "<group>"; };
-		5B1C2CCA24EFEB4C003544D7 /* ScanViewController+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScanViewController+ImagePicker.swift"; sourceTree = "<group>"; };
+		5B1C2CCA24EFEB4C003544D7 /* ScanViewController+UIImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScanViewController+UIImagePicker.swift"; sourceTree = "<group>"; };
 		5B1C2CCC24EFFB8A003544D7 /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
 		5B2AE30C21AA017E00976FE2 /* myQRcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myQRcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2AE30F21AA017E00976FE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +119,10 @@
 		5B4B4AA324E93F2700E44302 /* HistoryItem+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryItem+Date.swift"; sourceTree = "<group>"; };
 		5B4B4AA524E93FEC00E44302 /* HistoryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemTableViewCell.swift; sourceTree = "<group>"; };
 		5B4B4AA724E9596200E44302 /* ActivityIndicatorOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorOverlay.swift; sourceTree = "<group>"; };
+		5B4D14E82998EDCC0000BC94 /* SettingsTabTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTabTableViewController.swift; sourceTree = "<group>"; };
+		5B59970929C75AC600BC0E78 /* GenerateViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenerateViewController+TableView.swift"; sourceTree = "<group>"; };
+		5B59970B29C75BBA00BC0E78 /* GenerateViewController+TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenerateViewController+TextView.swift"; sourceTree = "<group>"; };
+		5B59970D29C75CD900BC0E78 /* GenerateViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenerateViewController+Helpers.swift"; sourceTree = "<group>"; };
 		5B5C98A72339299E00030C75 /* myQRcode-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myQRcode-dark.png"; sourceTree = "<group>"; };
 		5B5C98A9233929E200030C75 /* AppIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		5B5FAA9D24E97E6B00E719D4 /* myQRcodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myQRcodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +130,7 @@
 		5B642F0223392EC4005804AA /* AppIconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconTableViewCell.swift; sourceTree = "<group>"; };
 		5B642F0623393159005804AA /* AppIcon+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppIcon+TableView.swift"; sourceTree = "<group>"; };
 		5B642F0723393159005804AA /* AppIconTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconTableViewController.swift; sourceTree = "<group>"; };
+		5B80B21029967C2300C87939 /* ScanViewController+PHPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScanViewController+PHPicker.swift"; sourceTree = "<group>"; };
 		5B915E90233906EE008B8B59 /* fa-regular-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-regular-400.ttf"; sourceTree = "<group>"; };
 		5BAA4193298D28B600493175 /* UIDevice+Modelname.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Modelname.swift"; sourceTree = "<group>"; };
 		5BAA4195298D29DD00493175 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
@@ -151,7 +166,7 @@
 		5BE5310A24F04FFA006A225D /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		5BEC8A24223FDF1B00BDF642 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = myQRcode/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5BEC8A26223FDF2200BDF642 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = myQRcode/de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5BF98BC021AB371D00AA5BBC /* myQRcodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = myQRcodeUITests.swift; path = ../myQRcode/myQRcodeUITests.swift; sourceTree = "<group>"; };
+		5BF98BC021AB371D00AA5BBC /* myQRCodeScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = myQRCodeScreenshots.swift; path = ../myQRcode/myQRCodeScreenshots.swift; sourceTree = "<group>"; };
 		5BFE10CE24E9690500415E90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		5BFE10CF24E9690500415E90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Generate.storyboard; sourceTree = "<group>"; };
 		5BFE10D024E9690500415E90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -173,6 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BF419A62A00104700BA6EB6 /* HeinHelpers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BF419A82A00106100BA6EB6 /* HeinHelpers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,10 +233,11 @@
 		5B19FB2D21AAF60500BA102F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				5B4D14E72998EDB60000BC94 /* DefaultAction */,
 				5B642F052339313D005804AA /* AppIconList */,
 				5BE4AA8C21AAF62E00D69E18 /* SettingsTableViewController.swift */,
-				5BE4AA8D21AAF62E00D69E18 /* Settings+SendSupportMail.swift */,
 				5BE4AA8821AAF62E00D69E18 /* Settings+TableView.swift */,
+				5BE4AA8D21AAF62E00D69E18 /* Settings+SendSupportMail.swift */,
 				5BE4AA8421AAF62E00D69E18 /* TipJar */,
 			);
 			path = Settings;
@@ -232,6 +250,7 @@
 				5B5FAA9E24E97E6B00E719D4 /* myQRcodeUITests */,
 				5B1213A52992CA41007FDCE3 /* myQRcodeTests */,
 				5B2AE30D21AA017E00976FE2 /* Products */,
+				5B5AEE9E2A000DDD00682CF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -262,6 +281,7 @@
 				5B2AE31621AA017F00976FE2 /* Assets.xcassets */,
 				5B5C98A62339299000030C75 /* Alternative App Icons */,
 				5BB9DE0423396BCF00854E41 /* Info.plist */,
+				5B1213B72992E660007FDCE3 /* TestPlan.xctestplan */,
 			);
 			path = myQRcode;
 			sourceTree = "<group>";
@@ -275,6 +295,21 @@
 			path = History;
 			sourceTree = "<group>";
 		};
+		5B4D14E72998EDB60000BC94 /* DefaultAction */ = {
+			isa = PBXGroup;
+			children = (
+				5B4D14E82998EDCC0000BC94 /* SettingsTabTableViewController.swift */,
+			);
+			path = DefaultAction;
+			sourceTree = "<group>";
+		};
+		5B5AEE9E2A000DDD00682CF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5B5C98A62339299000030C75 /* Alternative App Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,7 +321,7 @@
 		5B5FAA9E24E97E6B00E719D4 /* myQRcodeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				5BF98BC021AB371D00AA5BBC /* myQRcodeUITests.swift */,
+				5BF98BC021AB371D00AA5BBC /* myQRCodeScreenshots.swift */,
 				5BAA4193298D28B600493175 /* UIDevice+Modelname.swift */,
 				5B5FAAA124E97E6B00E719D4 /* Info.plist */,
 			);
@@ -306,7 +341,8 @@
 			isa = PBXGroup;
 			children = (
 				5BD63BC921AEBE4200885382 /* ScanViewController.swift */,
-				5B1C2CCA24EFEB4C003544D7 /* ScanViewController+ImagePicker.swift */,
+				5B1C2CCA24EFEB4C003544D7 /* ScanViewController+UIImagePicker.swift */,
+				5B80B21029967C2300C87939 /* ScanViewController+PHPicker.swift */,
 				5BAA4199298D327600493175 /* ScanViewController+Demo.swift */,
 				5BFE10DF24E96C3B00415E90 /* ScanResultTableViewController.swift */,
 				5BCCE6A923397445007A78D0 /* ScanRequestAccessViewController.swift */,
@@ -389,6 +425,9 @@
 			isa = PBXGroup;
 			children = (
 				5B2AE31121AA017E00976FE2 /* GenerateViewController.swift */,
+				5B59970929C75AC600BC0E78 /* GenerateViewController+TableView.swift */,
+				5B59970B29C75BBA00BC0E78 /* GenerateViewController+TextView.swift */,
+				5B59970D29C75CD900BC0E78 /* GenerateViewController+Helpers.swift */,
 				5BE530FF24F024F4006A225D /* Templates */,
 			);
 			path = Generate;
@@ -433,6 +472,9 @@
 				5B1213A92992CA41007FDCE3 /* PBXTargetDependency */,
 			);
 			name = myQRcodeTests;
+			packageProductDependencies = (
+				5BF419A52A00104700BA6EB6 /* HeinHelpers */,
+			);
 			productName = myQRcodeTests;
 			productReference = 5B1213A42992CA41007FDCE3 /* myQRcodeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -450,6 +492,9 @@
 			dependencies = (
 			);
 			name = myQRcode;
+			packageProductDependencies = (
+				5BF419A72A00106100BA6EB6 /* HeinHelpers */,
+			);
 			productName = myQRgenerator;
 			productReference = 5B2AE30C21AA017E00976FE2 /* myQRcode.app */;
 			productType = "com.apple.product-type.application";
@@ -478,9 +523,10 @@
 		5B2AE30421AA017E00976FE2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
-				ORGANIZATIONNAME = "Marc Hein Webdesign";
+				LastUpgradeCheck = 1430;
+				ORGANIZATIONNAME = "Marc Hein";
 				TargetAttributes = {
 					5B1213A32992CA41007FDCE3 = {
 						CreatedOnToolsVersion = 14.2;
@@ -506,6 +552,9 @@
 				Base,
 			);
 			mainGroup = 5B2AE30321AA017E00976FE2;
+			packageReferences = (
+				5B4D14EA2998F0900000BC94 /* XCRemoteSwiftPackageReference "HeinHelpers" */,
+			);
 			productRefGroup = 5B2AE30D21AA017E00976FE2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -563,6 +612,7 @@
 				5B1213AF2992CB79007FDCE3 /* Template.swift in Sources */,
 				5B1213AD2992CB72007FDCE3 /* QRCode.swift in Sources */,
 				5B1213AE2992CB76007FDCE3 /* AppIcon.swift in Sources */,
+				5BF648C129F2DA770077D910 /* String+Localizable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,11 +641,15 @@
 				5B4B4AA224E93D0300E44302 /* HistoryTableViewController.swift in Sources */,
 				5BAA4196298D29DD00493175 /* String+Localizable.swift in Sources */,
 				5B1213B42992CC73007FDCE3 /* QRCode+CoreData.swift in Sources */,
+				5B59970C29C75BBA00BC0E78 /* GenerateViewController+TextView.swift in Sources */,
 				5BE4AA9221AAF62E00D69E18 /* TipJar+Transaction.swift in Sources */,
 				5BE5310124F0250E006A225D /* TemplateEditingTableViewController.swift in Sources */,
 				5BE4AA9821AAF62E00D69E18 /* Settings+SendSupportMail.swift in Sources */,
 				5BE4AAA821AAF6F300D69E18 /* Bundle+Icon.swift in Sources */,
+				5B59970A29C75AC600BC0E78 /* GenerateViewController+TableView.swift in Sources */,
 				5B1C2CCD24EFFB8A003544D7 /* TextViewTableViewCell.swift in Sources */,
+				5B4D14E92998EDCC0000BC94 /* SettingsTabTableViewController.swift in Sources */,
+				5B59970E29C75CD900BC0E78 /* GenerateViewController+Helpers.swift in Sources */,
 				5BCCE6AA23397445007A78D0 /* ScanRequestAccessViewController.swift in Sources */,
 				5B3D61CF24E92FA000C01F34 /* UIImage+Base64.swift in Sources */,
 				5BE4AAA721AAF6F300D69E18 /* SKProduct+LocalizedPrice.swift in Sources */,
@@ -607,13 +661,14 @@
 				5BE5310324F02519006A225D /* TemplateListTableViewController.swift in Sources */,
 				5B4B4AA624E93FEC00E44302 /* HistoryItemTableViewCell.swift in Sources */,
 				5BE4AAAE21AAF71200D69E18 /* Utilities.swift in Sources */,
+				5B80B21129967C2300C87939 /* ScanViewController+PHPicker.swift in Sources */,
 				5BE530FE24F02310006A225D /* Template.swift in Sources */,
 				5BE530FC24F0192F006A225D /* NoItemsView.swift in Sources */,
 				5BE4AA9721AAF62E00D69E18 /* SettingsTableViewController.swift in Sources */,
 				5B1551C7298D85DB00A4438B /* SKStoreReviewController+Request.swift in Sources */,
 				5BE5310524F02548006A225D /* Model.swift in Sources */,
 				5BFE10E024E96C3B00415E90 /* ScanResultTableViewController.swift in Sources */,
-				5B1C2CCB24EFEB4C003544D7 /* ScanViewController+ImagePicker.swift in Sources */,
+				5B1C2CCB24EFEB4C003544D7 /* ScanViewController+UIImagePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,7 +677,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BAA4194298D28B600493175 /* UIDevice+Modelname.swift in Sources */,
-				5B5FAAA724E97E7300E719D4 /* myQRcodeUITests.swift in Sources */,
+				5B30F8EE29B0FF2C0012602D /* Template.swift in Sources */,
+				5B5FAAA724E97E7300E719D4 /* myQRCodeScreenshots.swift in Sources */,
 				5BAA4197298D29DD00493175 /* String+Localizable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -879,7 +935,7 @@
 				CODE_SIGN_ENTITLEMENTS = myQRcode/myQRcode.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/myQRcode/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = myQRcode;
@@ -896,7 +952,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -911,7 +967,7 @@
 				CODE_SIGN_ENTITLEMENTS = myQRcode/myQRcode.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/myQRcode/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = myQRcode;
@@ -928,7 +984,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1018,6 +1074,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5B4D14EA2998F0900000BC94 /* XCRemoteSwiftPackageReference "HeinHelpers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marchein/HeinHelpers.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5BF419A52A00104700BA6EB6 /* HeinHelpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B4D14EA2998F0900000BC94 /* XCRemoteSwiftPackageReference "HeinHelpers" */;
+			productName = HeinHelpers;
+		};
+		5BF419A72A00106100BA6EB6 /* HeinHelpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B4D14EA2998F0900000BC94 /* XCRemoteSwiftPackageReference "HeinHelpers" */;
+			productName = HeinHelpers;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5B3D621624E9355B00C01F34 /* History.xcdatamodeld */ = {

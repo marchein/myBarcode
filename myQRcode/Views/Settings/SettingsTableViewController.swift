@@ -6,25 +6,28 @@
 //  Copyright © 2023 Marc Hein. All rights reserved.
 //
 
-import UIKit
 import CoreData
 import SafariServices
+import UIKit
 
 class SettingsTableViewController: UITableViewController {
+    // MARK: - Outlets
 
-    // MARK:- Outlets
-    @IBOutlet weak var contactMailCell: UITableViewCell!
-    @IBOutlet weak var developerTwitterCell: UITableViewCell!
-    @IBOutlet weak var appStoreCell: UITableViewCell!
-    @IBOutlet weak var rateCell: UITableViewCell!
-    @IBOutlet weak var developerCell: UITableViewCell!
-    @IBOutlet weak var appIconIV: UIImageView!
+    @IBOutlet var selectedTabName: UILabel!
+    @IBOutlet var contactMailCell: UITableViewCell!
+    @IBOutlet var developerTwitterCell: UITableViewCell!
+    @IBOutlet var appStoreCell: UITableViewCell!
+    @IBOutlet var rateCell: UITableViewCell!
+    @IBOutlet var developerCell: UITableViewCell!
+    @IBOutlet var appIconIV: UIImageView!
     
-    // MARK:- Class Attributes
+    // MARK: - Class Attributes
+
     private var hasTipped = false
     private var currentAppIcon: String?
 
     // MARK: System Functions
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -42,13 +45,25 @@ class SettingsTableViewController: UITableViewController {
         if !myQRcode.appIcons.contains(iconName: currentAppIcon) {
             currentAppIcon = myQRcode.defaultAppIcon
             UserDefaults.standard.set(currentAppIcon, forKey: localStoreKeys.currentAppIcon)
+            UserDefaults.standard.synchronize()
         }
+        
+        self.updateCurrentTab()
         
         if let appIcon = currentAppIcon {
             appIconIV.image = appIcon == myQRcode.defaultAppIcon ? Bundle.main.icon : UIImage(named: appIcon)
+            appIconIV.layer.borderWidth = 1.0
+            appIconIV.layer.borderColor = UIColor.lightGray.cgColor
             appIconIV.roundCorners(radius: 6)
         }
         tableView.reloadData()
+    }
+    
+    func updateCurrentTab() {
+        guard let resultValue = TabOption(rawValue: UserDefaults.standard.integer(forKey: localStoreKeys.defaultTab)) else {
+            fatalError()
+        }
+        self.selectedTabName.text = myQRcode.tabValues[resultValue]
     }
     
     private func configureNavigator() {
@@ -66,6 +81,6 @@ class SettingsTableViewController: UITableViewController {
     }
     
     @IBAction func closeModal(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }

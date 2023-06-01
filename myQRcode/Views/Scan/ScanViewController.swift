@@ -8,6 +8,7 @@
 
 import AVFoundation
 import UIKit
+import HeinHelpers
 
 class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, HistoryItemDelegate {
     @IBOutlet var pickerButton: UIBarButtonItem!
@@ -15,6 +16,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     @IBOutlet var errorIcon: UIImageView!
     @IBOutlet var missingPermissionsView: UIView!
     
+    let hapticsGenerator = UINotificationFeedbackGenerator()
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
@@ -36,22 +38,15 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             self.errorIcon.image = UIImage(systemName: "exclamationmark.circle")
         }
         
-        if !isSimulator() && AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
-            setupScanner()
-            // self.setupDemoHistory()
+        if isSimulator() {
+            setupDemoScanner()
         } else {
-            requestAccess()
+            AVCaptureDevice.authorizationStatus(for: .video) == .authorized  ? setupScanner() : requestAccess()
         }
         
+        fixNavTabBar()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(resetScanner), name: NSNotification.Name(rawValue: "resetView"), object: nil)
-    }
-    
-    func requestAccess() {
-        AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
-            DispatchQueue.main.async {
-                granted ? self.setupScanner() : self.setRequestView()
-            }
-        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,6 +59,14 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         captureSession.stopRunning()
+    }
+    
+    func requestAccess() {
+        AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
+            DispatchQueue.main.async {
+                granted ? self.setupScanner() : self.setRequestView()
+            }
+        })
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -110,59 +113,56 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     }
     
     func setupScanner() {
-        if !isSimulator() {
-            #if targetEnvironment(macCatalyst)
-            let deviceDiscoverySession = AVCaptureDevice.default(for: .video)
-            #else
-            let deviceDiscoverySession = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
-            #endif
+        #if targetEnvironment(macCatalyst)
+        let deviceDiscoverySession = AVCaptureDevice.default(for: .video)
+        #else
+        let deviceDiscoverySession = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
+        #endif
             
-            guard let captureDevice = deviceDiscoverySession else {
-                print("Failed to get the camera device")
-                return
-            }
+        guard let captureDevice = deviceDiscoverySession else {
+            print("Failed to get the camera device")
+            return
+        }
             
-            do {
-                if !isSetup {
-                    if let inputs = captureSession.inputs as? [AVCaptureDeviceInput] {
-                        for input in inputs {
-                            captureSession.removeInput(input)
-                        }
-                    }
-                    
-                    if captureSession.inputs.isEmpty {
-                        let deviceInput = try AVCaptureDeviceInput(device: captureDevice)
-                        captureSession.addInput(deviceInput)
-                    }
-                    
-                    let captureMetadataOutput = AVCaptureMetadataOutput()
-                    captureSession.addOutput(captureMetadataOutput)
-                    
-                    captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-                    captureMetadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
-                    
-                    videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-                    videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-                    videoPreviewLayer?.frame = view.bounds
-                    view.layer.addSublayer(videoPreviewLayer!)
-                    
-                    qrCodeFrameView = UIView()
-                    
-                    if let qrCodeFrameView = qrCodeFrameView {
-                        qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
-                        qrCodeFrameView.layer.borderWidth = 2
-                        view.addSubview(qrCodeFrameView)
-                        view.bringSubviewToFront(qrCodeFrameView)
-                    }
-                    isSetup = true
-                    resetScanner()
+        if !isSetup {
+            if let inputs = captureSession.inputs as? [AVCaptureDeviceInput] {
+                for input in inputs {
+                    captureSession.removeInput(input)
                 }
+            }
+                    
+            do {
+                if captureSession.inputs.isEmpty {
+                    let deviceInput = try AVCaptureDeviceInput(device: captureDevice)
+                    captureSession.addInput(deviceInput)
+                }
+                    
+                let captureMetadataOutput = AVCaptureMetadataOutput()
+                captureSession.addOutput(captureMetadataOutput)
+                    
+                captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+                captureMetadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+                    
+                videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+                videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+                videoPreviewLayer?.frame = view.bounds
+                view.layer.addSublayer(videoPreviewLayer!)
+                        
             } catch {
-                print(error)
+                print(error.localizedDescription)
                 return
             }
-        } else {
-            setupDemoScanner()
+                    
+            qrCodeFrameView = UIView()
+                    
+            if let qrCodeFrameView = qrCodeFrameView {
+                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
+                qrCodeFrameView.layer.borderWidth = 2
+                view.addSubview(qrCodeFrameView)
+                view.bringSubviewToFront(qrCodeFrameView)
+            }
+            isSetup = true
+            resetScanner()
         }
     }
     
@@ -182,7 +182,9 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if metadataObjects.count == 0 {
             resetQrCodeFrame()
-            print("No QR code is detected")
+            hapticsGenerator.prepare()
+            hapticsGenerator.notificationOccurred(.error)
+            print("No QR-code is detected")
             return
         }
         
@@ -202,13 +204,17 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     }
     
     func finishedScanning(content: String, performSegueValue: Bool = true) {
+        hapticsGenerator.prepare()
+        hapticsGenerator.notificationOccurred(.success)
+
         codeResult = content
         let qrCode = QRCode(content: content, category: .scan)
+        let historyItem = qrCode.addToCoreData()
+        
         incrementCodeValue(of: localStoreKeys.codeScanned)
+        
         if performSegueValue {
-            performSegue(withIdentifier: myQRcodeSegues.ResultSegue, sender: qrCode.coreDataObject)
-        } else {
-            _ = qrCode.coreDataObject
+            performSegue(withIdentifier: myQRcodeSegues.ResultSegue, sender: historyItem)
         }
     }
     
@@ -238,5 +244,59 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     func userSelectedHistoryItem(item: HistoryItem) {
         prepareResultScreen()
         performSegue(withIdentifier: myQRcodeSegues.ResultSegue, sender: item)
+    }
+    
+    @IBAction func gallerySelectionButtonTapped() {
+        if #available(iOS 14.0, *) {
+            pickPhotoUsingPHPicker()
+        } else {
+            pickImageUsingUIImagePicker()
+        }
+    }
+    
+    func processSelectedImage(_ image: UIImage) -> String {
+        guard
+            let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]),
+            let ciImage = CIImage(image: image),
+            let features = detector.features(in: ciImage) as? [CIQRCodeFeature]
+        else {
+            hapticsGenerator.prepare()
+            hapticsGenerator.notificationOccurred(.error)
+            fatalError("Something went wrong in the image picker code")
+        }
+        
+        var qrCodeResult = ""
+        for feature in features {
+            if let message = feature.messageString {
+                qrCodeResult += message
+            }
+        }
+        
+        return qrCodeResult
+    }
+    
+    func processingImageComplete(_ qrCodeContent: String) {
+        if qrCodeContent.isEmpty {
+            hapticsGenerator.prepare()
+            hapticsGenerator.notificationOccurred(.error)
+            showMessage(title: "no_qr_code_error".localized, message: "no_qr_code_error_description".localized, on: navigationController!)
+        } else {
+            finishedScanning(content: qrCodeContent)
+        }
+    }
+    
+    func fixNavTabBar() {
+        // This is needed so the navbar and tabbar stay over the contents of scan view
+        if #available(iOS 15, macCatalyst 15.0, *) {
+            let navbarAppearance = UINavigationBarAppearance()
+            navbarAppearance.configureWithDefaultBackground()
+            navigationController?.navigationBar.standardAppearance = navbarAppearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+                
+            let tabbarAppearance = UITabBarAppearance()
+            tabbarAppearance.configureWithDefaultBackground()
+            tabBarController?.tabBar.standardAppearance = tabbarAppearance
+            tabBarController?.tabBar.scrollEdgeAppearance = tabbarAppearance
+        }
     }
 }

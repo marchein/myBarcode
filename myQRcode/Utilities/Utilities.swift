@@ -42,7 +42,7 @@ func getReleaseTitle() -> String {
 // MARK: - showDialog
 func showMessage(title: String, message: String, on view: UIViewController) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: NSLocalizedString("message_okay_action", comment: ""), style: .cancel, handler: nil))
+    alert.addAction(UIAlertAction(title: "message_okay_action".localized, style: .cancel, handler: nil))
     DispatchQueue.main.async {
         view.present(alert, animated: true)
     }
@@ -55,6 +55,7 @@ func getCodeValue(from: String) -> Int {
 func incrementCodeValue(of: String) {
     let result = getCodeValue(from: of) + 1
     UserDefaults.standard.set(result, forKey: of)
+    UserDefaults.standard.synchronize()
     if result == myQRcode.askForReviewAtSingleAction {
         showRateWindow()
     } else if (getCodeValue(from: localStoreKeys.codeGenerated) + getCodeValue(from: localStoreKeys.codeScanned) == myQRcode.askForReviewAtCombinedAction) {

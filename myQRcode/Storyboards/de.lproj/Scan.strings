@@ -17,8 +17,8 @@
 /* Class = "UIViewController"; title = "Result"; ObjectID = "eWd-Zz-orO"; */
 "eWd-Zz-orO.title" = "Result";
 
-/* Class = "UILabel"; text = "Inhalt des gescannten QR Codes"; ObjectID = "ibm-qI-zCd"; */
-"ibm-qI-zCd.text" = "Inhalt des gescannten QR Codes";
+/* Class = "UILabel"; text = "Inhalt des gescannten QR-Codes"; ObjectID = "ibm-qI-zCd"; */
+"ibm-qI-zCd.text" = "Inhalt des gescannten QR-Codes";
 
 /* Class = "UINavigationItem"; title = "Scannen"; ObjectID = "jMO-wS-otb"; */
 "jMO-wS-otb.title" = "Scannen";
@@ -33,7 +33,7 @@
 "weY-8y-NRz.title" = "Ergebnis";
 
 /* Class = "UITableViewSection"; headerTitle = "CONTENT HEADLINE"; ObjectID = "E0h-tD-LST"; */
-"E0h-tD-LST.headerTitle" = "Inhalt des gescannten QR Codes";
+"E0h-tD-LST.headerTitle" = "Inhalt des gescannten QR-Codes";
 
 /* Class = "UIBarButtonItem"; title = "CLOSE_BUTTON"; ObjectID = "xyy-kc-08K"; */
 "xyy-kc-08K.title" = "Schließen";

@@ -47,7 +47,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="gte-QC-7TY">
-                            <rect key="frame" x="32" y="22" width="158" height="140.5"/>
+                            <rect key="frame" x="32" y="22" width="158" height="140"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Error-Icon" translatesAutoresizingMaskIntoConstraints="NO" id="P4C-yt-Ka0">
                                     <rect key="frame" x="47" y="0.0" width="64" height="64"/>
@@ -57,16 +57,16 @@
                                     </constraints>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o3s-2W-sCc">
-                                    <rect key="frame" x="15.5" y="96" width="127.5" height="44.5"/>
+                                    <rect key="frame" x="15.333333333333336" y="96" width="127.33333333333331" height="44"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ERROR_LABEL" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ch-CP-mhc">
-                                            <rect key="frame" x="4.5" y="0.0" width="118" height="20.5"/>
+                                            <rect key="frame" x="4.6666666666666643" y="0.0" width="118" height="20.333333333333332"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ERROR_HINT_LABEL" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlJ-EN-afc">
-                                            <rect key="frame" x="0.0" y="28.5" width="127.5" height="16"/>
+                                            <rect key="frame" x="0.0" y="28.333333333333346" width="127.33333333333333" height="15.666666666666668"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

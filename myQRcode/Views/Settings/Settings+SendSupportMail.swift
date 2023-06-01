@@ -9,8 +9,10 @@
 import Foundation
 import MessageUI
 import UIKit
+import HeinHelpers
 
-// MARK:- Mail Extension
+// MARK: - Mail Extension
+
 extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
     func sendSupportMail() {
         if MFMailComposeViewController.canSendMail() {
@@ -18,15 +20,15 @@ extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
             mail.mailComposeDelegate = self
             mail.setSubject("[myQRcode] - Version \(myQRcode.versionString) (Build: \(myQRcode.buildNumber) - \(getReleaseTitle()))")
             mail.setToRecipients([myQRcode.mailAdress])
-            mail.setMessageBody(NSLocalizedString("support_mail_body", comment: ""), isHTML: false)
+            mail.setMessageBody("support_mail_body".localized, isHTML: false)
             present(mail, animated: true)
         } else {
             print("No mail account configured")
-            let mailErrorMessage = NSLocalizedString("mail_error", comment: "")
-            showMessage(title: NSLocalizedString("Error", comment: ""), message: String(format: mailErrorMessage, myQRcode.mailAdress), on: self)
+            let mailErrorMessage = "mail_error".localized
+            showMessage(title: "Error".localized, message: String(format: mailErrorMessage, myQRcode.mailAdress), on: self)
         }
     }
-    
+
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
     }

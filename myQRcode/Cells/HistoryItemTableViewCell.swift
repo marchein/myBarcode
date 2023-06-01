@@ -13,7 +13,7 @@ class HistoryItemTableViewCell: UITableViewCell {
     // MARK: - Properties
     static let Identifier = "HistoryItemTableCell"
     
-    // MARK: -
+    // MARK: - Data
     var historyItem: HistoryItem? {
         didSet {
             guard let historyItem = historyItem else { return }
@@ -25,6 +25,8 @@ class HistoryItemTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.textLabel?.numberOfLines = 3
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

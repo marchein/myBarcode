@@ -21,6 +21,8 @@ struct localStoreKeys {
     // how many actions are taken
     static let codeGenerated = "codeGenerated"
     static let codeScanned = "codeScanned"
+    
+    static let defaultTab = "defaultSelectedTab"
 }
 
 // MARK: - Cells
@@ -32,12 +34,19 @@ struct Cells {
     static let TipCell      = "tipCell"
 }
 
+//MARK: - TabOption
+enum TabOption: Int {
+    case GENERATE = 0
+    case SCAN = 1
+}
+
 // MARK: - Segues
 struct myQRcodeSegues {
     static let ResultSegue = "resultSegue"
     static let ShowHistorySegue = "showHistory"
     static let GenerateToTemplateSegue = "GenerateToTemplateSegue"
     static let EditTemplateSegue = "editTemplateSegue"
+    static let ReuseTemplateSegue = "reuseTemplateSegue"
 }
 
 struct myQRcodeIAP {
@@ -57,11 +66,17 @@ struct myQRcode {
     static let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
     static let defaultAppIcon = "default"
     static var appIcons = AppIcons(icons: [
-        AppIcon(iconName: nil, iconTitle: "myQRcode - \(NSLocalizedString("light_icon", comment: ""))"),
-        AppIcon(iconName: "myQRcode-dark", iconTitle: "myQRcode - \(NSLocalizedString("dark_icon", comment: ""))")
+        AppIcon(iconName: nil, iconTitle: "myQRcode - \("light_icon".localized)"),
+        AppIcon(iconName: "myQRcode-dark", iconTitle: "myQRcode - \("dark_icon".localized)")
     ])
 
     static let askForReviewAtSingleAction = 10
     static let askForReviewAtCombinedAction = 30
+    
+    static let tabValues: [TabOption: String] = [
+        .GENERATE: "TAB_GENERATE".localized,
+        .SCAN: "TAB_SCAN".localized
+    ]
+    
 }
 

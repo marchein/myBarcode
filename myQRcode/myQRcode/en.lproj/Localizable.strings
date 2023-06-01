@@ -23,13 +23,18 @@
 "light_icon" = "Light";
 "dark_icon" = "Dark";
 "date_scanning" = "Time of scanning";
-"result_headline" = "Content of scanned QR code";
-"no_scan_history" = "Currently no QR codes have been scanned";
-"no_generate_history" = "Currently no QR codes have been generated";
+"result_headline" = "Content of scanned QR-code";
+"no_scan_history" = "Currently no QR-codes have been scanned";
+"no_generate_history" = "Currently no QR-codes have been generated";
 "message_okay_action" = "Got it";
 
-"no_qr_code_error" = "No QR code";
-"no_qr_code_error_description" = "myQRcode was unable to detect any QR codes in the selected image";
+"no_qr_code_error" = "No QR-code";
+"no_qr_code_error_description" = "myQRcode was unable to detect any QR-codes in the selected image";
+
+/* Generate */
+"GENERATE_CHARS_LEFT" = "characters left";
+"GENERATE_CHARS_TOO_MUCH" = "characters above the limit";
+"GENERATE_QR_CODE_PLACEHOLDER" = "Content of the QR-code";
 
 /* Templates */
 /* WiFi Template */
@@ -48,7 +53,38 @@
 "message_number" = "Phone number";
 
 /* Templates */
+/* Categories headlines */
+"TEMPLATE_CATEGORY_SOCIAL" = "Soziale Netzwerke";
+"TEMPLATE_CATEGORY_PHONE" = "Phone";
+"TEMPLATE_CATEGORY_MAIL" = "Mail";
+"TEMPLATE_CATEGORY_MISCELLANEOUS" = "Miscellaneous";
+
+/* Instagram */
+"TEMPLATE_INSTAGRAM_USERNAME" = "Username";
+"TEMPLATE_INSTAGRAM_USERNAME_PLACEHOLDER" = "Your Instagram username";
+
+/* Twitter */
+"TEMPLATE_TWITTER_USERNAME" = "Username";
+"TEMPLATE_TWITTER_USERNAME_PLACEHOLDER" = "Your Twitter @username";
+
+/* Mail */
+"TEMPLATE_EMAIL_WITH_CONTENT" = "Email with content";
+"TEMPLATE_EMAIL_WITH_CONTENT_RECEIPIENT" = "Recipient";
+"TEMPLATE_EMAIL_WITH_CONTENT_RECEIPIENT_PLACEHOLDER" = "recipient@provider.com";
+
+"TEMPLATE_EMAIL_WITH_CONTENT_SUBJECT" = "Email subject";
+"TEMPLATE_EMAIL_WITH_CONTENT_SUBJECT_PLACEHOLDER" = "Subject";
+
+"TEMPLATE_EMAIL_WITH_CONTENT_BODY" = "Body of the Email";
+"TEMPLATE_EMAIL_WITH_CONTENT_BODY_PLACEHOLDER" = "Message to recipient";
+
 "TEMPLATES_PLACEHOLDER_WIFI_NAME" = "WiFi Name";
 
 /* Settings */
 "SETTINGS_DEVELOPER_GREETING" = "Created with ❤️ in Trier";
+
+/* Tab Selection */
+"TAB_SELECTION_HEADER" = "Default tab";
+"TAB_GENERATE" = "Generate";
+"TAB_SCAN" = "Scan";
+"TAB_SELECTION_FOOTER" = "Here you can select which tab should be loaded when starting the Mensaplan app.";

@@ -14,28 +14,18 @@ extension ScanViewController {
         let imageView = UIImageView(image: lang == "en" ? imageEN : imageDE)
         imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         imageView.contentMode = .scaleAspectFill
+        imageView.accessibilityIdentifier = "demoImage"
         view.sendSubviewToBack(imageView)
         view.addSubview(imageView)
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
-        
-        if #available(iOS 15, macCatalyst 15.0, *) {
-            let navbarAppearance = UINavigationBarAppearance()
-            navbarAppearance.configureWithDefaultBackground()
-            navigationController?.navigationBar.standardAppearance = navbarAppearance
-            navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-                
-            let tabbarAppearance = UITabBarAppearance()
-            tabbarAppearance.configureWithDefaultBackground()
-            tabBarController?.tabBar.standardAppearance = tabbarAppearance
-            tabBarController?.tabBar.scrollEdgeAppearance = tabbarAppearance
-        }
     }
     
     func setupDemoHistory() {
         let demoStrings = ["https://marc-hein.de", "myQRcode", "BLÅHAJ", "Whatever", "0000 is the best pin"]
+        
         for string in demoStrings {
             self.finishedScanning(content: string, performSegueValue: false)
         }
@@ -45,6 +35,6 @@ extension ScanViewController {
         let tappedImageView = tapGestureRecognizer.view as! UIImageView
         let tappedImage = tappedImageView.image!
         
-        finishedScanning(content: tappedImage == imageDE ?"Hallo und herzlich willkommen zu myQRcode" : "Hello and welcome to myQRcode")
+        finishedScanning(content: tappedImage == imageDE ? "Hallo und herzlich willkommen zu myQRcode" : "Hello and welcome to myQRcode")
     }
 }

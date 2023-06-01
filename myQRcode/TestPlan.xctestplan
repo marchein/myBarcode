@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "9891A295-5AB3-4F9A-BC14-02093F269F6C",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:myQRcode.xcodeproj",
+        "identifier" : "5B1213A32992CA41007FDCE3",
+        "name" : "myQRcodeTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:myQRcode.xcodeproj",
+        "identifier" : "5B5FAA9C24E97E6B00E719D4",
+        "name" : "myQRcodeUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

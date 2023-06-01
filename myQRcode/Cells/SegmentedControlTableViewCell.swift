@@ -22,6 +22,14 @@ class SegmentedControlTableViewCell: UITableViewCell {
         }
     }
     
+    var selectedIndex: Int? {
+        didSet {
+            if let optionsCount = options?.count, selectedIndex ?? 0 < optionsCount {
+                segmentedControl.selectedSegmentIndex = selectedIndex ?? self.segmentedControl.numberOfSegments - 1
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.segmentedControl.removeAllSegments()

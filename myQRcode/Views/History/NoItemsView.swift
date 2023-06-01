@@ -17,7 +17,7 @@ class NoItemsView: UIView {
             if #available(iOS 13.0, *) {
                 errorIcon.image = UIImage(systemName: "exclamationmark.circle")
             }
-            noEntrysLabel.text = self.category == HistoryCategory.generate ? NSLocalizedString("no_generate_history", comment: "") : NSLocalizedString("no_scan_history", comment: "")
+            noEntrysLabel.text = self.category == HistoryCategory.generate ? "no_generate_history".localized : "no_scan_history".localized
         }
     }
 }
