@@ -14,6 +14,7 @@ extension ScanViewController {
         let imageView = UIImageView(image: lang == "en" ? imageEN : imageDE)
         imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         imageView.contentMode = .scaleAspectFill
+        imageView.accessibilityIdentifier = "demoImage"
         view.sendSubviewToBack(imageView)
         view.addSubview(imageView)
         

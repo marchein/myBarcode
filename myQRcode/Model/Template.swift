@@ -11,12 +11,12 @@ import Foundation
 class Template: TemplateItem, CustomStringConvertible, NSCopying, Equatable {
     static func == (lhs: Template, rhs: Template) -> Bool {
         return lhs.name == rhs.name &&
-        lhs.parameters == rhs.parameters &&
-        lhs.parameterType == rhs.parameterType &&
-        lhs.placeholders == rhs.placeholders &&
-        lhs.templateString == rhs.templateString &&
-        lhs.options == rhs.options &&
-        lhs.indexOflastImportantField == rhs.indexOflastImportantField
+            lhs.parameters == rhs.parameters &&
+            lhs.parameterType == rhs.parameterType &&
+            lhs.placeholders == rhs.placeholders &&
+            lhs.templateString == rhs.templateString &&
+            lhs.options == rhs.options &&
+            lhs.indexOflastImportantField == rhs.indexOflastImportantField
     }
     
     func copy(with zone: NSZone? = nil) -> Any {
@@ -38,8 +38,8 @@ class Template: TemplateItem, CustomStringConvertible, NSCopying, Equatable {
          parameterType: [TemplateParameterType],
          placeholders: [String?],
          options: [[String]?],
-         indexOflastImportantField: Int? = nil
-    ) {
+         indexOflastImportantField: Int? = nil)
+    {
         if parameters.count != parameterType.count {
             fatalError("Number of parameters must be equal to number of descriptions")
         }
@@ -60,12 +60,9 @@ class Template: TemplateItem, CustomStringConvertible, NSCopying, Equatable {
         self.parameterValues = parameters
         self.indexOflastImportantField = indexOflastImportantField ?? parameters.count - 1
         super.init(name: name)
-
     }
     
-    lazy var resultString: String? = {
-        return String(format: templateString, arguments: parameterValues)
-    }()
+    lazy var resultString: String? = String(format: templateString, arguments: parameterValues)
     
     var description: String {
         return "Name: \(name), Template String: \(templateString), Parameters: \(parameters), Parameter Type: \(parameterType), Parameter Values: \(parameterValues), Placeholders: \(placeholders), Options: \(options), IndexOfLastImportantField: \(indexOflastImportantField)"
@@ -81,8 +78,7 @@ enum TemplateParameterType {
     case Selector
 }
 
-class TemplateSeperator: TemplateItem {
-}
+class TemplateSeperator: TemplateItem {}
 
 class TemplateItem {
     var name: String

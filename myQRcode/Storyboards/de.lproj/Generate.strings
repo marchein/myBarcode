@@ -8,9 +8,6 @@
 /* Class = "UITextField"; placeholder = "Inhalt des QR-Codes"; ObjectID = "DwH-hJ-Ipd"; */
 "DwH-hJ-Ipd.placeholder" = "Inhalt des QR-Codes";
 
-/* Class = "UITableViewSection"; headerTitle = "QR-Code"; ObjectID = "EeJ-pa-ZRx"; */
-"EeJ-pa-ZRx.headerTitle" = "QR-Code";
-
 /* Class = "UINavigationController"; title = "Navigation"; ObjectID = "GAg-Vh-DJw"; */
 "GAg-Vh-DJw.title" = "Navigation";
 

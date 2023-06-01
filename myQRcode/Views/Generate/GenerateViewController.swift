@@ -9,8 +9,9 @@
 import CoreData
 import UIKit
 
-class GenerateViewController: UITableViewController, UIDragInteractionDelegate, UITextViewDelegate, HistoryItemDelegate {   
+class GenerateViewController: UITableViewController, UIDragInteractionDelegate, UITextViewDelegate, HistoryItemDelegate {
     // MARK: - Properties
+
     @IBOutlet var qrCodeImageView: UIImageView!
     @IBOutlet var qrContentTextView: UITextView!
     @IBOutlet var characterLimitLabel: UILabel!
@@ -31,6 +32,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     let maxLength = 2000
     
     // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupApp()
@@ -73,8 +75,6 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         return [item]
     }
     
-    
-    
     @IBAction func generateButtonPressed(_ sender: Any) {
         generateAction()
     }
@@ -99,7 +99,6 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         present(activityVC, animated: true, completion: nil)
     }
     
-    
     func userSelectedHistoryItem(item: HistoryItem) {
         resetView()
         enterQR(content: item.content, addToHistory: false)
@@ -121,7 +120,9 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
             generateAction()
         }
     }
+
     // MARK: - Segues
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         qrContentTextView.resignFirstResponder()
         if segue.identifier == myQRcodeSegues.ShowHistorySegue {

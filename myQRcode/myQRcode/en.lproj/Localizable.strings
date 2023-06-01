@@ -53,7 +53,11 @@
 "message_number" = "Phone number";
 
 /* Templates */
-"TEMPLATES_PLACEHOLDER_WIFI_NAME" = "WiFi Name";
+/* Categories headlines */
+"TEMPLATE_CATEGORY_SOCIAL" = "Soziale Netzwerke";
+"TEMPLATE_CATEGORY_PHONE" = "Phone";
+"TEMPLATE_CATEGORY_MAIL" = "Mail";
+"TEMPLATE_CATEGORY_MISCELLANEOUS" = "Miscellaneous";
 
 /* Instagram */
 "TEMPLATE_INSTAGRAM_USERNAME" = "Username";
@@ -73,6 +77,8 @@
 
 "TEMPLATE_EMAIL_WITH_CONTENT_BODY" = "Body of the Email";
 "TEMPLATE_EMAIL_WITH_CONTENT_BODY_PLACEHOLDER" = "Message to recipient";
+
+"TEMPLATES_PLACEHOLDER_WIFI_NAME" = "WiFi Name";
 
 /* Settings */
 "SETTINGS_DEVELOPER_GREETING" = "Created with ❤️ in Trier";

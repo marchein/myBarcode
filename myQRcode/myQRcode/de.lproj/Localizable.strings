@@ -58,7 +58,11 @@
 
 
 /* Templates */
-"TEMPLATES_PLACEHOLDER_WIFI_NAME" = "WLAN Name";
+/* Categories headlines */
+"TEMPLATE_CATEGORY_SOCIAL" = "Soziale Netzwerke";
+"TEMPLATE_CATEGORY_PHONE" = "Telefon";
+"TEMPLATE_CATEGORY_MAIL" = "E-Mail";
+"TEMPLATE_CATEGORY_MISCELLANEOUS" = "Sonstiges";
 
 /* Instagram */
 "TEMPLATE_INSTAGRAM_USERNAME" = "Benutzername";
@@ -78,6 +82,8 @@
 
 "TEMPLATE_EMAIL_WITH_CONTENT_BODY" = "Inhalt der E-Mail";
 "TEMPLATE_EMAIL_WITH_CONTENT_BODY_PLACEHOLDER" = "Nachricht an Empfänger";
+
+"TEMPLATES_PLACEHOLDER_WIFI_NAME" = "WLAN Name";
 
 /* Settings */
 "SETTINGS_DEVELOPER_GREETING" = "Erstellt mit ❤️ in Trier";

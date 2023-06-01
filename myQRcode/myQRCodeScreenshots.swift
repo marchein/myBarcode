@@ -77,52 +77,13 @@ class myQRCodeScreenshots: XCTestCase {
         return path
     }
     
-    func testScreenshotsEN() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
-        XCUIDevice.shared.orientation = .landscapeRight
-
-        let app = XCUIApplication()
-        app.launch()
-        let tablesQuery = app.tables
-        saveScreenshot(name: "01_start.jpeg")
-        tablesQuery/*@START_MENU_TOKEN@*/.textFields["Content of the QR code"]/*[[".cells.textFields[\"Content of the QR code\"]",".textFields[\"Content of the QR code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery.textFields["Content of the QR code"].typeText("Content of Your QR code")
-        saveScreenshot(name: "02_entered.jpeg")
-        app/*@START_MENU_TOKEN@*/.buttons["Done"]/*[[".keyboards",".buttons[\"Fertig\"]",".buttons[\"Done\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Generate QR code"]/*[[".cells.buttons[\"Generate QR code\"]",".buttons[\"Generate QR code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        sleep(3)
-        saveScreenshot(name: "03_generated.jpeg")
-        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Export generated QR code"]/*[[".cells.buttons[\"Export generated QR code\"]",".buttons[\"Export generated QR code\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        sleep(2)
-        saveScreenshot(name: "04_shared.jpeg")
-        if app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Close"].exists {
-            app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Close"].tap()
-        } else {
-            app.otherElements["PopoverDismissRegion"].tap()
-        }
-        app.tabBars.buttons["Scan"].tap()
-        sleep(2)
-        saveScreenshot(name: "05_scanner.jpeg")
-        
-        app.windows.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .image).element.tap()
-        
-        sleep(10)
-        saveScreenshot(name: "06_scanner_result.jpeg")
-        app.navigationBars["Result"].buttons["Close"].tap()
-        app.navigationBars["Scan"].buttons["About"].tap()
-        sleep(2)
-        saveScreenshot(name: "07_scanner_history.jpeg")
-    }
-    
     func testScreenshotsDE() {
         let app = XCUIApplication()
         app.launch()
         
         saveScreenshot(name: "01_start.jpeg")
         let tablesQuery = app.tables
-        let qrCodeContentField = tablesQuery.textViews.element(boundBy: 0)
+        let qrCodeContentField = tablesQuery.textViews["qrCodeContent"]
         qrCodeContentField.tap()
         qrCodeContentField.typeText("Inhalt Deines QR Codes")
         saveScreenshot(name: "02_entered.jpeg")
@@ -143,7 +104,9 @@ class myQRCodeScreenshots: XCTestCase {
         
         app.tabBars.buttons["Scannen"].tap()
 
-        app.windows.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .image).element.tap()
+        let items = app.images.allElementsBoundByAccessibilityElement
+        
+        app.images["demoImage"].tap()
         
         sleep(5)
         saveScreenshot(name: "06_scanner_result.jpeg")

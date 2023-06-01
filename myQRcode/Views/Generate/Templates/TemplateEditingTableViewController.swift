@@ -19,22 +19,23 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
         super.viewWillAppear(animated)
         
         // used for "reuse template" feature from generate tab home
-        if (isSingleView) {
-            self.navigationItem.hidesBackButton = true
+        if isSingleView {
+            navigationItem.hidesBackButton = true
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.setupTextFields()
+        // Disable generate button on load
+        setGenerateButton()
     }
     
     @IBAction func dismiss(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Table view data source
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         // number of parameters + generate button
         return selectedTemplate.parameters.count + 1
@@ -51,11 +52,11 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
             if selectedTemplate.parameterType[indexPath.section] == .Selector {
                 // current cell is selector cell
                 let cell = tableView.dequeueReusableCell(withIdentifier: SegmentedControlTableViewCell.Identifier, for: indexPath) as! SegmentedControlTableViewCell
-                if !self.isSetup {
+                if !isSetup {
                     cell.options = selectedTemplate.options[indexPath.section]
                 }
                 // cell.selectedIndex = 1
-                self.isSetup = true
+                isSetup = true
                 return cell
             } else {
                 // current cell is textview cell
@@ -70,6 +71,7 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
                 }
                 
                 textFieldTableViewCell.textField.delegate = self
+                textFieldTableViewCell.textField.addTarget(self, action: #selector(setGenerateButton), for: UIControl.Event.editingChanged)
 
                 return textFieldTableViewCell
             }
@@ -83,12 +85,12 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
         return selectedTemplate.parameters.count > section ? selectedTemplate.parameters[section] : nil
     }
     
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == tableView.numberOfSections - 1 {
-            self.generateButtonTapped()
-        }
         self.tableView.deselectRow(at: indexPath, animated: true)
+
+        if indexPath.section == tableView.numberOfSections - 1 {
+            generateButtonTapped()
+        }
     }
     
     func generateButtonTapped() {
@@ -99,7 +101,7 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
             let cell = tableView.cellForRow(at: indexPath)
             if let segmentedCell = cell as? SegmentedControlTableViewCell, let options = segmentedCell.options {
                 parameterValues.append(options[segmentedCell.segmentedControl.selectedSegmentIndex])
-            } else if let textFieldCell = cell as? TextFieldTableViewCell, let parameter = textFieldCell.textField.text  {
+            } else if let textFieldCell = cell as? TextFieldTableViewCell, let parameter = textFieldCell.textField.text {
                 parameterValues.append(parameter)
             }
         }
@@ -107,7 +109,7 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
         usedTemplate.parameterValues = parameterValues
         usedTemplate.setModifiedTemplate()
         
-        self.dismiss(animated: true) {
+        dismiss(animated: true) {
             if let resultString = usedTemplate.resultString, let generateVC = self.generateVC {
                 generateVC.usedTemplate = usedTemplate
                 generateVC.tableView.reloadData()
@@ -116,18 +118,18 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
         }
     }
     
-    private func setupTextFields() {
-        for sectionIndex in 0..<tableView.numberOfSections - selectedTemplate.indexOflastImportantField  {
-            let indexPath = IndexPath(row: 0, section: sectionIndex)
-            let cell = tableView.cellForRow(at: indexPath)
-            if let textFieldCell = cell as? TextFieldTableViewCell {
-                self.textFields.append(textFieldCell.textField)
-                textFieldCell.textField.delegate = self
-                textFieldCell.textField.addTarget(self, action: #selector(setGenerateButton), for: UIControl.Event.editingChanged)
-            }
-        }
-        self.setGenerateButton()
-    }
+    /* private func setupTextFields() {
+         for sectionIndex in 0..<tableView.numberOfSections - selectedTemplate.indexOflastImportantField  {
+             let indexPath = IndexPath(row: 0, section: sectionIndex)
+             let cell = tableView.cellForRow(at: indexPath)
+             if let textFieldCell = cell as? TextFieldTableViewCell {
+                 self.textFields.append(textFieldCell.textField)
+                 textFieldCell.textField.delegate = self
+                 textFieldCell.textField.addTarget(self, action: #selector(setGenerateButton), for: UIControl.Event.editingChanged)
+             }
+         }
+         self.setGenerateButton()
+     } */
     
     private func checkIfGenerationIsPossible() -> Bool {
         // by default generation is possible
@@ -141,8 +143,8 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
             // check if cell is text field cell and check if the text field is empty
             // if it empty, disable generation
             if i <= selectedTemplate.indexOflastImportantField,
-              let tfCell = cell as? TextFieldTableViewCell,
-              tfCell.textField.text?.isEmpty ?? true {
+               let tfCell = cell as? TextFieldTableViewCell,
+               tfCell.textField.text?.isEmpty ?? true {
                 generationPossible = false
             }
         }
@@ -152,7 +154,7 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
 
     @objc func setGenerateButton() {
         // last section is always generate button
-        let sectionOfGenerateButton = self.tableView.numberOfSections - 1
+        let sectionOfGenerateButton = tableView.numberOfSections - 1
         let generateCell = tableView.cellForRow(at: IndexPath(row: 0, section: sectionOfGenerateButton)) as! ButtonTableViewCell
         generateCell.accessibilityIdentifier = "generateQRCodeFromTemplateCell"
         generateCell.isEnabled = checkIfGenerationIsPossible()
