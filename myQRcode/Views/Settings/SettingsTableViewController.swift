@@ -30,6 +30,7 @@ class SettingsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        myQRcodeMatomo.track(action: myQRcodeMatomo.settingsAction, name: myQRcodeMatomo.settingsOpenAction)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,6 +79,7 @@ class SettingsTableViewController: UITableViewController {
         if let url = URL(string: urlStr), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
+        myQRcodeMatomo.track(action: myQRcodeMatomo.settingsAction, name: myQRcodeMatomo.settingsAppStoreAction)
     }
     
     @IBAction func closeModal(_ sender: Any) {

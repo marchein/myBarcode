@@ -47,6 +47,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         fixNavTabBar()
         
         NotificationCenter.default.addObserver(self, selector: #selector(resetScanner), name: NSNotification.Name(rawValue: "resetView"), object: nil)
+        myQRcodeMatomo.track(action: myQRcodeMatomo.basicAction, name: myQRcodeMatomo.scanViewShown)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -216,6 +217,8 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         if performSegueValue {
             performSegue(withIdentifier: myQRcodeSegues.ResultSegue, sender: historyItem)
         }
+        
+        myQRcodeMatomo.track(action: myQRcodeMatomo.scanAction, name: myQRcodeMatomo.scanScannedQR, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeScanned)))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -244,6 +247,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     func userSelectedHistoryItem(item: HistoryItem) {
         prepareResultScreen()
         performSegue(withIdentifier: myQRcodeSegues.ResultSegue, sender: item)
+        myQRcodeMatomo.track(action: myQRcodeMatomo.scanAction, name: myQRcodeMatomo.scanHistorySelected)
     }
     
     @IBAction func gallerySelectionButtonTapped() {
@@ -252,6 +256,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         } else {
             pickImageUsingUIImagePicker()
         }
+        myQRcodeMatomo.track(action: myQRcodeMatomo.scanAction, name: myQRcodeMatomo.scanImagePickerOpened)
     }
     
     func processSelectedImage(_ image: UIImage) -> String {

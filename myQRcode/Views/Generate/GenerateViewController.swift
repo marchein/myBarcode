@@ -47,6 +47,8 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         setClearButton()
         setMaxCharacterLabel()
         checkIfGenerationIsPossible()
+        
+        myQRcodeMatomo.track(action: myQRcodeMatomo.basicAction, name: myQRcodeMatomo.generateViewShown)
     }
     
     fileprivate func setupApp() {
@@ -72,6 +74,8 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         guard let image = qrCodeImageView.image else { return [] }
         let provider = NSItemProvider(object: image)
         let item = UIDragItem(itemProvider: provider)
+        
+        myQRcodeMatomo.track(action: myQRcodeMatomo.generateAction, name: myQRcodeMatomo.generateExport)
         return [item]
     }
     
@@ -97,6 +101,8 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         
         activityVC.popoverPresentationController?.sourceView = sender
         present(activityVC, animated: true, completion: nil)
+        
+        myQRcodeMatomo.track(action: myQRcodeMatomo.generateAction, name: myQRcodeMatomo.generateExport)
     }
     
     func userSelectedHistoryItem(item: HistoryItem) {
@@ -151,6 +157,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
             }
             templateList.generateVC = self
             templateList.performSegue(withIdentifier: myQRcodeSegues.EditTemplateSegue, sender: usedTemplate)
+            myQRcodeMatomo.track(action: myQRcodeMatomo.generateAction, name: myQRcodeMatomo.generateReusedTemplate)
         }
     }
 }

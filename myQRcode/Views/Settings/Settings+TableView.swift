@@ -32,12 +32,14 @@ extension SettingsTableViewController {
             sendSupportMail()
         case developerCell:
             openSafariViewControllerWith(url: myQRcode.website)
+            myQRcodeMatomo.track(action: myQRcodeMatomo.settingsAction, name: myQRcodeMatomo.settingsAboutAction)
         case rateCell:
             if #available(iOS 14.0, *) {
                 SKStoreReviewController.requestReviewInCurrentScene()
             } else {
                 SKStoreReviewController.requestReview()
             }
+            myQRcodeMatomo.track(action: myQRcodeMatomo.settingsAction, name: myQRcodeMatomo.settingsReviewAction)
         case appStoreCell:
             appStoreAction()
         default:

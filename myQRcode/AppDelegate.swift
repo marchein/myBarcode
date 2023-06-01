@@ -9,6 +9,8 @@
 import CoreData
 import UIKit
 import HeinHelpers
+import MatomoTracker
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +24,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             setDefaultTab(tabVC: tabBarController)
+            
+            let deviceId = UIDevice.current.identifierForVendor?.uuidString
+            MatomoTracker.shared.userId = deviceId
+            if (HeinHelpers.isSimulatorOrTestFlight()) {
+                MatomoTracker.shared.logger = DefaultLogger(minLevel: .verbose)
+            }
+
+            #if DEBUG
+            if #available(iOS 13.0, *), CommandLine.arguments.contains("UITestingDarkModeEnabled") {
+                window?.overrideUserInterfaceStyle = .dark
+            }
+            #endif
+            
+            myQRcodeMatomo.track(action: myQRcodeMatomo.basicAction, name: myQRcodeMatomo.appStartAction)
+            
             return true
         }
         

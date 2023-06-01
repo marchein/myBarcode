@@ -78,5 +78,6 @@ class SettingsTabTableViewController: UITableViewController {
             fatalError()
         }
         self.selectedTab = tabOption
+        myQRcodeMatomo.track(action: myQRcodeMatomo.settingsAction, name: myQRcodeMatomo.settingsSelectedTabAction, number: NSNumber(value: indexPath.row))
     }
 }
