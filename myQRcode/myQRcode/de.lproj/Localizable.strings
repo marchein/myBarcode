@@ -60,17 +60,52 @@
 /* Templates */
 /* Categories headlines */
 "TEMPLATE_CATEGORY_SOCIAL" = "Soziale Netzwerke";
+"TEMPLATE_CATEGORY_SOCIAL_MESSAGING" = "Nachrichtendienste";
 "TEMPLATE_CATEGORY_PHONE" = "Telefon";
 "TEMPLATE_CATEGORY_MAIL" = "E-Mail";
 "TEMPLATE_CATEGORY_MISCELLANEOUS" = "Sonstiges";
+
+/* Facebook */
+"TEMPLATE_FACEBOOK_USERNAME" = "Benutzername";
+"TEMPLATE_FACEBOOK_USERNAME_PLACEHOLDER" = "Dein Facebook Benutzername";
+
+/* YouTube */
+"TEMPLATE_YOUTUBE_USERNAME" = "Benutzername";
+"TEMPLATE_YOUTUBE_USERNAME_PLACEHOLDER" = "Dein YouTube @Benutzername";
 
 /* Instagram */
 "TEMPLATE_INSTAGRAM_USERNAME" = "Benutzername";
 "TEMPLATE_INSTAGRAM_USERNAME_PLACEHOLDER" = "Dein Instagram Benutzername";
 
+/* TikTok */
+"TEMPLATE_TIKTOK_USERNAME" = "Benutzername";
+"TEMPLATE_TIKTOK_USERNAME_PLACEHOLDER" = "Dein TikTok @Benutzername";
+
+/* Reddit */
+"TEMPLATE_REDDIT_USERNAME" = "Benutzername";
+"TEMPLATE_REDDIT_USERNAME_PLACEHOLDER" = "Dein Reddit Benutzername";
+
 /* Twitter */
 "TEMPLATE_TWITTER_USERNAME" = "Benutzername";
 "TEMPLATE_TWITTER_USERNAME_PLACEHOLDER" = "Dein Twitter @Benutzername";
+
+/* Mastodon */
+"TEMPLATE_MASTODON_INSTANCE" = "Instanz";
+"TEMPLATE_MASTODON_INSTANCE_PLACEHOLDER" = "z.B. mastodon.social";
+"TEMPLATE_MASTODON_USERNAME" = "Benutzername";
+"TEMPLATE_MASTODON_USERNAME_PLACEHOLDER" = "Dein Mastodon @Benutzername";
+
+/* Twitch */
+"TEMPLATE_TWITCH_USERNAME" = "Benutzername";
+"TEMPLATE_TWITCH_USERNAME_PLACEHOLDER" = "Dein Twitch Benutzername";
+
+/* Telegram */
+"TEMPLATE_TELEGRAM_USERNAME" = "Benutzername";
+"TEMPLATE_TELEGRAM_USERNAME_PLACEHOLDER" = "Dein Telegram @Benutzername oder deine Nummer";
+
+/* Snapchat */
+"TEMPLATE_SNAPCHAT_USERNAME" = "Benutzername";
+"TEMPLATE_SNAPCHAT_USERNAME_PLACEHOLDER" = "Dein Snapchat Benutzername";
 
 /* Mail */
 "TEMPLATE_EMAIL_WITH_CONTENT" = "E-Mail mit Inhalt";
