@@ -62,6 +62,11 @@ struct myQRcode {
     static let appStoreId = "1444531883"
     static let mailAdress = "dev@marc-hein.de"
     static let website = "https://marc-hein.de/"
+    static let privacyNoticeEN = "https://myqrcode.marc-hein.de/privacy"
+    static let privacyNoticeDE = "https://myqrcode.marc-hein.de/datenschutz"
+    static let matomoWebsite = "https://matomo.org/faq/new-to-piwik/faq_13/"
+   
+    
     static let versionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     static let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
     static let defaultAppIcon = "default"

@@ -67,3 +67,15 @@
 /* Class = "UITableViewController"; title = "TAB_SELECTION_NAV_HEADER"; ObjectID = "NnH-St-S7B"; */
 "NnH-St-S7B.title" = "Tab beim Start";
 
+/* Default tab placeholder */
+"TwD-Sc-VuR.text" = "Generieren";
+
+/* Privacy */
+"Mhq-DC-cDq.text" = "Datenschutz";
+"ggM-jN-5a8.title" = "Datenschutz";
+"3YQ-DX-iIE.title" = "Datenschutz";
+"rNt-C9-RjH.text" = "Datenschutzerklärung";
+"B3h-nP-Vft.headerTitle" = "Matomo";
+"mjp-l0-QGe.text" = "Was ist Matomo? (Englisch)";
+"8l1-eo-Zei.text" = "Matomo Opt-Out";
+"B3h-nP-Vft.footerTitle" = "Ihre Aktivität dieser App wird bei aktivem Schalter von der Matomo Webanalyse erfasst. Diesen Schalter abwählen für Opt-Out.";
