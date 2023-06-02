@@ -52,6 +52,7 @@
 		5BAA4197298D29DD00493175 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4195298D29DD00493175 /* String+Localizable.swift */; };
 		5BAA419A298D327600493175 /* ScanViewController+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4199298D327600493175 /* ScanViewController+Demo.swift */; };
 		5BB9DE0623396BF200854E41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BB9DE0823396BF200854E41 /* InfoPlist.strings */; };
+		5BC19F842A2A7E1400B95CFD /* PrivacyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC19F832A2A7E1400B95CFD /* PrivacyTableViewController.swift */; };
 		5BCCE6AA23397445007A78D0 /* ScanRequestAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCCE6A923397445007A78D0 /* ScanRequestAccessViewController.swift */; };
 		5BCF1D4D24ED907C0018A211 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF1D4C24ED907C0018A211 /* Main.storyboard */; };
 		5BD63BCA21AEBE4200885382 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD63BC921AEBE4200885382 /* ScanViewController.swift */; };
@@ -144,6 +145,7 @@
 		5BB9DE0423396BCF00854E41 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BB9DE0723396BF200854E41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5BB9DE0923396BF400854E41 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5BC19F832A2A7E1400B95CFD /* PrivacyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyTableViewController.swift; sourceTree = "<group>"; };
 		5BCCE6A923397445007A78D0 /* ScanRequestAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRequestAccessViewController.swift; sourceTree = "<group>"; };
 		5BCF1D4C24ED907C0018A211 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5BD63BC921AEBE4200885382 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 		5B19FB2D21AAF60500BA102F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				5BC19F822A2A7DE100B95CFD /* Privacy */,
 				5B4D14E72998EDB60000BC94 /* DefaultAction */,
 				5B642F052339313D005804AA /* AppIconList */,
 				5BE4AA8C21AAF62E00D69E18 /* SettingsTableViewController.swift */,
@@ -341,6 +344,14 @@
 				5B642F0723393159005804AA /* AppIconTableViewController.swift */,
 			);
 			path = AppIconList;
+			sourceTree = "<group>";
+		};
+		5BC19F822A2A7DE100B95CFD /* Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				5BC19F832A2A7E1400B95CFD /* PrivacyTableViewController.swift */,
+			);
+			path = Privacy;
 			sourceTree = "<group>";
 		};
 		5BD63BC821AEBE2F00885382 /* Scan */ = {
@@ -634,6 +645,7 @@
 				5BE4AAA921AAF6F300D69E18 /* UIViewController+SafariActions.swift in Sources */,
 				5BE4AAAD21AAF71200D69E18 /* Constants.swift in Sources */,
 				5BE4AA9121AAF62E00D69E18 /* TipJarTableViewController.swift in Sources */,
+				5BC19F842A2A7E1400B95CFD /* PrivacyTableViewController.swift in Sources */,
 				5BE4AA9F21AAF6B000D69E18 /* TipTableViewCell.swift in Sources */,
 				5BE4AA9421AAF62E00D69E18 /* Settings+TableView.swift in Sources */,
 				5B4B4AA424E93F2700E44302 /* HistoryItem+Date.swift in Sources */,

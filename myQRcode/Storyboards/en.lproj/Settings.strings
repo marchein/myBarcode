@@ -58,3 +58,17 @@
 
 /* Class = "UILabel"; text = "tip_desc"; ObjectID = "xM9-69-5s4"; */
 "xM9-69-5s4.text" = "tip_desc";
+
+
+/* Default tab placeholder */
+"TwD-Sc-VuR.text" = "Generate";
+
+/* Privacy */
+"Mhq-DC-cDq.text" = "Privacy";
+"ggM-jN-5a8.title" = "Privacy";
+"3YQ-DX-iIE.title" = "Privacy";
+"rNt-C9-RjH.text" = "Privacy Policy";
+"B3h-nP-Vft.headerTitle" = "Matomo";
+"mjp-l0-QGe.text" = "What is Matomo? (English)";
+"8l1-eo-Zei.text" = "Matomo Opt-Out";
+"B3h-nP-Vft.footerTitle" = "Your activity of this app will be collected by Matomo web analytics if this switch is active. Deselect this switch for opt-out.";

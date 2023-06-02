@@ -16,7 +16,7 @@ struct myQRcodeMatomo {
         MatomoTracker.shared.track(eventWithCategory: myQRcodeMatomo.categoryName, action: action, name: name, number: number, url: matomoActionUrl)
     }
     
-    static let matomoAppUrl = "https://myqrcode.de/app/"
+    static let matomoAppUrl = "https://myqrcode.marc-hein.de/app/"
     
     static let categoryName = "myQRcodeApp"
     
@@ -48,6 +48,15 @@ struct myQRcodeMatomo {
     static let settingsRecommendAction = "myQRcode-app-settings-recommend"
     // user selected about us in settings
     static let settingsAboutAction = "myQRcode-app-settings-about"
+    // user selected privacy in settings
+    static let settingsPrivacyAction = "myQRcode-app-settings-privacy"
+    // user selected privacy notice in settings
+    static let settingsPrivacyNoticeAction = "myQRcode-app-settings-privacynotice"
+    // user selected about matomo in settings
+    static let settingsMatomoAboutAction = "myQRcode-app-settings-matomo-about"
+    // user set matomo opt out in settings
+    static let settingsMatomoOptOutAction = "myQRcode-app-settings-matomo-optout"
+    
     
     // MARK: - Generate Actions
     // user generates new qr code
