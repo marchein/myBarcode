@@ -73,6 +73,7 @@ class TemplateEditingTableViewController: UITableViewController, UITextFieldDele
                 textFieldTableViewCell.textField.placeholder = placeholder
             }
             
+            textFieldTableViewCell.textField.autocorrectionType = .no
             textFieldTableViewCell.textField.delegate = self
             textFieldTableViewCell.textField.addTarget(self, action: #selector(setGenerateButton), for: UIControl.Event.editingChanged)
 

@@ -11,6 +11,23 @@ import Foundation
 struct Model {
     static let Templates: [[TemplateItem]] = [
         [TemplateSeperator(name: "TEMPLATE_CATEGORY_SOCIAL".localized),
+         // Facebook Template
+         Template(
+             name: "Facebook",
+             templateString: "https://facebook.com/%@",
+             parameters: ["TEMPLATE_FACEBOOK_USERNAME".localized],
+             parameterType: [.Text],
+             placeholders: ["TEMPLATE_FACEBOOK_USERNAME_PLACEHOLDER".localized],
+             options: [nil]
+         ),
+         Template(
+             name: "YouTube",
+             templateString: "https://youtube.com/%@",
+             parameters: ["TEMPLATE_YOUTUBE_USERNAME".localized],
+             parameterType: [.Text],
+             placeholders: ["TEMPLATE_YOUTUBE_USERNAME_PLACEHOLDER".localized],
+             options: [nil]
+         ),
          // Instagram Template
          Template(
              name: "Instagram",
@@ -20,6 +37,24 @@ struct Model {
              placeholders: ["TEMPLATE_INSTAGRAM_USERNAME_PLACEHOLDER".localized],
              options: [nil]
          ),
+         // TikTok Template
+         Template(
+             name: "TikTok",
+             templateString: "https://tiktok.com/%@",
+             parameters: ["TEMPLATE_TIKTOK_USERNAME".localized],
+             parameterType: [.Text],
+             placeholders: ["TEMPLATE_TIKTOK_USERNAME_PLACEHOLDER".localized],
+             options: [nil]
+         ),
+         // Reddit Template
+         Template(
+             name: "Reddit",
+             templateString: "https://reddit.com/user/%@",
+             parameters: ["TEMPLATE_REDDIT_USERNAME".localized],
+             parameterType: [.Text],
+             placeholders: ["TEMPLATE_REDDIT_USERNAME_PLACEHOLDER".localized],
+             options: [nil]
+         ),
          // Twitter Template
          Template(
              name: "Twitter",
@@ -27,6 +62,52 @@ struct Model {
              parameters: ["TEMPLATE_TWITTER_USERNAME".localized],
              parameterType: [.Text],
              placeholders: ["TEMPLATE_TWITTER_USERNAME_PLACEHOLDER".localized],
+             options: [nil]
+         ),
+         // Mastodon Template
+         Template(
+             name: "Mastodon",
+             templateString: "https://%@/%@",
+             parameters: ["TEMPLATE_MASTODON_INSTANCE".localized, "TEMPLATE_MASTODON_USERNAME".localized],
+             parameterType: [.Text, .Text],
+             placeholders: ["TEMPLATE_MASTODON_INSTANCE_PLACEHOLDER".localized, "TEMPLATE_MASTODON_USERNAME_PLACEHOLDER".localized],
+             options: [nil, nil]
+         ),
+         // Twitch Template
+         Template(
+             name: "Twitch",
+             templateString: "https://twitch.tv/%@",
+             parameters: ["TEMPLATE_TWITCH_USERNAME".localized],
+             parameterType: [.Text],
+             placeholders: ["TEMPLATE_TWITCH_USERNAME_PLACEHOLDER".localized],
+             options: [nil]
+         )],
+        [TemplateSeperator(name: "TEMPLATE_CATEGORY_SOCIAL_MESSAGING".localized),
+         // WhatsApp Template
+         Template(
+             name: "WhatsApp",
+             templateString: "https://wa.me/%@",
+             parameters: ["phone_number".localized],
+             parameterType: [.Text],
+             placeholders: ["+12 4567 89101112"],
+             options: [nil]
+         ),
+         // Telegram Template
+         Template(
+             name: "Telegram",
+             templateString: "https://t.me/%@",
+             parameters: ["TEMPLATE_TELEGRAM_USERNAME".localized],
+             parameterType: [.Text],
+             placeholders: ["TEMPLATE_TELEGRAM_USERNAME_PLACEHOLDER".localized],
+             options: [nil]
+         ),
+         // Snapchat Template
+         Template(
+             name: "Snapchat",
+             templateString: "https://www.snapchat.com/add/%@",
+             parameters: ["TEMPLATE_SNAPCHAT_USERNAME".localized],
+             parameterType: [.Text],
+             placeholders: ["TEMPLATE_SNAPCHAT_USERNAME_PLACEHOLDER".localized],
              options: [nil]
          )],
         [TemplateSeperator(name: "TEMPLATE_CATEGORY_PHONE".localized),
