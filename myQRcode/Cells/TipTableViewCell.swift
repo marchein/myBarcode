@@ -1,6 +1,6 @@
 //
 //  TipTableViewCell.swift
-//  myTodo
+//  myQRcode
 //
 //  Created by Marc Hein on 20.11.18.
 //  Copyright © 2023 Marc Hein. All rights reserved.

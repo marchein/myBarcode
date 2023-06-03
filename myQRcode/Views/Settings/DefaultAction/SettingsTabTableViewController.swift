@@ -39,6 +39,7 @@ class SettingsTabTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        myQRcodeMatomo.track(action: myQRcodeMatomo.settingsAction, name: myQRcodeMatomo.settingsDefaultTabAction)
     }
 
     // MARK: - Table view data source
@@ -78,6 +79,6 @@ class SettingsTabTableViewController: UITableViewController {
             fatalError()
         }
         self.selectedTab = tabOption
-        myQRcodeMatomo.track(action: myQRcodeMatomo.settingsAction, name: myQRcodeMatomo.settingsSelectedTabAction, number: NSNumber(value: indexPath.row))
+        myQRcodeMatomo.track(action: myQRcodeMatomo.settingsAction, name: myQRcodeMatomo.settingsDefaultTabSetAction, number: NSNumber(value: indexPath.row))
     }
 }

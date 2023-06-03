@@ -11,15 +11,15 @@ import UIKit
 class AppIconTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        myQRcodeMatomo.track(action: myQRcodeMatomo.settingsAction, name: myQRcodeMatomo.settingsAppIconAction)
     }
     
     // MARK:- Image functions
     internal func getAppIconFor(value: String?) -> UIImage? {
         if let imageName = value {
             return UIImage(named: imageName)
-        } else {
-            return Bundle.main.icon
         }
+        return Bundle.main.icon
     }
     
     internal func changeIcon(to name: String?) {

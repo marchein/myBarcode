@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+            
         if let tabBarController = self.window?.rootViewController as? UITabBarController, let items = tabBarController.tabBar.items {
             if #available(iOS 13.0, *) {
                 items[0].image = UIImage(systemName: "qrcode")
@@ -30,12 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if (HeinHelpers.isSimulatorOrTestFlight()) {
                 MatomoTracker.shared.logger = DefaultLogger(minLevel: .verbose)
             }
-
-            #if DEBUG
+            
+#if DEBUG
             if #available(iOS 13.0, *), CommandLine.arguments.contains("UITestingDarkModeEnabled") {
                 window?.overrideUserInterfaceStyle = .dark
             }
-            #endif
+#endif
             
             myQRcodeMatomo.track(action: myQRcodeMatomo.basicAction, name: myQRcodeMatomo.appStartAction)
             
@@ -56,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
- 
+        
         let container = NSPersistentContainer(name: "History")
         container.loadPersistentStores(completionHandler: { _, error in
             if let error = error as NSError? {
@@ -65,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
-
+    
     // MARK: - Core Data Saving support
     func saveContext() {
         let context = persistentContainer.viewContext

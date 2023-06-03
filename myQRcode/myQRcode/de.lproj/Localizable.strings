@@ -18,7 +18,7 @@
 "tip_success" = "Erfolgreich myApp unterstützt!";
 "tip_success_message" = "Vielen Dank für Deine Unterstützung!";
 "loading" = "Laden...";
-"error" = "Fehler";
+"Error" = "Fehler";
 "mail_error" = "Es ist kein E-Mail Konto in Apple Mail hinterlegt. Bitte kontaktiere uns unter %@";
 
 "light_icon" = "Hell";

@@ -31,6 +31,7 @@ extension AppIconTableViewController {
             self.setSelectedImage(key: selectedIcon, cell: tableView.cellForRow(at: indexPath))
             self.tableView.reloadData()
         })
+        myQRcodeMatomo.track(action: myQRcodeMatomo.settingsAction, name: myQRcodeMatomo.settingsAppIconSetAction, number: NSNumber(value: indexPath.row))
         changeIcon(to: selectedIcon)
         tableView.reloadData()
     }

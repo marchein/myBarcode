@@ -8,6 +8,7 @@
 
 import AVFoundation
 import UIKit
+import CoreData
 import HeinHelpers
 
 class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, HistoryItemDelegate {
@@ -40,6 +41,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         
         if isSimulator() {
             setupDemoScanner()
+            checkIfDemoHistoryShouldBeCreated()
         } else {
             AVCaptureDevice.authorizationStatus(for: .video) == .authorized  ? setupScanner() : requestAccess()
         }

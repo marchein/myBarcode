@@ -18,7 +18,7 @@
 "tip_success" = "Tip successful!";
 "tip_success_message" = "Thank you so much for your tip!";
 "loading" = "Loading...";
-"error" = "Error";
+"Error" = "Error";
 "mail_error" = "There is no mail account configured in Apple Mail. Please contact us at %@";
 "light_icon" = "Light";
 "dark_icon" = "Dark";

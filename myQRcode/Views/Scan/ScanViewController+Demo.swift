@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 extension ScanViewController {
     func setupDemoScanner() {
@@ -21,6 +22,27 @@ extension ScanViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
+        
+        
+    }
+    
+    func checkIfDemoHistoryShouldBeCreated() {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
+        let fetchRequest: NSFetchRequest<HistoryItem> = HistoryItem.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "category == %@", NSNumber(value: 0))
+        do {
+            let count = try context.count(for: fetchRequest)
+            
+            if count == 0 {
+                setupDemoHistory()
+            }
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+        
     }
     
     func setupDemoHistory() {

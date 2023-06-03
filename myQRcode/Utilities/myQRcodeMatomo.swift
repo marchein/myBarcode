@@ -36,8 +36,14 @@ struct myQRcodeMatomo {
     // MARK: - Settings Actions
     // user opens settings
     static let settingsOpenAction = "myQRcode-app-settings"
+    // user opens default app icon view in settings
+    static let settingsAppIconAction = "myQRcode-app-settings-appicon"
     // user sets the default selected tab in settings
-    static let settingsSelectedTabAction = "myQRcode-app-settings-default-tab"
+    static let settingsAppIconSetAction = "myQRcode-app-settings-appicon-set"
+    // user opens default selected tab view in settings
+    static let settingsDefaultTabAction = "myQRcode-app-settings-default-tab"
+    // user sets the default selected tab in settings
+    static let settingsDefaultTabSetAction = "myQRcode-app-settings-default-tab-set"
     // user selected support in settings
     static let settingsSupportAction = "myQRcode-app-settings-support"
     // user selected appstore in settings

@@ -30,8 +30,8 @@
             filePath = "myQRcode/Views/Scan/ScanViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "setupScanner()"
             landmarkType = "7">
          </BreakpointContent>
@@ -59,41 +59,9 @@
             filePath = "myQRcode/myQRCodeScreenshots.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "testScreenshotsDE()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4B07BC4B-ED34-4E7B-AE63-5CC5CA20E907"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "myQRcode/myQRCodeScreenshots.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "testScreenshotsDE()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C055812F-9F8B-482A-9F92-F7D9748AAB31"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "myQRcode/myQRCodeScreenshots.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "testScreenshotsDE()"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "createGermanScreenshots()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
