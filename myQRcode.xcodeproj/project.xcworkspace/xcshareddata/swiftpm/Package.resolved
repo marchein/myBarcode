@@ -17,6 +17,15 @@
         "branch" : "develop",
         "revision" : "dacc233f702c49f6140074a1da5f5c22172b092a"
       }
+    },
+    {
+      "identity" : "simulatorstatusmagic",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shinydevelopment/SimulatorStatusMagic",
+      "state" : {
+        "revision" : "76095ec820674457a11dc3cc621d8a5c369eea0e",
+        "version" : "2.7.0"
+      }
     }
   ],
   "version" : 2

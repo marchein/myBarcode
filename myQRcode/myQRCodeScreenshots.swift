@@ -8,6 +8,8 @@
 
 import XCTest
 import HeinHelpers
+import SimulatorStatusMagic
+
 
 func getPlatformNSString() -> String {
     #if targetEnvironment(simulator)
@@ -31,13 +33,18 @@ func getPlatformNSString() -> String {
 
 class myQRCodeScreenshots: XCTestCase {
     
+    var app: XCUIApplication!
+    
     var deviceScreenshotPath = ""
     
     override func setUp() {
         super.setUp()
         
+        SDStatusBarManager.sharedInstance().iPadDateEnabled = false
+        SDStatusBarManager.sharedInstance().timeString = "9:41"
+        SDStatusBarManager.sharedInstance().enableOverrides()
         continueAfterFailure = false
-        
+        app = XCUIApplication()
         let screenshotPath = create(directory: "Screenshots/", root: "/Users/marchein/Projekte/")
         
         let deviceName = UIDevice.modelName
@@ -50,6 +57,8 @@ class myQRCodeScreenshots: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        
+        SDStatusBarManager.sharedInstance().disableOverrides()
     }
     
     func saveScreenshot(name: String) {
@@ -79,28 +88,38 @@ class myQRCodeScreenshots: XCTestCase {
     
     func testScreenshots() {
         if Locale.current.languageCode == "de" {
-            createGermanScreenshots()
+            createGermanScreenshots(darkMode: false)
+            createGermanScreenshots(darkMode: true)
             return
         }
-        createEnglishScreenshots()
+        createEnglishScreenshots(darkMode: false)
+        createEnglishScreenshots(darkMode: true)
+        
+        /*
+         Clean afterwards:
+         rm 01_start_dark.jpeg 02_entered_light.jpeg 03_generated_dark.jpeg 04_shared_dark.jpeg 05_scanner_light.jpeg 06_scanner_result_dark.jpeg 07_scanner_history_dark.jpeg 08_templates_light.jpeg 09_templates_setup_dark.jpeg 10_templates_generated_dark.jpeg
+         */
     }
     
-    func createGermanScreenshots() {
-        let app = XCUIApplication()
+    func createGermanScreenshots(darkMode: Bool = false) {
+        if darkMode {
+            app.launchArguments.append("UITestingDarkModeEnabled")
+        }
+        let mode = darkMode ? "dark" : "light"
+        
         app.launch()
         
-        saveScreenshot(name: "01_start.jpeg")
+        saveScreenshot(name: "01_start_\(mode).jpeg")
         let tablesQuery = app.tables
         let qrCodeContentField = tablesQuery.textViews["qrCodeContent"]
         qrCodeContentField.tap()
         qrCodeContentField.typeText("myQRcode ist großartig!")
-        saveScreenshot(name: "02_entered.jpeg")
         tablesQuery.buttons["QR-Code generieren"].tap()
         sleep(3)
-        saveScreenshot(name: "03_generated.jpeg")
+        saveScreenshot(name: "02_generated_\(mode).jpeg")
         tablesQuery.buttons["Generierten QR-Code exportieren"].tap()
         sleep(1)
-        saveScreenshot(name: "04_shared.jpeg")
+        saveScreenshot(name: "03_shared_\(mode).jpeg")
         if app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Schließen"].exists {
             app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Schließen"].tap()
         } else {
@@ -108,7 +127,7 @@ class myQRCodeScreenshots: XCTestCase {
         }
         app.tabBars.buttons["Scannen"].tap()
         sleep(2)
-        saveScreenshot(name: "05_scanner.jpeg")
+        saveScreenshot(name: "04_scanner_\(mode).jpeg")
         
         app.tabBars.buttons["Scannen"].tap()
 
@@ -117,45 +136,52 @@ class myQRCodeScreenshots: XCTestCase {
         app.images["demoImage"].tap()
         
         sleep(5)
-        saveScreenshot(name: "06_scanner_result.jpeg")
+        saveScreenshot(name: "05_scanner_result_\(mode).jpeg")
         app.navigationBars["Ergebnis"].buttons["Schließen"].tap()
         app.navigationBars["Scannen"].buttons["Verlauf"].tap()
                 
         sleep(2)
-        saveScreenshot(name: "07_scanner_history.jpeg")
+        saveScreenshot(name: "06_scanner_history_\(mode).jpeg")
         app.navigationBars["Verlauf"].buttons["Schließen"].tap()
 
         app.tabBars.buttons["Generieren"].tap()
         
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Vorlagen"]/*[[".cells.staticTexts[\"Vorlagen\"]",".staticTexts[\"Vorlagen\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        saveScreenshot(name: "08_templates.jpeg")
+        saveScreenshot(name: "07_templates_\(mode).jpeg")
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["E-Mail Adresse"]/*[[".cells.staticTexts[\"E-Mail Adresse\"]",".staticTexts[\"E-Mail Adresse\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        saveScreenshot(name: "09_templates_setup.jpeg")
+        saveScreenshot(name: "08_templates_setup_\(mode).jpeg")
 
         tablesQuery/*@START_MENU_TOKEN@*/.textFields["hello@placeholder.com"]/*[[".cells.textFields[\"hello@placeholder.com\"]",".textFields[\"hello@placeholder.com\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         tablesQuery.textFields["hello@placeholder.com"].typeText("dev@marc-hein.de")
         
         tablesQuery.cells["generateQRCodeFromTemplateCell"].staticTexts.firstMatch.tap()
         sleep(2)
-        saveScreenshot(name: "10_templates_generated.jpeg")
+        saveScreenshot(name: "09_templates_generated_\(mode).jpeg")
+        
+        app.navigationBars["myQRcode"].buttons["Einstellungen"].tap()
+        saveScreenshot(name: "10_settings_\(mode).jpeg")
+        app.navigationBars["Einstellungen"].buttons["Schließen"].tap()
     }
     
-    func createEnglishScreenshots() {
-        let app = XCUIApplication()
+    func createEnglishScreenshots(darkMode: Bool = false) {
+        if darkMode {
+            app.launchArguments.append("UITestingDarkModeEnabled")
+        }
+        let mode = darkMode ? "dark" : "light"
         app.launch()
         
-        saveScreenshot(name: "01_start.jpeg")
+        saveScreenshot(name: "01_start_\(mode).jpeg")
         let tablesQuery = app.tables
         let qrCodeContentField = tablesQuery.textViews["qrCodeContent"]
         qrCodeContentField.tap()
         qrCodeContentField.typeText("myQRcode is awesome!")
-        saveScreenshot(name: "02_entered.jpeg")
+        //saveScreenshot(name: "02_entered_\(mode).jpeg")
         tablesQuery.buttons["Generate QR-code"].tap()
         sleep(3)
-        saveScreenshot(name: "03_generated.jpeg")
+        saveScreenshot(name: "02_generated_\(mode).jpeg")
         tablesQuery.buttons["Export generated QR-code"].tap()
         sleep(1)
-        saveScreenshot(name: "04_shared.jpeg")
+        saveScreenshot(name: "03_shared_\(mode).jpeg")
         if app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Close"].exists {
             app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Close"].tap()
         } else {
@@ -163,7 +189,7 @@ class myQRCodeScreenshots: XCTestCase {
         }
         app.tabBars.buttons["Scan"].tap()
         sleep(2)
-        saveScreenshot(name: "05_scanner.jpeg")
+        saveScreenshot(name: "04_scanner_\(mode).jpeg")
         
         app.tabBars.buttons["Scan"].tap()
 
@@ -172,26 +198,43 @@ class myQRCodeScreenshots: XCTestCase {
         app.images["demoImage"].tap()
         
         sleep(5)
-        saveScreenshot(name: "06_scanner_result.jpeg")
+        saveScreenshot(name: "05_scanner_result_\(mode).jpeg")
         app.navigationBars["Result"].buttons["Close"].tap()
         app.navigationBars["Scan"].buttons["History"].tap()
                 
         sleep(2)
-        saveScreenshot(name: "07_scanner_history.jpeg")
+        saveScreenshot(name: "06_scanner_history_\(mode).jpeg")
         app.navigationBars["History"].buttons["Close"].tap()
 
         app.tabBars.buttons["Generate"].tap()
         
         tablesQuery.staticTexts["Templates"].tap()
-        saveScreenshot(name: "08_templates.jpeg")
+        saveScreenshot(name: "07_templates_\(mode).jpeg")
         tablesQuery.staticTexts["Email address"].tap()
-        saveScreenshot(name: "09_templates_setup.jpeg")
+        saveScreenshot(name: "08_templates_setup_\(mode).jpeg")
 
         tablesQuery/*@START_MENU_TOKEN@*/.textFields["hello@placeholder.com"]/*[[".cells.textFields[\"hello@placeholder.com\"]",".textFields[\"hello@placeholder.com\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         tablesQuery.textFields["hello@placeholder.com"].typeText("dev@marc-hein.de")
         
         tablesQuery.cells["generateQRCodeFromTemplateCell"].staticTexts.firstMatch.tap()
         sleep(2)
-        saveScreenshot(name: "10_templates_generated.jpeg")
+        saveScreenshot(name: "09_templates_generated_\(mode).jpeg")
+        
+        app.navigationBars["myQRcode"].buttons["Settings"].tap()
+        saveScreenshot(name: "10_settings_\(mode).jpeg")
+        app.navigationBars["Settings"].buttons["Close"].tap()
+        
+    }
+
+}
+
+
+extension XCUIElement {
+    // The following is a workaround for inputting text in the
+    //simulator when the keyboard is hidden
+    func setText(text: String, application: XCUIApplication) {
+        UIPasteboard.general.string = text
+        doubleTap()
+        application.menuItems["Paste"].tap()
     }
 }

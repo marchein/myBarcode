@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B09EBC82A2B9D61009A8BBB /* SimulatorStatusMagic in Frameworks */ = {isa = PBXBuildFile; productRef = 5B09EBC72A2B9D61009A8BBB /* SimulatorStatusMagic */; };
 		5B1213A72992CA41007FDCE3 /* QRCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1213A62992CA41007FDCE3 /* QRCodeTests.swift */; };
 		5B1213AD2992CB72007FDCE3 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D61CC24E92C5300C01F34 /* QRCode.swift */; };
 		5B1213AE2992CB76007FDCE3 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C98A9233929E200030C75 /* AppIcon.swift */; };
@@ -212,6 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B09EBC82A2B9D61009A8BBB /* SimulatorStatusMagic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +535,9 @@
 				5B5FAAA324E97E6B00E719D4 /* PBXTargetDependency */,
 			);
 			name = myQRcodeUITests;
+			packageProductDependencies = (
+				5B09EBC72A2B9D61009A8BBB /* SimulatorStatusMagic */,
+			);
 			productName = myQRcodeUITests;
 			productReference = 5B5FAA9D24E97E6B00E719D4 /* myQRcodeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -575,6 +580,7 @@
 			packageReferences = (
 				5B4D14EA2998F0900000BC94 /* XCRemoteSwiftPackageReference "HeinHelpers" */,
 				5B9C3BD92A286F5D00B03B53 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */,
+				5B09EBC62A2B9D61009A8BBB /* XCRemoteSwiftPackageReference "SimulatorStatusMagic" */,
 			);
 			productRefGroup = 5B2AE30D21AA017E00976FE2 /* Products */;
 			projectDirPath = "";
@@ -1100,6 +1106,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5B09EBC62A2B9D61009A8BBB /* XCRemoteSwiftPackageReference "SimulatorStatusMagic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shinydevelopment/SimulatorStatusMagic";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		5B4D14EA2998F0900000BC94 /* XCRemoteSwiftPackageReference "HeinHelpers" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marchein/HeinHelpers.git";
@@ -1119,6 +1133,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5B09EBC72A2B9D61009A8BBB /* SimulatorStatusMagic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B09EBC62A2B9D61009A8BBB /* XCRemoteSwiftPackageReference "SimulatorStatusMagic" */;
+			productName = SimulatorStatusMagic;
+		};
 		5B9C3BDA2A286F5D00B03B53 /* MatomoTracker */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5B9C3BD92A286F5D00B03B53 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */;

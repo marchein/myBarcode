@@ -59,6 +59,13 @@
 /* Class = "UILabel"; text = "tip_desc"; ObjectID = "xM9-69-5s4"; */
 "xM9-69-5s4.text" = "tip_desc";
 
+/* Class = "UILabel"; text = "TAB_ON_START"; ObjectID = "gQU-QS-Vls"; */
+"gQU-QS-Vls.text" = "Tab on start";
+
+"E0M-Lr-A6I.title" = "Tab on start";
+
+"NnH-St-S7B.title" = "Tab on start";
+
 
 /* Default tab placeholder */
 "TwD-Sc-VuR.text" = "Generate";

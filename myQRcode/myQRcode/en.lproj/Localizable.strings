@@ -54,18 +54,54 @@
 
 /* Templates */
 /* Categories headlines */
-"TEMPLATE_CATEGORY_SOCIAL" = "Soziale Netzwerke";
+"TEMPLATE_CATEGORY_SOCIAL" = "Social networks";
+"TEMPLATE_CATEGORY_SOCIAL_MESSAGING" = "Messaging services";
 "TEMPLATE_CATEGORY_PHONE" = "Phone";
 "TEMPLATE_CATEGORY_MAIL" = "Mail";
 "TEMPLATE_CATEGORY_MISCELLANEOUS" = "Miscellaneous";
+
+/* Facebook */
+"TEMPLATE_FACEBOOK_USERNAME" = "Username";
+"TEMPLATE_FACEBOOK_USERNAME_PLACEHOLDER" = "Your Facebook username";
+
+/* YouTube */
+"TEMPLATE_YOUTUBE_USERNAME" = "Username";
+"TEMPLATE_YOUTUBE_USERNAME_PLACEHOLDER" = "Your YouTube @username";
 
 /* Instagram */
 "TEMPLATE_INSTAGRAM_USERNAME" = "Username";
 "TEMPLATE_INSTAGRAM_USERNAME_PLACEHOLDER" = "Your Instagram username";
 
+/* TikTok */
+"TEMPLATE_TIKTOK_USERNAME" = "Username";
+"TEMPLATE_TIKTOK_USERNAME_PLACEHOLDER" = "Your TikTok @username";
+
+/* Reddit */
+"TEMPLATE_REDDIT_USERNAME" = "Username";
+"TEMPLATE_REDDIT_USERNAME_PLACEHOLDER" = "Your Reddit username";
+
 /* Twitter */
 "TEMPLATE_TWITTER_USERNAME" = "Username";
 "TEMPLATE_TWITTER_USERNAME_PLACEHOLDER" = "Your Twitter @username";
+
+/* Mastodon */
+"TEMPLATE_MASTODON_INSTANCE" = "Instance";
+"TEMPLATE_MASTODON_INSTANCE_PLACEHOLDER" = "e.g. mastodon.social";
+"TEMPLATE_MASTODON_USERNAME" = "Username";
+"TEMPLATE_MASTODON_USERNAME_PLACEHOLDER" = "Your Mastodon @username";
+
+/* Twitch */
+"TEMPLATE_TWITCH_USERNAME" = "Username";
+"TEMPLATE_TWITCH_USERNAME_PLACEHOLDER" = "Your Twitch username";
+
+
+/* Telegram */
+"TEMPLATE_TELEGRAM_USERNAME" = "Username";
+"TEMPLATE_TELEGRAM_USERNAME_PLACEHOLDER" = "Your Telegram @username or number";
+
+/* Snapchat */
+"TEMPLATE_SNAPCHAT_USERNAME" = "Username";
+"TEMPLATE_SNAPCHAT_USERNAME_PLACEHOLDER" = "Your Snapchat username";
 
 /* Mail */
 "TEMPLATE_EMAIL_WITH_CONTENT" = "Email with content";
@@ -87,4 +123,4 @@
 "TAB_SELECTION_HEADER" = "Default tab";
 "TAB_GENERATE" = "Generate";
 "TAB_SCAN" = "Scan";
-"TAB_SELECTION_FOOTER" = "Here you can select which tab should be loaded when starting the Mensaplan app.";
+"TAB_SELECTION_FOOTER" = "Here you can select which tab should be loaded when starting myQRcode.";
