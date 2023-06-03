@@ -1,0 +1,172 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #f5f5f5;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Hero Section */
+#hero {
+    background-image: url('https://as1.ftcdn.net/v2/jpg/02/11/69/28/1000_F_211692896_EQqAQEHmkQYLQHjeK6AsnSuYksnqqGlv.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+#hero h1, #hero p {
+    text-shadow: 1px 1px 2px black;
+}
+
+#hero h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #2980b9;
+}
+
+/* Features Section */
+#features {
+    background-color: #f5f5f5;
+    padding: 80px 0;
+}
+
+#features h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#features ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+@media only screen and (max-width: 800px)  {
+    #features ul {
+        flex-direction: column;
+    }
+
+    #features li:not(:first-child) {
+        margin-top: 32px;
+    }
+}
+
+#features li {
+    text-align: center;
+    flex: 1;
+}
+
+#features i {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+#features img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    padding: 80px 0;
+}
+
+#contact h2 {
+    margin-bottom: 40px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+form button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #fff;
+}
