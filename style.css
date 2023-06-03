@@ -159,6 +159,16 @@ form button:hover {
     background-color: #2980b9;
 }
 
+#content h1 {
+    margin-bottom: 8px;
+} 
+
+#content h2 {
+    margin-top: 16px;
+    margin-bottom: 0px;
+    
+}
+
 /* Footer */
 footer {
     background-color: #333;
