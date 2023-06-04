@@ -1,0 +1,90 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+.wrapper, html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+body.bg {
+    background: #DEDEDE;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Hero Section */
+#hero {
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    min-height: 600px;
+}
+
+#hero .appIcon {
+    max-width: 300px;
+    border: solid #BDBDBD 1px; 
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ; 
+	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ; 
+	-moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5)  ; 
+    border-radius: 32px;;
+}
+
+#hero h1, #hero p {
+    text-shadow: 1px 1px 2px black;
+}
+
+#hero h1 {
+    font-size: 40px;
+    margin-top: 32px;
+    margin-bottom: 8px;
+}
+
+#hero p {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 32px;
+}
+
+#content h1 {
+    margin-bottom: 8px;
+} 
+
+#content h2 {
+    margin-top: 16px;
+    margin-bottom: 0px;
+    
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #fff;
+}
