@@ -7,15 +7,17 @@
 //
 
 import Foundation
-import StoreKit
 import UIKit
 
 // MARK: - Table View Extension
 
 extension SettingsTableViewController {
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if section == 0 {
+            return "Version \(myQRcode.versionString) (Build: \(myQRcode.buildNumber))"
+        }
         if section == tableView.numberOfSections - 1 {
-            return "\("SETTINGS_DEVELOPER_GREETING".localized) (Version \(myQRcode.versionString))"
+            return "SETTINGS_DEVELOPER_GREETING".localized
         }
         return nil
     }
@@ -34,12 +36,7 @@ extension SettingsTableViewController {
             openSafariViewControllerWith(url: myQRcode.website)
             myQRcodeMatomo.track(action: myQRcodeMatomo.settingsAction, name: myQRcodeMatomo.settingsAboutAction)
         case rateCell:
-            if #available(iOS 14.0, *) {
-                SKStoreReviewController.requestReviewInCurrentScene()
-            } else {
-                SKStoreReviewController.requestReview()
-            }
-            myQRcodeMatomo.track(action: myQRcodeMatomo.settingsAction, name: myQRcodeMatomo.settingsReviewAction)
+            rateAction()
         case appStoreCell:
             appStoreAction()
         default:

@@ -8,6 +8,7 @@
 
 import CoreData
 import SafariServices
+import StoreKit
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
@@ -72,6 +73,24 @@ class SettingsTableViewController: UITableViewController {
         navigationController.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .automatic
         navigationController.navigationBar.sizeToFit()
+    }
+    
+    func rateAction() {
+        myQRcodeMatomo.track(action: myQRcodeMatomo.settingsAction, name: myQRcodeMatomo.settingsReviewAction)
+        var components = URLComponents(url: URL(string: myQRcode.appStoreLink)!, resolvingAgainstBaseURL: false)
+        components?.queryItems = [
+          URLQueryItem(name: "action", value: "write-review")
+        ]
+        guard let writeReviewURL = components?.url, UIApplication.shared.canOpenURL(writeReviewURL) else {
+            if #available(iOS 14.0, *) {
+                SKStoreReviewController.requestReviewInCurrentScene()
+            } else {
+                SKStoreReviewController.requestReview()
+            }
+          return
+        }
+        UIApplication.shared.open(writeReviewURL)
+
     }
     
     func appStoreAction() {

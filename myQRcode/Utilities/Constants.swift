@@ -60,6 +60,7 @@ struct myQRcodeIAP {
 
 struct myQRcode {
     static let appStoreId = "1444531883"
+    static let appStoreLink = "https://apps.apple.com/app/myqrcode/id1444531883"
     static let mailAdress = "dev@marc-hein.de"
     static let website = "https://marc-hein.de/"
     static let privacyNoticeEN = "https://myqrcode.marc-hein.de/privacy"
