@@ -3,7 +3,7 @@
 "2dZ-Vw-L95.text" = "app_icon_label";
 
 /* Class = "UILabel"; text = "Rate myQRcode"; ObjectID = "ANl-Mk-QMH"; */
-"ANl-Mk-QMH.text" = "Rate myQRcode";
+"ANl-Mk-QMH.text" = "Leave a review for myQRcode";
 
 /* Class = "UIButton"; normalTitle = "tip_price"; ObjectID = "AdG-II-7yX"; */
 "AdG-II-7yX.normalTitle" = "tip_price";
