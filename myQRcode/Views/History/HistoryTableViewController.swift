@@ -124,9 +124,9 @@ class HistoryTableViewController: UITableViewController, NSFetchedResultsControl
         guard let historyItem = self.fetchedResultsController?.object(at: indexPath) else {
             fatalError("No historyItem retrieved for indexPath: \(indexPath)")
         }
-        
-        self.delegate?.userSelectedHistoryItem(item: historyItem)
+
         self.dismiss(self)
+        self.delegate?.userSelectedHistoryItem(item: historyItem)
         
         if self.category == HistoryCategory.generate {
             myQRcodeMatomo.track(action: myQRcodeMatomo.generateAction, name: myQRcodeMatomo.generateHistorySelected)

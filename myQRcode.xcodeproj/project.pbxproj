@@ -45,7 +45,7 @@
 		5B67630923395B6500C563FD /* Generate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F2023395975005804AA /* Generate.storyboard */; };
 		5B80B21129967C2300C87939 /* ScanViewController+PHPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80B21029967C2300C87939 /* ScanViewController+PHPicker.swift */; };
 		5B915E9123390703008B8B59 /* fa-regular-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B915E90233906EE008B8B59 /* fa-regular-400.ttf */; };
-		5B9C3BDB2A286F5D00B03B53 /* MatomoTracker in Frameworks */ = {isa = PBXBuildFile; productRef = 5B9C3BDA2A286F5D00B03B53 /* MatomoTracker */; };
+		5B9C3BDB2A286F5D00B03B53 /* MatomoTracker in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 5B9C3BDA2A286F5D00B03B53 /* MatomoTracker */; };
 		5B9C3BDD2A28701300B03B53 /* MatomoTracker+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C3BDC2A28701300B03B53 /* MatomoTracker+Shared.swift */; };
 		5B9C3BDF2A28705700B03B53 /* myQRcodeMatomo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C3BDE2A28705700B03B53 /* myQRcodeMatomo.swift */; };
 		5BAA4194298D28B600493175 /* UIDevice+Modelname.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4193298D28B600493175 /* UIDevice+Modelname.swift */; };
@@ -965,7 +965,7 @@
 				CODE_SIGN_ENTITLEMENTS = myQRcode/myQRcode.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/myQRcode/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = myQRcode;
@@ -997,7 +997,7 @@
 				CODE_SIGN_ENTITLEMENTS = myQRcode/myQRcode.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/myQRcode/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = myQRcode;
