@@ -1,0 +1,90 @@
+
+/* Class = "UILabel"; text = "app_icon_label"; ObjectID = "2dZ-Vw-L95"; */
+"2dZ-Vw-L95.text" = "app_icon_label";
+
+/* Class = "UILabel"; text = "Rate myBarcode"; ObjectID = "ANl-Mk-QMH"; */
+"ANl-Mk-QMH.text" = "Leave a review for myBarcode";
+
+/* Class = "UIButton"; normalTitle = "tip_price"; ObjectID = "AdG-II-7yX"; */
+"AdG-II-7yX.normalTitle" = "tip_price";
+
+/* Class = "UILabel"; text = "tip_name"; ObjectID = "FCo-bS-nK1"; */
+"FCo-bS-nK1.text" = "tip_name";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "HoM-Mw-uVh"; */
+"HoM-Mw-uVh.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Miz-H6-s6T"; */
+"Miz-H6-s6T.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "T3w-QR-w0N"; */
+"T3w-QR-w0N.title" = "Settings";
+
+/* Class = "UITableViewController"; title = "Tip Jar"; ObjectID = "XL1-gD-qrJ"; */
+"XL1-gD-qrJ.title" = "Tip Jar";
+
+/* Class = "UITableViewController"; title = "Change app icon"; ObjectID = "XYV-nO-z1g"; */
+"XYV-nO-z1g.title" = "Change app icon";
+
+/* Class = "UILabel"; text = "Support myBarcode"; ObjectID = "aeI-rr-3yC"; */
+"aeI-rr-3yC.text" = "Donate to myBarcode";
+
+/* Class = "UITableViewController"; title = "About"; ObjectID = "d3V-32-RIX"; */
+"d3V-32-RIX.title" = "About";
+
+/* Class = "UILabel"; text = "1.0 (XXX)"; ObjectID = "e2b-No-H44"; */
+"e2b-No-H44.text" = "1.0 (XXX)";
+
+/* Class = "UILabel"; text = "myBarcode support"; ObjectID = "eg5-mK-YoP"; */
+"eg5-mK-YoP.text" = "myBarcode support";
+
+/* Class = "UILabel"; text = "Developer website"; ObjectID = "gk2-gu-BZk"; */
+"gk2-gu-BZk.text" = "Developer website";
+
+/* Class = "UILabel"; text = "myBarcode on the App Store"; ObjectID = "kGT-5g-1ug"; */
+"kGT-5g-1ug.text" = "myBarcode on the App Store";
+
+/* Class = "UINavigationController"; title = "Settings"; ObjectID = "mMn-4x-nI7"; */
+"mMn-4x-nI7.title" = "Settings";
+
+/* Class = "UILabel"; text = "Change App Icon"; ObjectID = "t8x-1e-Dqo"; */
+"t8x-1e-Dqo.text" = "Change App Icon";
+
+/* Class = "UINavigationItem"; title = "Change app icon"; ObjectID = "vBM-oz-4cr"; */
+"vBM-oz-4cr.title" = "Change app icon";
+
+/* Class = "UIBarButtonItem"; title = "Close"; ObjectID = "vWa-8P-riK"; */
+"vWa-8P-riK.title" = "Close";
+
+/* Class = "UILabel"; text = "tip_desc"; ObjectID = "xM9-69-5s4"; */
+"xM9-69-5s4.text" = "tip_desc";
+
+/* Class = "UILabel"; text = "TAB_ON_START"; ObjectID = "gQU-QS-Vls"; */
+"gQU-QS-Vls.text" = "Tab on start";
+
+"E0M-Lr-A6I.title" = "Tab on start";
+
+"NnH-St-S7B.title" = "Tab on start";
+
+
+/* Default tab placeholder */
+"TwD-Sc-VuR.text" = "Generate";
+
+/* Default Code Selection */
+"CpT-bd-4bO.text" = "Show only Default Code";
+"klt-nm-GPJ.text" = "Default Code";
+"n91-Ca-UPi.text" = "Selected Code";
+
+/* Default Code Page */
+"Gzh-hY-dRx.title" = "Default Code";
+"CXP-Bp-sFp.title" = "Default Code";
+
+/* Privacy */
+"Mhq-DC-cDq.text" = "Privacy";
+"ggM-jN-5a8.title" = "Privacy";
+"3YQ-DX-iIE.title" = "Privacy";
+"rNt-C9-RjH.text" = "Privacy Policy";
+"B3h-nP-Vft.headerTitle" = "Matomo";
+"mjp-l0-QGe.text" = "What is Matomo? (English)";
+"8l1-eo-Zei.text" = "Matomo Opt-Out";
+"B3h-nP-Vft.footerTitle" = "Your activity of this app will be collected by Matomo web analytics if this switch is active. Deselect this switch for opt-out.";

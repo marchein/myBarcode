@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "heinhelpers",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/marchein/HeinHelpers.git",
+      "state" : {
+        "revision" : "4122bcccf6551c8ab1f52fad7e9a2f30ef9cd621",
+        "version" : "1.2.1"
+      }
+    },
+    {
+      "identity" : "matomo-sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/matomo-org/matomo-sdk-ios.git",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "32c2353d5b57f9e144f199a544c7fe1df9561236"
+      }
+    },
+    {
+      "identity" : "simulatorstatusmagic",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shinydevelopment/SimulatorStatusMagic",
+      "state" : {
+        "revision" : "76095ec820674457a11dc3cc621d8a5c369eea0e",
+        "version" : "2.7.0"
+      }
+    }
+  ],
+  "version" : 2
+}
