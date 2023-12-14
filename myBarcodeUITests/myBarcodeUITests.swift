@@ -40,7 +40,6 @@ final class myBarcodeUITests: XCTestCase {
         
         for (name) in codeValues {
             let actualTestString = testString + name
-            print("Value: \(name)")
             // You can now use 'code' and 'value' in each iteration
             if !tablesQuery.buttons[name].exists {
                 return;

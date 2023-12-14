@@ -70,17 +70,21 @@ extension GenerateViewController {
             switch selectedCodeType {
             case .CODE128:
                 code = Code128(code: code)
+                myBarcodeMatomo.track(action: myBarcodeMatomo.generateAction, name: myBarcodeMatomo.generateGeneratedCodeCode128, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeGenerated)))
                 break
             case .AZTEC:
                 code = Aztec(code: code)
+                myBarcodeMatomo.track(action: myBarcodeMatomo.generateAction, name: myBarcodeMatomo.generateGeneratedCodeAztec, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeGenerated)))
                 break
             case .PDF417:
                 code = PDF417(code: code)
+                myBarcodeMatomo.track(action: myBarcodeMatomo.generateAction, name: myBarcodeMatomo.generateGeneratedCodePDF417, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeGenerated)))
                 break
             case .QR:
                 fallthrough
             default:
                 code = QRCode(code: code)
+                myBarcodeMatomo.track(action: myBarcodeMatomo.generateAction, name: myBarcodeMatomo.generateGeneratedCodeQR, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeGenerated)))
             }
             
             if let usedTemplate = usedTemplate {
@@ -107,7 +111,7 @@ extension GenerateViewController {
                     self.generateButton.isEnabled = false
                     self.generateButton.alpha = self.generateButton.isEnabled ? 1.0 : 0.6
                     
-                    myBarcodeMatomo.track(action: myBarcodeMatomo.generateAction, name: myBarcodeMatomo.generateGeneratedQR, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeGenerated)))
+                    myBarcodeMatomo.track(action: myBarcodeMatomo.generateAction, name: myBarcodeMatomo.generateGeneratedCode, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeGenerated)))
                 }
             }
         }
@@ -175,6 +179,8 @@ extension GenerateViewController {
         // Present WhatsNewViewController
         // Version will be automatically saved in the provided
         // WhatsNewVersionStore when the WhatsNewViewController gets dismissed
+        #if !targetEnvironment(simulator)
         self.present(whatsNewViewController, animated: true)
+        #endif
     }
 }

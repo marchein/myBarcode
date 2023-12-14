@@ -16,7 +16,7 @@ struct myBarcodeMatomo {
         MatomoTracker.shared.track(eventWithCategory: myBarcodeMatomo.categoryName, action: action, name: name, number: number, url: matomoActionUrl)
     }
     
-    static let matomoAppUrl = "myBarcode://myBarcode.marc-hein.de/app/"
+    static let matomoAppUrl = "myBarcode://app/\(myBarcode.versionString)/"
     
     static let categoryName = "myBarcodeApp"
     
@@ -44,6 +44,14 @@ struct myBarcodeMatomo {
     static let settingsDefaultTabAction = "myBarcode-app-settings-default-tab"
     // user sets the default selected tab in settings
     static let settingsDefaultTabSetAction = "myBarcode-app-settings-default-tab-set"
+    // user opens default code view in settings
+    static let settingsDefaultCodeAction = "myBarcode-app-settings-default-code"
+    // user sets the default selected code in settings
+    static let settingsDefaultCodeSetAction = "myBarcode-app-settings-default-code-set"
+    // user sets switch to hide code selector
+    static let settingsHideNonDefaultCodeSetAction = "myBarcode-app-settings-hide-non-default-code-set"
+    // user sets switch to disable history
+    static let settingsDisableHistorySetAction = "myBarcode-app-settings-disable-history-set"
     // user selected support in settings
     static let settingsSupportAction = "myBarcode-app-settings-support"
     // user selected appstore in settings
@@ -65,8 +73,16 @@ struct myBarcodeMatomo {
     
     
     // MARK: - Generate Actions
+    // user generates new code
+    static let generateGeneratedCode = "myBarcode-app-generate-generated"
     // user generates new qr code
-    static let generateGeneratedQR = "myBarcode-app-generate-generated"
+    static let generateGeneratedCodeQR = "myBarcode-app-generate-generated-QR"
+    // user generates new aztec code
+    static let generateGeneratedCodeAztec = "myBarcode-app-generate-generated-Aztec"
+    // user generates new code128 code
+    static let generateGeneratedCodeCode128 = "myBarcode-app-generate-generated-Code128"
+    // user generates new pdf417 code
+    static let generateGeneratedCodePDF417 = "myBarcode-app-generate-generated-PDF417"
     // user exports qr code
     static let generateExport = "myBarcode-app-generate-export"
     // user opens templates
@@ -83,12 +99,22 @@ struct myBarcodeMatomo {
     static let generateHistoryDeleted = "myBarcode-app-generate-history-deleted"
     
     // MARK: - Scan Actions
-    // user scans qr code
-    static let scanScannedQR = "myBarcode-app-scan-scanned"
+    // user scans code
+    static let scanScannedCode = "myBarcode-app-scan-scanned"
+    // user scans qr
+    static let scanScannedCodeQR = "myBarcode-app-scan-scanned-qr"
+    // user scans aztec
+    static let scanScannedCodeAztec = "myBarcode-app-scan-scanned-aztec"
+    // user scans code128
+    static let scanScannedCodeCode128 = "myBarcode-app-scan-scanned-code128"
+    // user scans pdf417
+    static let scanScannedCodePDF417 = "myBarcode-app-scan-scanned-pdf417"
     // user selected images picker
     static let scanImagePickerOpened = "myBarcode-app-scan-image"
     // user scans qr code from image
     static let scanImageScanned = "myBarcode-app-scan-image-scanned"
+    // user scans qr code from image
+    static let scanImageScanFailed = "myBarcode-app-scan-image-scanned-failed"
     // user opened scan history
     static let scanHistory = "myBarcode-app-scan-history"
     // user selects item in scan history

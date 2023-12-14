@@ -36,7 +36,7 @@ class SettingsDefaultCodeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: Add Matomo for page load
+        myBarcodeMatomo.track(action: myBarcodeMatomo.settingsAction, name: myBarcodeMatomo.settingsDefaultCodeAction)
     }
 
     // MARK: - Table view data source
@@ -48,16 +48,6 @@ class SettingsDefaultCodeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myBarcode.codeValues.count
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "DEFAULT_CODE_SELECTION_HEADER".localized
-     }
-    
-    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "DEFAULT_CODE_SELECTION_FOOTER".localized
-    }
-     */
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
@@ -78,9 +68,6 @@ class SettingsDefaultCodeTableViewController: UITableViewController {
             fatalError()
         }
         self.selectedDefaultCode = codeOption
-        myBarcodeMatomo.track(action: myBarcodeMatomo.settingsAction, name: myBarcodeMatomo.settingsDefaultTabSetAction, number: NSNumber(value: indexPath.row))
-        
-        let actualCode = selectedDefaultCode
-        
+        myBarcodeMatomo.track(action: myBarcodeMatomo.settingsAction, name: myBarcodeMatomo.settingsDefaultCodeSetAction, number: NSNumber(value: indexPath.row))
     }
 }

@@ -176,117 +176,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C88F609A-8D57-40EE-BC26-12C6DC13FE34"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "App/Views/Settings/DefaultAction/SettingsDefaultCodeTableViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C88F609A-8D57-40EE-BC26-12C6DC13FE34 - c5133db1aaace551"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "myBarcode.SettingsDefaultCodeTableViewController.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "myBarcode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marchein/Developer/Privat/myQRcode/App/Views/Settings/DefaultAction/SettingsDefaultCodeTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "312">
-               </Location>
-               <Location
-                  uuid = "C88F609A-8D57-40EE-BC26-12C6DC13FE34 - c5133db1aaace551"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "myBarcode.SettingsDefaultCodeTableViewController.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "myBarcode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marchein/Developer/Privat/myQRcode/App/Views/Settings/DefaultAction/SettingsDefaultCodeTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "480">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E181208C-E91C-4AAC-9823-504DAD65ABEF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "App/Views/Settings/DefaultAction/SettingsDefaultCodeTableViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E181208C-E91C-4AAC-9823-504DAD65ABEF - c5133db1aaace5b0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "myBarcode.SettingsDefaultCodeTableViewController.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "myBarcode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marchein/Developer/Privat/myQRcode/App/Views/Settings/DefaultAction/SettingsDefaultCodeTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "504">
-               </Location>
-               <Location
-                  uuid = "E181208C-E91C-4AAC-9823-504DAD65ABEF - c5133db1aaace5b0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "myBarcode.SettingsDefaultCodeTableViewController.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "myBarcode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marchein/Developer/Privat/myQRcode/App/Views/Settings/DefaultAction/SettingsDefaultCodeTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "464">
-               </Location>
-               <Location
-                  uuid = "E181208C-E91C-4AAC-9823-504DAD65ABEF - c5133db1aaace58f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "myBarcode.SettingsDefaultCodeTableViewController.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "myBarcode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marchein/Developer/Privat/myQRcode/App/Views/Settings/DefaultAction/SettingsDefaultCodeTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "504">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C3AED681-B27D-4843-94B9-8CF122256FE7"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -310,8 +199,8 @@
             filePath = "App/Views/Generate/GenerateViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "enterCode(content:codeType:addToHistory:resetToDefaultCodeType:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -393,6 +282,22 @@
                   offsetFromSymbolStart = "88">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "197A1509-BE6D-4CBC-A3DD-7F2AD6657088"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "App/Views/Generate/GenerateViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -77,6 +77,7 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
         let switchObj = sender as? UISwitch, value = switchObj?.isOn ?? false
         UserDefaults.standard.set(value, forKey: localStoreKeys.showOnlyDefaultCode)
         UserDefaults.standard.synchronize()
+        myBarcodeMatomo.track(action: myBarcodeMatomo.settingsAction, name: myBarcodeMatomo.settingsHideNonDefaultCodeSetAction, number: value ? 1 : 0)
     }
     
     func updateHistoryDisabled() {
@@ -88,6 +89,7 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
         let switchObj = sender as? UISwitch, value = switchObj?.isOn ?? false
         UserDefaults.standard.set(value, forKey: localStoreKeys.historyDisabled)
         UserDefaults.standard.synchronize()
+        myBarcodeMatomo.track(action: myBarcodeMatomo.settingsAction, name: myBarcodeMatomo.settingsDisableHistorySetAction, number: value ? 1 : 0)
     }
     
     private func configureNavigator() {

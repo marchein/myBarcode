@@ -129,12 +129,10 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     }
         
     func setHistory() {
-        historyDisabled = UserDefaults.standard.bool(forKey: localStoreKeys.historyDisabled)
-
         if #available(iOS 16.0, *) {
             historyButton.isHidden = historyDisabled
         } else {
-            historyButton.isEnabled = historyDisabled
+            historyButton.isEnabled = !historyDisabled
         }
     }
     
@@ -249,11 +247,14 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     func updateViewFromSettings() {
         // Wether the selection should still be shown or not
         hideCodeTypeSelector = UserDefaults.standard.bool(forKey: localStoreKeys.showOnlyDefaultCode)
+
         // Which code should be selected
         setDefaultCodeType()
+        
+        historyDisabled = UserDefaults.standard.bool(forKey: localStoreKeys.historyDisabled)
+
         // Show/Hide History
         setHistory()
-        tableView.reloadData()
     }
     
     @IBAction func unwindToGenerateViewController(segue: UIStoryboardSegue) {

@@ -87,7 +87,7 @@ final class myBarcodeScreenshots: XCTestCase {
     }
     
     func testScreenshots() {
-        if Locale.current.languageCode == "de" {
+        if Locale.current.region?.identifier == "de" {
             createGermanScreenshots(darkMode: false)
             createGermanScreenshots(darkMode: true)
             return
@@ -120,11 +120,12 @@ final class myBarcodeScreenshots: XCTestCase {
         tablesQuery.buttons["Teilen"].tap()
         sleep(1)
         saveScreenshot(name: "03_shared_\(mode).jpeg")
-        if app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Schließen"].exists {
-            app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Schließen"].tap()
+        if  app.children(matching: .window)/*@START_MENU_TOKEN@*/.otherElements["PopoverDismissRegion"]/*[[".otherElements[\"Einblendmenü schließen\"]",".otherElements[\"PopoverDismissRegion\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists {
+            tablesQuery.buttons["Code generieren"].tap()
         } else {
             app.otherElements["PopoverDismissRegion"].tap()
         }
+        
         app.tabBars.buttons["Scannen"].tap()
         sleep(2)
         saveScreenshot(name: "04_scanner_\(mode).jpeg")

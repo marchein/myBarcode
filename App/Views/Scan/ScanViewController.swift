@@ -34,12 +34,12 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        #if targetEnvironment(simulator)
-            setupDemoScanner()
-            checkIfDemoHistoryShouldBeCreated()
-        #else
-            AVCaptureDevice.authorizationStatus(for: .video) == .authorized  ? setupScanner() : requestAccess()
-        #endif
+#if targetEnvironment(simulator)
+        setupDemoScanner()
+        checkIfDemoHistoryShouldBeCreated()
+#else
+        AVCaptureDevice.authorizationStatus(for: .video) == .authorized  ? setupScanner() : requestAccess()
+#endif
         
         fixNavTabBar()
         
@@ -88,16 +88,16 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             let previewLayerConnection: AVCaptureConnection = connection
             if previewLayerConnection.isVideoOrientationSupported {
                 switch orientation {
-                    case .portrait:
-                        updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
-                    case .landscapeRight:
-                        updatePreviewLayer(layer: previewLayerConnection, orientation: .landscapeLeft)
-                    case .landscapeLeft:
-                        updatePreviewLayer(layer: previewLayerConnection, orientation: .landscapeRight)
-                    case .portraitUpsideDown:
-                        updatePreviewLayer(layer: previewLayerConnection, orientation: .portraitUpsideDown)
-                    default:
-                        updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
+                case .portrait:
+                    updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
+                case .landscapeRight:
+                    updatePreviewLayer(layer: previewLayerConnection, orientation: .landscapeLeft)
+                case .landscapeLeft:
+                    updatePreviewLayer(layer: previewLayerConnection, orientation: .landscapeRight)
+                case .portraitUpsideDown:
+                    updatePreviewLayer(layer: previewLayerConnection, orientation: .portraitUpsideDown)
+                default:
+                    updatePreviewLayer(layer: previewLayerConnection, orientation: .portrait)
                 }
             }
         }
@@ -112,18 +112,18 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     }
     
     func setupScanner() {
-        #if targetEnvironment(macCatalyst)
+#if targetEnvironment(macCatalyst)
         let deviceDiscoverySession = AVCaptureDevice.default(for: .video)
-        #else
+#else
         let deviceDiscoverySession = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
-        #endif
-            
+#endif
+        
         guard let captureDevice = deviceDiscoverySession else {
             print("Failed to get the camera device")
             return
         }
-            
-    
+        
+        
         
         if !isSetup {
             if let inputs = captureSession.inputs as? [AVCaptureDeviceInput] {
@@ -131,13 +131,13 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                     captureSession.removeInput(input)
                 }
             }
-                    
+            
             do {
                 if captureSession.inputs.isEmpty {
                     let deviceInput = try AVCaptureDeviceInput(device: captureDevice)
                     captureSession.addInput(deviceInput)
                 }
-                    
+                
                 let captureMetadataOutput = AVCaptureMetadataOutput()
                 captureSession.addOutput(captureMetadataOutput)
                 
@@ -148,14 +148,14 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                 videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
                 videoPreviewLayer?.frame = view.bounds
                 view.layer.addSublayer(videoPreviewLayer!)
-                        
+                
             } catch {
                 print(error.localizedDescription)
                 return
             }
-                    
+            
             codeFrameView = UIView()
-                    
+            
             if let codeFrameView = codeFrameView {
                 codeFrameView.layer.borderColor = UIColor.green.cgColor
                 codeFrameView.layer.borderWidth = 2
@@ -200,28 +200,32 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             return
         }
         var code = Code(content: contentOfCode, category: .scan)
-
+        
         switch metadataObject.type {
-            case .qr:
-                code = QRCode(code: code)
-            case .code128:
-                code = Code128(code: code)
-            case .pdf417:
-                code = PDF417(code: code)
-            case .aztec:
-                code = Aztec(code: code)
-            default:
-                print("Error!")
-                return
+        case .qr:
+            code = QRCode(code: code)
+            myBarcodeMatomo.track(action: myBarcodeMatomo.scanAction, name: myBarcodeMatomo.scanScannedCodeQR, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeScanned)))
+        case .code128:
+            code = Code128(code: code)
+            myBarcodeMatomo.track(action: myBarcodeMatomo.scanAction, name: myBarcodeMatomo.scanScannedCodeCode128, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeScanned)))
+        case .pdf417:
+            code = PDF417(code: code)
+            myBarcodeMatomo.track(action: myBarcodeMatomo.scanAction, name: myBarcodeMatomo.scanScannedCodePDF417, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeScanned)))
+        case .aztec:
+            code = Aztec(code: code)
+            myBarcodeMatomo.track(action: myBarcodeMatomo.scanAction, name: myBarcodeMatomo.scanScannedCodeAztec, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeScanned)))
+        default:
+            print("Error!")
+            return
         }
-
+        
         finishedScanning(code: code)
     }
     
     func finishedScanning(code: Code, performSegueValue: Bool = true) {
         hapticsGenerator.prepare()
         hapticsGenerator.notificationOccurred(.success)
-
+        
         codeResult = code.content
         
         let historyItem = code.addToCoreData(save: !historyDisabled)
@@ -233,7 +237,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             performSegue(withIdentifier: myBarcodeSegues.ResultSegue, sender: historyItem)
         }
         
-        myBarcodeMatomo.track(action: myBarcodeMatomo.scanAction, name: myBarcodeMatomo.scanScannedQR, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeScanned)))
+        myBarcodeMatomo.track(action: myBarcodeMatomo.scanAction, name: myBarcodeMatomo.scanScannedCode, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeScanned)))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -304,6 +308,8 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         hapticsGenerator.prepare()
         hapticsGenerator.notificationOccurred(.error)
         showMessage(title: "no_qr_code_error".localized, message: "no_qr_code_error_description".localized, on: navigationController!)
+        myBarcodeMatomo.track(action: myBarcodeMatomo.scanAction, name: myBarcodeMatomo.scanImageScanFailed, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeScanned)))
+        
     }
     
     func fixNavTabBar() {
@@ -313,7 +319,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             navbarAppearance.configureWithDefaultBackground()
             navigationController?.navigationBar.standardAppearance = navbarAppearance
             navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-                
+            
             let tabbarAppearance = UITabBarAppearance()
             tabbarAppearance.configureWithDefaultBackground()
             tabBarController?.tabBar.standardAppearance = tabbarAppearance
@@ -323,7 +329,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     func setHistory() {
         historyDisabled = UserDefaults.standard.bool(forKey: localStoreKeys.historyDisabled)
-
+        
         if #available(iOS 16.0, *) {
             historyButton.isHidden = historyDisabled
         } else {

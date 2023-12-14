@@ -136,6 +136,7 @@
 		5B1213B72992E660007FDCE3 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 		5B1551C6298D85DB00A4438B /* SKStoreReviewController+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKStoreReviewController+Request.swift"; sourceTree = "<group>"; };
 		5B1C2CCC24EFFB8A003544D7 /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
+		5B20CC1E2B2B263F00E4EB09 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 		5B2AE30C21AA017E00976FE2 /* myBarcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myBarcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2AE30F21AA017E00976FE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B2AE31121AA017E00976FE2 /* GenerateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +290,7 @@
 				5B4EEE952B2A4DF600D36369 /* myBarcodeUITests */,
 				5B2AE30D21AA017E00976FE2 /* Products */,
 				5B5AEE9E2A000DDD00682CF8 /* Frameworks */,
+				5B20CC1E2B2B263F00E4EB09 /* TestPlan.xctestplan */,
 			);
 			sourceTree = "<group>";
 		};
@@ -998,7 +1000,7 @@
 				CODE_SIGN_ENTITLEMENTS = App/BarcodeScannerGenerator.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/App/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "myBarcode Generator & Scanner";
@@ -1031,7 +1033,7 @@
 				CODE_SIGN_ENTITLEMENTS = App/BarcodeScannerGenerator.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/App/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "myBarcode Generator & Scanner";

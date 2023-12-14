@@ -134,7 +134,6 @@
                                                             <rect key="frame" x="262" y="11.5" width="51" height="31"/>
                                                             <accessibility key="accessibilityConfiguration" identifier="disableHistorySwitch"/>
                                                             <connections>
-                                                                <action selector="defaultCodeSwitchChanged:" destination="d3V-32-RIX" eventType="valueChanged" id="DMW-30-2NQ"/>
                                                                 <action selector="disableHistorySwitchChanged:" destination="d3V-32-RIX" eventType="valueChanged" id="GfV-ty-ff1"/>
                                                             </connections>
                                                         </switch>

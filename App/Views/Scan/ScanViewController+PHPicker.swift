@@ -29,12 +29,12 @@ extension ScanViewController: PHPickerViewControllerDelegate {
             let itemProvider = results.first!.itemProvider
             
             itemProvider.loadObject(ofClass: UIImage.self) { image, _ in
-                guard let codeImg = image as? UIImage, let codeContents = self.processSelectedImage(codeImg) else {
-                    self.noQrCodeDetected()
-                    return
-                }
                 
                 DispatchQueue.main.async {
+                    guard let codeImg = image as? UIImage, let codeContents = self.processSelectedImage(codeImg) else {
+                        self.noQrCodeDetected()
+                        return
+                    }
                     self.processingImageComplete(codeContents)
                 }
             }
