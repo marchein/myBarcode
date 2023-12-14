@@ -270,7 +270,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         myBarcodeMatomo.track(action: myBarcodeMatomo.scanAction, name: myBarcodeMatomo.scanImagePickerOpened)
     }
     
-    func processSelectedImage(_ image: UIImage) -> String {
+    func processSelectedImage(_ image: UIImage) -> String? {
         guard
             let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh]),
             let ciImage = CIImage(image: image),
@@ -278,7 +278,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         else {
             hapticsGenerator.prepare()
             hapticsGenerator.notificationOccurred(.error)
-            fatalError("Something went wrong in the image picker code")
+            return nil
         }
         
         var qrCodeResult = ""
@@ -293,12 +293,17 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     func processingImageComplete(_ codeContent: String) {
         if codeContent.isEmpty {
-            hapticsGenerator.prepare()
-            hapticsGenerator.notificationOccurred(.error)
-            showMessage(title: "no_qr_code_error".localized, message: "no_qr_code_error_description".localized, on: navigationController!)
-        } else {
-            finishedScanning(code: QRCode(code: Code(content: codeContent, category: .scan)))
+            noQrCodeDetected()
+            return
         }
+        
+        finishedScanning(code: QRCode(code: Code(content: codeContent, category: .scan)))
+    }
+    
+    func noQrCodeDetected() {
+        hapticsGenerator.prepare()
+        hapticsGenerator.notificationOccurred(.error)
+        showMessage(title: "no_qr_code_error".localized, message: "no_qr_code_error_description".localized, on: navigationController!)
     }
     
     func fixNavTabBar() {

@@ -64,7 +64,9 @@ func incrementCodeValue(of: String) {
 }
 
 func showRateWindow() {
+    #if !targetEnvironment(simulator)
     SKStoreReviewController.requestReviewInCurrentScene()
+    #endif
 }
 
 func convertCIImageToCGImage(inputImage: CIImage) -> CGImage? {

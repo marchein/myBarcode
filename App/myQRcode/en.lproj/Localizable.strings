@@ -28,8 +28,8 @@
 "no_generate_history" = "Currently no codes have been generated";
 "message_okay_action" = "Got it";
 
-"no_qr_code_error" = "No code";
-"no_qr_code_error_description" = "myBarcode was unable to detect any codes in the selected image";
+"no_qr_code_error" = "No QR-Code";
+"no_qr_code_error_description" = "myBarcode was unable to detect any QR-Codes in the selected image.\n\nPlease note: myBarcode is only able to scan QR-Codes from images.";
 
 /* Generate */
 "GENERATE_CHARS_LEFT" = "characters left";

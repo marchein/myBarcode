@@ -32,8 +32,8 @@
 
 "message_okay_action" = "Verstanden";
 
-"no_qr_code_error" = "Kein Code";
-"no_qr_code_error_description" = "myBarcode war nicht in der Lage einen QR-Code im ausgewählten Bild zu entdecken";
+"no_qr_code_error" = "Kein QR Code";
+"no_qr_code_error_description" = "myBarcode war nicht in der Lage einen QR-Code im ausgewählten Bild zu entdecken.\n\nBeachte: myBarcode kann von Bildern nur QR-Codes auslesen.";
 
 /* Templates */
 /* WiFi Template*/

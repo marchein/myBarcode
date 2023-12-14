@@ -106,14 +106,5 @@ struct myBarcode {
         "PDF417": .PDF417,
         "Aztec": .AZTEC
     ]
-    
-    static func getGenerateVC() -> GenerateViewController? {
-        if let tabVC = UIApplication.shared.windows.first!.rootViewController as? UITabBarController,
-           let navVC = tabVC.children.first as? UINavigationController,
-           let mainVC = navVC.children.first as? GenerateViewController {
-            return mainVC
-        }
-        return nil
-    }
 }
 

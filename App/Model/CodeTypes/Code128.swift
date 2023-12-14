@@ -30,7 +30,7 @@ class Code128: Code, CustomStringConvertible {
     
     
     override func generateImage() -> CIImage {
-        let data = content.data(using: String.Encoding.utf8, allowLossyConversion: false)
+        let data = content.data(using: String.Encoding.ascii, allowLossyConversion: true)
         let filter = CIFilter(name: Code128.generatorName)!
         
         filter.setValue(data, forKey: "inputMessage")
