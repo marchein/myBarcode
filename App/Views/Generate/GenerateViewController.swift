@@ -127,7 +127,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         
         tableView.reloadData()
     }
-    
+        
     func setHistory() {
         historyDisabled = UserDefaults.standard.bool(forKey: localStoreKeys.historyDisabled)
 
@@ -165,7 +165,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
             return
         }
         
-        codeImageView.image = selectedCodeType != .PDF417 ? #imageLiteral(resourceName: "Blank QR") : nil
+        codeImageView.image = selectedCodeType != .CODE128 && selectedCodeType != .PDF417 ? #imageLiteral(resourceName: "Blank QR") : nil
     }
     
     // share image

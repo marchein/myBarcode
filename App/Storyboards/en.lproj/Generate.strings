@@ -12,7 +12,7 @@
 "Un4-9b-sBJ.title" = "Item";
 
 /* Class = "UIButton"; normalTitle = "Export generated code"; ObjectID = "X4f-wI-1Pm"; */
-"X4f-wI-1Pm.normalTitle" = "Export generated code";
+"X4f-wI-1Pm.normalTitle" = "Share";
 
 /* Class = "UITabBarItem"; title = "Generate"; ObjectID = "YWT-57-rL4"; */
 "YWT-57-rL4.title" = "Generate";
@@ -37,9 +37,9 @@
 /* XY Items left placeholder */
 "ZNT-9e-QHC.text" = "XYZ charaters left";
 /* Templates Button */
-"beF-PC-LeV.text" = "Templates";
+"yyP-HG-gaD.contentConfiguration.text" = "Templates";
 /* Use last Templazte Button */
-"vZP-N5-XQU.text" = "Use last template again";
+"qXI-71-Ho1.contentConfiguration.text" = "Use last template again";
 
 /* Templates View Controller */
 /* Title */
@@ -58,4 +58,4 @@
 "snB-Sp-SAz.segmentTitles[0]" = "PLACEHOLDER";
 "snB-Sp-SAz.segmentTitles[1]" = "PLACEHOLDER";
 /* Generate Button */
-"qEO-z9-prC.text" = "Generate Code";
+"aBE-FK-kol.configuration.title" = "Generate Code";

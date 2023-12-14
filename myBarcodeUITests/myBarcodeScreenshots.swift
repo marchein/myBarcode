@@ -117,7 +117,7 @@ final class myBarcodeScreenshots: XCTestCase {
         tablesQuery.buttons["Code generieren"].tap()
         sleep(3)
         saveScreenshot(name: "02_generated_\(mode).jpeg")
-        tablesQuery.buttons["Generierten Code exportieren"].tap()
+        tablesQuery.buttons["Teilen"].tap()
         sleep(1)
         saveScreenshot(name: "03_shared_\(mode).jpeg")
         if app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Schließen"].exists {
@@ -179,7 +179,7 @@ final class myBarcodeScreenshots: XCTestCase {
         tablesQuery.buttons["Generate Code"].tap()
         sleep(3)
         saveScreenshot(name: "02_generated_\(mode).jpeg")
-        tablesQuery.buttons["Export generated QR-code"].tap()
+        tablesQuery.buttons["Share"].tap()
         sleep(1)
         saveScreenshot(name: "03_shared_\(mode).jpeg")
         if app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Close"].exists {

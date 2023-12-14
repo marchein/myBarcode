@@ -139,7 +139,7 @@
 "CHANGELOG_HEADLINE" = "Neu bei myBarcode";
 "CHANGELOG_CONTINUE" = "Weiter";
 /* 2.0 */
-"CHANGELOG_2_0_TOP1_TITLE" = "Ein neuer Name";
+"CHANGELOG_2_0_TOP1_TITLE" = "Neuer Name";
 "CHANGELOG_2_0_TOP1_SUBTITLE" = "myQRcode heißt nun myBarcode.\nDu kannst nun, nicht nur QR-Codes, sondern auch weitere Barcode Typen generieren und scannen.";
 "CHANGELOG_2_0_TOP2_TITLE" = "Neue Code Typen zum Generieren";
 "CHANGELOG_2_0_TOP2_SUBTITLE" = "Zusätzlich zu QR-Codes können nun Aztec, Code128 und PDF417 Codes erstellt werden.";

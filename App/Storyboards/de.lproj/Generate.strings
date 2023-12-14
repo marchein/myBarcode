@@ -18,7 +18,7 @@
 "Un4-9b-sBJ.title" = "Item";
 
 /* Class = "UIButton"; normalTitle = "Generierten QR-Code exportieren"; ObjectID = "X4f-wI-1Pm"; */
-"X4f-wI-1Pm.normalTitle" = "Generierten Code exportieren";
+"X4f-wI-1Pm.normalTitle" = "Teilen";
 
 /* Class = "UITabBarItem"; title = "Generieren"; ObjectID = "YWT-57-rL4"; */
 "YWT-57-rL4.title" = "Generieren";
@@ -43,9 +43,9 @@
 /* XY Items left placeholder */
 "ZNT-9e-QHC.text" = "XYZ Zeichen verbleibend";
 /* Templates Button */
-"beF-PC-LeV.text" = "Vorlagen";
+"yyP-HG-gaD.contentConfiguration.text" = "Vorlagen";
 /* Use last Templazte Button */
-"vZP-N5-XQU.text" = "Letzte Vorlage erneut verwenden";
+"qXI-71-Ho1.contentConfiguration.text" = "Letzte Vorlage erneut verwenden";
 
 /* Templates View Controller */
 /* Title */
@@ -65,4 +65,4 @@
 "snB-Sp-SAz.segmentTitles[0]" = "PLACEHOLDER";
 "snB-Sp-SAz.segmentTitles[1]" = "PLACEHOLDER";
 /* Generate Button */
-"qEO-z9-prC.text" = "Code generieren";
+"aBE-FK-kol.configuration.title" = "Code generieren";

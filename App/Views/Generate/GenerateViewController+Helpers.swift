@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 import WhatsNewKit
 
 extension GenerateViewController {
@@ -36,13 +37,14 @@ extension GenerateViewController {
         let hasNoPlaceholderText = codeContentTextView.text! != codePlaceholder
         
         generateButton.isEnabled = hasContent && contentInLimit && hasNoPlaceholderText
+        generateButton.alpha = generateButton.isEnabled ? 1.0 : 0.6
     }
     
     // MARK: - View
     func resetView() {
         resignTextViewFirstResponder()
         setClearButton()
-        generateButton.isEnabled = false
+        checkIfGenerationIsPossible()
         codeImageView.isUserInteractionEnabled = false
         codeImageView.image = #imageLiteral(resourceName: "Blank QR")
         codeContentTextView.text = nil
@@ -97,11 +99,13 @@ extension GenerateViewController {
                     let resultImage = code.generateImage()
                     self.displayCodeImage(image: resultImage)
                     incrementCodeValue(of: localStoreKeys.codeGenerated)
+                                       
                     let historyDisabled = UserDefaults.standard.bool(forKey: localStoreKeys.historyDisabled)
                     if addToHistory && !historyDisabled {
                         code.addToCoreData()
                     }
                     self.generateButton.isEnabled = false
+                    self.generateButton.alpha = self.generateButton.isEnabled ? 1.0 : 0.6
                     
                     myBarcodeMatomo.track(action: myBarcodeMatomo.generateAction, name: myBarcodeMatomo.generateGeneratedQR, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeGenerated)))
                 }
@@ -136,7 +140,7 @@ extension GenerateViewController {
                     .init(
                         image: .init(
                             systemName: "barcode",
-                            foregroundColor: .black
+                            foregroundColor: Color(uiColor: .label)
                         ),
                         title: .init("CHANGELOG_2_0_TOP2_TITLE".localized),
                         subtitle: .init("CHANGELOG_2_0_TOP2_SUBTITLE".localized)
