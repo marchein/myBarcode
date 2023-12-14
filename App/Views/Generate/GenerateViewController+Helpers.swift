@@ -93,7 +93,8 @@ extension GenerateViewController {
                     let resultImage = code.generateImage()
                     self.displayCodeImage(image: resultImage)
                     incrementCodeValue(of: localStoreKeys.codeGenerated)
-                    if addToHistory {
+                    let historyDisabled = UserDefaults.standard.bool(forKey: localStoreKeys.historyDisabled)
+                    if addToHistory && !historyDisabled {
                         code.addToCoreData()
                     }
                     self.generateButton.isEnabled = false

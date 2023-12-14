@@ -18,9 +18,9 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
     @IBOutlet var contactMailCell: UITableViewCell!
     @IBOutlet var developerTwitterCell: UITableViewCell!
     @IBOutlet var selectedDefaultCode: UILabel!
-    
     // If only the selected Code type should be displayed on the start page
     @IBOutlet weak var showOnlyDefaultCodeSwitch: UISwitch!
+    @IBOutlet weak var disableHistorySwitch: UISwitch!
     @IBOutlet var appStoreCell: UITableViewCell!
     @IBOutlet var rateCell: UITableViewCell!
     @IBOutlet var developerCell: UITableViewCell!
@@ -46,8 +46,9 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
     fileprivate func reconfigureView() {
         configureNavigator()
         
-        self.updateCurrentTab()
-        self.updateDefaultCode()
+        updateCurrentTab()
+        updateDefaultCode()
+        updateHistoryDisabled()
         
         tableView.reloadData()
     }
@@ -71,10 +72,21 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
         let resultValue = PossibleCodes(rawValue: UserDefaults.standard.integer(forKey: localStoreKeys.defaultCode)) ?? PossibleCodes.QR
         self.selectedDefaultCode.text = myBarcode.codeValues[resultValue]
     }
-    
+        
     @IBAction func defaultCodeSwitchChanged(_ sender: Any) {
         let switchObj = sender as? UISwitch, value = switchObj?.isOn ?? false
         UserDefaults.standard.set(value, forKey: localStoreKeys.showOnlyDefaultCode)
+        UserDefaults.standard.synchronize()
+    }
+    
+    func updateHistoryDisabled() {
+        let historyDisabled = UserDefaults.standard.bool(forKey: localStoreKeys.historyDisabled)
+        self.disableHistorySwitch.isOn = historyDisabled
+    }
+    
+    @IBAction func disableHistorySwitchChanged(_ sender: Any) {
+        let switchObj = sender as? UISwitch, value = switchObj?.isOn ?? false
+        UserDefaults.standard.set(value, forKey: localStoreKeys.historyDisabled)
         UserDefaults.standard.synchronize()
     }
     

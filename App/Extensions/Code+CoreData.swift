@@ -10,7 +10,7 @@ import UIKit
 
 extension Code {
     @discardableResult
-    func addToCoreData() -> HistoryItem {
+    func addToCoreData(save: Bool = true) -> HistoryItem {
         guard
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
         else {
@@ -19,6 +19,7 @@ extension Code {
 
         let managedObjectContext = appDelegate.persistentContainer.viewContext
         let newItem = HistoryItem(context: managedObjectContext)
+        
         newItem.content = self.content
         newItem.date = self.date
         newItem.category = self.category == HistoryCategory.generate
@@ -33,10 +34,16 @@ extension Code {
             newItem.type = myBarcode.codeValues[.QR]
         }
         
+        
+        
         do {
             try managedObjectContext.save()
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
+        }
+        
+        if !save {
+            managedObjectContext.delete(newItem)
         }
         return newItem
     }

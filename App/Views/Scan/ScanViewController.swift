@@ -24,6 +24,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     var isReadyToScan = false
     var codeResult: String?
     var isSetup = false
+    var historyDisabled = false
     
     let imageEN = #imageLiteral(resourceName: "myQRcode_EN")
     let imageDE = #imageLiteral(resourceName: "myQRcode_DE")
@@ -51,6 +52,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         if isSetup {
             resetScanner()
         }
+        setHistory()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -221,7 +223,8 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         hapticsGenerator.notificationOccurred(.success)
 
         codeResult = code.content
-        let historyItem = code.addToCoreData()
+        
+        let historyItem = code.addToCoreData(save: !historyDisabled)
         
         incrementCodeValue(of: localStoreKeys.codeScanned)
         
@@ -310,6 +313,16 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             tabbarAppearance.configureWithDefaultBackground()
             tabBarController?.tabBar.standardAppearance = tabbarAppearance
             tabBarController?.tabBar.scrollEdgeAppearance = tabbarAppearance
+        }
+    }
+    
+    func setHistory() {
+        historyDisabled = UserDefaults.standard.bool(forKey: localStoreKeys.historyDisabled)
+
+        if #available(iOS 16.0, *) {
+            historyButton.isHidden = historyDisabled
+        } else {
+            historyButton.isEnabled = historyDisabled
         }
     }
 }

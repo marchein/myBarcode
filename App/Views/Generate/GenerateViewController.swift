@@ -25,6 +25,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     @IBOutlet var historyButton: UIBarButtonItem!
     
     var hideCodeTypeSelector = false
+    var historyDisabled = false
     var selectedCodeType: PossibleCodes!
     let hapticsGenerator = UINotificationFeedbackGenerator()
     var codeImage: CIImage!
@@ -49,6 +50,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         setupTextView()
         setupSegmentedControl()
         setDefaultCodeType()
+        setHistory()
         
         setClearButton()
         setMaxCharacterLabel()
@@ -70,9 +72,11 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
             UserDefaults.standard.set(TabOption.GENERATE.rawValue, forKey: localStoreKeys.defaultTab)
             UserDefaults.standard.set(false, forKey: localStoreKeys.showOnlyDefaultCode)
             UserDefaults.standard.set(PossibleCodes.QR.rawValue, forKey: localStoreKeys.defaultCode)
-            UserDefaults.standard.set(true, forKey: localStoreKeys.appSetup)
+            UserDefaults.standard.set(false, forKey: localStoreKeys.historyDisabled)
             UserDefaults.standard.set(0, forKey: localStoreKeys.codeGenerated)
             UserDefaults.standard.set(0, forKey: localStoreKeys.codeScanned)
+            UserDefaults.standard.set(true, forKey: localStoreKeys.appSetup)
+            
             UserDefaults.standard.synchronize()
         }
     }
@@ -122,6 +126,16 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         checkIfGenerationIsPossible()
         
         tableView.reloadData()
+    }
+    
+    func setHistory() {
+        historyDisabled = UserDefaults.standard.bool(forKey: localStoreKeys.historyDisabled)
+
+        if #available(iOS 16.0, *) {
+            historyButton.isHidden = historyDisabled
+        } else {
+            historyButton.isEnabled = historyDisabled
+        }
     }
     
     func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem] {
@@ -237,6 +251,8 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         hideCodeTypeSelector = UserDefaults.standard.bool(forKey: localStoreKeys.showOnlyDefaultCode)
         // Which code should be selected
         setDefaultCodeType()
+        // Show/Hide History
+        setHistory()
         tableView.reloadData()
     }
     

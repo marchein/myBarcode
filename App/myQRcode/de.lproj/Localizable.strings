@@ -124,6 +124,7 @@
 "TEMPLATES_PLACEHOLDER_WIFI_NAME" = "WLAN Name";
 
 /* Settings */
+"SETTINGS_DISABLE_HISTORY_HINT" = "Deaktiviert das Hinzufügen von generierten oder gescannten Codes zur Historie";
 "SETTINGS_DEVELOPER_GREETING" = "Erstellt mit ❤️ in Trier";
 
 /* Tab Selection */

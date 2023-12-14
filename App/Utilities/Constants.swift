@@ -26,6 +26,8 @@ struct localStoreKeys {
     
     static let showOnlyDefaultCode = "showOnlyDefaultCode"
     static let defaultCode = "defaultSelectedCode"
+    
+    static let historyDisabled = "historyDisabled"
 }
 
 // MARK: - Cells

@@ -12,11 +12,15 @@ import UIKit
 // MARK: - Table View Extension
 
 extension SettingsTableViewController {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return nil
+    }
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 0 {
             return "Version \(myBarcode.versionString) (Build: \(myBarcode.buildNumber))"
-        }
-        if section == tableView.numberOfSections - 1 {
+        } else if section == 1 {
+            return "SETTINGS_DISABLE_HISTORY_HINT".localized
+        } else if section == tableView.numberOfSections - 1 {
             return "SETTINGS_DEVELOPER_GREETING".localized
         }
         return nil

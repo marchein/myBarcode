@@ -120,6 +120,7 @@
 "TEMPLATES_PLACEHOLDER_WIFI_NAME" = "WiFi Name";
 
 /* Settings */
+"SETTINGS_DISABLE_HISTORY_HINT" = "Disables adding generated or scanned codes to the History.";
 "SETTINGS_DEVELOPER_GREETING" = "Created with ❤️ in Trier";
 
 /* Tab Selection */
