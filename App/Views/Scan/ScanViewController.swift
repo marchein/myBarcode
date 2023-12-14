@@ -333,7 +333,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         if #available(iOS 16.0, *) {
             historyButton.isHidden = historyDisabled
         } else {
-            historyButton.isEnabled = historyDisabled
+            historyButton.isEnabled = !historyDisabled
         }
     }
 }

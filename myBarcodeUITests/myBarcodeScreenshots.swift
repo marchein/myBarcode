@@ -87,7 +87,14 @@ final class myBarcodeScreenshots: XCTestCase {
     }
     
     func testScreenshots() {
-        if Locale.current.region?.identifier == "de" {
+        var localeCode: String?
+        if #available(iOS 16, *) {
+            localeCode = Locale.current.language.languageCode?.identifier ?? "de"
+        } else {
+            localeCode = Locale.current.languageCode ?? "de"
+        }
+        
+        if localeCode == "de" {
             createGermanScreenshots(darkMode: false)
             createGermanScreenshots(darkMode: true)
             return
@@ -97,7 +104,7 @@ final class myBarcodeScreenshots: XCTestCase {
         
         /*
          Clean afterwards:
-         rm 01_start_dark.jpeg 02_entered_light.jpeg 03_generated_dark.jpeg 04_shared_dark.jpeg 05_scanner_light.jpeg 06_scanner_result_dark.jpeg 07_scanner_history_dark.jpeg 08_templates_light.jpeg 09_templates_setup_dark.jpeg 10_templates_generated_dark.jpeg
+         rm 01_start_dark.jpeg 02_generated_light.jpeg 03_shared_dark.jpeg 04_scanner_light.jpeg 05_scanner_result_dark.jpeg 06_scanner_history_dark.jpeg 07_templates_light.jpeg 08_templates_setup_dark.jpeg 09_templates_generated_dark.jpeg 10_settings_light.jpeg
          */
     }
     
@@ -131,9 +138,7 @@ final class myBarcodeScreenshots: XCTestCase {
         saveScreenshot(name: "04_scanner_\(mode).jpeg")
         
         app.tabBars.buttons["Scannen"].tap()
-        
-        let items = app.images.allElementsBoundByAccessibilityElement
-        
+                
         app.images["demoImage"].tap()
         
         sleep(5)
@@ -153,7 +158,7 @@ final class myBarcodeScreenshots: XCTestCase {
         saveScreenshot(name: "08_templates_setup_\(mode).jpeg")
         
         tablesQuery/*@START_MENU_TOKEN@*/.textFields["hello@placeholder.com"]/*[[".cells.textFields[\"hello@placeholder.com\"]",".textFields[\"hello@placeholder.com\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery.textFields["hello@placeholder.com"].typeText("dev@marc-hein.de")
+        tablesQuery.textFields["hello@placeholder.com"].typeText("hilfe@myBarcode-app.de")
         
         tablesQuery.cells["generateQRCodeFromTemplateCell"].staticTexts.firstMatch.tap()
         sleep(2)
@@ -193,9 +198,7 @@ final class myBarcodeScreenshots: XCTestCase {
         saveScreenshot(name: "04_scanner_\(mode).jpeg")
         
         app.tabBars.buttons["Scan"].tap()
-        
-        let items = app.images.allElementsBoundByAccessibilityElement
-        
+                
         app.images["demoImage"].tap()
         
         sleep(5)
@@ -215,7 +218,7 @@ final class myBarcodeScreenshots: XCTestCase {
         saveScreenshot(name: "08_templates_setup_\(mode).jpeg")
         
         tablesQuery/*@START_MENU_TOKEN@*/.textFields["hello@placeholder.com"]/*[[".cells.textFields[\"hello@placeholder.com\"]",".textFields[\"hello@placeholder.com\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery.textFields["hello@placeholder.com"].typeText("dev@marc-hein.de")
+        tablesQuery.textFields["hello@placeholder.com"].typeText("help@myBarcode-app.com")
         
         tablesQuery.cells["generateQRCodeFromTemplateCell"].staticTexts.firstMatch.tap()
         sleep(2)

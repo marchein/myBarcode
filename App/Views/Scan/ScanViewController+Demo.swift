@@ -47,10 +47,25 @@ extension ScanViewController {
     
     func setupDemoHistory() {
         let demoStrings = ["https://marc-hein.de", "myBarcode", "BLÅHAJ", "Whatever", "0000 is the best pin"]
+        let demoType: [PossibleCodes] = [.QR, .AZTEC, .PDF417, .QR, .CODE128]
         
-        for string in demoStrings {
+        for (index, string) in demoStrings.enumerated() {
             let code = Code(content: string, category: .scan)
-            self.finishedScanning(code: code, performSegueValue: false)
+            let type = demoType[index]
+            var actualCode: Code!
+            switch type {
+            case .AZTEC:
+                actualCode = Aztec(code: code)
+            case .PDF417:
+                actualCode = PDF417(code: code)
+            case .CODE128:
+                actualCode = Code128(code: code)
+            case .QR:
+                fallthrough
+            default:
+                actualCode = QRCode(code: code)
+            }
+            self.finishedScanning(code: actualCode, performSegueValue: false)
         }
     }
     
