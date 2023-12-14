@@ -63,7 +63,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5B768E5C2B29FEC60092BE7D"
+               BlueprintIdentifier = "5B4EEE932B2A4DF600D36369"
                BuildableName = "myBarcodeUITests.xctest"
                BlueprintName = "myBarcodeUITests"
                ReferencedContainer = "container:myBarcode.xcodeproj">
@@ -75,6 +75,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = "en"
       region = "US"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"

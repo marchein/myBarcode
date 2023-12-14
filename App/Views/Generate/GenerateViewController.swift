@@ -56,6 +56,8 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
                
         tableView.reloadData()
         
+        showChangelog()
+        
         myBarcodeMatomo.track(action: myBarcodeMatomo.basicAction, name: myBarcodeMatomo.generateViewShown)
     }
     

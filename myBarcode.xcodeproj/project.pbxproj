@@ -27,6 +27,7 @@
 		5B4E239E2B26167D002F6960 /* SettingsDefaultCodeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E239D2B26167D002F6960 /* SettingsDefaultCodeTableViewController.swift */; };
 		5B4EEE972B2A4DF600D36369 /* myBarcodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4EEE962B2A4DF600D36369 /* myBarcodeUITests.swift */; };
 		5B4EEE992B2A4DF600D36369 /* myBarcodeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4EEE982B2A4DF600D36369 /* myBarcodeUITestsLaunchTests.swift */; };
+		5B586C932B2ADF020074E4EA /* WhatsNewKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5B586C922B2ADF020074E4EA /* WhatsNewKit */; };
 		5B59970A29C75AC600BC0E78 /* GenerateViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59970929C75AC600BC0E78 /* GenerateViewController+TableView.swift */; };
 		5B59970C29C75BBA00BC0E78 /* GenerateViewController+TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59970B29C75BBA00BC0E78 /* GenerateViewController+TextView.swift */; };
 		5B59970E29C75CD900BC0E78 /* GenerateViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59970D29C75CD900BC0E78 /* GenerateViewController+Helpers.swift */; };
@@ -37,8 +38,6 @@
 		5B67630923395B6500C563FD /* Generate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F2023395975005804AA /* Generate.storyboard */; };
 		5B69C0B32B2A4E1A0080D11E /* SimulatorStatusMagic in Frameworks */ = {isa = PBXBuildFile; productRef = 5B69C0B22B2A4E1A0080D11E /* SimulatorStatusMagic */; };
 		5B69C0B42B2A4E1A0080D11E /* SimulatorStatusMagic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 5B69C0B22B2A4E1A0080D11E /* SimulatorStatusMagic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		5B69C0B72B2A4E460080D11E /* SimulatorStatusMagic in Frameworks */ = {isa = PBXBuildFile; productRef = 5B69C0B62B2A4E460080D11E /* SimulatorStatusMagic */; };
-		5B69C0B82B2A4E460080D11E /* SimulatorStatusMagic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 5B69C0B62B2A4E460080D11E /* SimulatorStatusMagic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		5B69C1072B2A50070080D11E /* UIDevice+Modelname.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4193298D28B600493175 /* UIDevice+Modelname.swift */; };
 		5B69C1082B2A50070080D11E /* myBarcodeScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B768E562B29FD270092BE7D /* myBarcodeScreenshots.swift */; };
 		5B80B21129967C2300C87939 /* ScanViewController+PHPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80B21029967C2300C87939 /* ScanViewController+PHPicker.swift */; };
@@ -122,7 +121,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5B69C0B82B2A4E460080D11E /* SimulatorStatusMagic in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,9 +230,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B69C0B72B2A4E460080D11E /* SimulatorStatusMagic in Frameworks */,
 				5B9C3BDB2A286F5D00B03B53 /* MatomoTracker in Frameworks */,
 				5BF419A82A00106100BA6EB6 /* HeinHelpers in Frameworks */,
+				5B586C932B2ADF020074E4EA /* WhatsNewKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +547,7 @@
 			packageProductDependencies = (
 				5BF419A72A00106100BA6EB6 /* HeinHelpers */,
 				5B9C3BDA2A286F5D00B03B53 /* MatomoTracker */,
-				5B69C0B62B2A4E460080D11E /* SimulatorStatusMagic */,
+				5B586C922B2ADF020074E4EA /* WhatsNewKit */,
 			);
 			productName = myQRgenerator;
 			productReference = 5B2AE30C21AA017E00976FE2 /* myBarcode.app */;
@@ -616,6 +614,7 @@
 				5B4D14EA2998F0900000BC94 /* XCRemoteSwiftPackageReference "HeinHelpers" */,
 				5B9C3BD92A286F5D00B03B53 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */,
 				5B09EBC62A2B9D61009A8BBB /* XCRemoteSwiftPackageReference "SimulatorStatusMagic" */,
+				5B586C912B2ADF020074E4EA /* XCRemoteSwiftPackageReference "WhatsNewKit" */,
 			);
 			productRefGroup = 5B2AE30D21AA017E00976FE2 /* Products */;
 			projectDirPath = "";
@@ -1161,6 +1160,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		5B586C912B2ADF020074E4EA /* XCRemoteSwiftPackageReference "WhatsNewKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/WhatsNewKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 		5B9C3BD92A286F5D00B03B53 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/matomo-org/matomo-sdk-ios.git";
@@ -1172,12 +1179,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5B69C0B22B2A4E1A0080D11E /* SimulatorStatusMagic */ = {
+		5B586C922B2ADF020074E4EA /* WhatsNewKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B09EBC62A2B9D61009A8BBB /* XCRemoteSwiftPackageReference "SimulatorStatusMagic" */;
-			productName = SimulatorStatusMagic;
+			package = 5B586C912B2ADF020074E4EA /* XCRemoteSwiftPackageReference "WhatsNewKit" */;
+			productName = WhatsNewKit;
 		};
-		5B69C0B62B2A4E460080D11E /* SimulatorStatusMagic */ = {
+		5B69C0B22B2A4E1A0080D11E /* SimulatorStatusMagic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5B09EBC62A2B9D61009A8BBB /* XCRemoteSwiftPackageReference "SimulatorStatusMagic" */;
 			productName = SimulatorStatusMagic;

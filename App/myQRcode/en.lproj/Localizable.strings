@@ -127,3 +127,16 @@
 "TAB_GENERATE" = "Generate";
 "TAB_SCAN" = "Scan";
 "TAB_SELECTION_FOOTER" = "Here you can select which tab should be loaded when starting myBarcode.";
+
+/* Changelog */
+"CHANGELOG_HEADLINE" = "What's New in myBarcode";
+"CHANGELOG_CONTINUE" = "Continue";
+/* 2.0 */
+"CHANGELOG_2_0_TOP1_TITLE" = "New Name";
+"CHANGELOG_2_0_TOP1_SUBTITLE" = "myQRcode is now called myBarcode.\nYou can now generate and scan not only QR codes, but also other barcode types.";
+"CHANGELOG_2_0_TOP2_TITLE" = "More Code Types to Generate";
+"CHANGELOG_2_0_TOP2_SUBTITLE" = "In addition to QR codes, Aztec, Code128 and PDF417 codes can now be generated.";
+"CHANGELOG_2_0_TOP3_TITLE" = "More Code Types to Scan";
+"CHANGELOG_2_0_TOP3_SUBTITLE" = "It is also possible to scan various new barcode types.";
+"CHANGELOG_2_0_TOP4_TITLE" = "New Options";
+"CHANGELOG_2_0_TOP4_SUBTITLE" = "You primarily use myBarcode to scan codes? Then you can make this your default behavior in the settings.";
