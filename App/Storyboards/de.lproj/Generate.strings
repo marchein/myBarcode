@@ -1,0 +1,68 @@
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "1F2-sl-1iK"; */
+"1F2-sl-1iK.title" = "Item";
+
+/* Class = "UITabBarItem"; title = "Generieren"; ObjectID = "Dip-om-eee"; */
+"Dip-om-eee.title" = "Generieren";
+
+/* Class = "UITextField"; placeholder = "Inhalt des QR-Codes"; ObjectID = "DwH-hJ-Ipd"; */
+"DwH-hJ-Ipd.placeholder" = "Inhalt des Codes";
+
+/* Class = "UINavigationController"; title = "Navigation"; ObjectID = "GAg-Vh-DJw"; */
+"GAg-Vh-DJw.title" = "Navigation";
+
+/* Class = "UIBarButtonItem"; title = "About"; ObjectID = "Hud-aR-JWF"; */
+"Hud-aR-JWF.title" = "About";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "Un4-9b-sBJ"; */
+"Un4-9b-sBJ.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Generierten QR-Code exportieren"; ObjectID = "X4f-wI-1Pm"; */
+"X4f-wI-1Pm.normalTitle" = "Teilen";
+
+/* Class = "UITabBarItem"; title = "Generieren"; ObjectID = "YWT-57-rL4"; */
+"YWT-57-rL4.title" = "Generieren";
+
+/* Class = "UIButton"; normalTitle = "QR-Code generieren"; ObjectID = "aBE-FK-kol"; */
+"aBE-FK-kol.normalTitle" = "Code generieren";
+
+/* Class = "UINavigationItem"; title = "Generieren"; ObjectID = "hFD-uy-cC7"; */
+"hFD-uy-cC7.title" = "Generieren";
+
+/* Class = "UIBarButtonItem"; title = "About"; ObjectID = "mbM-68-iH4"; */
+"mbM-68-iH4.title" = "Einstellungen";
+
+/* Class = "UIBarButtonItem"; title = "About"; ObjectID = "jbV-8l-EOS"; */
+"jbV-8l-EOS.title" = "Verlauf";
+
+/* Class = "UILabel"; text = "Bisher kein QR-Code generiert"; ObjectID = "njC-gD-BiU"; */
+"njC-gD-BiU.text" = "Bisher kein Code generiert";
+
+
+/* Generate View Controller */
+/* XY Items left placeholder */
+"ZNT-9e-QHC.text" = "XYZ Zeichen verbleibend";
+/* Templates Button */
+"yyP-HG-gaD.contentConfiguration.text" = "Vorlagen";
+/* Use last Templazte Button */
+"qXI-71-Ho1.contentConfiguration.text" = "Letzte Vorlage erneut verwenden";
+
+/* Templates View Controller */
+/* Title */
+"ygU-Zj-EFm.title" = "Vorlagen";
+/* Close Button */
+"Z2y-HK-CYq.title" = "Schließen";
+/* Template Name Placeholder */
+"XNl-he-7ff.text" = "TEMPLATE_NAME";
+
+
+/* Enter Data to Template View Controller */
+/* Title */
+"wRj-ek-yHH.title" = "Daten eingeben";
+/* Close Button */
+"Ueu-BN-pe5.title" = "Schließen";
+/* Segmented Control */
+"snB-Sp-SAz.segmentTitles[0]" = "PLACEHOLDER";
+"snB-Sp-SAz.segmentTitles[1]" = "PLACEHOLDER";
+/* Generate Button */
+"aBE-FK-kol.configuration.title" = "Code generieren";

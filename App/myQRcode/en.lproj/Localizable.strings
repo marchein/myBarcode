@@ -1,0 +1,144 @@
+/* 
+  Localizable.strings
+  myQRcode
+
+  Created by Marc Hein on 11.11.18.
+  Copyright © 2023 Marc Hein. All rights reserved.
+*/
+
+"Build number" = "Build number";
+"support_mail_body" = "Why are you contacting the support of myBarcode?";
+"Beta testers" = "Beta testers";
+"Developers" = "Developers";
+"tip_greeting" = "Hey there";
+"tip_desc" = "If you are really enjoying myBarcode, you can leave a tip here. Tips keep up the development, as I really enjoy what I'm doing here.\nEven if you don't, thank you for considering!";
+"transaction_error" = "There was an error while finishing the transaction.";
+"no_tips" = "No tips found";
+"no_tips_desc" = "Either your device has problems fetching data from Apple or Apple has issues. Please try again!";
+"tip_success" = "Tip successful!";
+"tip_success_message" = "Thank you so much for your tip!";
+"loading" = "Loading...";
+"Error" = "Error";
+"mail_error" = "There is no mail account configured in Apple Mail. Please contact us at %@";
+"light_icon" = "Light";
+"dark_icon" = "Dark";
+"date_scanning" = "Time of scanning";
+"result_headline" = "Content of scanned code";
+"no_scan_history" = "Currently no codes have been scanned";
+"no_generate_history" = "Currently no codes have been generated";
+"message_okay_action" = "Got it";
+
+"no_qr_code_error" = "No QR-Code";
+"no_qr_code_error_description" = "myBarcode was unable to detect any QR-Codes in the selected image.\n\nPlease note: myBarcode is only able to scan QR-Codes from images.";
+
+/* Generate */
+"GENERATE_CHARS_LEFT" = "characters left";
+"GENERATE_CHARS_TOO_MUCH" = "characters above the limit";
+"GENERATE_CODE_PLACEHOLDER" = "Content of the code";
+"GENERATED" = "Generated";
+"SCANNED" = "Scanned";
+"CODE" = "Code";
+
+/* Templates */
+"TEMPLATE" = "Template";
+/* WiFi Template */
+"wifi_template" = "WiFi login data";
+"wifi_security" = "Security of the WiFi network";
+"wifi_name" = "Name of the WiFi network";
+"wifi_password" = "Password of the WiFi network";
+/* E-Mail Template */
+"email_template" = "Email address";
+"email_address" = "Email address";
+/* Phone Template */
+"phone_template" = "Phone call";
+"phone_number" = "Phone number";
+/* Message Template */
+"message_template" = "Phone message";
+"message_number" = "Phone number";
+
+/* Templates */
+/* Categories headlines */
+"TEMPLATE_CATEGORY_SOCIAL" = "Social networks";
+"TEMPLATE_CATEGORY_SOCIAL_MESSAGING" = "Messaging services";
+"TEMPLATE_CATEGORY_PHONE" = "Phone";
+"TEMPLATE_CATEGORY_MAIL" = "Mail";
+"TEMPLATE_CATEGORY_MISCELLANEOUS" = "Miscellaneous";
+
+/* Facebook */
+"TEMPLATE_FACEBOOK_USERNAME" = "Username";
+"TEMPLATE_FACEBOOK_USERNAME_PLACEHOLDER" = "Your Facebook username";
+
+/* YouTube */
+"TEMPLATE_YOUTUBE_USERNAME" = "Username";
+"TEMPLATE_YOUTUBE_USERNAME_PLACEHOLDER" = "Your YouTube @username";
+
+/* Instagram */
+"TEMPLATE_INSTAGRAM_USERNAME" = "Username";
+"TEMPLATE_INSTAGRAM_USERNAME_PLACEHOLDER" = "Your Instagram username";
+
+/* TikTok */
+"TEMPLATE_TIKTOK_USERNAME" = "Username";
+"TEMPLATE_TIKTOK_USERNAME_PLACEHOLDER" = "Your TikTok @username";
+
+/* Reddit */
+"TEMPLATE_REDDIT_USERNAME" = "Username";
+"TEMPLATE_REDDIT_USERNAME_PLACEHOLDER" = "Your Reddit username";
+
+/* Twitter */
+"TEMPLATE_TWITTER_USERNAME" = "Username";
+"TEMPLATE_TWITTER_USERNAME_PLACEHOLDER" = "Your Twitter @username";
+
+/* Mastodon */
+"TEMPLATE_MASTODON_INSTANCE" = "Instance";
+"TEMPLATE_MASTODON_INSTANCE_PLACEHOLDER" = "e.g. mastodon.social";
+"TEMPLATE_MASTODON_USERNAME" = "Username";
+"TEMPLATE_MASTODON_USERNAME_PLACEHOLDER" = "Your Mastodon @username";
+
+/* Twitch */
+"TEMPLATE_TWITCH_USERNAME" = "Username";
+"TEMPLATE_TWITCH_USERNAME_PLACEHOLDER" = "Your Twitch username";
+
+
+/* Telegram */
+"TEMPLATE_TELEGRAM_USERNAME" = "Username";
+"TEMPLATE_TELEGRAM_USERNAME_PLACEHOLDER" = "Your Telegram @username or number";
+
+/* Snapchat */
+"TEMPLATE_SNAPCHAT_USERNAME" = "Username";
+"TEMPLATE_SNAPCHAT_USERNAME_PLACEHOLDER" = "Your Snapchat username";
+
+/* Mail */
+"TEMPLATE_EMAIL_WITH_CONTENT" = "Email with content";
+"TEMPLATE_EMAIL_WITH_CONTENT_RECEIPIENT" = "Recipient";
+"TEMPLATE_EMAIL_WITH_CONTENT_RECEIPIENT_PLACEHOLDER" = "recipient@provider.com";
+
+"TEMPLATE_EMAIL_WITH_CONTENT_SUBJECT" = "Email subject";
+"TEMPLATE_EMAIL_WITH_CONTENT_SUBJECT_PLACEHOLDER" = "Subject";
+
+"TEMPLATE_EMAIL_WITH_CONTENT_BODY" = "Body of the Email";
+"TEMPLATE_EMAIL_WITH_CONTENT_BODY_PLACEHOLDER" = "Message to recipient";
+
+"TEMPLATES_PLACEHOLDER_WIFI_NAME" = "WiFi Name";
+
+/* Settings */
+"SETTINGS_DISABLE_HISTORY_HINT" = "Disables adding generated or scanned codes to the History.";
+"SETTINGS_DEVELOPER_GREETING" = "Created with ❤️ in Trier";
+
+/* Tab Selection */
+"TAB_SELECTION_HEADER" = "Default tab";
+"TAB_GENERATE" = "Generate";
+"TAB_SCAN" = "Scan";
+"TAB_SELECTION_FOOTER" = "Here you can select which tab should be loaded when starting myBarcode.";
+
+/* Changelog */
+"CHANGELOG_HEADLINE" = "What's New in myBarcode";
+"CHANGELOG_CONTINUE" = "Continue";
+/* 2.0 */
+"CHANGELOG_2_0_TOP1_TITLE" = "New Name";
+"CHANGELOG_2_0_TOP1_SUBTITLE" = "myQRcode is now called myBarcode.\nYou can now generate and scan not only QR codes, but also other barcode types.";
+"CHANGELOG_2_0_TOP2_TITLE" = "More Code Types to Generate";
+"CHANGELOG_2_0_TOP2_SUBTITLE" = "In addition to QR codes, Aztec, Code128 and PDF417 codes can now be generated.";
+"CHANGELOG_2_0_TOP3_TITLE" = "More Code Types to Scan";
+"CHANGELOG_2_0_TOP3_SUBTITLE" = "It is also possible to scan various new barcode types.";
+"CHANGELOG_2_0_TOP4_TITLE" = "New Options";
+"CHANGELOG_2_0_TOP4_SUBTITLE" = "You primarily use myBarcode to scan codes? Then you can make this your default behavior in the settings.";

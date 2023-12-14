@@ -1,12 +1,14 @@
 //
 //  TemplateTestClass.swift
-//  myQRcodeTests
+//  myBarcodeTests
 //
 //  Created by Marc Hein on 07.02.23.
 //  Copyright © 2023 Marc Hein. All rights reserved.
 //
 
 import XCTest
+
+@testable import myBarcode
 
 final class TemplateTests: XCTestCase {
     func testTemplateActions() throws {

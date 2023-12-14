@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  myQRcode
+
+  Created by Marc Hein on 23.09.19.
+  Copyright © 2023 Marc Hein. All rights reserved.
+*/
+
+"NSCameraUsageDescription" = "This app needs access to your back camera to scan Codes";
+"NSPhotoLibraryAddUsageDescription" = "This app needs access to your photo library so it can save generated codes to your library";

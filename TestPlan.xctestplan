@@ -1,0 +1,33 @@
+{
+  "configurations" : [
+    {
+      "id" : "7C5E4948-61D6-4503-AE9D-7BCAEC1588EA",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:myBarcode.xcodeproj",
+        "identifier" : "5B1213A32992CA41007FDCE3",
+        "name" : "Tests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:myBarcode.xcodeproj",
+        "identifier" : "5B4EEE932B2A4DF600D36369",
+        "name" : "myBarcodeUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
