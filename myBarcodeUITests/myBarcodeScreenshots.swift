@@ -181,15 +181,14 @@ final class myBarcodeScreenshots: XCTestCase {
         let codeContentField = tablesQuery.textViews["codeContent"]
         codeContentField.tap()
         codeContentField.typeText("myBarcode is awesome!")
-        //saveScreenshot(name: "02_entered_\(mode).jpeg")
         tablesQuery.buttons["Generate Code"].tap()
         sleep(3)
         saveScreenshot(name: "02_generated_\(mode).jpeg")
         tablesQuery.buttons["Share"].tap()
         sleep(1)
         saveScreenshot(name: "03_shared_\(mode).jpeg")
-        if app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Close"].exists {
-            app/*@START_MENU_TOKEN@*/.navigationBars["UIActivityContentView"]/*[[".otherElements[\"ActivityListView\"].navigationBars[\"UIActivityContentView\"]",".navigationBars[\"UIActivityContentView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Close"].tap()
+        if  app.children(matching: .window)/*@START_MENU_TOKEN@*/.otherElements["PopoverDismissRegion"]/*[[".otherElements[\"Einblendmenü schließen\"]",".otherElements[\"PopoverDismissRegion\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists {
+            tablesQuery.buttons["Generate Code"].tap()
         } else {
             app.otherElements["PopoverDismissRegion"].tap()
         }
