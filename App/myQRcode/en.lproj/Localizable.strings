@@ -40,6 +40,7 @@
 "CODE" = "Code";
 
 /* Templates */
+"TEMPLATE" = "Template";
 /* WiFi Template */
 "wifi_template" = "WiFi login data";
 "wifi_security" = "Security of the WiFi network";

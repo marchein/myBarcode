@@ -81,6 +81,10 @@ extension GenerateViewController {
                 code = QRCode(code: code)
             }
             
+            if let usedTemplate = usedTemplate {
+                code.setTemplateName(name: usedTemplate.name)
+            }
+            
             let actualCodeType = selectedCodeType ?? .QR
             codeTypeSelector.selectedSegmentIndex = actualCodeType.rawValue
             codeTypeSelectorChanged(codeTypeSelector!)

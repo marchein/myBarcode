@@ -61,6 +61,7 @@
 
 
 /* Templates */
+"TEMPLATE" = "Vorlage";
 /* Categories headlines */
 "TEMPLATE_CATEGORY_SOCIAL" = "Soziale Netzwerke";
 "TEMPLATE_CATEGORY_SOCIAL_MESSAGING" = "Nachrichtendienste";

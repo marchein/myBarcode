@@ -20,7 +20,8 @@ class HistoryItemTableViewCell: UITableViewCell {
             
             let type = historyItem.type ?? myBarcode.codeValues[.QR] ?? "N/A"
             self.textLabel?.text = historyItem.content
-            self.detailTextLabel?.text = "\(historyItem.isoDate) - \(historyItem.isoTime) (\(type))"
+            let usedTemplate = historyItem.templateName != nil ? ",  \("TEMPLATE".localized): \(historyItem.templateName!)" : ""
+            self.detailTextLabel?.text = "\(historyItem.isoDate) - \(historyItem.isoTime) (\(type)\(usedTemplate))"
         }
     }
 

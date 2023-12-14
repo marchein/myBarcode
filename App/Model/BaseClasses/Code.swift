@@ -15,6 +15,7 @@ class Code {
     var displayName: String = "Code"
     var displayNameShort: String = "Code Short Name"
     var type: PossibleCodes
+    private var templateName: String?
     
     class var maxLength: Int {
         preconditionFailure("This method must be overridden")
@@ -37,5 +38,13 @@ class Code {
     
     var description: String {
         return "content=\(content), category=\(category), date=\(date)"
+    }
+    
+    func setTemplateName(name: String) {
+        self.templateName = name
+    }
+    
+    func getTemplateName() -> String? {
+        return templateName
     }
 }

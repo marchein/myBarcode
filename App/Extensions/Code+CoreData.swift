@@ -34,8 +34,11 @@ extension Code {
             newItem.type = myBarcode.codeValues[.QR]
         }
         
+        if let templateName = self.getTemplateName() {
+            newItem.templateName = templateName
+        }
         
-        
+                    
         do {
             try managedObjectContext.save()
         } catch let error as NSError {
