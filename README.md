@@ -1,4 +1,4 @@
-![myBarcode Logo](myBarcode/Assets.xcassets/AppIcon.appiconset/icon_83pt@2x.png)
+![myBarcode Logo](App/Assets.xcassets/AppIcon.appiconset/Logo.png)
 # myBarcode
 Easy to use and feature rich Barcode generator and scanner
 
