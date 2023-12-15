@@ -8,7 +8,6 @@
 
 import XCTest
 import HeinHelpers
-import SimulatorStatusMagic
 
 @testable import myBarcode
 
@@ -39,10 +38,6 @@ final class myBarcodeScreenshots: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
-        SDStatusBarManager.sharedInstance().iPadDateEnabled = false
-        SDStatusBarManager.sharedInstance().timeString = "9:41"
-        SDStatusBarManager.sharedInstance().enableOverrides()
         continueAfterFailure = false
         app = XCUIApplication()
         let screenshotPath = create(directory: "Screenshots/", root: "/Users/marchein/Developer/")
@@ -52,13 +47,6 @@ final class myBarcodeScreenshots: XCTestCase {
         
         deviceScreenshotPath = create(directory: deviceName + " - " + deviceVersion, root: screenshotPath)
         
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-        
-        SDStatusBarManager.sharedInstance().disableOverrides()
     }
     
     func saveScreenshot(name: String) {
@@ -104,7 +92,7 @@ final class myBarcodeScreenshots: XCTestCase {
         
         /*
          Clean afterwards:
-         rm 01_start_dark.jpeg 02_generated_light.jpeg 03_shared_dark.jpeg 04_scanner_light.jpeg 05_scanner_result_dark.jpeg 06_scanner_history_dark.jpeg 07_templates_light.jpeg 08_templates_setup_dark.jpeg 09_templates_generated_dark.jpeg 10_settings_light.jpeg
+         rm 01_generated_QR_dark.jpeg  02_generated_PDF417_light.jpeg 03_scanner_light.jpeg  04_scanner_result_dark.jpeg  05_scanner_history_light.jpeg  06_settings_dark.jpeg
          */
     }
     
@@ -116,56 +104,48 @@ final class myBarcodeScreenshots: XCTestCase {
         
         app.launch()
         
-        saveScreenshot(name: "01_start_\(mode).jpeg")
         let tablesQuery = app.tables
         let codeContentField = tablesQuery.textViews["codeContent"]
         codeContentField.tap()
         codeContentField.typeText("myBarcode ist großartig!")
         tablesQuery.buttons["Code generieren"].tap()
         sleep(3)
-        saveScreenshot(name: "02_generated_\(mode).jpeg")
-        tablesQuery.buttons["Teilen"].tap()
-        sleep(1)
-        saveScreenshot(name: "03_shared_\(mode).jpeg")
-        if  app.children(matching: .window)/*@START_MENU_TOKEN@*/.otherElements["PopoverDismissRegion"]/*[[".otherElements[\"Einblendmenü schließen\"]",".otherElements[\"PopoverDismissRegion\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists {
-            tablesQuery.buttons["Code generieren"].tap()
-        } else {
-            app.otherElements["PopoverDismissRegion"].tap()
-        }
+        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Schließen"]/*[[".cells.buttons[\"Schließen\"]",".buttons[\"Schließen\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        codeContentField.tap()
+        codeContentField.typeText("myBarcode ist großartig!")
+        tablesQuery.buttons["Aztec"].tap()
+        tablesQuery.buttons["QR"].tap()
+        saveScreenshot(name: "01_generated_QR_\(mode).jpeg")
+        tablesQuery.buttons["PDF417"].tap()
+        tablesQuery.buttons["Code generieren"].tap()
+        sleep(3)
+        tablesQuery.buttons["Schließen"].tap()
+        codeContentField.tap()
+        codeContentField.typeText("myBarcode ist großartig!")
+        tablesQuery.buttons["Aztec"].tap()
+        tablesQuery.buttons["PDF417"].tap()
+        saveScreenshot(name: "02_generated_PDF417_\(mode).jpeg")
         
         app.tabBars.buttons["Scannen"].tap()
         sleep(2)
-        saveScreenshot(name: "04_scanner_\(mode).jpeg")
+        saveScreenshot(name: "03_scanner_\(mode).jpeg")
         
         app.tabBars.buttons["Scannen"].tap()
-                
+        
         app.images["demoImage"].tap()
         
         sleep(5)
-        saveScreenshot(name: "05_scanner_result_\(mode).jpeg")
+        saveScreenshot(name: "04_scanner_result_\(mode).jpeg")
         app.navigationBars["Ergebnis"].buttons["Schließen"].tap()
         app.navigationBars["Scannen"].buttons["Verlauf"].tap()
         
         sleep(2)
-        saveScreenshot(name: "06_scanner_history_\(mode).jpeg")
+        saveScreenshot(name: "05_scanner_history_\(mode).jpeg")
         app.navigationBars["Verlauf"].buttons["Schließen"].tap()
         
         app.tabBars.buttons["Generieren"].tap()
-        
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Vorlagen"]/*[[".cells.staticTexts[\"Vorlagen\"]",".staticTexts[\"Vorlagen\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        saveScreenshot(name: "07_templates_\(mode).jpeg")
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["E-Mail Adresse"]/*[[".cells.staticTexts[\"E-Mail Adresse\"]",".staticTexts[\"E-Mail Adresse\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        saveScreenshot(name: "08_templates_setup_\(mode).jpeg")
-        
-        tablesQuery/*@START_MENU_TOKEN@*/.textFields["hello@placeholder.com"]/*[[".cells.textFields[\"hello@placeholder.com\"]",".textFields[\"hello@placeholder.com\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery.textFields["hello@placeholder.com"].typeText("hilfe@myBarcode-app.de")
-        
-        tablesQuery.cells["generateQRCodeFromTemplateCell"].staticTexts.firstMatch.tap()
-        sleep(2)
-        saveScreenshot(name: "09_templates_generated_\(mode).jpeg")
-        
         app.navigationBars["Generieren"].buttons["Einstellungen"].tap()
-        saveScreenshot(name: "10_settings_\(mode).jpeg")
+        saveScreenshot(name: "06_settings_\(mode).jpeg")
         app.navigationBars["Einstellungen"].buttons["Schließen"].tap()
     }
     
@@ -197,7 +177,7 @@ final class myBarcodeScreenshots: XCTestCase {
         saveScreenshot(name: "04_scanner_\(mode).jpeg")
         
         app.tabBars.buttons["Scan"].tap()
-                
+        
         app.images["demoImage"].tap()
         
         sleep(5)

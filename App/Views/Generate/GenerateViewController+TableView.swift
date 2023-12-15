@@ -22,7 +22,7 @@ extension GenerateViewController {
         // Set height for selection row to zero, as it was simpler to just "hide" it instead of really removing the cell from the table
         if section == 0 && row == 0 && hideCodeTypeSelector {
             return 0
-        } else if section == 3 && row == 0 && (selectedCodeType == .PDF417 || selectedCodeType == .CODE128 ) {
+        } else if section == 3 && row == 0 && (selectedCodeType == .PDF417 || selectedCodeType == .CODE128) {
             return 150
         }
         

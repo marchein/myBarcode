@@ -67,24 +67,35 @@ extension GenerateViewController {
             
             var code = Code(content: codeData, category: .generate)
             
+            let narrowConstraint = codeImageView.heightAnchor.constraint(equalTo: codeImageView.widthAnchor, multiplier: 4.0/1.0)
+            let squareConstraint = codeImageView.heightAnchor.constraint(equalTo: codeImageView.widthAnchor, multiplier: 1.0/1.0)
+            
             switch selectedCodeType {
             case .CODE128:
                 code = Code128(code: code)
                 myBarcodeMatomo.track(action: myBarcodeMatomo.generateAction, name: myBarcodeMatomo.generateGeneratedCodeCode128, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeGenerated)))
+                narrowConstraint.isActive = true
+                squareConstraint.isActive = false
                 break
             case .AZTEC:
                 code = Aztec(code: code)
                 myBarcodeMatomo.track(action: myBarcodeMatomo.generateAction, name: myBarcodeMatomo.generateGeneratedCodeAztec, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeGenerated)))
+                narrowConstraint.isActive = false
+                squareConstraint.isActive = true
                 break
             case .PDF417:
                 code = PDF417(code: code)
                 myBarcodeMatomo.track(action: myBarcodeMatomo.generateAction, name: myBarcodeMatomo.generateGeneratedCodePDF417, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeGenerated)))
+                narrowConstraint.isActive = true
+                squareConstraint.isActive = false
                 break
             case .QR:
                 fallthrough
             default:
                 code = QRCode(code: code)
                 myBarcodeMatomo.track(action: myBarcodeMatomo.generateAction, name: myBarcodeMatomo.generateGeneratedCodeQR, number: NSNumber(value: getCodeValue(from: localStoreKeys.codeGenerated)))
+                narrowConstraint.isActive = false
+                squareConstraint.isActive = true
             }
             
             if let usedTemplate = usedTemplate {
@@ -108,6 +119,7 @@ extension GenerateViewController {
                     if addToHistory && !historyDisabled {
                         code.addToCoreData()
                     }
+                    self.currentCode = code
                     self.generateButton.isEnabled = false
                     self.generateButton.alpha = self.generateButton.isEnabled ? 1.0 : 0.6
                     

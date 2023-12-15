@@ -52,11 +52,16 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5B4EEE932B2A4DF600D36369"
+               BlueprintIdentifier = "5B00900B2B2B565B00485988"
                BuildableName = "myBarcodeUITests.xctest"
                BlueprintName = "myBarcodeUITests"
                ReferencedContainer = "container:myBarcode.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "myBarcodeScreenshots">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

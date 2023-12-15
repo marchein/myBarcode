@@ -30,7 +30,8 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     let hapticsGenerator = UINotificationFeedbackGenerator()
     var codeImage: CIImage!
     var firstAction = true
-    var usedTemplate: Template? = nil
+    var usedTemplate: Template?
+    var currentCode: Code?
     
     var codePlaceholder = "GENERATE_CODE_PLACEHOLDER".localized
     var maxLength = -1
