@@ -17,6 +17,7 @@
 		5B1551C7298D85DB00A4438B /* SKStoreReviewController+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1551C6298D85DB00A4438B /* SKStoreReviewController+Request.swift */; };
 		5B1C2CCD24EFFB8A003544D7 /* TextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1C2CCC24EFFB8A003544D7 /* TextViewTableViewCell.swift */; };
 		5B2473DA2C8347290040864A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 5B2473D92C8347290040864A /* PrivacyInfo.xcprivacy */; };
+		5B2473DC2C834FC60040864A /* AppTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2473DB2C834FC10040864A /* AppTracking.swift */; };
 		5B2AE31021AA017E00976FE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AE30F21AA017E00976FE2 /* AppDelegate.swift */; };
 		5B2AE31221AA017E00976FE2 /* GenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AE31121AA017E00976FE2 /* GenerateViewController.swift */; };
 		5B2AE31721AA017F00976FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AE31621AA017F00976FE2 /* Assets.xcassets */; };
@@ -33,14 +34,13 @@
 		5B59970A29C75AC600BC0E78 /* GenerateViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59970929C75AC600BC0E78 /* GenerateViewController+TableView.swift */; };
 		5B59970C29C75BBA00BC0E78 /* GenerateViewController+TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59970B29C75BBA00BC0E78 /* GenerateViewController+TextView.swift */; };
 		5B59970E29C75CD900BC0E78 /* GenerateViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59970D29C75CD900BC0E78 /* GenerateViewController+Helpers.swift */; };
-		5B642F0323392EC4005804AA /* AppIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B642F0223392EC4005804AA /* AppIconTableViewCell.swift */; };
 		5B642F1B2339596B005804AA /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F1D2339596B005804AA /* Settings.storyboard */; };
 		5B642F2123395979005804AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F2323395979005804AA /* LaunchScreen.storyboard */; };
 		5B67630823395B6000C563FD /* Scan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F262339597E005804AA /* Scan.storyboard */; };
 		5B67630923395B6500C563FD /* Generate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B642F2023395975005804AA /* Generate.storyboard */; };
 		5B80B21129967C2300C87939 /* ScanViewController+PHPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80B21029967C2300C87939 /* ScanViewController+PHPicker.swift */; };
 		5B915E9123390703008B8B59 /* fa-regular-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B915E90233906EE008B8B59 /* fa-regular-400.ttf */; };
-		5B9C3BDB2A286F5D00B03B53 /* MatomoTracker in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 5B9C3BDA2A286F5D00B03B53 /* MatomoTracker */; };
+		5B9C3BDB2A286F5D00B03B53 /* MatomoTracker in Frameworks */ = {isa = PBXBuildFile; productRef = 5B9C3BDA2A286F5D00B03B53 /* MatomoTracker */; };
 		5B9C3BDD2A28701300B03B53 /* MatomoTracker+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C3BDC2A28701300B03B53 /* MatomoTracker+Shared.swift */; };
 		5B9C3BDF2A28705700B03B53 /* myBarcodeMatomo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C3BDE2A28705700B03B53 /* myBarcodeMatomo.swift */; };
 		5BAA4196298D29DD00493175 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4195298D29DD00493175 /* String+Localizable.swift */; };
@@ -51,6 +51,7 @@
 		5BC19F842A2A7E1400B95CFD /* PrivacyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC19F832A2A7E1400B95CFD /* PrivacyTableViewController.swift */; };
 		5BCCE6AA23397445007A78D0 /* ScanRequestAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCCE6A923397445007A78D0 /* ScanRequestAccessViewController.swift */; };
 		5BCF1D4D24ED907C0018A211 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BCF1D4C24ED907C0018A211 /* Main.storyboard */; };
+		5BD0FC832C835C4800C46C8B /* GenerateViewController+Changelog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD0FC822C835C4800C46C8B /* GenerateViewController+Changelog.swift */; };
 		5BD63BCA21AEBE4200885382 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD63BC921AEBE4200885382 /* ScanViewController.swift */; };
 		5BD975082A8A86ED008AB237 /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD975072A8A86ED008AB237 /* Code.swift */; };
 		5BD9750A2A8A872B008AB237 /* HistoryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD975092A8A872B008AB237 /* HistoryCategory.swift */; };
@@ -139,6 +140,7 @@
 		5B1C2CCC24EFFB8A003544D7 /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
 		5B20CC1E2B2B263F00E4EB09 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 		5B2473D92C8347290040864A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		5B2473DB2C834FC10040864A /* AppTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTracking.swift; sourceTree = "<group>"; };
 		5B2AE30C21AA017E00976FE2 /* myBarcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myBarcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2AE30F21AA017E00976FE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B2AE31121AA017E00976FE2 /* GenerateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateViewController.swift; sourceTree = "<group>"; };
@@ -155,7 +157,6 @@
 		5B59970929C75AC600BC0E78 /* GenerateViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenerateViewController+TableView.swift"; sourceTree = "<group>"; };
 		5B59970B29C75BBA00BC0E78 /* GenerateViewController+TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenerateViewController+TextView.swift"; sourceTree = "<group>"; };
 		5B59970D29C75CD900BC0E78 /* GenerateViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenerateViewController+Helpers.swift"; sourceTree = "<group>"; };
-		5B642F0223392EC4005804AA /* AppIconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconTableViewCell.swift; sourceTree = "<group>"; };
 		5B768E562B29FD270092BE7D /* myBarcodeScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myBarcodeScreenshots.swift; sourceTree = "<group>"; };
 		5B80B21029967C2300C87939 /* ScanViewController+PHPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScanViewController+PHPicker.swift"; sourceTree = "<group>"; };
 		5B915E90233906EE008B8B59 /* fa-regular-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-regular-400.ttf"; sourceTree = "<group>"; };
@@ -172,6 +173,7 @@
 		5BC19F832A2A7E1400B95CFD /* PrivacyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyTableViewController.swift; sourceTree = "<group>"; };
 		5BCCE6A923397445007A78D0 /* ScanRequestAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRequestAccessViewController.swift; sourceTree = "<group>"; };
 		5BCF1D4C24ED907C0018A211 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5BD0FC822C835C4800C46C8B /* GenerateViewController+Changelog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenerateViewController+Changelog.swift"; sourceTree = "<group>"; };
 		5BD63BC921AEBE4200885382 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		5BD975072A8A86ED008AB237 /* Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code.swift; sourceTree = "<group>"; };
 		5BD975092A8A872B008AB237 /* HistoryCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCategory.swift; sourceTree = "<group>"; };
@@ -415,7 +417,6 @@
 			isa = PBXGroup;
 			children = (
 				5BE4AA9D21AAF6B000D69E18 /* TipTableViewCell.swift */,
-				5B642F0223392EC4005804AA /* AppIconTableViewCell.swift */,
 				5B4B4AA524E93FEC00E44302 /* HistoryItemTableViewCell.swift */,
 				5B1C2CCC24EFFB8A003544D7 /* TextViewTableViewCell.swift */,
 				5BE5310624F0301A006A225D /* SegmentedControlTableViewCell.swift */,
@@ -454,6 +455,7 @@
 		5BE4AAAA21AAF70900D69E18 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5B2473DB2C834FC10040864A /* AppTracking.swift */,
 				5BE4AAAB21AAF71200D69E18 /* Constants.swift */,
 				5BE4AAAC21AAF71200D69E18 /* Utilities.swift */,
 				5B9C3BDE2A28705700B03B53 /* myBarcodeMatomo.swift */,
@@ -483,6 +485,7 @@
 				5B59970929C75AC600BC0E78 /* GenerateViewController+TableView.swift */,
 				5B59970B29C75BBA00BC0E78 /* GenerateViewController+TextView.swift */,
 				5B59970D29C75CD900BC0E78 /* GenerateViewController+Helpers.swift */,
+				5BD0FC822C835C4800C46C8B /* GenerateViewController+Changelog.swift */,
 				5BE530FF24F024F4006A225D /* Templates */,
 			);
 			path = Generate;
@@ -701,6 +704,7 @@
 				5BE4AA9F21AAF6B000D69E18 /* TipTableViewCell.swift in Sources */,
 				5BE4AA9421AAF62E00D69E18 /* Settings+TableView.swift in Sources */,
 				5B4B4AA424E93F2700E44302 /* HistoryItem+Date.swift in Sources */,
+				5B2473DC2C834FC60040864A /* AppTracking.swift in Sources */,
 				5BE5310924F03CC0006A225D /* TextFieldTableViewCell.swift in Sources */,
 				5BE4AAA221AAF6C900D69E18 /* BorderedButton.swift in Sources */,
 				5BD9750D2A8A8C78008AB237 /* Code128.swift in Sources */,
@@ -710,7 +714,7 @@
 				5BE4AAB021AAF7CC00D69E18 /* UIView+Effects.swift in Sources */,
 				5BE5310724F0301A006A225D /* SegmentedControlTableViewCell.swift in Sources */,
 				5BAA419A298D327600493175 /* ScanViewController+Demo.swift in Sources */,
-				5B642F0323392EC4005804AA /* AppIconTableViewCell.swift in Sources */,
+				5BD0FC832C835C4800C46C8B /* GenerateViewController+Changelog.swift in Sources */,
 				5B4B4AA824E9596200E44302 /* ActivityIndicatorOverlay.swift in Sources */,
 				5BE4AA9321AAF62E00D69E18 /* TipJar+TableView.swift in Sources */,
 				5B4B4AA224E93D0300E44302 /* HistoryTableViewController.swift in Sources */,
@@ -1046,10 +1050,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = App/BarcodeScannerGenerator.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/App/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "myBarcode Generator & Scanner";
@@ -1061,7 +1066,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1079,10 +1084,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = App/BarcodeScannerGenerator.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/App/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "myBarcode Generator & Scanner";
@@ -1094,7 +1100,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

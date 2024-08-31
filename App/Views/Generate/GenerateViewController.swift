@@ -11,7 +11,7 @@ import UIKit
 
 class GenerateViewController: UITableViewController, UIDragInteractionDelegate, UITextViewDelegate, HistoryItemDelegate {
     // MARK: - Properties
-
+    
     @IBOutlet weak var codeTypeSelector: UISegmentedControl!
     @IBOutlet var codeImageView: UIImageView!
     @IBOutlet var codeContentTextView: UITextView!
@@ -37,11 +37,11 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     var maxLength = -1
     
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupApp()
-                
+        
         codeImageView.addInteraction(UIDragInteraction(delegate: self))
         codeContentTextView.delegate = self
         updateImageViewForFirstAction()
@@ -56,7 +56,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         setClearButton()
         setMaxCharacterLabel()
         checkIfGenerationIsPossible()
-               
+        
         tableView.reloadData()
         
         showChangelog()
@@ -66,6 +66,15 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     
     
     fileprivate func setupApp() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("Could not find AppDelegate")
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            appDelegate.appTracking.requestTracking()
+        }
+        
+        
+        
         let appSetup = UserDefaults.standard.bool(forKey: localStoreKeys.appSetup)
         
         if !appSetup {
@@ -80,6 +89,8 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
             
             UserDefaults.standard.synchronize()
         }
+        
+        
     }
     
     func setupSegmentedControl() {
@@ -128,7 +139,7 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         
         tableView.reloadData()
     }
-        
+    
     func setHistory() {
         if #available(iOS 16.0, *) {
             historyButton.isHidden = historyDisabled
@@ -192,9 +203,9 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
         guard let content = content, content.count > 0 else {
             return
         }
-
+        
         codeTypeSelector.selectedSegmentIndex = (codeType ?? selectedCodeType).rawValue
-
+        
         codeTypeSelectorChanged(codeTypeSelector!)
         
         codeContentTextView.text = content
@@ -210,9 +221,9 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
             setDefaultCodeType()
         }
     }
-
+    
     // MARK: - Segues
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         codeContentTextView.resignFirstResponder()
         if segue.identifier == myBarcodeSegues.ShowHistorySegue {
@@ -248,12 +259,12 @@ class GenerateViewController: UITableViewController, UIDragInteractionDelegate, 
     func updateViewFromSettings() {
         // Wether the selection should still be shown or not
         hideCodeTypeSelector = UserDefaults.standard.bool(forKey: localStoreKeys.showOnlyDefaultCode)
-
+        
         // Which code should be selected
         setDefaultCodeType()
         
         historyDisabled = UserDefaults.standard.bool(forKey: localStoreKeys.historyDisabled)
-
+        
         // Show/Hide History
         setHistory()
     }

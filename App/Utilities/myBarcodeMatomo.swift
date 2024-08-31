@@ -36,10 +36,6 @@ struct myBarcodeMatomo {
     // MARK: - Settings Actions
     // user opens settings
     static let settingsOpenAction = "myBarcode-app-settings"
-    // user opens default app icon view in settings
-    static let settingsAppIconAction = "myBarcode-app-settings-appicon"
-    // user sets the default selected tab in settings
-    static let settingsAppIconSetAction = "myBarcode-app-settings-appicon-set"
     // user opens default selected tab view in settings
     static let settingsDefaultTabAction = "myBarcode-app-settings-default-tab"
     // user sets the default selected tab in settings

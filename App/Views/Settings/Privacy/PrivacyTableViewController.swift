@@ -8,6 +8,7 @@
 
 import UIKit
 import MatomoTracker
+import AppTrackingTransparency
 
 class PrivacyTableViewController: UITableViewController {
 
@@ -15,18 +16,24 @@ class PrivacyTableViewController: UITableViewController {
     @IBOutlet var whatIsMatomoCell: UITableViewCell!
     @IBOutlet var optOutCell: UITableViewCell!
     @IBOutlet var optOutSwitch: UISwitch!
+    private var userCanBeTracked: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-        optOutSwitch.isOn = !MatomoTracker.shared.isOptedOut
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("Could not find AppDelegate")
+        }
+        userCanBeTracked = appDelegate.appTracking.userCanBeTracked()
+        optOutSwitch.isOn = MatomoTracker.shared.isOptedOut
     }
     
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        if userCanBeTracked {
+            return 2
+        }
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,10 +64,12 @@ class PrivacyTableViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
+    
+    
+    // MARK: - Actions
     @IBAction func optOutSwitchChanged(_ sender: UISwitch) {
         myBarcodeMatomo.track(action: myBarcodeMatomo.settingsAction, name: myBarcodeMatomo.settingsMatomoOptOutAction, number: NSNumber(value: MatomoTracker.shared.isOptedOut ? 1 : 0))
         MatomoTracker.shared.dispatch()
-        MatomoTracker.shared.isOptedOut = !sender.isOn
+        MatomoTracker.shared.isOptedOut = sender.isOn
     }
 }
