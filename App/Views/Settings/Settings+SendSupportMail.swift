@@ -15,22 +15,24 @@ import HeinHelpers
 
 extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
     func sendSupportMail() {
-        let language = Locale.current.languageCode ?? "en"
-        let supportMail = language == "de" ? myBarcode.mailAdressDE : myBarcode.mailAdressEN
-        if MFMailComposeViewController.canSendMail() {
-            let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self
-            mail.setSubject("[myBarcode] - Version \(myBarcode.versionString) (Build: \(myBarcode.buildNumber) - \(getReleaseTitle()))")
-            mail.setToRecipients([supportMail])
-            mail.setMessageBody("support_mail_body".localized, isHTML: false)
-            present(mail, animated: true)
-        } else {
+        let supportMail = myBarcode.mailAdress
+        
+        if !MFMailComposeViewController.canSendMail() {
             print("No mail account configured")
             let mailErrorMessage = "mail_error".localized
             showMessage(title: "Error".localized, message: String(format: mailErrorMessage, supportMail), on: self)
+            return
         }
+        
+        let mail = MFMailComposeViewController()
+        mail.mailComposeDelegate = self
+        mail.setSubject("[myBarcode] - Version \(myBarcode.versionString) (Build: \(myBarcode.buildNumber) - \(getReleaseTitle()))")
+        mail.setToRecipients([supportMail])
+        mail.setMessageBody("support_mail_body".localized, isHTML: false)
+        present(mail, animated: true)
+        
     }
-
+    
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
     }

@@ -16,8 +16,7 @@ struct localStoreKeys {
     static let isTester = "isTester"
     // has tipped?
     static let hasTipped = "hasTipped"
-    // which is the current App icon?
-    static let currentAppIcon = "currentIcon"
+    
     // how many actions are taken
     static let codeGenerated = "codeGenerated"
     static let codeScanned = "codeScanned"
@@ -34,7 +33,6 @@ struct localStoreKeys {
 struct Cells {
     static let GenerateCell = "generateCell"
     static let TemplateCell = "templateCell"
-    static let AppIconCell  = "appIcons"
     static let TipIntroCell = "introCell"
     static let TipCell      = "tipCell"
 }
@@ -74,11 +72,10 @@ struct myBarcodeIAP {
 struct myBarcode {
     static let appStoreId = "1444531883"
     static let appStoreLink = "https://apps.apple.com/app/myqrcode/id1444531883"
-    static let mailAdressDE = "help@mybarcode-app.de"
-    static let mailAdressEN = "help@mybarcode-app.com"
+    static let mailAdress = "help@mybarcode-app.com"
     static let website = "https://marc-hein.de/"
-    static let privacyNoticeEN = "https://myqrcode.marc-hein.de/privacy"
-    static let privacyNoticeDE = "https://myqrcode.marc-hein.de/datenschutz"
+    static let privacyNoticeEN = "https://mybarcode-app.com/privacy"
+    static let privacyNoticeDE = "https://mybarcode-app.com/datenschutz"
     static let matomoWebsite = "https://matomo.org/faq/new-to-piwik/faq_13/"
    
     

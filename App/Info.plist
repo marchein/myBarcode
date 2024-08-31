@@ -22,17 +22,14 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>tweetbot</string>
-		<string>twitter</string>
-	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>This app needs access to your back camera to scan Barcodes</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>This app needs access to your photo library so it can save generated codes to your library</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>$(PRODUCT_NAME) counts how often a feature is used so we can prioritize the development of new features. Your data is never sold or used for any non technical uses.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
