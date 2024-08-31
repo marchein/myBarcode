@@ -57,15 +57,6 @@ struct Model {
              placeholders: ["TEMPLATE_REDDIT_USERNAME_PLACEHOLDER".localized],
              options: [nil]
          ),
-         // Twitter Template
-         Template(
-             name: "Twitter",
-             templateString: "https://twitter.com/%@",
-             parameters: ["TEMPLATE_TWITTER_USERNAME".localized],
-             parameterType: [.Text],
-             placeholders: ["TEMPLATE_TWITTER_USERNAME_PLACEHOLDER".localized],
-             options: [nil]
-         ),
          // Mastodon Template
          Template(
              name: "Mastodon",

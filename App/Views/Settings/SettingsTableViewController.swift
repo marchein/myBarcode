@@ -16,7 +16,6 @@ class SettingsTableViewController: UITableViewController, UIAdaptivePresentation
 
     @IBOutlet var selectedTabName: UILabel!
     @IBOutlet var contactMailCell: UITableViewCell!
-    @IBOutlet var developerTwitterCell: UITableViewCell!
     @IBOutlet var selectedDefaultCode: UILabel!
     // If only the selected Code type should be displayed on the start page
     @IBOutlet weak var showOnlyDefaultCodeSwitch: UISwitch!

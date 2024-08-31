@@ -89,10 +89,6 @@
 "TEMPLATE_REDDIT_USERNAME" = "Benutzername";
 "TEMPLATE_REDDIT_USERNAME_PLACEHOLDER" = "Dein Reddit Benutzername";
 
-/* Twitter */
-"TEMPLATE_TWITTER_USERNAME" = "Benutzername";
-"TEMPLATE_TWITTER_USERNAME_PLACEHOLDER" = "Dein Twitter @Benutzername";
-
 /* Mastodon */
 "TEMPLATE_MASTODON_INSTANCE" = "Instanz";
 "TEMPLATE_MASTODON_INSTANCE_PLACEHOLDER" = "z.B. mastodon.social";
