@@ -74,8 +74,7 @@ struct myBarcodeIAP {
 struct myBarcode {
     static let appStoreId = "1444531883"
     static let appStoreLink = "https://apps.apple.com/app/myqrcode/id1444531883"
-    static let mailAdressDE = "help@mybarcode-app.de"
-    static let mailAdressEN = "help@mybarcode-app.com"
+    static let mailAdress = "help@mybarcode-app.com"
     static let website = "https://marc-hein.de/"
     static let privacyNoticeEN = "https://myqrcode.marc-hein.de/privacy"
     static let privacyNoticeDE = "https://myqrcode.marc-hein.de/datenschutz"

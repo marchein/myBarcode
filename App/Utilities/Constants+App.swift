@@ -10,7 +10,9 @@ import UIKit
 
 extension myBarcode {
     static func getGenerateVC() -> GenerateViewController? {
-        if let tabVC = UIApplication.shared.windows.first!.rootViewController as? UITabBarController,
+        // Get the active window scene
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let tabVC = windowScene.windows.first?.rootViewController as? UITabBarController,
            let navVC = tabVC.children.first as? UINavigationController,
            let mainVC = navVC.children.first as? GenerateViewController {
             return mainVC

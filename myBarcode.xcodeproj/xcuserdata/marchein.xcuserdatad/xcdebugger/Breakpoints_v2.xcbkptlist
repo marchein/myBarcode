@@ -82,84 +82,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EFB5241F-B2A1-4786-99CB-D97A1E4C44A5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "App/Views/Settings/Settings+SendSupportMail.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "sendSupportMail()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "EFB5241F-B2A1-4786-99CB-D97A1E4C44A5 - 32a116a330221eed"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "myBarcode.SettingsTableViewController.sendSupportMail() -&gt; ()"
-                  moduleName = "myBarcode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marchein/Developer/Privat/myQRcode/App/Views/Settings/Settings+SendSupportMail.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "376">
-               </Location>
-               <Location
-                  uuid = "EFB5241F-B2A1-4786-99CB-D97A1E4C44A5 - 32a116a330221eed"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "myBarcode.SettingsTableViewController.sendSupportMail() -&gt; ()"
-                  moduleName = "myBarcode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marchein/Developer/Privat/myQRcode/App/Views/Settings/Settings+SendSupportMail.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "432">
-               </Location>
-               <Location
-                  uuid = "EFB5241F-B2A1-4786-99CB-D97A1E4C44A5 - 32a116a330221eed"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "myBarcode.SettingsTableViewController.sendSupportMail() -&gt; ()"
-                  moduleName = "myBarcode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marchein/Developer/Privat/myQRcode/App/Views/Settings/Settings+SendSupportMail.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "500">
-               </Location>
-               <Location
-                  uuid = "EFB5241F-B2A1-4786-99CB-D97A1E4C44A5 - 32a116a330221eed"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "myBarcode.SettingsTableViewController.sendSupportMail() -&gt; ()"
-                  moduleName = "myBarcode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marchein/Developer/Privat/myQRcode/App/Views/Settings/Settings+SendSupportMail.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "452">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "CF7D73EB-9163-473A-B6D1-B57374C505E0"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -223,16 +145,6 @@
                </BreakpointActionProxy>
             </Actions>
             <Locations>
-               <Location
-                  uuid = "21F5A012-3B6E-4192-A02D-6F6D4562EB7C - ba3ad5676a792f38"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "UIViewAlertForUnsatisfiableConstraints"
-                  moduleName = "UIKitCore"
-                  usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
-               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -250,38 +162,6 @@
             endingLineNumber = "38"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7C563CF2-4D2A-490E-AECC-3572ED468573 - 9a44cb5a5d0a3cc8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "myBarcode.ScanViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "myBarcode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marchein/Developer/Privat/myQRcode/App/Views/Scan/ScanViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "112">
-               </Location>
-               <Location
-                  uuid = "7C563CF2-4D2A-490E-AECC-3572ED468573 - 9a44cb5a5d0a3cc8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "myBarcode.ScanViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "myBarcode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marchein/Developer/Privat/myQRcode/App/Views/Scan/ScanViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "88">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
