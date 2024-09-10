@@ -15,7 +15,6 @@ import MatomoTracker
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var appTracking: AppTracking!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         guard let tabBarController = self.window?.rootViewController as? UITabBarController else {
@@ -23,16 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         setDefaultTab(tabVC: tabBarController)
         
-        appTracking = AppTracking()
-                
+        let deviceId = UIDevice.current.identifierForVendor?.uuidString
+        MatomoTracker.shared.userId = deviceId
+        
         #if DEBUG
         if CommandLine.arguments.contains("UITestingDarkModeEnabled") {
             window?.overrideUserInterfaceStyle = .dark
         }
         #endif
-        
-        let deviceId = UIDevice.current.identifierForVendor?.uuidString
-        MatomoTracker.shared.userId = deviceId
         
         myBarcodeMatomo.track(action: myBarcodeMatomo.basicAction, name: myBarcodeMatomo.appStartAction)
         
@@ -42,10 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Save changes in the application's managed object context when the application transitions to the background.
         saveContext()
-    }
-    
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        appTracking.updateTrackingStatus()
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {

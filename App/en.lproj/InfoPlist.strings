@@ -8,4 +8,3 @@
 
 "NSCameraUsageDescription" = "myBarcode needs access to your back camera to scan Codes";
 "NSPhotoLibraryAddUsageDescription" = "myBarcode needs access to your photo library so it can save generated codes to your library";
-"NSUserTrackingUsageDescription" = "myBarcode counts how often a feature is used so we can prioritize the development of new features. Your data is never sold or used for any non technical uses.";
