@@ -89,4 +89,4 @@
 "B3h-nP-Vft.headerTitle" = "Matomo";
 "mjp-l0-QGe.text" = "What is Matomo? (English)";
 "8l1-eo-Zei.text" = "Matomo Opt-Out";
-"B3h-nP-Vft.footerTitle" = "Your activity of this app will be collected by Matomo web analytics if this switch is inactive. Select this switch for opt-out.";
+"B3h-nP-Vft.footerTitle" = "Your activity of this app will be collected by Matomo web analytics if this switch is active. Deselect this switch for opt-out.";
