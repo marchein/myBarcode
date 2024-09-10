@@ -1,4 +1,5 @@
 {
+  "originHash" : "53acd2171453b7d5fef60f9a75222c055a320846a44ee608c4bd63304f0c74a4",
   "pins" : [
     {
       "identity" : "heinhelpers",
@@ -14,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/matomo-org/matomo-sdk-ios.git",
       "state" : {
-        "branch" : "develop",
-        "revision" : "32c2353d5b57f9e144f199a544c7fe1df9561236"
+        "revision" : "82a1f3b18215381e2133d98b7cc09b5a855ff99d",
+        "version" : "7.7.0"
       }
     },
     {
@@ -32,10 +33,10 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SvenTiigi/WhatsNewKit.git",
       "state" : {
-        "revision" : "238dadc14dd58885f51037e63d08baf4275c480e",
-        "version" : "2.1.0"
+        "revision" : "6157c77e8be9b3d2310bc680681b61a8d9e290ac",
+        "version" : "2.2.1"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

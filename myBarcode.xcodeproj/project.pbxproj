@@ -1161,7 +1161,7 @@
 			repositoryURL = "https://github.com/shinydevelopment/SimulatorStatusMagic";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				minimumVersion = 2.7.0;
 			};
 		};
 		5B4D14EA2998F0900000BC94 /* XCRemoteSwiftPackageReference "HeinHelpers" */ = {
@@ -1177,15 +1177,15 @@
 			repositoryURL = "https://github.com/SvenTiigi/WhatsNewKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.0;
+				minimumVersion = 2.2.1;
 			};
 		};
 		5B9C3BD92A286F5D00B03B53 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/matomo-org/matomo-sdk-ios.git";
 			requirement = {
-				branch = develop;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.7.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
