@@ -6,6 +6,5 @@
   Copyright © 2023 Marc Hein. All rights reserved.
 */
 
-"NSCameraUsageDescription" = "Diese Anwendungs benötigt Zugriff auf die Rückkamera um Codes zu scannen";
-"NSPhotoLibraryAddUsageDescription" = "Diese Anwendungs benötigt Zugriff auf deine Fotos, um generierte Codes zu speichern";
-
+"NSCameraUsageDescription" = "myBarcode benötigt Zugriff auf Ihre Rückseitenkamera, um Codes zu scannen";
+"NSPhotoLibraryAddUsageDescription" = "myBarcode benötigt Zugriff auf Ihre Fotobibliothek, damit es die erzeugten Codes in Ihrer Bibliothek speichern kann";

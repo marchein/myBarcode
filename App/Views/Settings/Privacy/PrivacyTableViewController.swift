@@ -20,7 +20,7 @@ class PrivacyTableViewController: UITableViewController {
         super.viewDidLoad()
 
         
-        optOutSwitch.isOn = !MatomoTracker.shared.isOptedOut
+        optOutSwitch.isOn = MatomoTracker.shared.isOptedOut
     }
     
     // MARK: - Table view data source
@@ -61,6 +61,6 @@ class PrivacyTableViewController: UITableViewController {
     @IBAction func optOutSwitchChanged(_ sender: UISwitch) {
         myBarcodeMatomo.track(action: myBarcodeMatomo.settingsAction, name: myBarcodeMatomo.settingsMatomoOptOutAction, number: NSNumber(value: MatomoTracker.shared.isOptedOut ? 1 : 0))
         MatomoTracker.shared.dispatch()
-        MatomoTracker.shared.isOptedOut = !sender.isOn
+        MatomoTracker.shared.isOptedOut = sender.isOn
     }
 }

@@ -16,8 +16,6 @@ struct localStoreKeys {
     static let isTester = "isTester"
     // has tipped?
     static let hasTipped = "hasTipped"
-    // which is the current App icon?
-    static let currentAppIcon = "currentIcon"
     // how many actions are taken
     static let codeGenerated = "codeGenerated"
     static let codeScanned = "codeScanned"
@@ -34,7 +32,6 @@ struct localStoreKeys {
 struct Cells {
     static let GenerateCell = "generateCell"
     static let TemplateCell = "templateCell"
-    static let AppIconCell  = "appIcons"
     static let TipIntroCell = "introCell"
     static let TipCell      = "tipCell"
 }

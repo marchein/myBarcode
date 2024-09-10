@@ -6,5 +6,5 @@
   Copyright © 2023 Marc Hein. All rights reserved.
 */
 
-"NSCameraUsageDescription" = "This app needs access to your back camera to scan Codes";
-"NSPhotoLibraryAddUsageDescription" = "This app needs access to your photo library so it can save generated codes to your library";
+"NSCameraUsageDescription" = "myBarcode needs access to your back camera to scan Codes";
+"NSPhotoLibraryAddUsageDescription" = "myBarcode needs access to your photo library so it can save generated codes to your library";
