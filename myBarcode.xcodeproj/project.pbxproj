@@ -3,10 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3921E2FA2C986EED00104846 /* Notifications+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39544D762C986D0600A8E477 /* Notifications+Name.swift */; };
+		3921E30E2C9873DE00104846 /* GenerateIntent.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 3921E3052C9873DE00104846 /* GenerateIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3921E3132C98741900104846 /* Notifications+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39544D762C986D0600A8E477 /* Notifications+Name.swift */; };
+		3921E3222C9877E400104846 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BEC8A23223FDF1B00BDF642 /* Localizable.strings */; };
+		3921E3232C9877E400104846 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BEC8A23223FDF1B00BDF642 /* Localizable.strings */; };
+		3921E3242C9877E400104846 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BEC8A23223FDF1B00BDF642 /* Localizable.strings */; };
+		3921E3252C98780400104846 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4195298D29DD00493175 /* String+Localizable.swift */; };
+		3921E3262C98780400104846 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4195298D29DD00493175 /* String+Localizable.swift */; };
+		3921E3272C98780400104846 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4195298D29DD00493175 /* String+Localizable.swift */; };
+		39544D462C98676900A8E477 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39544D452C98676900A8E477 /* WidgetKit.framework */; };
+		39544D482C98676900A8E477 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39544D472C98676900A8E477 /* SwiftUI.framework */; };
+		39544D592C98676A00A8E477 /* BarcodeWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 39544D442C98676900A8E477 /* BarcodeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		39544D702C986B1C00A8E477 /* ScanIntent.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 39544D672C986B1C00A8E477 /* ScanIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		39544D772C986D0B00A8E477 /* Notifications+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39544D762C986D0600A8E477 /* Notifications+Name.swift */; };
+		39544D782C986E6300A8E477 /* Notifications+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39544D762C986D0600A8E477 /* Notifications+Name.swift */; };
 		5B0090182B2B566800485988 /* SimulatorStatusMagic in Frameworks */ = {isa = PBXBuildFile; productRef = 5B0090172B2B566800485988 /* SimulatorStatusMagic */; };
 		5B0090192B2B566800485988 /* SimulatorStatusMagic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 5B0090172B2B566800485988 /* SimulatorStatusMagic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		5B00901B2B2B567100485988 /* UIDevice+Modelname.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA4193298D28B600493175 /* UIDevice+Modelname.swift */; };
@@ -88,6 +103,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3921E30C2C9873DE00104846 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B2AE30421AA017E00976FE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3921E3042C9873DE00104846;
+			remoteInfo = GenerateIntent;
+		};
+		39544D572C98676A00A8E477 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B2AE30421AA017E00976FE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39544D432C98676900A8E477;
+			remoteInfo = BarcodeWidgetExtension;
+		};
+		39544D6E2C986B1C00A8E477 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B2AE30421AA017E00976FE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39544D662C986B1C00A8E477;
+			remoteInfo = ScanIntent;
+		};
 		5B0090122B2B565B00485988 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5B2AE30421AA017E00976FE2 /* Project object */;
@@ -105,6 +141,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		39544D5E2C98676A00A8E477 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				39544D592C98676A00A8E477 /* BarcodeWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39544D752C986B1C00A8E477 /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+				39544D702C986B1C00A8E477 /* ScanIntent.appex in Embed ExtensionKit Extensions */,
+				3921E30E2C9873DE00104846 /* GenerateIntent.appex in Embed ExtensionKit Extensions */,
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5B00901A2B2B566800485988 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,6 +188,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3921E3052C9873DE00104846 /* GenerateIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = GenerateIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		39544D442C98676900A8E477 /* BarcodeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BarcodeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		39544D452C98676900A8E477 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		39544D472C98676900A8E477 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		39544D672C986B1C00A8E477 /* ScanIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ScanIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		39544D762C986D0600A8E477 /* Notifications+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notifications+Name.swift"; sourceTree = "<group>"; };
 		5B00900C2B2B565B00485988 /* myBarcodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myBarcodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B1213A42992CA41007FDCE3 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B1213A62992CA41007FDCE3 /* QRCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTests.swift; sourceTree = "<group>"; };
@@ -218,7 +283,96 @@
 		5BFE10E424E9789400415E90 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Scan.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3921E2FE2C98707100104846 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				GenerateBarcodeControl.swift,
+				ScanBarcodeControl.swift,
+			);
+			target = 5B2AE30B21AA017E00976FE2 /* myBarcode */;
+		};
+		3921E3122C9873DE00104846 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 3921E3042C9873DE00104846 /* GenerateIntent */;
+		};
+		3921E31A2C98749200104846 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				GenerateIntent.swift,
+			);
+			target = 39544D432C98676900A8E477 /* BarcodeWidgetExtension */;
+		};
+		39544D5A2C98676A00A8E477 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 39544D432C98676900A8E477 /* BarcodeWidgetExtension */;
+		};
+		39544D712C986B1C00A8E477 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 39544D662C986B1C00A8E477 /* ScanIntent */;
+		};
+		39544D7A2C986E9900A8E477 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ScanIntent.swift,
+			);
+			target = 39544D432C98676900A8E477 /* BarcodeWidgetExtension */;
+		};
+		5B6DF5012C98832600E92915 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				GenerateIntent.swift,
+			);
+			target = 5B2AE30B21AA017E00976FE2 /* myBarcode */;
+		};
+		5B6DF5032C98832D00E92915 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ScanIntent.swift,
+			);
+			target = 5B2AE30B21AA017E00976FE2 /* myBarcode */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3921E3062C9873DE00104846 /* GenerateIntent */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5B6DF5012C98832600E92915 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 3921E31A2C98749200104846 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 3921E3122C9873DE00104846 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = GenerateIntent; sourceTree = "<group>"; };
+		39544D492C98676900A8E477 /* BarcodeWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (3921E2FE2C98707100104846 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 39544D5A2C98676A00A8E477 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = BarcodeWidget; sourceTree = "<group>"; };
+		39544D682C986B1C00A8E477 /* ScanIntent */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5B6DF5032C98832D00E92915 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 39544D7A2C986E9900A8E477 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 39544D712C986B1C00A8E477 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ScanIntent; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		3921E3022C9873DE00104846 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39544D412C98676900A8E477 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39544D482C98676900A8E477 /* SwiftUI.framework in Frameworks */,
+				39544D462C98676900A8E477 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39544D642C986B1C00A8E477 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5B0090092B2B565B00485988 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -298,6 +452,9 @@
 				5B2AE30E21AA017E00976FE2 /* App */,
 				5B1213A52992CA41007FDCE3 /* myQRcodeTests */,
 				5B00900D2B2B565B00485988 /* myBarcodeUITests */,
+				39544D492C98676900A8E477 /* BarcodeWidget */,
+				39544D682C986B1C00A8E477 /* ScanIntent */,
+				3921E3062C9873DE00104846 /* GenerateIntent */,
 				5B2AE30D21AA017E00976FE2 /* Products */,
 				5B5AEE9E2A000DDD00682CF8 /* Frameworks */,
 				5B20CC1E2B2B263F00E4EB09 /* TestPlan.xctestplan */,
@@ -310,6 +467,9 @@
 				5B2AE30C21AA017E00976FE2 /* myBarcode.app */,
 				5B1213A42992CA41007FDCE3 /* Tests.xctest */,
 				5B00900C2B2B565B00485988 /* myBarcodeUITests.xctest */,
+				39544D442C98676900A8E477 /* BarcodeWidgetExtension.appex */,
+				39544D672C986B1C00A8E477 /* ScanIntent.appex */,
+				3921E3052C9873DE00104846 /* GenerateIntent.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -356,6 +516,8 @@
 		5B5AEE9E2A000DDD00682CF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39544D452C98676900A8E477 /* WidgetKit.framework */,
+				39544D472C98676900A8E477 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -444,6 +606,7 @@
 				5B1551C6298D85DB00A4438B /* SKStoreReviewController+Request.swift */,
 				5B1213B32992CC73007FDCE3 /* Code+CoreData.swift */,
 				5B9C3BDC2A28701300B03B53 /* MatomoTracker+Shared.swift */,
+				39544D762C986D0600A8E477 /* Notifications+Name.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -510,6 +673,72 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3921E3042C9873DE00104846 /* GenerateIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3921E30F2C9873DE00104846 /* Build configuration list for PBXNativeTarget "GenerateIntent" */;
+			buildPhases = (
+				3921E3012C9873DE00104846 /* Sources */,
+				3921E3022C9873DE00104846 /* Frameworks */,
+				3921E3032C9873DE00104846 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3921E3062C9873DE00104846 /* GenerateIntent */,
+			);
+			name = GenerateIntent;
+			packageProductDependencies = (
+			);
+			productName = GenerateIntent;
+			productReference = 3921E3052C9873DE00104846 /* GenerateIntent.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
+		39544D432C98676900A8E477 /* BarcodeWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39544D5B2C98676A00A8E477 /* Build configuration list for PBXNativeTarget "BarcodeWidgetExtension" */;
+			buildPhases = (
+				39544D402C98676900A8E477 /* Sources */,
+				39544D412C98676900A8E477 /* Frameworks */,
+				39544D422C98676900A8E477 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				39544D492C98676900A8E477 /* BarcodeWidget */,
+			);
+			name = BarcodeWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = BarcodeWidgetExtension;
+			productReference = 39544D442C98676900A8E477 /* BarcodeWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		39544D662C986B1C00A8E477 /* ScanIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39544D722C986B1C00A8E477 /* Build configuration list for PBXNativeTarget "ScanIntent" */;
+			buildPhases = (
+				39544D632C986B1C00A8E477 /* Sources */,
+				39544D642C986B1C00A8E477 /* Frameworks */,
+				39544D652C986B1C00A8E477 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				39544D682C986B1C00A8E477 /* ScanIntent */,
+			);
+			name = ScanIntent;
+			packageProductDependencies = (
+			);
+			productName = ScanIntent;
+			productReference = 39544D672C986B1C00A8E477 /* ScanIntent.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
 		5B00900B2B2B565B00485988 /* myBarcodeUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B0090142B2B565B00485988 /* Build configuration list for PBXNativeTarget "myBarcodeUITests" */;
@@ -561,10 +790,15 @@
 				5B2AE30921AA017E00976FE2 /* Frameworks */,
 				5B2AE30A21AA017E00976FE2 /* Resources */,
 				5B69C0B92B2A4E460080D11E /* Embed Frameworks */,
+				39544D5E2C98676A00A8E477 /* Embed Foundation Extensions */,
+				39544D752C986B1C00A8E477 /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				39544D582C98676A00A8E477 /* PBXTargetDependency */,
+				39544D6F2C986B1C00A8E477 /* PBXTargetDependency */,
+				3921E30D2C9873DE00104846 /* PBXTargetDependency */,
 			);
 			name = myBarcode;
 			packageProductDependencies = (
@@ -583,10 +817,19 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1510;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1510;
 				ORGANIZATIONNAME = "Marc Hein";
 				TargetAttributes = {
+					3921E3042C9873DE00104846 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					39544D432C98676900A8E477 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					39544D662C986B1C00A8E477 = {
+						CreatedOnToolsVersion = 16.0;
+					};
 					5B00900B2B2B565B00485988 = {
 						CreatedOnToolsVersion = 15.1;
 						TestTargetID = 5B2AE30B21AA017E00976FE2;
@@ -624,11 +867,38 @@
 				5B2AE30B21AA017E00976FE2 /* myBarcode */,
 				5B1213A32992CA41007FDCE3 /* Tests */,
 				5B00900B2B2B565B00485988 /* myBarcodeUITests */,
+				39544D432C98676900A8E477 /* BarcodeWidgetExtension */,
+				39544D662C986B1C00A8E477 /* ScanIntent */,
+				3921E3042C9873DE00104846 /* GenerateIntent */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3921E3032C9873DE00104846 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3921E3242C9877E400104846 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39544D422C98676900A8E477 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3921E3222C9877E400104846 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39544D652C986B1C00A8E477 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3921E3232C9877E400104846 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5B00900A2B2B565B00485988 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -664,6 +934,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3921E3012C9873DE00104846 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3921E3132C98741900104846 /* Notifications+Name.swift in Sources */,
+				3921E3272C98780400104846 /* String+Localizable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39544D402C98676900A8E477 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3921E2FA2C986EED00104846 /* Notifications+Name.swift in Sources */,
+				3921E3252C98780400104846 /* String+Localizable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39544D632C986B1C00A8E477 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39544D782C986E6300A8E477 /* Notifications+Name.swift in Sources */,
+				3921E3262C98780400104846 /* String+Localizable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5B0090082B2B565B00485988 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -724,6 +1021,7 @@
 				5B59970E29C75CD900BC0E78 /* GenerateViewController+Helpers.swift in Sources */,
 				5BCCE6AA23397445007A78D0 /* ScanRequestAccessViewController.swift in Sources */,
 				5B3D61CF24E92FA000C01F34 /* UIImage+Base64.swift in Sources */,
+				39544D772C986D0B00A8E477 /* Notifications+Name.swift in Sources */,
 				5B9C3BDF2A28705700B03B53 /* myBarcodeMatomo.swift in Sources */,
 				5BE4AAA721AAF6F300D69E18 /* SKProduct+LocalizedPrice.swift in Sources */,
 				5BE5310B24F04FFA006A225D /* ButtonTableViewCell.swift in Sources */,
@@ -749,6 +1047,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3921E30D2C9873DE00104846 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3921E3042C9873DE00104846 /* GenerateIntent */;
+			targetProxy = 3921E30C2C9873DE00104846 /* PBXContainerItemProxy */;
+		};
+		39544D582C98676A00A8E477 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39544D432C98676900A8E477 /* BarcodeWidgetExtension */;
+			targetProxy = 39544D572C98676A00A8E477 /* PBXContainerItemProxy */;
+		};
+		39544D6F2C986B1C00A8E477 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39544D662C986B1C00A8E477 /* ScanIntent */;
+			targetProxy = 39544D6E2C986B1C00A8E477 /* PBXContainerItemProxy */;
+		};
 		5B0090132B2B565B00485988 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5B2AE30B21AA017E00976FE2 /* myBarcode */;
@@ -831,6 +1144,199 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3921E3102C9873DE00104846 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 22;
+				DEVELOPMENT_TEAM = UJR28ZV94C;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GenerateIntent/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GenerateIntent;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Marc Hein. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 2.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcode.GenerateIntent";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3921E3112C9873DE00104846 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 22;
+				DEVELOPMENT_TEAM = UJR28ZV94C;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GenerateIntent/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GenerateIntent;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Marc Hein. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 2.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcode.GenerateIntent";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		39544D5C2C98676A00A8E477 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 22;
+				DEVELOPMENT_TEAM = UJR28ZV94C;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BarcodeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BarcodeWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Marc Hein. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 2.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcode.BarcodeWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		39544D5D2C98676A00A8E477 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 22;
+				DEVELOPMENT_TEAM = UJR28ZV94C;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BarcodeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BarcodeWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Marc Hein. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 2.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcode.BarcodeWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		39544D732C986B1C00A8E477 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 22;
+				DEVELOPMENT_TEAM = UJR28ZV94C;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScanIntent/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ScanIntent;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Marc Hein. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 2.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcode.ScanIntent";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		39544D742C986B1C00A8E477 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 22;
+				DEVELOPMENT_TEAM = UJR28ZV94C;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScanIntent/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ScanIntent;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Marc Hein. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 2.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcode.ScanIntent";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		5B0090152B2B565B00485988 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -976,6 +1482,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -1033,6 +1540,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1046,7 +1554,7 @@
 				CODE_SIGN_ENTITLEMENTS = App/BarcodeScannerGenerator.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/App/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "myBarcode Generator & Scanner";
@@ -1058,7 +1566,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 2.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1080,7 +1588,7 @@
 				CODE_SIGN_ENTITLEMENTS = App/BarcodeScannerGenerator.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = UJR28ZV94C;
 				INFOPLIST_FILE = "$(SRCROOT)/App/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "myBarcode Generator & Scanner";
@@ -1092,7 +1600,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 2.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.marc-hein.myQRcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1109,6 +1617,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3921E30F2C9873DE00104846 /* Build configuration list for PBXNativeTarget "GenerateIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3921E3102C9873DE00104846 /* Debug */,
+				3921E3112C9873DE00104846 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39544D5B2C98676A00A8E477 /* Build configuration list for PBXNativeTarget "BarcodeWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39544D5C2C98676A00A8E477 /* Debug */,
+				39544D5D2C98676A00A8E477 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39544D722C986B1C00A8E477 /* Build configuration list for PBXNativeTarget "ScanIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39544D732C986B1C00A8E477 /* Debug */,
+				39544D742C986B1C00A8E477 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5B0090142B2B565B00485988 /* Build configuration list for PBXNativeTarget "myBarcodeUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

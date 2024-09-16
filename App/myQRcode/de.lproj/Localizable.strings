@@ -144,3 +144,13 @@
 "CHANGELOG_2_0_TOP4_TITLE" = "Neue Optionen";
 "CHANGELOG_2_0_TOP4_SUBTITLE" = "Du nutzt myBarcode primär um Codes zu scannen? Dann kannst du dies zu Deinem Standardverhalten in den Einstellungen machen.";
 
+/* Control Center Actions */
+"SCAN_BARCODE" = "Barcode scannen";
+"GENERATE_BARCODE" = "Barcode generieren";
+
+/* App Intents */
+"OPEN_MYBARCODE_GENERATOR" = "Barcode Generator öffnen";
+"OPEN_MYBARCODE_GENERATOR_DESCRIPTION" = "myBarcode Generator öffnen, um einen neuen Barcode zu generieren";
+
+"OPEN_MYBARCODE_SCANNER" = "Barcode Scanner öffnen";
+"OPEN_MYBARCODE_SCANNER_DESCRIPTION" = "myBarcode Scanner öffnen, um einen Barcode zu scannen";
