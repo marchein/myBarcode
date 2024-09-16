@@ -138,3 +138,15 @@
 "CHANGELOG_2_0_TOP3_SUBTITLE" = "It is also possible to scan various new barcode types.";
 "CHANGELOG_2_0_TOP4_TITLE" = "New Options";
 "CHANGELOG_2_0_TOP4_SUBTITLE" = "You primarily use myBarcode to scan codes? Then you can make this your default behavior in the settings.";
+
+
+/* Control Center Actions */
+"SCAN_BARCODE" = "Scan Barcode";
+"GENERATE_BARCODE" = "Generate Barcode";
+
+/* App Intents */
+"OPEN_MYBARCODE_GENERATOR" = "Open Barcode Generator";
+"OPEN_MYBARCODE_GENERATOR_DESCRIPTION" = "Open myBarcode Generator to generate a new Barcode";
+
+"OPEN_MYBARCODE_SCANNER" = "Open Barcode Scanner";
+"OPEN_MYBARCODE_SCANNER_DESCRIPTION" = "Open myBarcode Scanner to scan a Barcode";

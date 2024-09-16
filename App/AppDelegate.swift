@@ -22,6 +22,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         setDefaultTab(tabVC: tabBarController)
         
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleScannerAction),
+            name: .startScanner,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleGenerateAction),
+            name: .startGenerator,
+            object: nil
+        )
+        
         let deviceId = UIDevice.current.identifierForVendor?.uuidString
         MatomoTracker.shared.userId = deviceId
         
@@ -84,5 +98,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 on: (self.window?.rootViewController)!
             )
         }
+    }
+    
+    // MARK: - App Intent
+    private func openAppBase(tabVC: UITabBarController, showScanner: Bool = false) {
+        if showScanner {
+            tabVC.selectedIndex = 1
+            return
+        }
+        tabVC.selectedIndex = 0
+    }
+    
+    @objc private func handleScannerAction() {
+        DispatchQueue.main.async {
+            guard let tabBarController = self.window?.rootViewController as? UITabBarController else {
+                return
+            }
+            
+            self.openAppBase(tabVC: tabBarController, showScanner: true)
+        }
+    }
+    
+    @objc private func handleGenerateAction() {
+        DispatchQueue.main.async {
+            guard let tabBarController = self.window?.rootViewController as? UITabBarController else {
+                return
+            }
+            
+            self.openAppBase(tabVC: tabBarController, showScanner: false)
+        }
+    }
+    
+    // Remove the observer when the app delegate is deallocated
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
